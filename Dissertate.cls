@@ -1,3 +1,4 @@
+% -*- mode: latex-mode; TeX-engine: xetex; LaTeX-command-style: (("" "SOURCE_DATE_EPOCH=0 %(PDF)%(latex) --shell-escape %S%(PDFout)")); TeX-master: "dissertation.tex"; -*-
 % -------------------------------------------------------------------
 %  @LaTeX-class-file{
 %     filename        = "Dissertate.cls",
