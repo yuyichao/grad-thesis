@@ -117,7 +117,7 @@ const data_cold_x0 = [data_cold_xp1[1:1]; split_b[:x0]]
 const data_cold_y0 = [data_cold_xp1[1:1]; split_b[:y0]]
 const data_cold_z0 = [data_cold_xp1[1:1]; split_b[:z0]]
 
-const prefix = joinpath(@__DIR__, "rabi_flop")
+const prefix = joinpath(@__DIR__, "../figures/na_rsc_rabi_flop")
 
 function f1_prob(Ωs, pΩ::AbstractArray, Γ::AbstractMatrix{T},
                  rates::AbstractVector{T}, tmax::T, atol=0.005, δΩ=T(0),
