@@ -44,4 +44,25 @@
 
 \section{Solution: Simulation based optimization}
 
+\ref{fig:na-rsc-sequence}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{figures/na_rsc_sequence.pdf}
+  \caption[Simulation optimized Raman sideband cooling sequence for Sodium]{
+    Schematic of the cooling pulse sequence. The tweezer is strobed at 3 MHz to
+    reduce light shifts during optical pumping\todo{~\cite{Hutzler2017-LightShifts}}.
+    Each cooling cycle consists of $8$ sideband pulses.
+    The four axial pulses address two sideband orders.
+    The two pulses in each radial direction either address $\Delta n=-2$ and $\Delta n=-1$
+    or have different durations to drive $\Delta n=-1$,
+    at the end of the cooling sequence when most of the population is below $n=3$.
+    The Raman cooling and spectroscopy pulses have Blackman envelopes\todo{~\cite{Kasevich1992}}
+    to reduce off-resonant coupling,
+    while the measurement Rabi pulses in Fig.\todo{~\ref{f-radial}(B,C)}
+    and \todo{\ref{f-axial}(B,C)}
+    have square envelopes to simplify analysis.
+    \label{fig:na-rsc-sequence}}
+\end{figure}
+
 \section{Cooling performance}
