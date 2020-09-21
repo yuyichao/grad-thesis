@@ -1,0 +1,36 @@
+\documentclass[border={-7pt -5pt -5pt -3pt}]{standalone}
+
+\usepackage{hyperref}
+\usepackage{tikz}
+
+\usetikzlibrary{decorations.pathreplacing,
+  arrows,
+  calc,
+  decorations.pathmorphing,
+  decorations.pathreplacing,
+  decorations.markings,
+  fadings,
+  positioning,
+  shapes,
+  3d
+}
+
+\ifpdf
+% Ensure reproducible output
+\pdfinfoomitdate=1
+\pdfsuppressptexinfo=-1
+\pdftrailerid{}
+\hypersetup{
+  pdfcreator={},
+  pdfproducer={}
+}
+\fi
+
+\begin{document}
+\begin{tikzpicture}
+  \node at (0, 0) {\includegraphics[height=4.5cm]{na_rsc_op_branching.pdf}};
+  \node at (6.2, 0) {\includegraphics[height=4.5cm]{na_rsc_mele_raman_1.pdf}};
+  \node at (2.4, 1.9) {\scriptsize (\textbf{A})};
+  \node at (8.65, 1.9) {\scriptsize (\textbf{B})};
+\end{tikzpicture}
+\end{document}
