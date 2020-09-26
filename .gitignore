@@ -38,3 +38,4 @@ $*
 _autosave-*
 *.*-bak
 *.end
+/references/files/
