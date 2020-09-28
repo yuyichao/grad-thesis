@@ -8,43 +8,71 @@
 \section{Raman Transition Beyond Three-Level Model}
 
 In an ideal three-level system, the scattering probability during a $\pi$ pulse
-can be arbitrarily small by using a large single photon detuning.
-However, in practice, there are often other effects that increases the scattering
-and may also put a lower limit on the minimum scattering probability during the transfer.
-In this section, we will discuss the difference between an ideal Raman transition
-in three-level system and on in a real system.
-
-\subsection{Generic Model}
-
-\ref{fig:raman-transfer-generic-raman-model}
+Raman transition can be made arbitrarily small by using a large single photon detuning.
+However, in a real system, there are often other effects that increases the scattering
+and may also put a lower limit on the scattering probability during the transfer.
+Other practical limitation in the system like stability of the laser power and frequency
+also needs to be taken into account.
+Fig.~\ref{fig:raman-transfer-generic-raman-model} shows a generic model
+for a real Raman transition demostrating some of these effects.
+In this section, we will discuss how some of these affect our transfer efficiency.
+Due to experimental constraint,
+we will discuss under the assumption that the single photon detuning is
+much smaller than the frequency of each individual beams, i.e. $\Delta\ll\nu_1,\ \nu_2$.
 
 \begin{figure}
   \centering
   \includegraphics[width=0.6\textwidth]{figures/raman_transfer_generic_raman_model.pdf}
   \caption[Generic model for a real Raman transition]{
-    \todo{}
+    Generic model for a real Raman transition.
+    The initial state $|i\rangle$ and the final state $|f\rangle$
+    has a energy difference $\delta$
+    and are coupled by two Raman beams with frequencies and
+    single photon Rabi frequencies of $\nu_1,\ \Omega_1$ and $\nu_2,\ \Omega_2$ respectively.
+    The corresponding matrix elements (arbitrary unit) are $M_1$ and $M_2$.
+    The Raman beams are detuned by $\Delta$ from the primary excited state $|e\rangle$,
+    which has a decay rate of $\Gamma_e$.
+    We also consider additional states near the initial ($|i'\rangle$),
+    final ($|f'\rangle$) and intermediate excited $|e'\rangle$ states which are
+    separated from the corresponding Raman transition states by $\omega'_i$,
+    $\omega'_f$ and $\omega'_e$ respectively.
+    Only one additional state of each kinds are included to simplify the discussion
+    without loss of generality.
     \label{fig:raman-transfer-generic-raman-model}}
 \end{figure}
 
-\todo{}
-
-Due to experimental constraint,
-we will discuss only in the limit where the single photon detuning is
-much smaller than the frequency of each individual beams ($\Delta\ll\nu_1,\ \nu_2$).
-
 \subsection{Additional Initial and Final States}
 
+First, we will discuss the effect of $|i'\rangle$ and $|f'\rangle$ states
+near the initial and final states.
+These states can be coupled to the excited state $|e\rangle$ by the Raman beams,
+which can in tern be coupled to the initial and final states
+by an off-resonance Raman transition.
+The leakage is suppressed by the detuning from the Raman resonance,
+i.e. $\omega'_i$ and $\omega'_f$.
+This puts a limit on the Raman Rabi frequency $\Omega_R$ to be smaller
+than the smallest energy gap, which in turns puts a limit on the minimum Raman transfer time.
+In our experiment, the minimum energy gap comes from axial motional excitation of
+the atomic initial states which is between $2\pi\times10 - 30$~kHz
+depending on the trap depth used.
+The typical Raman $\pi$ time we can realize is $0.5 - 5$~ms so this effect
+is not a major limiting factor for our transfer efficiency.
+
 \subsection{Additional Excited states}
+
+Next, we will consider the effect of $|e'\rangle$ state near the excited intermediate state.
 
 \subsection{Cross Coupling Between Light Addressing Initial and Final States}
 
 \todo{Light shift?}
+\todo{Footnote about assumption of matrix element being the same for two beams/polarization
+  and general existance of other angular momentum states}
 
 \section{Raman Transfer versus STIRAP}
 
 An alternative method often used to create and prepare the internal states of ultracold molecule
 is stimulated Raman adiabatic passage (STIRAP)\todo{\cite{}}.
-Compared to off-resonance Raman transition, which uses detuning from the excited state
+Compared to Raman transition, which uses detuning from the excited state
 to reduce scattering during the transfer, STIRAP relies on a superposition between
 the initial and final state as a dark state to achieve the same goal.
 The dark state in STIRAP is created due to a destructive interference of transition
