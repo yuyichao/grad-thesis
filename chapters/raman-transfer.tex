@@ -13,10 +13,11 @@ In an ideal three-level system, the scattering probability during a $\pi$ pulse
 Raman transition can be made arbitrarily small by using a large single photon detuning.
 However, in a real system, there are often other effects that increases the scattering
 and may also put a lower limit on the scattering probability during the transfer.
-Other practical limitation in the system like stability of the laser power and frequency
-also needs to be taken into account.
 Fig.~\ref{fig:raman-transfer-generic-raman-model} shows a generic model
 for a real Raman transition demostrating some of these effects.
+Additionally, other practical limitation in the system like stability of the laser power
+and frequency also needs to be taken into account.
+
 In the experiment, we find the parameter range that gives the best transfer efficiency
 using numerical simulation (see section \ref{ch:raman-transfer:state-selction}).
 Nevertheless, in order to develop a general approach that can be applied to other systems,
@@ -66,6 +67,7 @@ The typical Raman $\pi$ time we can realize is $0.5 - 5$~ms so this effect
 is not a major limiting factor for our transfer efficiency.
 
 \subsection{Additional Excited states}
+\label{ch:raman-transfer:extra-ext}
 
 \begin{figure}
   \centering
@@ -121,9 +123,80 @@ treated as a change in the maximum detuning.
 
 \subsection{Cross Coupling Between Light Addressing Initial and Final States}
 
-\todo{Light shift?}
-\todo{Footnote about assumption of matrix element being the same for two beams/polarization
-  and general existance of other angular momentum states}
+Due to the small energy separation between the initial and final state $\delta$,
+the cross coupling of the laser addressing the initial/final state on the final/initial state
+is another important effect in our experiment.
+Without the cross coupling, the total off resonance scattering rate for
+the initial and the final states is
+\[
+  \Gamma_{scatter0}=\frac{\Gamma_e\left(\Omega_1^2+\Omega_2^2\right)}{2\Delta^2}
+\]
+For a given Raman Rabi frequency $\Omega_{Raman}\propto\Omega_1\Omega_2$, this is
+minimized when $\Omega_1=\Omega_2$.\todo{reference}
+
+When cross coupling is taken into account, however, the total scattering rate becomes,
+\footnote{Here we assume that the matrix elements are the same for the two beams.
+  This is the case when the two beams have the same polarization as in our experiment.
+  This effect can be minimized or eliminated by selecting different polarizations for the
+  two laser frequencies that does not couple to the other initial/final state.
+  This would also require choosing an excited state with the same or lower angular momentum
+  as the ground states in order to avoid cross coupling to different excited states.}
+\begin{align}
+  \Gamma_{scatter}=&\frac{\Gamma_e\Omega_1^2}{2M_1^2}\left(\frac{M_1^2}{\Delta^2}+\frac{M_2^2}{(\Delta+\delta)^2}\right)+\frac{\Gamma_e\Omega_2^2}{2M_2^2}\left(\frac{M_2^2}{\Delta^2}+\frac{M_1^2}{(\Delta-\delta)^2}\right)\\
+  \propto&\frac{\Gamma_eP_1}{2}\left(\frac{M_1^2}{\Delta^2}+\frac{M_2^2}{(\Delta+\delta)^2}\right)+\frac{\Gamma_eP_2}{2}\left(\frac{M_2^2}{\Delta^2}+\frac{M_1^2}{(\Delta-\delta)^2}\right)
+\end{align}
+Where $P_1$ and $P_2$ are the powers of the laser beams 1 and 2.
+When $\delta\ll\Delta$ such as our experiment,
+\begin{align*}
+  \Gamma_{scatter}\approx&\frac{\Gamma_e\left(M_1^2+M_2^2\right)}{2\Delta^2}\left(\frac{\Omega_1^2}{M_1^2}+\frac{\Omega_2^2}{M_2^2}\right)\\
+  \propto&\frac{\Gamma_e\left(M_1^2+M_2^2\right)}{2\Delta^2}\left(P_1+P_2\right)
+\end{align*}
+For a given Raman Rabi frequency $\Omega_{Raman}\propto\Omega_1\Omega_2\propto\sqrt{P_1P_2}$,
+this is minimized when $P_1=P_2$.
+Hence, due to the strong cross coupling, we need to use the same power in both Raman beams
+rather than adjusting the powers to match their single photon Rabi frequencies.
+
+Moreover, at the minimum scattering rate, we have $\Omega_2=\Omega_1M_2/M_1$
+and the ratio between Raman Rabi frequency and scattering rate is,
+\begin{align*}
+  \frac{\Omega_{Raman}}{\Gamma_{scatter}}=&\frac{\Omega_1\Omega_2}{2\Delta}\frac{2\Delta^2}{\Gamma_e\left(M_1^2+M_2^2\right)}\left/\left(\frac{\Omega_1^2}{M_1^2}+\frac{\Omega_2^2}{M_2^2}\right)\right.\\
+  =&\frac{\Delta\Omega_1\Omega_2}{\Gamma_e\left(M_1^2+M_2^2\right)}\left/\left(\frac{\Omega_1^2}{M_1^2}+\frac{\Omega_2^2}{M_2^2}\right)\right.\\
+  =&\frac{\Delta\Omega_1^2M_2}{2\Gamma_eM_1\left(M_1^2+M_2^2\right)}\frac{M_1^2}{\Omega_1^2}\\
+  =&\frac{\Delta}{2\Gamma_e}\frac{M_1M_2}{M_1^2+M_2^2}
+\end{align*}
+Therefore, for a given excited state linewidth $\Gamma_e$
+and maximum detuning (section \ref{ch:raman-transfer:extra-ext}) the transfer efficiency
+maximizes for the smallest $M_1M_2/(M_1^2+M_2^2)$ which happens when the ratio
+$M_1/M_2$ is the closest to $1$.
+
+The light shift of the Raman resonance is similarly affected by the cross coupling.
+The differential light shift between the initial and the final state determines
+the resonance fluctuation as a function of light intensity fluctuation.
+The ration between the light shift and the Raman Rabi frequency, i.e. line width,
+determines the stability requirement of our laser indensity.
+With cross coupling, the differential shift is (assuming $\delta\ll\Delta$),
+\begin{align*}
+  \Delta\delta\approx&\frac{\Omega_1^2}{4\Delta}-\frac{\Omega_1^2M_2^2}{4\Delta M_1^2}-\frac{\Omega_2^2}{4\Delta}+\frac{\Omega_2^2M_1^2}{4\Delta M_2^2}\\
+  =&\frac{M_1^2-M_2^2}{4\Delta}\left(\frac{\Omega_1^2}{M_1^2}+\frac{\Omega_2^2}{M_2^2}\right)\\
+  \propto&\frac{M_1^2-M_2^2}{4\Delta}\left(P_1+P_2\right)
+\end{align*}
+which is also minimized when $P_1=P_2$ at a given Raman Rabi frequency.
+
+The ratio with the Raman Rabi frequency is,
+\begin{align*}
+  \frac{\Delta\delta}{\Omega_{Raman}}\approx&\frac{M_1^2-M_2^2}{4\Delta}\left(\frac{\Omega_1^2}{M_1^2}+\frac{\Omega_2^2}{M_2^2}\right)\frac{2\Delta}{\Omega_1\Omega_2}\\
+  =&\frac{M_1^2-M_2^2}{2\Omega_1\Omega_2}\left(\frac{\Omega_1^2}{M_1^2}+\frac{\Omega_2^2}{M_2^2}\right)\\
+  =&\frac{M_1^2-M_2^2}{M_1M_2}
+\end{align*}
+the absolute value of which is also minimized when the ratio $M_1/M_2$ is the closest to $1$.
+
+Due to the coupling strength difference, we have $M_2\gg M_1$ in our experiment, which means,
+\begin{align*}
+  \left|\frac{\Delta\delta}{\Omega_{Raman}}\right|\approx&\frac{M_2}{M_1}
+\end{align*}
+In order to keep the resonance stable within the linewidth of the Raman resonance,
+i.e. $\Omega_{Raman}$, we need to maintain a relative stability of $\Delta\delta$,
+therefore relative stability of the laser power to better than $M_1/M_2$.
 
 \section{Raman Transfer versus STIRAP}
 
@@ -143,8 +216,6 @@ always have a non-zero probability of scattering loss.
 In this section, we will apply the approach we took for Raman transition
 and apply it to STIRAP. We will then compare the loss caused by different practical limitations
 and discuss which approach should be taken under certain circumstance.
-
-\subsection{Generic Model for STIRAP}
 
 \ref{fig:raman-transfer-generic-stirap-model}
 
