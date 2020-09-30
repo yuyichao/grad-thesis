@@ -84,10 +84,40 @@ is not a major limiting factor for our transfer efficiency.
 Next, we will consider the effect of the $|e'\rangle$ state near the excited intermediate state.
 These states can be coupled to the ground states, both $|i\rangle$ and $|f\rangle$,
 by the Raman beams and can cause a change in both the Raman Rabi frequency
-and the scattering rate (Fig.~\ref{fig:raman-transfer-extra-ext-states}).
+and the scattering rate.
+The total Raman Rabi frequency (Fig.~\ref{fig:raman-transfer-extra-ext-states}A) is,
+\[
+  \Omega_{Raman}=\frac{\Omega_1\Omega_2}{2\Delta}+\frac{\Omega'_1\Omega'_2}{2(\Delta-\omega'_e)}
+\]
+where $\Omega'_1$ and $\Omega'_2$ are the single photon Rabi frequencies coupling $|e'\rangle$
+to $|i\rangle$ and $|f\rangle$ respectively.
+Depending on whether $\Omega'_1\Omega'_2$ has the same (orange line)
+or different (blue line) sign as $\Omega_1\Omega_2$, the total Raman Rabi frequency
+may be cancelled or enhanced between the two excited states.
+On the other hand, the total scattering rate (Fig.~\ref{fig:raman-transfer-extra-ext-states}B)
+is almost always increased due to the additional state, creating a local minimum
+between the excited states.
+Combining the two effects, the ratio between the Raman Rabi frequency and
+the scattering rate, which determines the transfer efficiency, always have local maximum
+between the excited states (Fig.~\ref{fig:raman-transfer-extra-ext-states}C).
 
-\todo{make sure to mention background Raman/scattering rate has a similar effect
-  (i.e. reduce maximum available detuning)}
+Despite the difference in the position and value of the maximum for different
+$|e'\rangle$ parameters, we can summarize the effect on the transfer efficiency
+as a limit on the maximum detuning $\Delta_{max}$ to a fraction of the spacing
+between the excited states ($\omega'_e$).
+As an example, the blue and orange maxima in Fig.~\ref{fig:raman-transfer-extra-ext-states}C
+corresponds to a limit on single photon detuning of $0.5\omega'_e$ and $0.15\omega'_e$.
+As one would expected, a larger excited state spacing usually result in
+a larger detuning limit and a better transfer efficiency.
+
+Summarizing the effect of additional excited state as a single number $\Delta_{max}$ allows
+us to keep using the equation for Raman transition with minor corrections
+and makes it easier to compare different state selection and transition schemes.
+It is also worth noting that although only one additional excited state $|e'\rangle$
+is considered here, this result can be generalized when more excited states are taken into account
+as well. These states introduces additional smooth variation in both the Raman Rabi frequency
+and scattering rate and the effects on the final transition efficiency can be similarly
+treated as a change in the maximum detuning.
 
 \subsection{Cross Coupling Between Light Addressing Initial and Final States}
 
