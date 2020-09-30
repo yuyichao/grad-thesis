@@ -5,6 +5,8 @@
 
 \section{Introduction}
 
+\todo{emphasize general approach}
+
 \section{Raman Transition Beyond Three-Level Model}
 
 In an ideal three-level system, the scattering probability during a $\pi$ pulse
@@ -15,9 +17,14 @@ Other practical limitation in the system like stability of the laser power and f
 also needs to be taken into account.
 Fig.~\ref{fig:raman-transfer-generic-raman-model} shows a generic model
 for a real Raman transition demostrating some of these effects.
-In this section, we will discuss how some of these affect our transfer efficiency.
-Due to experimental constraint,
-we will discuss under the assumption that the single photon detuning is
+In the experiment, we find the parameter range that gives the best transfer efficiency
+using numerical simulation (see section \ref{ch:raman-transfer:state-selction}).
+Nevertheless, in order to develop a general approach that can be applied to other systems,
+it is also important to understand the various physical mechanism that leads
+to the optimal parameters.
+Therefore, in this section, we will discuss some of the most important effects
+on the transfer efficiency at qualitative and semiquantitative level.
+Due to experimental constraint, we will assume that the single photon detuning is
 much smaller than the frequency of each individual beams, i.e. $\Delta\ll\nu_1,\ \nu_2$.
 
 \begin{figure}
@@ -60,7 +67,10 @@ is not a major limiting factor for our transfer efficiency.
 
 \subsection{Additional Excited states}
 
-Next, we will consider the effect of $|e'\rangle$ state near the excited intermediate state.
+Next, we will consider the effect of the $|e'\rangle$ state near the excited intermediate state.
+These states can be coupled to the ground states, both $|i\rangle$ and $|f\rangle$,
+by the Raman beams and can cause a change in both the Raman Rabi frequency
+and the scattering rate.
 
 \subsection{Cross Coupling Between Light Addressing Initial and Final States}
 
@@ -108,6 +118,7 @@ and discuss which approach should be taken under certain circumstance.
 \subsection{Conclusion}
 
 \section{States Selection}
+\label{ch:raman-transfer:state-selction}
 
 (Differential Light Shift)
 (Scattering)
