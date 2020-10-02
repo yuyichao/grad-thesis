@@ -131,7 +131,7 @@ is another important effect in our experiment.
 Without the cross coupling, the total off resonance scattering rate for
 the initial and the final states is
 \[
-  \Gamma_{scatter0}=\frac{\Gamma_e\left(\Omega_1^2+\Omega_2^2\right)}{2\Delta^2}
+  \Gamma_{scatter0}=\frac{\Gamma_e\left(\Omega_1^2+\Omega_2^2\right)}{4\Delta^2}
 \]
 For a given Raman Rabi frequency $\Omega_{Raman}\propto\Omega_1\Omega_2$, this is
 minimized when $\Omega_1=\Omega_2$.\todo{\cite{}}
@@ -144,14 +144,14 @@ When cross coupling is taken into account, however, the total scattering rate be
   This would also require choosing an excited state with the same or lower angular momentum
   as the ground states in order to avoid cross coupling to different excited states.}
 \begin{align}
-  \Gamma_{scatter}=&\frac{\Gamma_e\Omega_1^2}{2M_1^2}\left(\frac{M_1^2}{\Delta^2}+\frac{M_2^2}{(\Delta+\delta)^2}\right)+\frac{\Gamma_e\Omega_2^2}{2M_2^2}\left(\frac{M_2^2}{\Delta^2}+\frac{M_1^2}{(\Delta-\delta)^2}\right)\\
-  \propto&\frac{\Gamma_eP_1}{2}\left(\frac{M_1^2}{\Delta^2}+\frac{M_2^2}{(\Delta+\delta)^2}\right)+\frac{\Gamma_eP_2}{2}\left(\frac{M_2^2}{\Delta^2}+\frac{M_1^2}{(\Delta-\delta)^2}\right)
+  \Gamma_{scatter}=&\frac{\Gamma_e\Omega_1^2}{4M_1^2}\left(\frac{M_1^2}{\Delta^2}+\frac{M_2^2}{(\Delta+\delta)^2}\right)+\frac{\Gamma_e\Omega_2^2}{4M_2^2}\left(\frac{M_2^2}{\Delta^2}+\frac{M_1^2}{(\Delta-\delta)^2}\right)\\
+  \propto&\frac{\Gamma_eP_1}{4}\left(\frac{M_1^2}{\Delta^2}+\frac{M_2^2}{(\Delta+\delta)^2}\right)+\frac{\Gamma_eP_2}{4}\left(\frac{M_2^2}{\Delta^2}+\frac{M_1^2}{(\Delta-\delta)^2}\right)
 \end{align}
-Where $P_1$ and $P_2$ are the powers of the laser beams 1 and 2.
+where $P_{1,2}\propto\Omega_{1,2}^2/M_{1,2}^2$ are the powers of the laser beams 1 and 2.
 When $\delta\ll\Delta$ such as our experiment,
 \begin{align*}
-  \Gamma_{scatter}\approx&\frac{\Gamma_e\left(M_1^2+M_2^2\right)}{2\Delta^2}\left(\frac{\Omega_1^2}{M_1^2}+\frac{\Omega_2^2}{M_2^2}\right)\\
-  \propto&\frac{\Gamma_e\left(M_1^2+M_2^2\right)}{2\Delta^2}\left(P_1+P_2\right)
+  \Gamma_{scatter}\approx&\frac{\Gamma_e\left(M_1^2+M_2^2\right)}{4\Delta^2}\left(\frac{\Omega_1^2}{M_1^2}+\frac{\Omega_2^2}{M_2^2}\right)\\
+  \propto&\frac{\Gamma_e\left(M_1^2+M_2^2\right)}{4\Delta^2}\left(P_1+P_2\right)
 \end{align*}
 For a given Raman Rabi frequency $\Omega_{Raman}\propto\Omega_1\Omega_2\propto\sqrt{P_1P_2}$,
 this is minimized when $P_1=P_2$.
@@ -161,10 +161,10 @@ rather than adjusting the powers to match their single photon Rabi frequencies.
 Moreover, at the minimum scattering rate, we have $\Omega_2=\Omega_1M_2/M_1$
 and the ratio between Raman Rabi frequency and scattering rate is,
 \begin{align*}
-  \frac{\Omega_{Raman}}{\Gamma_{scatter}}=&\frac{\Omega_1\Omega_2}{2\Delta}\frac{2\Delta^2}{\Gamma_e\left(M_1^2+M_2^2\right)}\left/\left(\frac{\Omega_1^2}{M_1^2}+\frac{\Omega_2^2}{M_2^2}\right)\right.\\
-  =&\frac{\Delta\Omega_1\Omega_2}{\Gamma_e\left(M_1^2+M_2^2\right)}\left/\left(\frac{\Omega_1^2}{M_1^2}+\frac{\Omega_2^2}{M_2^2}\right)\right.\\
-  =&\frac{\Delta\Omega_1^2M_2}{2\Gamma_eM_1\left(M_1^2+M_2^2\right)}\frac{M_1^2}{\Omega_1^2}\\
-  =&\frac{\Delta}{2\Gamma_e}\frac{M_1M_2}{M_1^2+M_2^2}
+  \frac{\Omega_{Raman}}{\Gamma_{scatter}}=&\frac{\Omega_1\Omega_2}{2\Delta}\frac{4\Delta^2}{\Gamma_e\left(M_1^2+M_2^2\right)}\left/\left(\frac{\Omega_1^2}{M_1^2}+\frac{\Omega_2^2}{M_2^2}\right)\right.\\
+  =&\frac{2\Delta\Omega_1\Omega_2}{\Gamma_e\left(M_1^2+M_2^2\right)}\left/\left(\frac{\Omega_1^2}{M_1^2}+\frac{\Omega_2^2}{M_2^2}\right)\right.\\
+  =&\frac{\Delta\Omega_1^2M_2}{\Gamma_eM_1\left(M_1^2+M_2^2\right)}\frac{M_1^2}{\Omega_1^2}\\
+  =&\frac{\Delta}{\Gamma_e}\frac{M_1M_2}{M_1^2+M_2^2}
 \end{align*}
 Therefore, for a given excited state linewidth $\Gamma_e$
 and maximum detuning (section \ref{ch:raman-transfer:extra-ext}) the transfer efficiency
@@ -262,3 +262,5 @@ This limits the minimum time of the transfer in a way similar to that of Raman t
 \section{Raman Transfer Results}
 
 \subsection{Scaling of Raman Transition Parameters}
+
+\todo{mention significance of atomic scattering}
