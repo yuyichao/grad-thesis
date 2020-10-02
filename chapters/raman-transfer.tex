@@ -50,6 +50,7 @@ much smaller than the frequency of each individual beams, i.e. $\Delta\ll\nu_1,\
 \end{figure}
 
 \subsection{Additional Initial and Final States}
+\label{ch:raman-transfer:extra-init-final}
 
 First, we will discuss the effect of $|i'\rangle$ and $|f'\rangle$ states
 near the initial and final states.
@@ -122,6 +123,7 @@ and scattering rate and the effects on the final transition efficiency can be si
 treated as a change in the maximum detuning.
 
 \subsection{Cross Coupling Between Light Addressing Initial and Final States}
+\label{ch:raman-transfer:cross-couple}
 
 Due to the small energy separation between the initial and final state $\delta$,
 the cross coupling of the laser addressing the initial/final state on the final/initial state
@@ -212,12 +214,11 @@ Similar to Raman transfer, STIRAP in an ideal three-level system can achieve
 full coherent transfer with arbitrarily small scattering probability
 when given unlimited time and power budget.
 However, in reality, states and coupling that exist outside the ideal three-level system
-always have a non-zero probability of scattering loss.
-In this section, we will apply the approach we took for Raman transition
-and apply it to STIRAP. We will then compare the loss caused by different practical limitations
+always cause a non-zero probability of scattering loss
+(see Fig.~\ref{fig:raman-transfer-generic-stirap-model}).
+In this section, we will apply the approach we took for Raman transition to STIRAP.
+We will then compare the loss caused by different practical limitations
 and discuss which approach should be taken under certain circumstance.
-
-\ref{fig:raman-transfer-generic-stirap-model}
 
 \begin{figure}
   \centering
@@ -232,11 +233,17 @@ and discuss which approach should be taken under certain circumstance.
 
 \subsection{Additional Initial and Final States}
 
+Similar to Raman transition (section \ref{ch:raman-transfer:extra-init-final}),
+the additional initial and final states causes potential leakage out of the three-level system.
+This limits the minimum time of the transfer in a way similar to that of Raman transition.
+
 \subsection{Additional Excited states}
 
 \subsection{Cross Coupling Between Light Addressing Initial and Final States}
 
 \subsection{Conclusion}
+
+\todo{mention use of tweezer as Raman}
 
 \section{States Selection}
 \label{ch:raman-transfer:state-selction}
