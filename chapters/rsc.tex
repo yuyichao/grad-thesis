@@ -10,6 +10,7 @@
 (PGC cools to ...)
 (RSC to further cool.)
 \todo{Define abbreviation RSC}
+\todo{Maybe move some intro about large LD parameter here}
 
 \section{Basic Theory}
 \label{ch:rsc-basic-theory}
@@ -41,6 +42,8 @@ First, a Raman pulse drives the atom to a different hyperfine state while simult
 reduces the motional energy of the atom.
 The optical pumping (OP) pulse afterwards then reset the hyperfine state of the atom
 and reduce the entropy of the system.
+This sequence is then repeated until the system reaches the ground motional state
+where there is no more motional energy to be taken out of the system via the Raman pulse.
 In this section, we will discuss the theory of each types of pulses individually.
 We will cover how the pulses affect cooling performance in section \ref{ch:rsc-challenges}.
 
@@ -69,12 +72,12 @@ is allowed due to the recoil from the Raman lasers,
 which corresponds to a spacial phase imprinting of $\ue^{\ui\mathbf{\Delta k}\cdot\mathbf{\hat x}}$
 where $\mathbf{\Delta k}$ is the wavevector difference between the two Raman beams.
 Using the creation ($\hat a^\dagger$) and annihilation ($\hat a$) operators and the relation
-$\mathbf{\hat x}=\mathbf{x}_0(\hat a+\hat a^\dagger)$ where $x_0=\sqrt{\hbar/2m\omega}$
+$\mathbf{\hat x}=\mathbf{x}_0\paren{\hat a+\hat a^\dagger}$ where $x_0=\sqrt{\hbar/2m\omega}$
 is the harmonic oscillator length, the phase factor can be expressed as
-$\ue^{\ui\eta_R(\hat a+\hat a^\dagger)}$ where $\eta_R\equiv\mathbf{\Delta k}\cdot\mathbf{x}_0$
+$\ue^{\ui\eta^R\paren{\hat a+\hat a^\dagger}}$ where $\eta^R\equiv\mathbf{\Delta k}\cdot\mathbf{x}_0$
 is the Lamb-Dicke parameter for the Raman transition \todo{\cite{}}.
 The matrix element between motional state $|n\rangle$ and $|n'\rangle$ is therefore,
-\[ M_{n,n'}=\langle n|\ue^{\ui\eta_R(\hat a+\hat a^\dagger)}|n'\rangle \]
+\[ M_{n,n'}=\langle n|\ue^{\ui\eta^R\paren{\hat a+\hat a^\dagger}}|n'\rangle \]
 and the final Raman Rabi frequency between motional states $n$ and $n'$ is given by,
 \[ \Omega_{R}^{n,n'}=M_{n,n'}\Omega_R^0 \]
 For $n=n'$, this is called a carrier transition and the others are called sideband transitions.
@@ -82,22 +85,22 @@ If the final state is higher than the initial one, i.e. $n'>n$, it is a heating 
 Likewise, transitions with $n'<n$ are cooling sidebands.
 
 A closed form result for $M_{n,n'}$ is given in \todo{\cite{}},
-\[ M_{n,n'}=\ue^{\eta_R^2/2}\sqrt{\frac{n_<!}{n_>!}}\eta_R^{|n-n'|}L_{n_<}^{|n-n'|}(\eta_R^2) \]
+\[ M_{n,n'}=\ue^{\paren{\eta^R}^2/2}\sqrt{\frac{n_<!}{n_>!}}\paren{\eta^R}^{|n-n'|}L_{n_<}^{|n-n'|}\paren{\paren{\eta^R}^2} \]
 where $n_<$ and $n_>$ are the lesser and greater, respectively, of $n$ and $n'$,
 and $L_n^\alpha$ is the generalized Laguerre polynomial,
 \[ L_n^\alpha(x)\equiv\sum_{m=0}^n(-1)^m\begin{pmatrix}n+\alpha\\n-m\end{pmatrix}\frac{x^m}{m!} \]
 
-An important limit is the so-called Lamb-Dicke regime defined by $\eta_R^2(2n+1)\ll 1$.
-In this case, we can approximate the phase factor in leading order of $\eta_R$,
-\[ \ue^{\ui\eta_R(\hat a+\hat a^\dagger)}\approx1+\ui\eta_R(\hat a+\hat a^\dagger) \]
+An important limit is the so-called Lamb-Dicke (LD) regime defined by $\paren{\eta^R}^2(2n+1)\ll 1$.
+In this case, we can approximate the phase factor in leading order of $\eta^R$,
+\[ \ue^{\ui\eta^R\paren{\hat a+\hat a^\dagger}}\approx1+\ui\eta^R\paren{\hat a+\hat a^\dagger} \]
 and the matrix element
-\[ M_{n,n'}\approx\delta_{n,n'}+\ui\eta_R\sqrt{n+1}\delta_{n+1,n'}+\ui\eta_R\sqrt{n}\delta_{n,n'+1} \]
+\[ M_{n,n'}\approx\delta_{n,n'}+\ui\eta^R\sqrt{n+1}\delta_{n+1,n'}+\ui\eta^R\sqrt{n}\delta_{n,n'+1} \]
 the three terms corresponds to the carrier ($n'=n$),
 the first order heating sideband ($n'=n+1$)
 and the first order cooling sideband ($n'=n-1$) with corresponding strength
-$1$, $\eta_R\sqrt{n+1}$ and $\eta_R\sqrt{n}$.
+$1$, $\eta^R\sqrt{n+1}$ and $\eta^R\sqrt{n}$.
 We can clearly see from this approximation that the coupling to other motional state
-is stronger for a larger $\eta_R$ and higher motional quantum number $n$.
+is stronger for a larger $\eta^R$ and higher motional quantum number $n$.
 We will discuss this effect outside the Lamb-Dicke regime and its implication
 on the cooling performance in more detail in section \ref{ch:rsc-challenges}.
 
@@ -132,7 +135,7 @@ This also allow us to reuse the MOT light source and simplifies our setup.
 
 \todo{\cite{?}}From the discussion in section \ref{ch:rsc-basic-theory-raman},
 we see that the strength of the sideband transition depends on the initial motional state
-as well as the Lamb-Dicke parameter $\eta_R$ of the atom.
+as well as the Lamb-Dicke parameter $\eta^R$ of the atom.
 This dependency allows us to infer the motional state of the atom
 by measuring the sideband height, i.e. the so-called sideband thermometry.
 
@@ -142,12 +145,12 @@ the probability for the atom to be in motional state $|n\rangle$ is,
 for a Raman pulse with full Rabi frequency $\Omega_R^0$ and time $t$,
 the peak height for the first order heating (+) and cooling (-) sidebands,
 \begin{align*}
-  h_\pm=&\sum_{n=0}^\infty p_n\sin^2\left(\frac{\Omega_R^0t}{2}M_{n,n\pm1}\right)
+  h_\pm=&\sum_{n=0}^\infty p_n\sin^2\paren{\frac{\Omega_R^0t}{2}M_{n,n\pm1}}
 \end{align*}
 note that $p_{n+1}=p_n\ue^{-\hbar\omega/k_BT}$, $M_{n,n'}=M_{n',n}$ and $M_{n,-1}=0$, we have
 \begin{align*}
-  h_-=&\sum_{n=0}^\infty p_n\sin^2\left(\frac{\Omega_R^0t}{2}M_{n,n-1}\right)\\
-  =&\ue^{-\hbar\omega/k_BT}\sum_{n=1}^\infty p_{n-1}\sin^2\left(\frac{\Omega_R^0t}{2}M_{n-1,n}\right)\\
+  h_-=&\sum_{n=0}^\infty p_n\sin^2\paren{\frac{\Omega_R^0t}{2}M_{n,n-1}}\\
+  =&\ue^{-\hbar\omega/k_BT}\sum_{n=1}^\infty p_{n-1}\sin^2\paren{\frac{\Omega_R^0t}{2}M_{n-1,n}}\\
   =&\ue^{-\hbar\omega/k_BT}h_+
 \end{align*}
 Therefore, if we measure the ratio of the cooling and heating sideband heights
@@ -190,7 +193,37 @@ it is setup to propagate parallel to the applied magnetic field.
 \section{Cooling Performance and Challenge with Large Lamb-Dicke Parameter}
 \label{ch:rsc-challenges}
 
-\ref{fig:na-rsc-challenges}
+\todo{some might belong to introduction of the chapter}
+RSC is typically performed in the Lamb-Dicke regime where the coupling
+to other motional state is small.
+Due to the light mass, short wavelength, limitted trap depth and high initial temperature
+of the sodium atom however, we have to start our RSC sequence outside the Lamb-Dicke regime.
+This creates unique challenges to our experiment.
+A detailed understanding of the cooling performance is required to understand
+and overcome these challenges.
+
+The simplest way to estimate the effectiveness of RSC
+is by keeping track of the average energy of the atom during the cooling sequence.
+For a typical RSC sequence in the LD regime, all the cooling are done on
+the strongest first order cooling sideband.
+The energy removed for atom driven in one Raman pulse is therefore, $\Delta E_-=\omega$.
+In order to reinitialize the hyperfine state, the sodium atom needs to scatter on average
+$2$ photons from the OP pulse which increases the average energy of the driven atom
+by $\Delta E_+=4\omega_r$
+\footnote{The factor of 4 comes from 2 absorbed photons and two reemitted photons}
+where $\omega_r\equiv \hbar k^2/2m$ is the recoil energy\cite{steck_sodium_nodate}
+and $k$ is the OP light wave vector.
+The heating to cooling ratio in one RSC pulse cycle is therefore,
+\begin{align*}
+  \frac{\Delta E_+}{\Delta E_-}=&\frac{2\hbar k^2}{m\omega}=4k^2x_0^2\\
+  =&4\paren{\eta^{OP}}^2
+\end{align*}
+where $\eta^{OP}\equiv kx_0$ is the Lamb-Dicke parameter for OP.
+Therefore, in order to achieve net cooling, we need $\paren{\eta^{OP}}^2<0.25$.
+In 3D with cooling along multiple axis with different trapping frequency
+(and therefore different $\eta^{OP}$), the $\paren{\eta^{OP}}^2$ in the requirement
+is replaced by a weighted average of different axis depending on the frequency
+each axis is cooled in the sequence.
 
 \begin{figure}
   \centering
@@ -207,6 +240,17 @@ it is setup to propagate parallel to the applied magnetic field.
     deviate from $\sqrt{n}$ scaling with multiple minima.
     \label{fig:na-rsc-challenges}}
 \end{figure}
+
+In our experiment, the OP Lamb-Dicke parameters are
+$\eta^{OP}_x, \eta^{OP}_y, \eta^{OP}_z = 0.25, 0.25, 0.55$.
+Based on the metric above, any cooling sequences
+that have fewer than $78\%$ cooling pulse for $z$ (axial) axis, which is generally the case,
+should have a net cooling effect.
+This, however, does not guarantee cooling into the ground motional state,
+nor does it fully characterize the efficiency of the cooling sequence
+since the averaging hides a few critical aspect of having a large Lamb-Dicke parameter.
+
+\ref{fig:na-rsc-challenges}
 
 \section{Solution: High Order Sidebands}
 
