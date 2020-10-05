@@ -9,18 +9,19 @@
 (Motional degrees of freedom)
 (PGC cools to ...)
 (RSC to further cool.)
+\todo{Define abbreviation RSC}
 
-\section{Theory}
-
-\ref{fig:na-rsc-schematics}
+\section{Basic Theory}
+\label{ch:rsc-basic-theory}
 
 \begin{figure}
   \centering
   \includegraphics[width=8cm]{figures/na_rsc_schematics.pdf}
   \caption[Schematics of Raman sideband cooling for Sodium.]{
     Single Na atom Raman sideband cooling scheme.
-    The Raman transitions between $|2,2;n\rangle$ and $|1,1;n+\Delta n\rangle$
-    have a one-photon detuning $\Delta=75$ GHz below the $3^2S_{1/2}$ to $3^2P_{3/2}$ transition.
+    The Raman transitions couples $|2,2;n\rangle$ and $|1,1;n+\Delta n\rangle$
+    through the intermediate states $|e_i\rangle$ in the $3^2P_{3/2}$ electronic states.
+    The transitions have a one-photon detuning $\Delta_i\approx75$ GHz.
     Two-photon detuning, $\delta$, is defined relative to the $\Delta n=0$ carrier transition.
     For optical pumping, we use two $\sigma^+$ polarized transitions,
     one to pump the atom state out of $|1,1\rangle$ via $3^2P_{3/2}$
@@ -28,6 +29,78 @@
     to minimize heating of the $|2,2\rangle$ state.
     \label{fig:na-rsc-schematics}}
 \end{figure}
+
+The relevant energy diagram and the laser frequencies for RSC are shown in
+Fig.~\ref{fig:na-rsc-schematics}.
+We approximate the trapping potential using a harmonic oscillator.
+Since this is a separable potential, we can use only the 1D motional state $|n\rangle$
+and the result can be easily generalized to the full 3D system.
+
+The cooling sequence consists of two types of pulses.
+First, a Raman pulse drives the atom to a different hyperfine state while simultaneously
+reduces the motional energy of the atom.
+The optical pumping (OP) pulse afterwards then reset the hyperfine state of the atom
+and reduce the entropy of the system.
+In this section, we will discuss the theory of each types of pulses individually.
+We will cover how the pulses affect cooling performance in section \ref{ch:rsc-challenges}.
+
+\subsection{Raman Transition}
+\label{ch:rsc-basic-theory-raman}
+
+As shown in Fig.~\ref{fig:na-rsc-schematics},
+the cooling sequence starts with the sodium atom in the
+$|s_1\rangle\equiv|F=2,m_F=2\rangle$ hyperfine state,
+and a Raman transition is used to drive the atom to the
+$|s_2\rangle\equiv|F=1,m_F=1\rangle$ state.
+The full Rabi frequency for such a transition is given by
+\begin{align*}
+  \Omega_R^0=&\sum_{i}\frac{\Omega_{1i}\Omega_{2i}^*}{2\Delta_i}
+\end{align*}
+where the sum is over all the coupled excited states,
+$\Omega_{ai}\equiv\langle a|\mathbf{d}\cdot\mathbf{E}_a|e_i\rangle$ is the single photon
+Rabi frequency between $|a\rangle$ and $|e_i\rangle$
+and $\Delta_i$ is the single photon detuning from excited state $|e_i\rangle$.
+
+In order to account for the motional degrees of freedom, we need to include the spatial
+wavefunction of the atom and light into account.
+As mentioned above, we approximate the atomic motional wavefunction by the harmonic oscillator
+eigenstates $|n\rangle$. Coupling between states different $n$ states from the Raman transition
+is allowed due to the recoil from the Raman lasers,
+which corresponds to a spacial phase imprinting of $\ue^{\ui\mathbf{\Delta k}\cdot\mathbf{\hat x}}$
+where $\mathbf{\Delta k}$ is the wavevector difference between the two Raman beams.
+Using the creation ($\hat a^\dagger$) and annihilation ($\hat a$) operators and the relation
+$\mathbf{\hat x}=\mathbf{x}_0(\hat a+\hat a^\dagger)$ where $x_0=\sqrt{\hbar/2m\omega}$
+is the harmonic oscillator length, the phase factor can be expressed as
+$\ue^{\ui\eta_R(\hat a+\hat a^\dagger)}$ where $\eta_R\equiv\mathbf{\Delta k}\cdot\mathbf{x}_0$
+is the Lamb-Dicke parameter for the Raman transition \todo{\cite{}}.
+The matrix element between motional state $|n\rangle$ and $|n'\rangle$ is therefore,
+\[ M_{n,n'}=\langle n|\ue^{\ui\eta_R(\hat a+\hat a^\dagger)}|n'\rangle \]
+and the final Raman Rabi frequency between motional states $n$ and $n'$ is given by,
+\[ \Omega_{R}^{n,n'}=M_{n,n'}\Omega_R^0 \]
+A closed form result for this is given in \todo{\cite{}},
+\[ M_{n,n'}=\ue^{\eta_R^2/2}\sqrt{\frac{n_<!}{n_>!}}\eta_R^{|n-n'|}L_{n_<}^{|n-n'|}(\eta_R^2) \]
+where $n_<$ and $n_>$ are the lesser and greater, respectively, of $n$ and $n'$,
+and $L_n^\alpha$ is the generalized Laguerre polynomial,
+\[ L_n^\alpha(x)\equiv\sum_{m=0}^n(-1)^m\begin{pmatrix}n+\alpha\\n-m\end{pmatrix}\frac{x^m}{m!} \]
+
+An important limit is the so-called Lamb-Dicke regime defined by $\eta_R^2(2n+1)\ll 1$.
+In this case, we can approximate the phase factor in leading order of $\eta_R$,
+\[ \ue^{\ui\eta_R(\hat a+\hat a^\dagger)}\approx1+\ui\eta_R(\hat a+\hat a^\dagger) \]
+and the matrix element
+\[ M_{n,n'}\approx\delta_{n,n'}+\ui\eta_R\sqrt{n+1}\delta_{n+1,n'}+\ui\eta_R\sqrt{n}\delta_{n,n'+1} \]
+the three terms corresponds to the carrier ($\Delta n=0$),
+the first order heating sideband ($\Delta n=1$)
+and the first order cooling sideband ($\Delta n=-1$) with corresponding strength
+$1$, $\eta_R\sqrt{n+1}$ and $\eta_R\sqrt{n}$.
+We can clearly see from this approximation that the coupling to other motional state
+is stronger for a larger $\eta_R$ and higher motional quantum number $n$.
+We will discuss this effect outside the Lamb-Dicke regime and its implication
+on the cooling performance in more detail in section \ref{ch:rsc-challenges}.
+
+\subsection{Optical Pumping}
+\label{ch:rsc-basic-theory-op}
+
+(OP)
 
 \section{Setup}
 
@@ -46,7 +119,8 @@
     \label{fig:na-rsc-geometry}}
 \end{figure}
 
-\section{Challenge with Large Lamb-Dicke Parameter}
+\section{Cooling Performance and Challenge with Large Lamb-Dicke Parameter}
+\label{ch:rsc-challenges}
 
 \ref{fig:na-rsc-challenges}
 

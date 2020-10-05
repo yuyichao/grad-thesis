@@ -1,0 +1,101 @@
+\documentclass[border=0pt]{standalone}
+
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+\usetikzlibrary{decorations.pathreplacing,
+  arrows,
+  calc,
+  decorations.pathmorphing,
+  decorations.pathreplacing,
+  decorations.markings,
+  fadings,
+  positioning,
+  shapes
+}
+\tikzfading[name=fade img right,left color=transparent!100, right color=transparent!0]
+\tikzfading[name=fade img left,right color=transparent!100, left color=transparent!0]
+\tikzstyle{snakearrow} = [decorate, decoration={pre length=0.1cm,
+  post length=0.1cm, snake, amplitude=.4mm,
+  segment length=4mm},thick, ->]
+
+\ifpdf
+% Ensure reproducible output
+\pdfinfoomitdate=1
+\pdfsuppressptexinfo=-1
+\pdftrailerid{}
+\hypersetup{
+  pdfcreator={},
+  pdfproducer={}
+}
+\fi
+
+\begin{document}
+\begin{tikzpicture}[scale=0.65]
+  % F2 trap
+  \draw[line width=1]
+  plot[domain={-0.8:0.8},smooth,variable=\x] ({\x}, {(\x)^2 * 3.75 - 1});
+  \foreach \y in {0.3,0.9,1.5} {
+    \draw[line width=0.8] ({-sqrt(\y / 3.75)}, \y - 1) -- ({sqrt(\y / 3.75)}, \y - 1);
+  }
+  \node[right,rotate=90] at (0, 1.5 - 1) {\LARGE $\cdots$};
+
+  \node[left] at (-0.4, 0.9 - 1) {$|2,2;n\rangle$};
+  \node[left] at (-0.3, 0.3 - 1) {$|2,2;n\!\!-\!\!1\rangle$};
+  \node[left, red!60!black] at (-1, 0.7) {$3^2S_{1/2}$};
+
+  % P3/2
+  \draw[line width=0.7] (-1, 4.9) -- (3.85, 4.9);
+  \node[right] at (4.1, 5.05) {$\vdots$};
+  \draw[line width=0.7] (-1, 4.6) -- (3.85, 4.6);
+  \draw[line width=1] (-1, 4.3) -- (3.85, 4.3) node[right] {\scriptsize $|e_i\rangle$};
+  \draw[line width=1, densely dotted] (-1, 3.6) -- (3.85, 3.6);
+  \draw[<->, line width=0.7, >=stealth] (0.75, 3.6) -- (0.75, 4.3);
+  \node[right] at (0.75, 3.95) {$\Delta$};
+  \node[left, red!60!black] at (-1, 4.1) {$3^2P_{3/2}$};
+
+  % F2 Raman
+  \draw[<->, line width=0.7, >=stealth, orange] (0, 0.9 - 1) -- (0.72, 3.6);
+  \node[orange,above left] at (0.75, 2.6) {$\Omega_{F2}$};
+
+  % D2 transition
+  \draw[<->, line width=0.7, >=stealth] (-1.5, 0.9) -- (-1.5, 3.8);
+  \node[above, rotate=90] at (-1.5, 2.35) {$589$ nm};
+
+  % D2 decay
+  \draw[snakearrow, >=stealth, green!70!black] (-0.5, 4.3) -- (-0.5, 0.5);
+
+  % F1 trap
+  \draw[line width=1]
+  plot[domain={-0.8:0.8},smooth,variable=\x] ({\x + 2.05}, {(\x)^2 * 3.75 - 2.6});
+  \foreach \y in {0.3,0.9,1.5} {
+    \draw[line width=0.8] ({-sqrt(\y / 3.75) + 2.05}, \y - 2.6) -- ({sqrt(\y / 3.75) + 2.05}, \y - 2.6);
+  }
+  \node[right,rotate=90] at (2.05, 1.5 - 2.6) {\LARGE $\cdots$};
+  \node[right] at (2.05 + 0.5, 0.9 - 2.6) {$|1,1;n\rangle$};
+  \node[right] at (2.05 + 0.4, 0.3 - 2.6) {$|1,1;n\!\!-\!\!1\rangle$};
+
+  % Raman det
+  \draw[line width=0.8,densely dotted] (2.05, 0.9 - 2.6) -- (2.05 - 1, 0.9 - 2.6);
+  \draw[line width=0.8,densely dotted] ({sqrt(0.4 / 3.75) + 2.05}, 0.4 - 2.6) -- (2.05 - 1, 0.4 - 2.6);
+  \draw[<->, line width=0.7, >=stealth] (2.05 - 0.9, 0.9 - 2.6) -- (2.05 - 0.9, 0.4 - 2.6);
+  \node[right] at (2.05 - 0.96, 0.65 - 2.6) {$\delta$};
+
+  % F1 Raman
+  \draw[<->, line width=0.7, >=stealth, red] (2.05, 0.4 - 2.6) -- (0.78, 3.6);
+  \node[red,right] at (2.05 - 0.65, 0.5) {$\Omega_{F1}$};
+
+  % Trap freq (F2)
+  \draw[<->, line width=0.7, >=stealth] (2.05 + 0.4, 0.9 - 2.6) -- (2.05 + 0.4, 1.5 - 2.6);
+  \node[left] at (2.05 + 0.46, 1.2 - 2.6) {$\omega$};
+
+  % P1/2
+  \node[below right, red!60!black] at (1.2, 2.98) {$3^2P_{1/2}$};
+  \draw[line width=1] (1.7, 2.85) -- (3.35, 2.85);
+
+  \draw[->, line width=0.7, >=stealth, blue] (3.15, 0.6) -- (3.15, 2.85);
+  \draw[->, line width=0.7, >=stealth, blue] (3.5, -1.5) -- (3.5, 4.3);
+  \node[right, blue] at (3.35, 1.5) {$\Gamma_{OP}$};
+\end{tikzpicture}
+\end{document}
