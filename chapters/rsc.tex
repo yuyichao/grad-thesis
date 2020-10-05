@@ -109,7 +109,24 @@ motional energy of the atom. However, this is a fully coherent process that does
 not reduce the system entropy and is not really ``cooling'' the system
 or achieving better control on the quantum state of the system.
 Instead, quantum state control is achieved in the RSC via the OP pulse.
-The initial hyperfine state $|2,2\rangle$
+The initial hyperfine state $|2,2\rangle$ is a stretched state so it is the
+state the system naturally ends up in when $\sigma^+$ light is applied.
+However, if this is done using scattering from a $F=2$ to $F'=3$ transition,
+the OP beam will allow continuous photon cycle
+between the $|2,2\rangle$ and the $|3',3\rangle$ causing unnecessary motional heating during OP.
+Therefore, the OP must be done on a $F=2$ to $F'=2$ transition.
+Unfortunately, for Na, the corresponding transition from $3^2S_{1/2}$ to $3^2P_{3/2}$
+that is used for the MOT is not useable due to the small energy difference of
+$60 \mathrm{MHz}$ (or $6$ line widths) between the $F'=2$ and $F'=3$ states
+\cite{steck_sodium_nodate}.
+Instead, we must use the sodium $\mathrm{D1}$ line, i.e. $3^2S_{1/2}$ to $3^2P_{1/2}$ transition,
+which lacks a $F'=3$ excited state.
+The $\mathrm{D1}$ light with $\sigma^+$ polarization is only used to pump atoms from
+$F=2$ states (in particular $|2,1\rangle$ which is populated during the OP process).
+Since the goal of the OP pulse is to clear the atom population in all states but $|2,2\rangle$,
+the photon cycling is not a concern for $F=1$ states and the $\mathrm{D2}$ line
+is used for OP of $F=1$ states instead.
+This also allow us to reuse the MOT light source and simplifies our setup.
 
 \section{Setup}
 
