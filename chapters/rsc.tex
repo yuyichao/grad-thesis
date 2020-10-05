@@ -264,16 +264,16 @@ The other important effect is the dependency of matrix element $M_{n,n+1}$
 on the motional level $n$.
 While this dependency is not a new effect, since the $\sqrt{n}$ dependency
 on the cooling sideband strength exist even in the LD regime
-and must be taken into account\todo{\cite{}} to achieve efficient cooling,
-the high Lamb-Dicke parameter adds even more complications.
+and must be taken into account with pulse time variation\todo{\cite{}}
+to achieve efficient cooling, the high Lamb-Dicke parameter adds even more complications.
 As shown in Fig.~\ref{fig:na-rsc-challenges}B, rather than a simple $\sqrt{n}$ dependency,
-it is a non-monotonic function and more importantly has multiple minima within the range of
-motional states we are interested in.
-The coupling strength for states near these minima can be reduced by more than ten times
+it is a non-monotonic function and more importantly has multiple minima, so-called ``dead-zone'',
+within the range of motional states we are interested in.
+The coupling strength for states in the dead-zones can be reduced by more than ten times
 which can significant affect the efficiency of the cooling pulse
 and even makes it virtually impossible to drive Raman transitions on atoms in these states
 in order to cool them further.
-A cooling sequence can therefore accumulate pupolations near these minima
+A cooling sequence can therefore accumulate pupolations in the dead-zones
 rather than the ground state.
 Their small coupling strength also reduce their signal level during
 Raman sideband spectroscopy making these states nearly invisible to sideband thermometry
@@ -281,8 +281,7 @@ which further complicates the optimization of the cooling sequence.
 
 \section{Solution: High Order Sidebands}
 
-\ref{fig:na-rsc-mele-raman}
-
+\todo{change r to x in the plot to be consistent with text}
 \begin{figure}
   \centering
   \includegraphics[width=8cm]{figures/na_rsc_mele_raman.pdf}
@@ -293,6 +292,26 @@ which further complicates the optimization of the cooling sequence.
     variation and dead zone in the coupling strengths.
     \label{fig:na-rsc-mele-raman}}
 \end{figure}
+
+The main solution to the issues related to the large Lamb-Dicke parameter
+is in fact the large Lamb-Dicke parameter itself.
+The increased coupling to other motional state for large Lamb-Dicke parameter
+and high motional states applies not only to $|\Delta n|=1$ but to higher $\Delta n$ as well.
+Fig.~\ref{fig:na-rsc-mele-raman} shows the coupling to higher order cooling sidebands
+which all have comparable strengths as the first order sidebands in different ranges
+of motional states.
+
+Because of this, it is now possible, and in some cases preferred, to apply Raman cooling pulse
+on the higher order sidebands instead of only the first order one.
+These pulses reduce more energy from the system per pulse which directly improves
+the cooling to heating ratio and allows better control on the motional state
+given the uncertainty after an OP pulse.
+More importantly, depending on the motional level, there is always a sideband order
+with significant coupling strength that can be used to cool it,
+therefore completely removing the coupling dead-zones.
+Moreover, by using each sideband orders only near their coupling maxima,
+the coupling strength variation is also greatly reduced which removes
+the need to vary the pulse times for all but the pulses on the first order sideband.
 
 \section{Solution: Simulation Based Optimization}
 
