@@ -77,7 +77,11 @@ The matrix element between motional state $|n\rangle$ and $|n'\rangle$ is theref
 \[ M_{n,n'}=\langle n|\ue^{\ui\eta_R(\hat a+\hat a^\dagger)}|n'\rangle \]
 and the final Raman Rabi frequency between motional states $n$ and $n'$ is given by,
 \[ \Omega_{R}^{n,n'}=M_{n,n'}\Omega_R^0 \]
-A closed form result for this is given in \todo{\cite{}},
+For $n=n'$, this is called a carrier transition and the others are called sideband transitions.
+If the final state is higher than the initial one, i.e. $n'>n$, it is a heating sideband.
+Likewise, transitions with $n'<n$ are cooling sidebands.
+
+A closed form result for $M_{n,n'}$ is given in \todo{\cite{}},
 \[ M_{n,n'}=\ue^{\eta_R^2/2}\sqrt{\frac{n_<!}{n_>!}}\eta_R^{|n-n'|}L_{n_<}^{|n-n'|}(\eta_R^2) \]
 where $n_<$ and $n_>$ are the lesser and greater, respectively, of $n$ and $n'$,
 and $L_n^\alpha$ is the generalized Laguerre polynomial,
@@ -88,9 +92,9 @@ In this case, we can approximate the phase factor in leading order of $\eta_R$,
 \[ \ue^{\ui\eta_R(\hat a+\hat a^\dagger)}\approx1+\ui\eta_R(\hat a+\hat a^\dagger) \]
 and the matrix element
 \[ M_{n,n'}\approx\delta_{n,n'}+\ui\eta_R\sqrt{n+1}\delta_{n+1,n'}+\ui\eta_R\sqrt{n}\delta_{n,n'+1} \]
-the three terms corresponds to the carrier ($\Delta n=0$),
-the first order heating sideband ($\Delta n=1$)
-and the first order cooling sideband ($\Delta n=-1$) with corresponding strength
+the three terms corresponds to the carrier ($n'=n$),
+the first order heating sideband ($n'=n+1$)
+and the first order cooling sideband ($n'=n-1$) with corresponding strength
 $1$, $\eta_R\sqrt{n+1}$ and $\eta_R\sqrt{n}$.
 We can clearly see from this approximation that the coupling to other motional state
 is stronger for a larger $\eta_R$ and higher motional quantum number $n$.
