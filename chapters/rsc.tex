@@ -101,7 +101,7 @@ and the first order cooling sideband ($n'=n-1$) with corresponding strength
 $1$, $\eta^R\sqrt{n+1}$ and $\eta^R\sqrt{n}$.
 We can clearly see from this approximation that the coupling to other motional state
 is stronger for a larger $\eta^R$ and higher motional quantum number $n$.
-We will discuss this effect outside the Lamb-Dicke regime and its implication
+We will discuss this effect outside the LD regime and its implication
 on the cooling performance in more detail in section \ref{ch:rsc-challenges}.
 
 \subsection{Optical Pumping}
@@ -194,10 +194,10 @@ it is setup to propagate parallel to the applied magnetic field.
 \label{ch:rsc-challenges}
 
 \todo{some might belong to introduction of the chapter}
-RSC is typically performed in the Lamb-Dicke regime where the coupling
+RSC is typically performed in the LD regime where the coupling
 to other motional state is small.
 Due to the light mass, short wavelength, limitted trap depth and high initial temperature
-of the sodium atom however, we have to start our RSC sequence outside the Lamb-Dicke regime.
+of the sodium atom however, we have to start our RSC sequence outside the LD regime.
 This creates unique challenges to our experiment.
 A detailed understanding of the cooling performance is required to understand
 and overcome these challenges.
@@ -210,7 +210,7 @@ The energy removed for atom driven in one Raman pulse is therefore, $\Delta E_-=
 In order to reinitialize the hyperfine state, the sodium atom needs to scatter on average
 $2$ photons from the OP pulse which increases the average energy of the driven atom
 by $\Delta E_+=4\omega_r$
-\footnote{The factor of 4 comes from 2 absorbed photons and two reemitted photons}
+\footnote{The factor of 4 comes from 2 absorbed photons and 2 reemitted photons.}
 where $\omega_r\equiv \hbar k^2/2m$ is the recoil energy\cite{steck_sodium_nodate}
 and $k$ is the OP light wave vector.
 The heating to cooling ratio in one RSC pulse cycle is therefore,
@@ -225,6 +225,7 @@ In 3D with cooling along multiple axis with different trapping frequency
 is replaced by a weighted average of different axis depending on the frequency
 each axis is cooled in the sequence.
 
+\todo{change r to x in the plot to be consistent with text}
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{figures/na_rsc_challenges.pdf}
@@ -250,7 +251,33 @@ This, however, does not guarantee cooling into the ground motional state,
 nor does it fully characterize the efficiency of the cooling sequence
 since the averaging hides a few critical aspect of having a large Lamb-Dicke parameter.
 
-\ref{fig:na-rsc-challenges}
+One of the important effects can be seen in Fig.~\ref{fig:na-rsc-challenges}A showing
+the motional state distribution after one OP cycle
+for different initial motional states $n_{init}$.
+Although the average heating is fixed at $4\omega_r$, independent of $n_{init}$,
+the spread or the uncertainty of $n$ after the OP is significantly higher for high $n_{init}$.
+This effect significantly increases the difficulty in controlling the state during the
+RSC sequence. It can negatively impact the cooling performance and
+may lead to increased loss during cooling due to atom escaping to higher motional states.
+
+The other important effect is the dependency of matrix element $M_{n,n+1}$
+on the motional level $n$.
+While this dependency is not a new effect, since the $\sqrt{n}$ dependency
+on the cooling sideband strength exist even in the LD regime
+and must be taken into account\todo{\cite{}} to achieve efficient cooling,
+the high Lamb-Dicke parameter adds even more complications.
+As shown in Fig.~\ref{fig:na-rsc-challenges}B, rather than a simple $\sqrt{n}$ dependency,
+it is a non-monotonic function and more importantly has multiple minima within the range of
+motional states we are interested in.
+The coupling strength for states near these minima can be reduced by more than ten times
+which can significant affect the efficiency of the cooling pulse
+and even makes it virtually impossible to drive Raman transitions on atoms in these states
+in order to cool them further.
+A cooling sequence can therefore accumulate pupolations near these minima
+rather than the ground state.
+Their small coupling strength also reduce their signal level during
+Raman sideband spectroscopy making these states nearly invisible to sideband thermometry
+which further complicates the optimization of the cooling sequence.
 
 \section{Solution: High Order Sidebands}
 
