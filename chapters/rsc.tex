@@ -280,6 +280,7 @@ Raman sideband spectroscopy making these states nearly invisible to sideband the
 which further complicates the optimization of the cooling sequence.
 
 \section{Solution: High Order Sidebands}
+\label{ch:rsc-solution-high-orders}
 
 \todo{change r to x in the plot to be consistent with text}
 \begin{figure}
@@ -315,8 +316,6 @@ the need to vary the pulse times for all but the pulses on the first order sideb
 
 \section{Solution: Simulation Based Optimization}
 
-\ref{fig:na-rsc-sequence}
-
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{figures/na_rsc_sequence.pdf}
@@ -335,11 +334,35 @@ the need to vary the pulse times for all but the pulses on the first order sideb
     \label{fig:na-rsc-sequence}}
 \end{figure}
 
+The change in cooling technique by including higher order sidebands, however,
+does not remove the effect of coupling variation on the sideband thermometry.
+If the cooling sequence accidentally produced a non-thermal distribution of motional states,
+the ratio of the first order sideband height still cannot be trusted to calculate
+the temperature or the ground state probability.
+Including higher order sidebands in the sideband thermometry could in principle
+give us enough information about the state distribution but doing
+so for a non-thermal distribution is not easy or reliable.
+We therefore use a Monte-Carlo simulation to guide our search
+for the optimal sequence \todo{\cite{}}.\todo{More detail?}
+Fig.~\ref{fig:na-rsc-sequence} demostrate the sequence from the simulation.
+In particular, we find that alternating the cooling pulses between two
+neighboring orders for the axial direction and $\Delta n=-2$ and $\Delta n=-1$
+for the radial directions
+eliminates the accumulation of population in motional states with small Raman coupling.
+The simulation also confirms that setting the coupling strength of each sideband
+to drive a Rabi $\pi$-pulse corresponding to the maximum matrix element motional state
+(i.e. the maxima in Fig.~\ref{fig:na-rsc-mele-raman}) yields efficient cooling, initially,
+as we expected from section \ref{ch:rsc-solution-high-orders}.
+The efficiency of cooling on higher-order sidebands diminishes
+as the atom approaches the ground state, so the final cycles utilize only
+the $\Delta n=-1$ sideband while alternating between the three axes.
+
 \section{Calibration}
 (Sideband/carrier)\todo{Use scattering to calibrate intensity}
 (Cold vs hot)
 
 \section{Cooling Performance}
+% The full sequence can be found in appendix \ref{appendex:rsc}.
 
 \ref{fig:na-rsc-spectrum}
 \ref{fig:na-rsc-rabi-flop}
