@@ -128,9 +128,43 @@ the photon cycling is not a concern for $F=1$ states and the $\mathrm{D2}$ line
 is used for OP of $F=1$ states instead.
 This also allow us to reuse the MOT light source and simplifies our setup.
 
+\section{Raman Sideband Thermometry}
+
+From the discussion in section \ref{ch:rsc-basic-theory-raman},
+we see that the strength of the sideband transition depends on the initial motional state
+as well as the Lamb-Dicke parameter $\eta_R$ of the atom.
+This dependency allows us to infer the motional state of the atom
+by measuring the sideband height, i.e. the so-called sideband thermometry.
+
+In particular, for atom with temperature $T$,
+the probability for the atom to be in motional state $|n\rangle$ is,
+\[ p_n=\frac{\ue^{-n\hbar\omega/k_BT}}{1-\ue^{-\hbar\omega/k_BT}} \]
+for a Raman pulse with full Rabi frequency $\Omega_R^0$ and time $t$,
+the peak height for the first order heating (+) and cooling (-) sidebands,
+\begin{align*}
+  h_\pm=&\sum_{n=0}^\infty p_n\sin^2\left(\frac{\Omega_R^0t}{2}M_{n,n\pm1}\right)
+\end{align*}
+note that $p_{n+1}=p_n\ue^{-\hbar\omega/k_BT}$, $M_{n,n'}=M_{n',n}$ and $M_{n,-1}=0$, we have
+\begin{align*}
+  h_-=&\sum_{n=0}^\infty p_n\sin^2\left(\frac{\Omega_R^0t}{2}M_{n,n-1}\right)\\
+  =&\ue^{-\hbar\omega/k_BT}\sum_{n=1}^\infty p_{n-1}\sin^2\left(\frac{\Omega_R^0t}{2}M_{n-1,n}\right)\\
+  =&\ue^{-\hbar\omega/k_BT}h_+
+\end{align*}
+Therefore, if we measure the ratio of the cooling and heating sideband heights
+$\alpha\equiv h_-/h_+$, we can calculate the temperature of the atom with
+$\ue^{-\hbar\omega/k_BT}=\alpha$.
+The corresponding ground state probability is,
+\begin{align*}
+  p_0=&\frac{1}{1-\ue^{-\hbar\omega/k_BT}}\\
+  =&\frac{1}{1-\alpha}
+\end{align*}
+We will use this to experimentally characterize the performance of the cooling sequence
+in the following sections.
+
 \section{Setup}
 
-\ref{fig:na-rsc-geometry}
+The geometry of all the beams and field involved is shown in Fig.~\ref{fig:na-rsc-geometry}.
+In order to make the cooling more efficient and simplify the spectroscopy
 
 \begin{figure}
   \centering
