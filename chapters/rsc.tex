@@ -56,9 +56,9 @@ $|s_1\rangle\equiv|2,2\rangle$ hyperfine state,
 and a Raman transition is used to drive the atom to the $|s_2\rangle\equiv|1,1\rangle$ state,
 where $|F,m_F\rangle$ denotes the $F$ and $m_F$ quantum number for the sodium atom.
 The full Rabi frequency for such a transition is given by
-\begin{align*}
-  \Omega_R^0=&\sum_{i}\frac{\Omega_{1i}\Omega_{2i}^*}{2\Delta_i}
-\end{align*}
+\begin{align}
+  \Omega_R^0=&\sum_{i}\frac{\Omega_{1i}\Omega_{2i}^*}{2\Delta_i}\label{rsc-basic-theory-raman-rabi}
+\end{align}
 where the sum is over all the coupled excited states,
 $\Omega_{ai}\equiv\langle a|\mathbf{d}\cdot\mathbf{E}_a|e_i\rangle$ is the single photon
 Rabi frequency between $|a\rangle$ and $|e_i\rangle$
@@ -103,6 +103,22 @@ We can clearly see from this approximation that the coupling to other motional s
 is stronger for a larger $\eta^R$ and higher motional quantum number $n$.
 We will discuss this effect outside the LD regime and its implication
 on the cooling performance in more detail in section \ref{ch:rsc-challenges}.
+
+\subsubsection{Scattering from Raman Beams}
+\label{ch:rsc-basic-theory-raman-scatter}
+
+In additional to driving the Raman transition, the Raman beams can also cause scattering.
+The rate of the scattering is
+\footnote{Here we assume that each Raman beam only couples to their respective ground states.
+  Including coupling to the other ground state increases the scattering rate but does not change
+  the scaling with detuning.},
+\begin{align*}
+  \Gamma=&\sum_{i}\frac{\Gamma_{ei}\Omega_{1i}^2}{4\Delta_i^2}
+\end{align*}
+where $\Gamma_{ei}$ is the linewidth of the excited state $|e_i\rangle$.
+Together with (\ref{rsc-basic-theory-raman-rabi}), we see that approximately
+$\Gamma/\Omega_R\propto1/\Delta$ so a larger detuning should be used
+in order to reduce the scattering during RSC.
 
 \subsection{Optical Pumping}
 \label{ch:rsc-basic-theory-op}
@@ -357,9 +373,17 @@ The efficiency of cooling on higher-order sidebands diminishes
 as the atom approaches the ground state, so the final cycles utilize only
 the $\Delta n=-1$ sideband while alternating between the three axes.
 
-\section{Calibration}
-(Sideband/carrier)\todo{Use scattering to calibrate intensity}
+\section{Experiment Setup}
+
+\subsection{Alignment of Raman and OP Beams}
+
+(Back reflection of OP)
+
+\subsection{Calibration}
+
+(Sideband/carrier)
 (Cold vs hot)
+\todo{Anharmonicity}
 
 \section{Cooling Performance}
 % The full sequence can be found in appendix \ref{appendex:rsc}.
