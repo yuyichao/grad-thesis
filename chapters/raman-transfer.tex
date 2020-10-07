@@ -210,7 +210,7 @@ In order to keep the resonance stable within the linewidth of the Raman resonanc
 i.e. $\Omega_{Raman}$, we need to maintain a relative stability of $\Delta\delta$,
 therefore relative stability of the laser power to better than $M_1/M_2$.
 
-\section{Raman Transfer versus STIRAP}
+\section{STIRAP}
 
 An alternative method often used to create and prepare the internal states of ultracold molecule
 is stimulated Raman adiabatic passage (STIRAP)\todo{\cite{}}.
@@ -278,19 +278,19 @@ Since $\Omega_2$ is the upper bound of $\abs{\Omega_2(t)}$ we have,
 \end{align*}
 The total scattering probability is,
 \begin{align*}
-  p_{scatter}=&\int_0^T \Gamma_e|c_e^2(t)| \ud t\\
+  p_{scatter0}=&\int_0^T \Gamma_e|c_e^2(t)| \ud t\\
   \geqslant&\frac{\Gamma_e}{T}\abs{\int_0^T c_e(t) \ud t}^2\\
   \geqslant&\frac{4\Gamma_e}{\Omega_2^2T}
 \end{align*}
 From similar argument, we also have,
 \begin{align*}
-  p_{scatter}\geqslant&\frac{4\Gamma_e}{\Omega_1^2T}
+  p_{scatter0}\geqslant&\frac{4\Gamma_e}{\Omega_1^2T}
 \end{align*}
 which is the same as the previous result for a three-level STIRAP system
 where $\Omega_1=\Omega_2$.
 In the generic case, these give us a lower bound on the scattering probability,
 \begin{align*}
-  \min\paren{p_{scatter}}=&\frac{4\Gamma_e}{\min\paren{\Omega_1^2}T}
+  \min\paren{p_{scatter0}}=&\frac{4\Gamma_e}{\min\paren{\Omega_1^2, \Omega_2^2}T}
 \end{align*}
 whereas the full scattering is larger than this lower bound by a pulse shape dependent
 small constant factor.
@@ -327,13 +327,17 @@ The Rabi frequency coupling the dark state $|D(t)\rangle$ to the excited state $
 where we used $\Omega_1(t)/\Omega_2(t)=\Omega'_1(t)/\Omega'_2(t)=\Omega_1/\Omega_2=\Omega'_1/\Omega'_2$ in the last step. The addtional scattering caused by this is,
 \begin{align*}
   p'_{scatter}=&\int_0^T \frac{\Gamma'_e\Omega'^2(t)}{4{\omega'_e}^2} \ud t\\
-  =&\frac{\Gamma'_e}{4{\omega'_e}^2}\paren{\frac{\Omega'_1}{\Omega_1}-\frac{\Omega'_2}{\Omega_2}}^2\int_0^T \frac{\Omega_1^2(t)\Omega_2^2(t)}{\Omega_1^2(t)+\Omega_2^2(t)} \ud t\\
-  =&C'\frac{\Gamma'_e\paren{\Omega_1^2+\Omega_2^2}T}{4{\omega'_e}^2}\paren{\frac{\Omega'_1}{\Omega_1}-\frac{\Omega'_2}{\Omega_2}}^2
+  =&\frac{\Gamma'_e}{4{\omega'_e}^2}
+     \paren{\frac{\Omega'_1}{\Omega_1}-\frac{\Omega'_2}{\Omega_2}}^2
+     \int_0^T \frac{\Omega_1^2(t)\Omega_2^2(t)}{\Omega_1^2(t)+\Omega_2^2(t)} \ud t\\
+  =&C'\frac{\Gamma'_eT}{4{\omega'_e}^2}
+     \paren{\frac{\Omega'_1}{\Omega_1}-\frac{\Omega'_2}{\Omega_2}}^2
+     \frac{\Omega_1^2\Omega_2^2}{\Omega_1^2+\Omega_2^2}
 \end{align*}
 which has the form of an off-resonance scattering probability.
 $C'$ is a dimensionless number depending only on the pulse shape defined as
 \begin{align*}
-  C'\equiv&\frac{1}{T}\int_0^T \frac{\Omega_1^2(t)\Omega_2^2(t) \ud t}{\paren{\Omega_1^2(t)+\Omega_2^2(t)}\paren{\Omega_1^2+\Omega_2^2}}
+  C'\equiv&\frac{\Omega_1^2+\Omega_2^2}{\Omega_1^2\Omega_2^2T}\int_0^T \frac{\Omega_1^2(t)\Omega_2^2(t)\ud t}{\Omega_1^2(t)+\Omega_2^2(t)}
 \end{align*}
 
 \subsection{Cross Coupling Between Light Addressing Initial and Final States}
@@ -346,21 +350,113 @@ The total scattering probability caused by the cross coupling is
 \begin{align*}
   p''_{scatter}=&\int_0^T \frac{\Gamma_e\Omega_1^2(t)}{4M_1^2}\frac{M_2^2}{\delta^2}\abs{c_f(t)}^2+\frac{\Gamma_e\Omega_2^2(t)}{4M_2^2}\frac{M_1^2}{\delta^2}\abs{c_i(t)}^2 \ud t\\
   =&\frac{\Gamma_e}{4\delta^2}\int_0^T \frac{M_2^2}{M_1^2}\frac{\Omega_1^4(t)}{\Omega_1^2(t)+\Omega_2^2(t)}+\frac{M_1^2}{M_2^2}\frac{\Omega_2^4(t)}{\Omega_1^2(t)+\Omega_2^2(t)} \ud t\\
-  =&\frac{\Gamma_e\paren{\Omega_1^2+\Omega_2^2}T}{4\delta^2}\paren{C''_1\frac{M_2^2}{M_1^2}+C''_2\frac{M_1^2}{M_2^2}}
+  =&\frac{\Gamma_eT}{4\delta^2}\paren{C''_1\frac{M_2^2}{M_1^2}\frac{\Omega_1^4}{\Omega_1^2+\Omega_2^2}+C''_2\frac{M_1^2}{M_2^2}\frac{\Omega_2^4}{\Omega_1^2+\Omega_2^2}}
 \end{align*}
 where $C''_1$ and $C''_2$ are two dimentionless numbers
 depending only on the pulse shape defined as,
 \begin{align*}
-  C''_i\equiv&\frac{1}{T}\int_0^T \frac{\Omega_i^4(t) \ud t}{\paren{\Omega_1^2(t)+\Omega_2^2(t)}\paren{\Omega_1^2+\Omega_2^2}}
+  C''_i\equiv&\frac{\Omega_1^2+\Omega_2^2}{\Omega_i^4T}\int_0^T \frac{\Omega_i^4(t) \ud t}{\Omega_1^2(t)+\Omega_2^2(t)}
 \end{align*}
 
-\subsection{Conclusion}
+\subsection{Raman Transfer versus STIRAP}
 
-\todo{mention use of tweezer as Raman}
-\todo{mention light shift which is worse for imbalanced coupling and large decay rate}
-\todo{Since the light shift depends on the power of the two beams,
-  it is not a constant during STIRAP so the frequencies of the two beams have to be
-  varied in additional to the power ramp.}
+As one may expect, the scattering probability and the efficiency of a STIRAP transfer
+depends on the precise pulse shape used.
+While it may be possible to construct a STIRAP pulse shape,
+we will focus our discussion on more traditional shapes and assume
+$C''_1\approx C''_2\approx C'\approx1$.
+
+We will compare the scattering probability during STIRAP to that of
+Raman $\pi$ pulse in two limiting case depending on whether the contribution
+from the additional excited or ground state are more significant.
+
+\subsubsection{More Significant Contribution from Additional Excited State}
+
+This is the case where excited state separation $\omega_e'$ is significantly smaller compared
+to the ground state separation $\delta$.
+By choosing an optimal pulse time, the minimum scattering probability for the STIRAP is,
+\begin{align*}
+  p_{scatter}^{STIRAP}\approx&2\sqrt{\frac{4\Gamma_e}{\min\paren{\Omega_1^2, \Omega_2^2}}\frac{\Gamma'_e}{4{\omega'_e}^2}\paren{\frac{\Omega'_1}{\Omega_1}-\frac{\Omega'_2}{\Omega_2}}^2\frac{\Omega_1^2\Omega_2^2}{\Omega_1^2+\Omega_2^2}}\\
+  =&\frac{\sqrt{\Gamma_e\Gamma'_e}}{\omega'_e}
+     \abs{\frac{\Omega'_1}{\Omega_1}-\frac{\Omega'_2}{\Omega_2}}
+     \frac{2\max\paren{\Omega_1, \Omega_2}}{\sqrt{\Omega_1^2+\Omega_2^2}}\\
+  \geqslant&\frac{\sqrt{\Gamma_e\Gamma'_e}}{\omega'_e}
+             \abs{\frac{\Omega'_1}{\Omega_1}-\frac{\Omega'_2}{\Omega_2}}
+\end{align*}
+For Raman $\pi$ pulse,
+\begin{align*}
+  p_{scatter}^{RAMAN}=&\frac{\pi\Gamma}{2\Omega_R}\\
+  =&\frac{\pi}{2}\frac{\Gamma_e\paren{\Omega_1^2+\Omega_2^2}}{4\Delta_{max}^2}
+     \frac{2\Delta_{max}}{\Omega_1\Omega_2}\\
+  =&\frac{\pi\Gamma_e}{4\Delta_{max}}\frac{\paren{\Omega_1^2+\Omega_2^2}}{\Omega_1\Omega_2}\\
+  \geqslant&\frac{\pi\Gamma_e}{2\Delta_{max}}
+\end{align*}
+The last inequality for both take the equal sign when $\Omega_1=\Omega_2$.
+Comparing the result and note that $\Delta_{max}$ is a fraction of $\omega_e'$,
+we see that the two scales similarly to the excited state spacing.
+However, given that in the common cases we have $\Delta_{max}<\omega_e'$ and
+$\abs{\Omega'_1/\Omega_1-\Omega'_2/\Omega_2}<1$ using STIRAP can potentially reduce
+the total scattering in this case.
+
+\subsubsection{More Significant Contribution from Additional Ground State}
+
+With the assumption of $C''_1\approx C''_2\approx1$ the scattering due to
+cross coupling for STIRAP is now,
+\begin{align*}
+  p''_{scatter}=&\frac{\Gamma_eT}{4\delta^2}\paren{\frac{M_2^2}{M_1^2}\frac{\Omega_1^4}{\Omega_1^2+\Omega_2^2}+\frac{M_1^2}{M_2^2}\frac{\Omega_2^4}{\Omega_1^2+\Omega_2^2}}\\
+  \geqslant&\frac{\Gamma_eT}{2\delta^2}\paren{\Omega_1^2+\Omega_2^2}\frac{M_1^2M_2^2}{\paren{M_1^2+M_2^2}^2}
+\end{align*}
+and the minimum is taken when $M_2/M_1=\Omega_2/\Omega_1$\footnote{Same as Raman transition.}
+The minimum total scattering rate for STIRAP is therefore,
+\begin{align*}
+  p_{scatter}^{STIRAP}\approx&2\sqrt{\frac{4\Gamma_e}{\min\paren{\Omega_1^2, \Omega_2^2}}\frac{\Gamma_e}{2\delta^2}\paren{\Omega_1^2+\Omega_2^2}\frac{M_1^2M_2^2}{\paren{M_1^2+M_2^2}^2}}\\
+  =&2\sqrt{2}\frac{\Gamma_e}{\delta}\frac{M_1M_2}{M_1^2+M_2^2}\frac{\sqrt{\Omega_1^2+\Omega_2^2}}{\min\paren{\Omega_1, \Omega_2}}\\
+  =&2\sqrt{2}\frac{\Gamma_e}{\delta}\frac{\max\paren{M_1, M_2}}{\sqrt{M_1^2+M_2^2}}\approx2\sqrt{2}\frac{\Gamma_e}{\delta}
+\end{align*}
+For Raman transition
+\begin{align*}
+  p_{scatter}^{RAMAN}=&\frac{\pi\Gamma}{2\Omega_R}\\
+  =&\frac{\pi\Gamma_e}{2\Delta}\frac{M_1^2+M_2^2}{M_1M_2}\\
+  \approx&\frac{\pi\Gamma_e}{2\Delta}\frac{\max\paren{M_1,M_2}}{\min\paren{M_1,M_2}}
+\end{align*}
+we can see that when the single photon Rabi frequency is changed to minimize
+cross coupling scattering, the Raman transition can be more strongly affected by
+the matrix element imbalance. However, if the Raman transition can use a detuning
+\[
+  \Delta>\frac{\max\paren{M_1,M_2}}{\min\paren{M_1,M_2}}\delta
+\]
+then the scattering probability for a Raman transition can be made smaller than that of STIRAP.
+
+\subsubsection{Conclusion}
+
+In our experiment, we have an initial and final state separation of $< 1\mathrm{GHz}$
+and an matrix element ratio of $< 30$.
+This means that as long as we can use a single photon detuning of more than
+$\approx 30\mathrm{GHz}$, the total scattering probability for Raman transition
+will be smaller than that of STIRAP.
+Since this detuning can be achieved easily,
+a Raman $\pi$ pulse should be preferred in our experiment.
+
+The comparison so far has been focused on the scattering probability from the Raman or STIRAP
+beams. There are also a few other more technical reasons we preferred Raman versus STIRAP
+in our experiment.
+
+\begin{enumerate}
+\item \todo{Make sure this is mentioned somewhere else}
+  We use the tweezer beam as the Raman beam for transfer in order to reduce scattering
+  from external sources.
+  Doing this for STIRAP while optimizing the pulse shape for transfer is more challenging.
+\item In additional to scattering, the additional excited and ground state
+  also causes a power, and therefore time, dependent light shift.
+  A STIRAP in the presence of these couplings must vary the frequency of the two beams
+  in additional to the power ramp. This is also technically challenging to do.
+\end{enumerate}
+
+As a summary, for two photon transfer to a weakly bound molecular state,
+it is likely that Raman transition is the preferred technique.
+However, for transfering to a deeply bound molecular state,
+which is where STIRAP is used in previous experiments,
+STIRAP can have an advantage over Raman transition.
 
 \section{States Selection}
 \label{ch:raman-transfer:state-selction}
