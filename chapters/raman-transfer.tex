@@ -77,7 +77,7 @@ depending on the trap depth used.
 The typical Raman $\pi$ time we can realize is $0.5 - 5$~ms so this effect
 is not a major limiting factor for our transfer efficiency.
 
-\subsection{Additional Excited states}
+\subsection{Additional Excited States}
 \label{ch:raman-transfer:extra-ext}
 
 \begin{figure}
@@ -241,9 +241,25 @@ and discuss which approach should be taken under certain circumstance.
     \label{fig:raman-transfer-generic-stirap-model}}
 \end{figure}
 
-\subsection{Loss During STIRAP for Ideal Three-Level System}
+\subsection{STIRAP for Ideal Three-Level System}
 
-During STIRAP, the wavefunction amplitude in the final state $c_f$
+During STIRAP, the system approximately remains in a dark state $|D(t)\rangle$
+\begin{align*}
+  |D(t)\rangle=&c_i(t)|i\rangle+c_f(t)|f\rangle
+\end{align*}
+Since this state does not couple to the excited state, we have,
+\begin{align*}
+  0=&\langle e|\mathbf{d}\cdot\mathbf{E}|D(t)\rangle\\
+  =&c_i(t)\langle e|\mathbf{d}\cdot\mathbf{E}|i\rangle
+     +c_f(t)\langle e|\mathbf{d}\cdot\mathbf{E}|f\rangle\\
+  =&c_i(t)\Omega_1(t)+c_f(t)\Omega_2(t)
+\end{align*}
+or
+\begin{align*}
+  |D(t)\rangle=&\frac{\Omega_2(t)|i\rangle-\Omega_1(t)|f\rangle}{\sqrt{\Omega_1^2(t)+\Omega_2^2(t)}}
+\end{align*}
+In order to estimate the scattering rate,
+we use the fact that the wavefunction amplitude in the final state $c_f$
 is the integral of the excited state amplitude $c_e$ and the down leg Rabi frequency $\Omega_2$,
 i.e.,\footnote{This equation and the lower bound on scattering probability applies generically
   to all two photon transfer process including Raman $\pi$ pulse.
@@ -272,7 +288,7 @@ From similar argument, we also have,
 \end{align*}
 which is the same as the previous result for a three-level STIRAP system
 where $\Omega_1=\Omega_2$.
-These give us a lower bound on the scattering probability,
+In the generic case, these give us a lower bound on the scattering probability,
 \begin{align*}
   \min\paren{p_{scatter}}=&\frac{4\Gamma_e}{\min\paren{\Omega_1^2}T}
 \end{align*}
@@ -291,13 +307,60 @@ Similar to Raman transition (section \ref{ch:raman-transfer:extra-init-final}),
 the additional initial and final states causes potential leakage out of the three-level system.
 This limits the minimum time of the transfer in a way similar to that of Raman transition.
 
-\subsection{Additional Excited states}
+\subsection{Additional Excited States}
+
+For additional excited states that are farther away than the single photon Rabi frequency
+$\Omega_1$ and $\Omega_2$, the contribution to the coherent transfer is minimum.
+However, these states can still contribute to scattering during the transfer.
+
+Excited state will only contribute significantly to the scattering if it causes scattering
+from the dark state, which happens if $\Omega_1/\Omega_2\neq\Omega'_1/\Omega'_2$,
+where $\Omega'_1\equiv\max\paren{\Omega'_1(t)}$ and $\Omega'_2\equiv\max\paren{\Omega'_2(t)}$
+are the maximum single photon Rabi frequencies coupling
+$|e'\rangle$ to $|i\rangle$ and $|f\rangle$ respectively.
+The Rabi frequency coupling the dark state $|D(t)\rangle$ to the excited state $|e'\rangle$ is,
+\begin{align*}
+  \Omega'(t)=&\langle e'|\mathbf{d}\cdot\mathbf{E}|D(t)\rangle\\
+  =&\frac{\Omega_2(t)\Omega'_1(t)-\Omega_1(t)\Omega'_2(t)}{\sqrt{\Omega_1^2(t)+\Omega_2^2(t)}}\\
+  =&\frac{\Omega_1(t)\Omega_2(t)}{\sqrt{\Omega_1^2(t)+\Omega_2^2(t)}}\paren{\frac{\Omega'_1}{\Omega_1}-\frac{\Omega'_2}{\Omega_2}}
+\end{align*}
+where we used $\Omega_1(t)/\Omega_2(t)=\Omega'_1(t)/\Omega'_2(t)=\Omega_1/\Omega_2=\Omega'_1/\Omega'_2$ in the last step. The addtional scattering caused by this is,
+\begin{align*}
+  p'_{scatter}=&\int_0^T \frac{\Gamma'_e\Omega'^2(t)}{4{\omega'_e}^2} \ud t\\
+  =&\frac{\Gamma'_e}{4{\omega'_e}^2}\paren{\frac{\Omega'_1}{\Omega_1}-\frac{\Omega'_2}{\Omega_2}}^2\int_0^T \frac{\Omega_1^2(t)\Omega_2^2(t)}{\Omega_1^2(t)+\Omega_2^2(t)} \ud t\\
+  =&C'\frac{\Gamma'_e\paren{\Omega_1^2+\Omega_2^2}T}{4{\omega'_e}^2}\paren{\frac{\Omega'_1}{\Omega_1}-\frac{\Omega'_2}{\Omega_2}}^2
+\end{align*}
+which has the form of an off-resonance scattering probability.
+$C'$ is a dimensionless number depending only on the pulse shape defined as
+\begin{align*}
+  C'\equiv&\frac{1}{T}\int_0^T \frac{\Omega_1^2(t)\Omega_2^2(t) \ud t}{\paren{\Omega_1^2(t)+\Omega_2^2(t)}\paren{\Omega_1^2+\Omega_2^2}}
+\end{align*}
 
 \subsection{Cross Coupling Between Light Addressing Initial and Final States}
+
+As is the case for Raman transition\textsuperscript{(\ref{ch:raman-transfer:cross-couple})},
+the coupling of each beam on the other initial or final state can cause increased scattering.
+The total scattering probability caused by the cross coupling is
+\footnote{Here we are making the same assumption of identical matrix elements for the two beams
+  as the one we made for Raman transition in section \ref{ch:raman-transfer:cross-couple}.},
+\begin{align*}
+  p''_{scatter}=&\int_0^T \frac{\Gamma_e\Omega_1^2(t)}{4M_1^2}\frac{M_2^2}{\delta^2}\abs{c_f(t)}^2+\frac{\Gamma_e\Omega_2^2(t)}{4M_2^2}\frac{M_1^2}{\delta^2}\abs{c_i(t)}^2 \ud t\\
+  =&\frac{\Gamma_e}{4\delta^2}\int_0^T \frac{M_2^2}{M_1^2}\frac{\Omega_1^4(t)}{\Omega_1^2(t)+\Omega_2^2(t)}+\frac{M_1^2}{M_2^2}\frac{\Omega_2^4(t)}{\Omega_1^2(t)+\Omega_2^2(t)} \ud t\\
+  =&\frac{\Gamma_e\paren{\Omega_1^2+\Omega_2^2}T}{4\delta^2}\paren{C''_1\frac{M_2^2}{M_1^2}+C''_2\frac{M_1^2}{M_2^2}}
+\end{align*}
+where $C''_1$ and $C''_2$ are two dimentionless numbers
+depending only on the pulse shape defined as,
+\begin{align*}
+  C''_i\equiv&\frac{1}{T}\int_0^T \frac{\Omega_i^4(t) \ud t}{\paren{\Omega_1^2(t)+\Omega_2^2(t)}\paren{\Omega_1^2+\Omega_2^2}}
+\end{align*}
 
 \subsection{Conclusion}
 
 \todo{mention use of tweezer as Raman}
+\todo{mention light shift which is worse for imbalanced coupling and large decay rate}
+\todo{Since the light shift depends on the power of the two beams,
+  it is not a constant during STIRAP so the frequencies of the two beams have to be
+  varied in additional to the power ramp.}
 
 \section{States Selection}
 \label{ch:raman-transfer:state-selction}
@@ -316,5 +379,3 @@ This limits the minimum time of the transfer in a way similar to that of Raman t
 \section{Raman Transfer Results}
 
 \subsection{Scaling of Raman Transition Parameters}
-
-\todo{mention significance of atomic scattering}
