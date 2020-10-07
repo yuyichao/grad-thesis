@@ -8,6 +8,7 @@
 \todo{emphasize general approach}
 
 \section{Raman Transition Beyond Three-Level Model}
+\label{ch:raman-transfer:raman-model}
 
 For a Raman transition with Raman Rabi frequency $\Omega_R$ and total scattering rate
 $\Gamma$, defined as the sum of the scattering rate for the initial and final states,
@@ -236,9 +237,44 @@ and discuss which approach should be taken under certain circumstance.
     Generic model for a real STIRAP similar to Fig.~\ref{fig:raman-transfer-generic-raman-model}.
     Differences are that the two beams are now on resonant with $|e\rangle$
     and the $\Omega_1$ and $\Omega_2$ now represent the maximum single photon Rabi frequency
-    during the STIRAP pulse.
+    during the STIRAP pulse for the two beams.
     \label{fig:raman-transfer-generic-stirap-model}}
 \end{figure}
+
+\subsection{Loss During STIRAP for Ideal Three-Level System}
+
+During STIRAP, the wavefunction amplitude in the final state $c_f$
+is the integral of the excited state amplitude $c_e$ and the down leg Rabi frequency $\Omega_2$,
+i.e.,\footnote{This equation and the lower bound on scattering probability applies generically
+  to all two photon transfer process including Raman $\pi$ pulse.
+  The equation we used in section \ref{ch:raman-transfer:raman-model} is a refinement
+  on this limit.}
+\begin{align*}
+  c_f(t)=&\int_0^t \frac{\ui\Omega_2(t)}{2}c_e(t') \ud t'
+\end{align*}
+For a complete transfer of length $T$, we have $c_f(0)=0$ and $c_f(T)=1$, therefore,
+\begin{align*}
+  \int_0^T\Omega_2(t)c_e(t)\ud t=&-2\ui
+\end{align*}
+Since $\Omega_2$ is the upper bound of $\abs{\Omega_2(t)}$ we have,
+\begin{align*}
+  \abs{\int_0^Tc_e(t)\ud t}\geqslant&\frac{2}{\Omega_2}
+\end{align*}
+The total scattering probability is,
+\begin{align*}
+  p_{scatter}=&\int_0^T \Gamma_e|c_e^2(t)| \ud t\\
+  \geqslant&\frac{\Gamma_e}{T}\abs{\int_0^T c_e(t) \ud t}^2\\
+  \geqslant&\frac{4\Gamma_e}{\Omega_2^2T}
+\end{align*}
+which give us a lower bound on the scattering probability.
+The full scattering is larger than this lower bound by a pulse shape dependent
+small constant factor.
+It is also easy to verify that this result agrees with the scattering probability for
+a optimal three-level Raman $\pi$ with similar single photon Rabi frequency and pulse time.
+This confirms that without additional constraint from the real system or the experimental setup,
+neither Raman transfer or STIRAP offers a significant advantage over the other.
+As we will see in the following sections,
+other effects in the system can favor one approach over the other one.
 
 \subsection{Additional Initial and Final States}
 
