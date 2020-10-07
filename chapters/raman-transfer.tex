@@ -266,8 +266,17 @@ The total scattering probability is,
   \geqslant&\frac{\Gamma_e}{T}\abs{\int_0^T c_e(t) \ud t}^2\\
   \geqslant&\frac{4\Gamma_e}{\Omega_2^2T}
 \end{align*}
-which give us a lower bound on the scattering probability.
-The full scattering is larger than this lower bound by a pulse shape dependent
+From similar argument, we also have,
+\begin{align*}
+  p_{scatter}\geqslant&\frac{4\Gamma_e}{\Omega_1^2T}
+\end{align*}
+which is the same as the previous result for a three-level STIRAP system
+where $\Omega_1=\Omega_2$.
+These give us a lower bound on the scattering probability,
+\begin{align*}
+  \min\paren{p_{scatter}}=&\frac{4\Gamma_e}{\min\paren{\Omega_1^2}T}
+\end{align*}
+whereas the full scattering is larger than this lower bound by a pulse shape dependent
 small constant factor.
 It is also easy to verify that this result agrees with the scattering probability for
 a optimal three-level Raman $\pi$ with similar single photon Rabi frequency and pulse time.
