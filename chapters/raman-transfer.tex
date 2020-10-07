@@ -9,24 +9,23 @@
 
 \section{Raman Transition Beyond Three-Level Model}
 
-In an ideal three-level system, the scattering probability during a $\pi$ pulse
-Raman transition can be made arbitrarily small by using a large single photon detuning\textsuperscript{(\ref{ch:rsc-basic-theory-raman-scatter})}.
+For a Raman transition with Raman Rabi frequency $\Omega_R$ and total scattering rate
+$\Gamma$, defined as the sum of the scattering rate for the initial and final states,
+the probability of scattering during a $\pi$ pulse is,
+\begin{align*}
+  p_{scatter}=&\frac{\Gamma t_{\pi}}{2}\\
+  =&\frac{\pi\Gamma}{2\Omega_R}
+\end{align*}
+which is proportional to the ratio $\Gamma/\Omega_R$.
+In an ideal three-level system, this is the only source of decoherence
+which can be made arbitrarily small by using a large single photon detuning
+\textsuperscript{(\ref{ch:rsc-basic-theory-raman-scatter})}.
 However, in a real system, there are often other effects that increases the scattering
 and may also put a lower limit on the scattering probability during the transfer.
 Fig.~\ref{fig:raman-transfer-generic-raman-model} shows a generic model
 for a real Raman transition demostrating some of these effects.
 Additionally, other practical limitation in the system like stability of the laser power
 and frequency also needs to be taken into account.
-
-In the experiment, we find the parameter range that gives the best transfer efficiency
-using numerical simulation (see section \ref{ch:raman-transfer:state-selction}).
-Nevertheless, in order to develop a general approach that can be applied to other systems,
-it is also important to understand the various physical mechanism that leads
-to the optimal parameters.
-Therefore, in this section, we will discuss some of the most important effects
-on the transfer efficiency at qualitative and semiquantitative level.
-Due to experimental constraint, we will assume that the single photon detuning is
-much smaller than the frequency of each individual beams, i.e. $\Delta\ll\nu_1,\ \nu_2$.
 
 \begin{figure}
   \centering
@@ -48,6 +47,16 @@ much smaller than the frequency of each individual beams, i.e. $\Delta\ll\nu_1,\
     without loss of generality.
     \label{fig:raman-transfer-generic-raman-model}}
 \end{figure}
+
+In the experiment, we find the parameter range that gives the best transfer efficiency
+using numerical simulation (see section \ref{ch:raman-transfer:state-selction}).
+Nevertheless, in order to develop a general approach that can be applied to other systems,
+it is also important to understand the various physical mechanism that leads
+to the optimal parameters.
+Therefore, in this section, we will discuss some of the most important effects
+on the transfer efficiency at qualitative and semiquantitative level.
+Due to experimental constraint, we will assume that the single photon detuning is
+much smaller than the frequency of each individual beams, i.e. $\Delta\ll\nu_1,\ \nu_2$.
 
 \subsection{Additional Initial and Final States}
 \label{ch:raman-transfer:extra-init-final}
