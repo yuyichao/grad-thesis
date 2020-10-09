@@ -471,8 +471,8 @@ STIRAP can have an advantage over Raman transition.
 \label{ch:raman-transfer:state-selction}
 
 From section \ref{ch:raman-transfer:raman-model} we see that the transfer efficiency
-is directly related to the excited state lifetime, the maximum usuable detuning
-and the excited state linewidth.
+is directly related to the excited state linewidth, the maximum usuable detuning
+and the matrix element ratio ($M_1/M_2$).
 In this section, we will discuss how these, as well as other technical constraints
 affects the choices of states we use for the Raman transfer.
 
@@ -483,7 +483,15 @@ very similar to that of the Cesium D lines between $2\pi\times5 \mathrm{MHz}$ to
 $2\pi\times10 \mathrm{MHz}$ due to optical decay process.
 States above the Cesium $6^2P_{1/2}$ state,
 however, could non-radiatively decay to the Cs $6^2P_{1/2}$ and Na $3^2S_{1/2}$ states
-via pre-dissociation which significantly increases the linewidth.
+via pre-dissociation which significantly increases the linewidth and should be avoided.
+
+\todo{make sure size mismatch and FCF are mentioned somewhere before this}
+The other factor that affects excited state selection is the maximum detuning.
+Due to larger FCF with the ground atomic and weakly bound molecular state,
+previous attempt at Raman spectroscopy \todo{\cite{}} typically
+use an excited state closed to the dissociative threshold as the intermediate state.
+However, the smaller inter-state spacing and the smaller detuning from
+the atomic excited state means that these state have a relatively small $\Delta_{max}$.
 
 \subsection{Ground States Selection}
 
