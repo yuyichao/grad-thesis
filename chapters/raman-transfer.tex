@@ -314,17 +314,25 @@ $\Omega_1$ and $\Omega_2$, the contribution to the coherent transfer is minimum.
 However, these states can still contribute to scattering during the transfer.
 
 Excited state will only contribute significantly to the scattering if it causes scattering
-from the dark state, which happens if $\Omega_1/\Omega_2\neq\Omega'_1/\Omega'_2$,
-where $\Omega'_1\equiv\max\paren{\Omega'_1(t)}$ and $\Omega'_2\equiv\max\paren{\Omega'_2(t)}$
-are the maximum single photon Rabi frequencies coupling
-$|e'\rangle$ to $|i\rangle$ and $|f\rangle$ respectively.
-The Rabi frequency coupling the dark state $|D(t)\rangle$ to the excited state $|e'\rangle$ is,
+from the dark state, which happens if $\Omega_1(t)/\Omega_2(t)\neq\Omega'_1(t)/\Omega'_2(t)$,
+where $\Omega'_1(t)$ and $\Omega'_2(t)$ are the time dependent single photon Rabi frequencies
+coupling $|e'\rangle$ to $|i\rangle$ and $|f\rangle$ respectively.
+Similar to $\Omega_1$ and $\Omega_2$, we can also define
+$\Omega'_1\equiv\max\paren{\Omega'_1(t)}$ and $\Omega'_2\equiv\max\paren{\Omega'_2(t)}$.
+Since $\Omega'_1(t)$($\Omega'_2(t)$) and $\Omega_1(t)$($\Omega_2(t)$)
+are generated from the same beam, we have
+$\Omega'_1(t)\propto\Omega_1(t)$($\Omega'_2(t)\propto\Omega_2(t)$)
+and the condition can also be equivalently expressed as
+$\Omega_1/\Omega_2\neq\Omega'_1/\Omega'_2$.
+
+More quantitatively,
+the Rabi frequency coupling the dark state $|D(t)\rangle$ to the excited state $|e'\rangle$ is,
 \begin{align*}
   \Omega'(t)=&\langle e'|\mathbf{d}\cdot\mathbf{E}|D(t)\rangle\\
   =&\frac{\Omega_2(t)\Omega'_1(t)-\Omega_1(t)\Omega'_2(t)}{\sqrt{\Omega_1^2(t)+\Omega_2^2(t)}}\\
   =&\frac{\Omega_1(t)\Omega_2(t)}{\sqrt{\Omega_1^2(t)+\Omega_2^2(t)}}\paren{\frac{\Omega'_1}{\Omega_1}-\frac{\Omega'_2}{\Omega_2}}
 \end{align*}
-where we used $\Omega_1(t)/\Omega_2(t)=\Omega'_1(t)/\Omega'_2(t)=\Omega_1/\Omega_2=\Omega'_1/\Omega'_2$ in the last step. The addtional scattering caused by this is,
+The addtional scattering caused by this is,
 \begin{align*}
   p'_{scatter}=&\int_0^T \frac{\Gamma'_e\Omega'^2(t)}{4{\omega'_e}^2} \ud t\\
   =&\frac{\Gamma'_e}{4{\omega'_e}^2}
