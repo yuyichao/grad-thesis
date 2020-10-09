@@ -478,6 +478,22 @@ affects the choices of states we use for the Raman transfer.
 
 \subsection{Excited State Selection}
 
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{figures/raman_transfer_v0_vs_v63.pdf}
+  \caption[Comparison between using a weakly bound and a deeply bound excited state
+  as intermediate state for the Raman transition]{
+    Comparison between using a weakly bound and a deeply bound excited state
+    as intermediate state for the Raman transition.
+    The (A) deeply bound excited state ($v'=0$) has a smaller Raman Rabi frequency
+    ($\Omega_{Raman}$) compared to the (B) weakly bound excited state ($v'=63$)
+    at a given detuning.
+    However, the lower scattering rate ($\Gamma_{scatter}$) allows a much larger
+    $\Delta_{max}$,
+    which results in a larger Raman Rabi frequency to scattering rate ratio.
+    \label{fig:raman-transfer-v0-vs-v63}}
+\end{figure}
+
 Based on theory calculation, most of the molecular excited states have a linewidth $\Gamma_e'$
 very similar to that of the Cesium D lines between $2\pi\times5 \mathrm{MHz}$ to
 $2\pi\times10 \mathrm{MHz}$ due to optical decay process.
@@ -491,7 +507,18 @@ Due to larger FCF with the ground atomic and weakly bound molecular state,
 previous attempt at Raman spectroscopy \todo{\cite{}} typically
 use an excited state closed to the dissociative threshold as the intermediate state.
 However, the smaller inter-state spacing and the smaller detuning from
-the atomic excited state means that these state have a relatively small $\Delta_{max}$.
+the atomic excited state means that these state have a relatively small $\Delta_{max}$
+and therefore a lower coherent transfer efficiency.
+On the other hand, a deeply bound excited state has a significantly higher $\Delta_{max}$
+and is the preferred choice for coherent Raman transfer.
+
+In the experiment, we use numerical simulation to calculate the Raman transfer efficiency
+for any given Raman beam wavelength.
+Fig.~\ref{fig:raman-transfer-v0-vs-v63} shows the result near a deeply bound
+and weakly bound excited state.
+Despite having a lower Raman Rabi frequency,
+the deeply bound state has significantly higher transfer efficiency
+and is used as the intermediate state for coherent Raman transfer in our experiment.
 
 \subsection{Ground States Selection}
 

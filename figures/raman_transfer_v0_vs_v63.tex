@@ -1,0 +1,36 @@
+\documentclass[border={-4pt -6pt -4pt -4pt}]{standalone}
+
+\usepackage{hyperref}
+\usepackage{tikz}
+
+\usetikzlibrary{decorations.pathreplacing,
+  arrows,
+  calc,
+  decorations.pathmorphing,
+  decorations.pathreplacing,
+  decorations.markings,
+  fadings,
+  positioning,
+  shapes,
+  3d
+}
+
+\ifpdf
+% Ensure reproducible output
+\pdfinfoomitdate=1
+\pdfsuppressptexinfo=-1
+\pdftrailerid{}
+\hypersetup{
+  pdfcreator={},
+  pdfproducer={}
+}
+\fi
+
+\begin{document}
+\begin{tikzpicture}
+  \node at (0.0, 0) {\includegraphics[height=4.5cm]{raman_transfer_v0.pdf}};
+  \node at (6.6, 0) {\includegraphics[height=4.5cm]{raman_transfer_v63.pdf}};
+  \node at (2.1, 1.9) {\scriptsize (\textbf{A})};
+  \node at (8.7, 1.9) {\scriptsize (\textbf{B})};
+\end{tikzpicture}
+\end{document}
