@@ -420,18 +420,57 @@ beams to be ... \todo{number, maybe table} which corresponds to a total of $...$
 scattering event on average during the whole cooling sequence and
 should not be a limiting factor for the cooling performance.
 
-The optical pumping beam has a much larger waist ($\approx1\mathrm{mm}$)
+The OP beam has a much larger waist ($\approx1\mathrm{mm}$)
 and therefore require less alignment in the beam position.
-\todo{need beam direction for dark state pumping}
+However, in order to take advantage of the dark state optical pumping and
+minimize unnecessary scattering for atoms in the $|2,2\rangle$ state,
+the OP beam need to have a pure $\sigma^+$ polarization.
+This requires the OP beam to propagate parallel to the magnetic field
+in additional to having the currect circular polarization.
+The alignment is done by minimizing ``depumping'' of the atom spin state caused by the OP beam,
+similar to the technique we used to calibrate the Raman beam Rabi frequency.
+After the atom is initialized in the $|2,2\rangle$ state, we turn on the D1 OP light
+for a certain time which should not address the atom when perfectly aligned.
+The misalignment of the beam, however, will cause the atom to scatter from the OP beam
+and change to $F=1$ state, i.e. ``depumped'', with certain probability.
+We then change the alignment of the beam an minimize the depumping rate.
+Due to a similar requirement for Cesium OP, the probagation direction of
+the OP beam for Sodium and Cesium are aligned to each other by overlapping them
+using mechanical target to better than $0.08^\circ$ first
+before the magnetic field direction is aligned to the OP beams by minimizing depumping.
+For polarization alignment, we first clean up the linear polarization of the light
+using a Thorlabs nanoparticle linear film polarizer with better than $100,000:1$
+extinction ratio. After that we use both a half waveplate and a quater waveplate
+to generate a circularly polarized light.
+We observed that both the polarization cleanup and the half waveplate is necessary
+to obtain the best polarization alignment in order to compensate for the polarization
+fluctuation caused by the fiber as well as the birefringence of the optics and windows
+within the OP beam path. After alignment, the OP intensity is calibrated
+by measuring the OP rate for atom prepared in $|2,1\rangle$ state
+using Raman transitions\footnote{One from $|2,2\rangle$ to $|1,1\rangle$
+  and a second one from $|1,1\rangle$ to $|2,1\rangle$.}.
+From this measurement we determined that the purity of the OP polarization
+to be ... \todo{number}.
+\todo{decide if thin film polarizer should be mentioned earlier}
 
-(Back reflection of OP)
+Other than the alignment procedure above, we have also observed that reflection
+of the OP beam can contribute significantly to the polarization impurity and
+must be avoided. In particular, since the Raman beam R1 counter propagate with the OP beam,
+it is possible for the OP beam to be coupled into the Raman fiber and then retro-reflected
+to be focused onto the atom through the Raman beam path at a wrong polarization.
+Since the Raman beam size is much smaller, we have observed as much as $3\%$
+polarization impurity caused by this mechanism despite only a small amount of
+power being reflected. This issue, along with other reflections,
+are reduced by avoiding optics with normal incident on the exit path of the OP beam
+as well as changing the propagation direction of the R1 Raman beam
+to have a small angle with the OP beam which reduces the OP power coupled into
+the Raman beam fiber.
 
 \section{Calibration}
 
 (Sideband/carrier)
 (Cold vs hot)
 \todo{Anharmonicity}
-\todo{Depumping}
 
 \section{Cooling Performance}
 % The full sequence can be found in appendix \ref{appendex:rsc}.
