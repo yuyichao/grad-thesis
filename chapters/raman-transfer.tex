@@ -476,7 +476,21 @@ and the matrix elements ratio ($M_1/M_2$).
 In this section, we will discuss how these, as well as other technical constraints
 affects the choices of states we use for the Raman transfer.
 
+\subsection{Initial Atomic State}
+\label{ch:raman-transfer:state-selction:init}
+
+The choice of initial state can affect the transfer efficiency
+by changing the matrix element $M_1$ and therefore the matrix elements ratio.
+Since for most choices of the atomic and molecular states we have $M_1<M_2$,
+we would like to choose an atomic initial state with the largest $M_1$ possible.
+Unlike the selection of final state (see \ref{ch:raman-transfer:state-selction:final})
+maximizing $M_1$ can improve the matrix element ratio as well as
+shortening the transfer time to decrease sensitivity to technical noise at the same time.
+
+\todo{wavefunction size}
+
 \subsection{Excited State}
+\label{ch:raman-transfer:state-selction:ext}
 
 \begin{figure}
   \centering
@@ -521,6 +535,7 @@ the deeply bound state has significantly higher transfer efficiency
 and is used as the intermediate state for coherent Raman transfer in our experiment.
 
 \subsection{Final Molecular State}
+\label{ch:raman-transfer:state-selction:final}
 
 In additional to the scattering and light shift considertions discussed above,
 the transition can also be affected by external magnetic field.
@@ -543,8 +558,6 @@ which is a frequency difference that can be generated using AOM's
 so that the coherence between the two beams is greatly improved.
 \todo{Make sure AOM is defined before and reference/add beam path description,
   mention common mode rejectin by using co-prop beams in beam path}
-
-\subsection{Initial Atomic State}
 
 \section{Raman Transfer Results}
 
