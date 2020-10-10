@@ -472,7 +472,7 @@ STIRAP can have an advantage over Raman transition.
 
 From section \ref{ch:raman-transfer:raman-model} we see that the transfer efficiency
 is directly related to the excited state linewidth, the maximum usuable detuning
-and the matrix element ratio ($M_1/M_2$).
+and the matrix elements ratio ($M_1/M_2$).
 In this section, we will discuss how these, as well as other technical constraints
 affects the choices of states we use for the Raman transfer.
 
@@ -524,8 +524,44 @@ and is used as the intermediate state for coherent Raman transfer in our experim
 
 \subsubsection{Final Molecular State}
 
+In additional to the scattering and light shift considertions discussed above,
+the transition can also be affected by external magnetic field.
+We minimize the effect of magnetic field noise on the transition by using molcular
+and atomic states that are in the same molecular potential,
+i.e. molecular bound state in the potential that asymptote to
+the atomic state. For weakly bound molecular state,
+i.e. binding energy smaller than or comparable to the hyperfine energy scale,
+this ensures that the atomic and molecular states has maximally overlapping spin state
+and therefore a small differential Zeeman shift that can affect the Raman resonance frequency.
+
+Because of the weak coupling between the atomic and molecular states,
+the Raman transition has a relatively low Rabi frequency.
+This also means a longer transfer time over which the Raman lasers must remain coherent.
+In order to lower the requirement on our Raman and tweezer laser,
+we select the first bound state, i.e. smallest binding energy, as the final molecular state.
+This ensures the maximum Raman Rabi frequency.
+Additionally, the typical binding energy for these states are $<1\mathrm{GHz}$
+which is a frequency difference that can be generated using AOM's
+so that the coherence between the two beams is greatly improved.
+\todo{Make sure AOM is defined before and reference/add beam path description,
+  mention common mode rejectin by using co-prop beams in beam path}
+
 \subsubsection{Initial Atomic State}
 
 \section{Raman Transfer Results}
 
+\todo{B field dependency? reference zeeman shift/spin state consideration}
+
 \subsection{Scaling of Raman Transition Parameters}
+
+\section{Conclusion}
+
+
+(outlook:)
+
+Since the final state is mainly selected based on technical considerations,
+there are other choices that can potentially improve the transfer efficiency.
+As an exmple, states with larger binding energies can have weaker coupling
+to the excited state therefore reducing the matrix elements ratio.
+Doing so would likely require locking two lasers with a coherence time
+longer than a few milliseconds.
