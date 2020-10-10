@@ -403,8 +403,26 @@ This process is then repeated with lower power in the Raman beam path until the 
 position sensitivity is reached.
 
 \todo{appendex about scattering branching ratio calculation}
+\todo{make sure spin state detection method (and the ``pushout'' concept) is mentioned}
 In order to verify the alignment of the tweezer without any physical change to the beam path,
 we use a second method to calibrate the single photon Rabi frequency of the Raman light.
+This method requires a working OP to initialize the spin state of the atom
+so it is less convenient for aligning from scratch.
+To use this method, the atom is first loaded in the tweezer and initialized
+in the $|2,2\rangle$ state. We then turn on a single Raman beam at maximum power for a
+variable length of time. The off resonance scattering from the Raman beam will cause
+the spin state of the atom to change and the population in $F=1$ state is measured
+by removing the $F=2$ population using a pushout pulse.
+The rate of the spin change is fitted to a theory model to derive the Rabi frequency of
+the Raman light. This measurement shows that the Rabi frequencies for the Raman beams are
+... \todo{number, maybe table}. We can also calculate the scattering rate from the Raman
+beams to be ... \todo{number, maybe table} which corresponds to a total of $...$ \todo{number}
+scattering event on average during the whole cooling sequence and
+should not be a limiting factor for the cooling performance.
+
+The optical pumping beam has a much larger waist ($\approx1\mathrm{mm}$)
+and therefore require less alignment in the beam position.
+\todo{need beam direction for dark state pumping}
 
 (Back reflection of OP)
 
@@ -413,6 +431,7 @@ we use a second method to calibrate the single photon Rabi frequency of the Rama
 (Sideband/carrier)
 (Cold vs hot)
 \todo{Anharmonicity}
+\todo{Depumping}
 
 \section{Cooling Performance}
 % The full sequence can be found in appendix \ref{appendex:rsc}.
