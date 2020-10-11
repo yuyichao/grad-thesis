@@ -365,8 +365,20 @@ Including higher order sidebands in the sideband thermometry could in principle
 give us enough information about the state distribution but doing
 so for a non-thermal distribution is not easy or reliable.
 We therefore use a Monte-Carlo simulation to guide our search
-for the optimal sequence \todo{\cite{}}.\todo{More detail?}
-Fig.~\ref{fig:na-rsc-sequence} demostrate the sequence from the simulation.
+for the optimal sequence \todo{\cite{}}.
+The simulation includes accurate scattering rate and branching ratios
+from the tweezer, Raman and OP beams.
+For best simulation performance, the atom is assumed to be in a single motional state,
+i.e. with a certain $n_x$, $n_y$ and $n_z$, after each Raman or OP step
+\footnote{This assumes no coherence between different motional state,
+  which is the case as long as each Raman pulses are separated from each other by OP pulses}.
+It is also assumed that each Raman pulse drives only the intended sideband order,
+which is a property that needs to be ensured in the experiment (see section \ref{ch:rsc:calibration}).
+For each cooling sequence simulated,
+the Raman beam power and frequency, and the OP beam power and polarization purity
+are varies slightly around the respective expected values
+in order to confirm the robustness of the sequence against fluctuation in the experiment.
+Fig.~\ref{fig:na-rsc-sequence} demostrate the resulting optimal sequence from the simulation.
 In particular, we find that alternating the cooling pulses between two
 neighboring orders for the axial direction and $\Delta n=-2$ and $\Delta n=-1$
 for the radial directions
@@ -468,8 +480,10 @@ the Raman beam fiber.
 \todo{Make sure that the importance of tweezer switching on OP is mentioned before this}
 
 \section{Calibration}
+\label{ch:rsc:calibration}
 
 (Sideband/carrier)
+(off resonance coupling, Blackman pulse shape)
 (Cold vs hot)
 \todo{Anharmonicity}
 
