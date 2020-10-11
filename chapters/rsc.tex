@@ -512,9 +512,32 @@ We achieve this by using a Blackman pulse shape for the Raman transition \todo{\
 
 \subsection{Calibration}
 
-(Sideband/carrier resonance frequency/Rabi frequency)
+The Raman sideband frequencies are calibrated by measuring the Raman spectrum before cooling
+(an example of which is shown in the pre-cooling spectrum in Fig.~\ref{fig:na-rsc-spectrum}).
+However, since high sideband orders are mainly used to cool atoms in high motional state,
+the resonance frequency for these sideband are not equal spacing anymore due to
+the anharmonicity of the trap.
+In order to estimate the effect on the sideband frequencies,
+we can define anharmonicity as $A_{i,n}=(E_{i,n+1}-E_{i,n})/h - \omega_i/(2\pi)$
+for each trap axis $i$, and calculated from the quartic term
+of the optical tweezers via perturbation theory.
+In the paraxial approximation, we find $A_{i,n}=\frac{-3n\hbar}{4\pi m d_i^2}$,
+where $d_i$ equals the beam radius for the radial directions and
+$d_z\approx\pi w_{0,x}w_{0,y}/\lambda_{\textrm{trap}}$.
+Numerically, $\{A_{x,n},A_{y,n},A_{z,n}\}=\{-1.4, -1.4, -0.16\}n$~kHz.
+For the states addressed by high order sidebands,
+this broadens and shifts high-order sidebands
+due to the $n$-dependence of the transitions.
+
+To mitigate this, we calibrate the frequency of each sideband order individually
+at the initial temperature. However, since the first order sideband is mainly used to cool atoms
+that are closed to the ground state,
+their resonance frequency  is recalibrated using partially cooled atoms after the initial calibration.
+The use of high Rabi frequency and Blackman pulse shape also reduces the effect
+of anharmonicity by broadening the spectrum as much as possible.
+
+(Rabi frequency)
 (Cold vs hot/iteration)
-\todo{Anharmonicity}
 
 \section{Cooling Performance}
 
