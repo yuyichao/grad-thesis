@@ -393,6 +393,7 @@ as the atom approaches the ground state, so the final cycles utilize only
 the $\Delta n=-1$ sideband while alternating between the three axes.
 
 \section{Alignment of Raman and OP Beams}
+\label{ch:rsc:alignment}
 
 Due to small waist of the Raman beam, it is important to align the Raman beam to
 the single atom with high precision in order to maximize the Raman Rabi frequency
@@ -513,7 +514,7 @@ We achieve this by using a Blackman pulse shape for the Raman transition \todo{\
 \subsection{Calibration}
 
 The Raman sideband frequencies are calibrated by measuring the Raman spectrum before cooling
-(an example of which is shown in the pre-cooling spectrum in Fig.~\ref{fig:na-rsc-spectrum}).
+(an example of which is shown in the initial spectrum in Fig.~\ref{fig:na-rsc-spectrum}).
 However, since high sideband orders are mainly used to cool atoms in high motional state,
 the resonance frequency for these sideband are not equal spacing anymore due to
 the anharmonicity of the trap.
@@ -536,8 +537,21 @@ their resonance frequency  is recalibrated using partially cooled atoms after th
 The use of high Rabi frequency and Blackman pulse shape also reduces the effect
 of anharmonicity by broadening the spectrum as much as possible.
 
-(Rabi frequency)
-(Cold vs hot/iteration)
+Although we can calibrate the single photon Rabi frequency of the Raman beams from the scattering rate
+(section \ref{ch:rsc:alignment}), we also calibrate the Raman Rabi frequency on the carrier and
+different sideband orders.
+This offers a more direct and sensitive measurement for the cooling sequence parameter.
+Unlike resonance frequency, the anharmonicity only has a second order effect on the Rabi frequency
+and is therefore ignored. The calibration measures
+only the carrier and first order heating sideband which has the highest signal after cooling
+(an example of which is shown in the cooled Rabi flopping signal in Fig.~\ref{fig:na-rsc-rabi-flop}).
+The Raman Rabi frequencies measured on these two transitions are used to calculate
+the full Rabi frequency $\Omega_R^0$ and the Lamb-Dicke parameter,
+which are in-turn used to calculate the Rabi frequency on other sideband orders.
+
+Since the final calibration of both the Raman Rabi frequency and resonance requires a working
+cooling sequence, when optimizing the sequency from scratch,
+the calibration process is applied iteratively as the cooling performance is improved.
 
 \section{Cooling Performance}
 
