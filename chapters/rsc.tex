@@ -337,6 +337,7 @@ the coupling strength variation is also greatly reduced which removes
 the need to vary the pulse times for all but the pulses on the first order sideband.
 
 \section{Solution: Simulation Based Optimization}
+\label{ch:rsc:simulation}
 
 \begin{figure}
   \centering
@@ -371,9 +372,9 @@ from the tweezer, Raman and OP beams.
 For best simulation performance, the atom is assumed to be in a single motional state,
 i.e. with a certain $n_x$, $n_y$ and $n_z$, after each Raman or OP step
 \footnote{This assumes no coherence between different motional state,
-  which is the case as long as each Raman pulses are separated from each other by OP pulses}.
+  which is the case as long as each Raman pulses are separated from each other by OP pulses.}.
 It is also assumed that each Raman pulse drives only the intended sideband order,
-which is a property that needs to be ensured in the experiment (see section \ref{ch:rsc:calibration}).
+which is a property that needs to be ensured in the experiment (see section \ref{ch:rsc:implementation:pulse-shaping}).
 For each cooling sequence simulated,
 the Raman beam power and frequency, and the OP beam power and polarization purity
 are varies slightly around the respective expected values
@@ -479,12 +480,40 @@ to have a small angle with the OP beam which reduces the OP power coupled into
 the Raman beam fiber.
 \todo{Make sure that the importance of tweezer switching on OP is mentioned before this}
 
-\section{Calibration}
-\label{ch:rsc:calibration}
+\section{Implementing Optimized RSC Sequence}
+\label{ch:rsc:implementation}
 
-(Sideband/carrier)
-(off resonance coupling, Blackman pulse shape)
-(Cold vs hot)
+In order to achieve the optimal cooling performance, a few more considerations are important
+for implementing the sequence from section \ref{ch:rsc:simulation}.
+
+\subsection{Pulse shaping}
+\label{ch:rsc:implementation:pulse-shaping}
+
+In order to achieve optimal performance from the cooling sequence,
+it is important to accurately drive the intended sideband order.
+In fact, in the absense of undesired scattering,
+the frequency resolution of the Raman transition limits the lost achievable temperature.
+This is particularly important when driving the first order cooling sidebands
+since any coupling to the carrier may change the spin state of the atom without
+removing any motional energy therefore causing a net heating effect after the OP pulse.
+
+The obvious way to achieve this is to narrow the linewidth of the Raman transition,
+e.g. by using a lower power or Raman Rabi frequency.
+However, reducing the lineiwth of the transition also increase the susceptibility
+to resonance fluctuation.
+Therefore the desired solution is to reduce the off-resonance coupling of the Raman beam
+for large detuning while increasing or maintaining the coupling for small detuning.
+We achieve this by using a Blackman pulse shape for the Raman transition \todo{\cite{}}.
+\footnote{While more complex pulses can be constructed to achieve a even sharp detuning cutoff,
+  \todo{\cite{}} such pulses generally significantly increases the pulse time
+  and can cause more heating during cooling due to scattering and other heating mechanisms.
+  The Blackman pulse we use offers a balance between the pulse time
+  and off-resonance coupling reduction.}
+
+\subsection{Calibration}
+
+(Sideband/carrier resonance frequency/Rabi frequency)
+(Cold vs hot/iteration)
 \todo{Anharmonicity}
 
 \section{Cooling Performance}
