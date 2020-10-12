@@ -6,11 +6,108 @@
 \section{Scattering Length}
 (Importance/relation with binding energy etc.)
 
-\section{Energy Levels of Two Interacting Atoms in an Anisotropic Trap}
-(Hamiltonian)
-(Pseudo potential)
-(Pertubation)
-(Full treatment: separation of motion)
+\section{Two Interacting Atoms in Optical Tweezer}
+
+The Hamiltonian for two atoms in an harmonic potential with interaction is,
+\[
+  H=\sum_{i=x,y,z}\paren{\frac{m_{1}\omega_{1,i}^2r_{1,i}^2}{2}+\frac{p_{1,i}^2}{2m_{1}}}+\sum_{i=x,y,z}\paren{\frac{m_{2}\omega_{2,i}^2r_{2,i}^2}{2}+\frac{p_{2,i}^2}{2m_{2}}}+V_{int}\paren{\mathbf{r}_1-\mathbf{r}_2}
+\]
+where $m_j$ is the mass of the $j$-th atom,
+$r_{j,i}$, $p_{j,i}$, $\omega_{j,i}$ are the coordinate, momentum and trapping frequency
+for the $j$-th atom along the $i$-th axis.
+$V_{int}$ is the interaction potential between the two atoms which is only a function
+of the relative coordinate between the atoms $\mathbf{r}_1-\mathbf{r}_2$.
+
+Since the two atoms experience the same trapping light field,
+their trapping potential has the same center and the same shape.
+However, due to the difference in the polarizability between the atoms,
+the trap depth can be different.
+Nevertheless, in our experiment, depending on the trapping wavelength,
+we have $\omega_{1,i}\approx\omega_{2,i}$ to within $10\%$ to $20\%$
+and this is the regime we will mainly focus on in this section.
+
+The interaction potential $V_{int}$ is the original for
+the molecular bound states and its exact form will be discussed in chapter \ref{ch:pa},
+\ref{ch:raman-spectroscopy} and \ref{ch:raman-transfer}.
+However, since the range of the potential is much smaller than
+the size of the atomic wavefunction, we can ignore the short range details of the potential
+and treat it as a contact interaction characterized only by the scattering length $a$.
+\[
+  V_{int}\paren{\mathbf{r}}=\frac{2\pi\hbar^2a}{\mu}\delta_{reg}\paren{\mathbf{r}}
+\]
+where $\mu = m_1m_2/\paren{m_1+m_2}$ is the reduced mass and
+$\delta_{reg}\paren{\mathbf{r}}\equiv\delta^{(3)}\paren{\mathbf{r}}\paren{\partial/\partial r}r$
+is the regularized delta-function.
+
+In order to calculate the interaction term, we can change from the coordinates for
+the two individual atoms to the center of mass (COM) and relative coordinates.
+\begin{align*}
+  R_i=&\ \frac{m_1r_{1,i}+m_2r_{2,i}}{m_1+m_2}&r_{rel,i}=&\ r_{1,i}-r_{2,i}\\
+  P_i=&\ p_{1,i}+p_{2,i}&p_{rel,i}=&\ \frac{m_2p_{1,i}-m_1p_{2,i}}{m_1+m_2}
+\end{align*}
+The corresponding masses and trapping frequencies are,
+\begin{align*}
+  M=&\ m_1+m_2&\mu=&\ \frac{m_1m_2}{m_1+m_2}\\
+  \Omega_i^2=&\ \frac{m_1\omega_{1,i}^2+m_2\omega_{2,i}^2}{m_1+m_2}&\omega_{rel,i}^2=&\ \frac{m_2\omega_{1,i}^2+m_1\omega_{2,i}^2}{m_1+m_2}
+\end{align*}
+and the Hamiltonian can be expressed as,
+\begin{align*}
+  H=&\sum_{i=x,y,z}\paren{\frac{M\Omega_{i}^2R_{i}^2}{2}+\frac{P_{i}^2}{2M}}+
+      \left[\sum_{i=x,y,z}\paren{\frac{\mu\omega_{rel,i}^2r_{rel,i}^2}{2}+\frac{p_{rel,i}^2}{2\mu}}+
+      V_{int}\paren{\mathbf{r}_{rel}}\right]+
+      \sum_{i=x,y,z}\mu\paren{\omega_{1,i}^2 - \omega_{2,i}^2}R_ir_{rel,i}
+\end{align*}
+The first term and the second term only relies on the COM motion and relative motion
+respectively and can be solved independently. The third term mixes the COM and relative motion
+and is proportional to the trapping frequency difference.
+If the trapping frequencies are the same for the two atoms, the third term is $0$ and
+the solution is fully separateable.
+As mentioned above, since the trapping frequencies for the two atoms are similar,
+we will assume the mixing term is small and treat it as a small correction in the calculation.
+
+\subsection{Perturbative Calculation}
+
+For weak interaction, i.e. a small scattering length $a$, the effect of the interaction
+on the energy level can be calculated perturbatively.
+The result from this calculation is useful for checking the validity of the full calculation,
+as well as providing an intuitive understanding of the shift and its dependency
+on different parameters.
+
+For simplicity, we will assume all the trapping frequencies are the same,
+i.e. $\omega_{1,i}=\omega_{2,i}=\omega_{rel,i}=\Omega_i=\omega_i$,
+so that we only need to consider the relative motion,
+\[
+  H_{rel}=\sum_{i=x,y,z}\paren{\frac{\mu\omega_{i}^2r_{rel,i}^2}{2}+\frac{p_{rel,i}^2}{2\mu}}+
+  V_{int}\paren{\mathbf{r}_{rel}}
+\]
+When treating the interaction as perturbation, the base solution is the harmonic oscillator
+states for the relative motion $|n_{rel,x},n_{rel,y},n_{rel,z}\rangle$.
+The energy level pertubation is then,
+\begin{align*}
+  \Delta_{n_{rel,x},n_{rel,y},n_{rel,z}}=&\langle n_{rel,x},n_{rel,y},n_{rel,z}|V_{int}\paren{\mathbf{r}_{rel}}|n_{rel,x},n_{rel,y},n_{rel,z}\rangle\\
+  =&\frac{2\pi\hbar^2a}{\mu}\langle n_{rel,x},n_{rel,y},n_{rel,z}|\delta_{reg}\paren{\mathbf{r}_{rel}}|n_{rel,x},n_{rel,y},n_{rel,z}\rangle\\
+  =&\frac{2\pi\hbar^2a}{\mu}\abs{\psi_{n_{rel,x},n_{rel,y},n_{rel,z}}(0)}^2\numberthis{eq:interaction-shift-perturb-shift}
+\end{align*}
+where $\abs{\psi_{n_{rel,x},n_{rel,y},n_{rel,z}}(0)}^2$ is the probability density
+for zero distance between the atoms.
+
+For the motional ground state, the shift is,
+\begin{align*}
+  \Delta_{0,0,0}=&a\frac{2\hbar^2}{\mu\sqrt{\pi}}\prod_{i=x,y,z}\frac{1}{\beta_{rel,i}}
+\end{align*}
+where $\beta_{rel,i}\equiv\sqrt{\hbar/\mu\omega_{rel,i}}$ is the relative motion
+oscillator length along the $i$-th axis.
+The shift is proportional to the strength of the interaction $a$,
+and is also stronger for stronger confinement where the wavefunction density is higher.
+
+We can see from (\ref{eq:interaction-shift-perturb-shift}) that the shift is only
+non-zero when all of $n_{rel,i}$'s are even.
+The shift is also smaller for higher motional excited state with smaller wavefunction density.
+This means that the shift will only be observable if the atom is cooled to closed to
+the motional ground state and will be small or zero for hot atoms.
+
+\subsection{Non-perturbative Calculation}
+
 (Exact solution for anisotripic trap)
 (Correction on top of exact solution)
 
