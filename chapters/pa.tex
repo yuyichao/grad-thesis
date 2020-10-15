@@ -112,11 +112,24 @@ to form $\mathbf{F}=\mathbf{F}_{atom}+\mathbf{N}$.
 \subsection{Potential Energy Surface}
 \label{ch:pa:pes}
 
-Due to the different angular momentum coupling in different regime,
+Due to the different angular momentum coupling in different regimes,
 there is not a consistent way to label the interaction between the two atoms
 at both short and long distance.
 Nevertheless, by convention, we use the \textit{Hund's case (a)} term symbol
-since it more accurately represent the state when the interaction energy dominates.
+since it more accurately represents the state when the interaction energy dominates.
+
+The Hamiltonian (excluding spin\footnote{Electron spin is implicitly included, however,
+  via the symmetry of the electronic wavefunction.}) is,
+\begin{align*}
+  H=&H_e+T_n
+\end{align*}
+where the electronic term $H_e$ and the nuclear kinetic term $T_n$ are given by
+\begin{align*}
+  H_e=&-\sum_i\frac{\hbar}{2m_e}\nabla_i^2+\frac{e^2}{4\pi\varepsilon_0}\paren{-\sum_i\frac{Z_{Na}}{r_{i,Na}}-\sum_i\frac{Z_{Cs}}{r_{i,Cs}}+\sum_{i>j}\frac{1}{r_{ij}}+\frac{Z_{Na}Z_{Cs}}{r_{Na,Cs}}}\\
+  T_n=&-\frac{\hbar^2}{2m_{Na}}\nabla_{Na}^2-\frac{\hbar^2}{2m_{Cs}}\nabla_{Cs}^2
+\end{align*}
+and the sum is over all the electrons in the molecule.
+The Hamiltonian is solved using the Born-Oppenheimer approximation.
 
 \todo{
   {
