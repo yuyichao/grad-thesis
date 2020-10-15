@@ -12,26 +12,72 @@
 
 \section{Energy Levels}
 
-First we will discuss the energy levels in a diatomic molecule as well as the labeling system.
+First we will discuss the energy levels in a diatomic molecule
+as well as the labeling system for the states.
 We will focus mainly on the electronic excited states measured in this chapter
 but most of the discussion here applies to ground electronic states as well
 and will be useful for chapter \label{ch:raman-spectroscopy} and \label{ch:raman-transfer}.
 
-\todo{FCF}
+\subsection{Angular Momentums}
 
+Compared to an atom, a diatomic molecule has many more degrees of freedoms.
+In additional to the quantum numbers for each atom in the molecule,
+molecules also have nuclear motion.
+In order to reduce the complexity, it is therefore very important to consider the
+symmetry of the system, and in particular the angular momentums,
+which corresponds to rotation symmetry, and the coupling between them.
+The angular momentums in a diatomic molecule includes electron orbit $\mathbf{L}$
+\footnote{There are $\mathbf{L}_1$ and $\mathbf{L}_2$ for the two electron but since
+  we only consider states with at most one $\mathbf{L}_i\neq0$ we will only use one quantum number here},
+electron spin $\mathbf{S}_1$ and $\mathbf{S}_2$, nuclear orbital $\mathbf{N}$
+and nuclear spin $\mathbf{I}_1$ and $\mathbf{I}_2$.
+Although the total angular momentum
+$\mathbf{F}\equiv\mathbf{L}+\mathbf{S}_1+\mathbf{S}_2+\mathbf{N}+\mathbf{I}_1+\mathbf{I}_2$
+is the only true conserved quantity in the absence of external field,
+depending on the coupling strengths between the angular momentums,
+there are additional approximately conserved quantity in the molecule.
+
+For the NaCs molecule and our experiment, there are two important regimes where the coupling
+strength can be easily ordered.
+
+\subsubsection{Deeply Bound States}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{figures/pa_hunds_case_a.pdf}
+  \caption[Hund's case (a)]{
+    Angular momentum coupling for \textit{Hund's case (a)}.
+    $\mathbf{L}$ and $\mathbf{S}$ are coupled to the internuclear axis $\hat n$
+    and the sum of the projections $\Omega=\Lambda+\Sigma$ is then
+    added with the orthogonal compoment $\mathbf{N}$ to form $\mathbf{J}$.
+    \label{fig:pa-hunds-case-a}}
+\end{figure}
+
+This is described by the \textit{Hund's case (a)}.
+Molecular states with large binding energies mostly experience interactions
+between the atoms at short range where the electric static interaction is very strong.
+This couples the the two electron spins into a total electron spin
+$\mathbf{S}\equiv\mathbf{S}_1+\mathbf{S}_2$ via a very strong effective interaction
+of the form $\mathbf{S}_1\cdot\mathbf{S}_2$ which originates
+from the resulting symmetry of the electron orbital wavefunction.
+Similar to atoms, the nuclear spin interaction is also very week compared to
+other energy scales so we can ignore the hyperfine structure and only need to consider
+$\mathbf{J}\equiv\mathbf{L}+\mathbf{S}+\mathbf{N}$.
+
+The strong electrostatic interaction also creates an effective coupling
+between the $\mathbf{L}$ and $\mathbf{S}$ with the internuclear axis $\hat{n}$
+causing $\mathbf{L}$ and $\mathbf{S}$ to process rapidly around $\hat{n}$.
+This creates two new lab-frame conserved quantity $\Lambda$ and $\Sigma$
+as the projection of $\mathbf{L}$ and $\mathbf{S}$
+along $\hat{n}$ respectively.
+The total angular momentum along $\hat{n}$ is therefore $\Omega\equiv\Lambda+\Sigma$
+and it is added to the $\mathbf{N}$ which is orthogonal to $\hat{n}$ to form
+the total angular momentum $\mathbf{J}$ (Fig~\ref{fig:pa-hunds-case-a}).
+
+\subsubsection{Near Threshold Bound States}
+
+\subsection{Potential Energy Surface}
 \todo{
-\item Also mostly about the interaction at short range/state with large binding energy.
-
-  {
-  \item Has many degrees of freedoms (in additional to twice the number of electron orbit,
-    electron spin and neuclear spin, also neuclear motion)
-  \item Important to consider the symmetry, especially the angular momentum
-  \item Strongest from S1-S2
-  \item LS coupling, hunds case a
-  }
-
-
-
   {
   \item Electronic (including spins via exchange interaction)
   \item Vibrational
@@ -48,6 +94,7 @@ and will be useful for chapter \label{ch:raman-spectroscopy} and \label{ch:raman
     For most of our discussion, we operate far away from the crossing of the electronic
     potentials and therefore the approximation is justified.
   }
+  \todo{FCF}
 }
 
 \section{Effect of the Trap}
