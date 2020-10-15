@@ -67,16 +67,50 @@ $\mathbf{J}\equiv\mathbf{L}+\mathbf{S}+\mathbf{N}$.
 The strong electrostatic interaction also creates an effective coupling
 between the $\mathbf{L}$ and $\mathbf{S}$ with the internuclear axis $\hat{n}$
 causing $\mathbf{L}$ and $\mathbf{S}$ to process rapidly around $\hat{n}$.
-This creates two new lab-frame conserved quantity $\Lambda$ and $\Sigma$
+This creates two new conserved quantity $\Lambda$ and $\Sigma$
 as the projection of $\mathbf{L}$ and $\mathbf{S}$
 along $\hat{n}$ respectively.
 The total angular momentum along $\hat{n}$ is therefore $\Omega\equiv\Lambda+\Sigma$
 and it is added to the $\mathbf{N}$ which is orthogonal to $\hat{n}$ to form
 the total angular momentum $\mathbf{J}$ (Fig~\ref{fig:pa-hunds-case-a}).
 
+The angular momenum state of the molecule is therefore fully characterized by
+$|L,\Lambda,S,\Omega,J\rangle$. $\Lambda$ can be $0,1,\dots,L$, $\Omega$ ranges from
+$\abs{\Lambda-S}$ to $\Lambda+S$ and $J\geqslant\Omega$.
+The $L$ quantum number is specified by the electronic state and will be discussed
+in section \ref{ch:pa:pes} and the rest of the angular momentum quantum numbers
+are represented by the \textit{Hund's case (a)} term symbol,
+\[ ^{2S+1}\Lambda_\Omega \]
+similar to the atomic term symbol $^{2S+1}L_J$.
+Just as the use of capital English letters $S,P,D,\dots$ to represent
+$L=0,1,2,\dots$, capital Greek letters $\Sigma,\Pi,\Delta,\dots$ are used
+to denote $\Lambda=0,1,2,\dots$ in the term symbol.
+An additional symmetry to consider is the reflection about a plane that includes
+the internuclear axis.
+For $\Lambda>0$ states, the reflection produces a new state at the same energy
+creating the so-called $\Lambda$-doubling. For $\Lambda=0$ states, i.e. $\Sigma$ states,
+the reflection produces the same state with a phase of $\pm1$.
+This phase is also included in the term symbol to fully specify the symmetry of
+a $\Sigma$ states as
+\[ ^{2S+1}\Sigma_\Omega^{\pm} \]
+Note the $\Sigma$ state here should not be confused with the quantum number $\Sigma$.
+
+\todo{rotational energy? J(J+1) - Omega^2}
+
 \subsubsection{Near Threshold Bound States}
 
+For molecular states with small binding energy, the interaction between the two atoms is
+small compared to the internal coupling in the atoms and
+the angular momentum coupling is ``atom like''.
+In this limit, the total angular momentum $\mathbf{F}_1$ and $\mathbf{F}_2$
+for the individual atoms forms $\mathbf{F}_{atom}=\mathbf{F}_1+\mathbf{F}_2$
+which is then coupled to the nuclear rotation $\mathbf{N}$
+to form $\mathbf{F}=\mathbf{F}_{atom}+\mathbf{N}$.
+
+\todo{mention N=2 spectroscopy?}
+
 \subsection{Potential Energy Surface}
+\label{ch:pa:pes}
 \todo{
   {
   \item Electronic (including spins via exchange interaction)
