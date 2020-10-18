@@ -118,38 +118,58 @@ at both short and long distance.
 Nevertheless, by convention, we use the \textit{Hund's case (a)} term symbol
 since it more accurately represents the state when the interaction energy dominates.
 
-The Hamiltonian (excluding spin\footnote{Electron spin is implicitly included, however,
-  via the symmetry of the electronic wavefunction.}) is,
+The Hamiltonian (excluding spin for simplicity\footnote{Electron spin is implicitly included,
+  however, via the symmetry of the electronic wavefunction.}) is,
 \begin{align*}
   H=&H_e+T_n
 \end{align*}
 where the electronic term $H_e$ and the nuclear kinetic term $T_n$ are given by
 \begin{align*}
-  H_e=&-\sum_i\frac{\hbar}{2m_e}\nabla_i^2+\frac{e^2}{4\pi\varepsilon_0}\paren{-\sum_i\frac{Z_{Na}}{r_{i,Na}}-\sum_i\frac{Z_{Cs}}{r_{i,Cs}}+\sum_{i>j}\frac{1}{r_{ij}}+\frac{Z_{Na}Z_{Cs}}{r_{Na,Cs}}}\\
-  T_n=&-\frac{\hbar^2}{2m_{Na}}\nabla_{Na}^2-\frac{\hbar^2}{2m_{Cs}}\nabla_{Cs}^2
+  H_e=&-\sum_i\frac{\hbar}{2m_e}\mathbf{\nabla}_i^2+\frac{e^2}{4\pi\varepsilon_0}\paren{\sum_{i>j}\frac{1}{\abs{\mathbf{r}_i-\mathbf{r}_j}}-\sum_{A=Na,Cs}\sum_i\frac{Z_{A}}{\abs{\mathbf{r}_i-\mathbf{R}_{A}}}+\frac{Z_{Na}Z_{Cs}}{\abs{\mathbf{R}_{Cs}-\mathbf{R}_{Na}}}}\\
+  T_n=&-\sum_{A=Na,Cs}\frac{\hbar^2}{2m_{A}}\mathbf{\nabla}_{A}^2
 \end{align*}
 and the sum is over all the electrons in the molecule.
-The Hamiltonian is solved using the Born-Oppenheimer approximation.
+This Hamiltonian is solved using the Born-Oppenheimer approximation.
+Because of the large mass difference between the nuclei and the electrons,
+we can assume that the electron motion follows the position of the nuclei
+instantaneously so that the motion of the nuclei and the elctrons can be treated separately.
+Formally, this mean that the electron wavefunctions is solved using the
+electrionic term $H_e$ for a given nuclear position $\mathbf{R}_{Na}$ and $\mathbf{R}_{Cs}$.
+This results in an effective potential $V_{eff}\paren{\abs{\mathbf{R}_{Na}-\mathbf{R}_{Cs}}}$ called
+the potential energy surfaces (PES) for each electronic states.
+The solutions to the approximate Hamiltonians $T_n+V_{eff}$ provide
+the vibrational and rotational states of the molecule.
 
-\todo{
-  {
-  \item Electronic (including spins via exchange interaction)
-  \item Vibrational
-  \item Rotations (coupled to the spin)
-  \item HF, will be ignored for the most part for the excited state
-    We will breifly discuss the ground state HF structure in next chapter
-  }
-  {
-  \item BO approximation, motivated by the mass ratio between the nuclear and electron mass.
-    Allows us to treat the electronic energy as a function of nuclear motion (PEC).
-    Formally the approximation corresponds to the energy gap between electronic state
-    to be much larger than neuclear motion, thus the approximation breaks down when
-    electronic state energy crosses.
-    For most of our discussion, we operate far away from the crossing of the electronic
-    potentials and therefore the approximation is justified.
-  }
-  \todo{FCF}
-}
+In additional to the energy of the molecular bound state,
+the solution of the nuclear motion also provides information to the selection rules
+and coupling strength of transitions between the states.
+For an electronic electric dipole transition between state
+$|e_1,v_1,j_1\rangle$ and $|e_2,v_2,j_2\rangle$,
+where $e_i$, $v_i$ and $j_i$ denotes electronic, vibrational and angular momentum states,
+the Rabi frequency under the BO approximation is,
+\begin{align*}
+  \Omega=&\langle e_1,v_1,j_1|e\mathbf{r}_e\cdot\mathbf{E}\ue^{\ui\mathbf{k}\cdot\mathbf{r}}|e_2,v_2,j_2\rangle\\
+  =&\langle e_1(\mathbf{r})|e\mathbf{r}_e\cdot\mathbf{E}|e_2(\mathbf{r})\rangle\langle v_1,j_1|\ue^{\ui\mathbf{k}\cdot\mathbf{r}}|v_2,j_2\rangle
+\end{align*}
+where $\mathbf{r}$ and $\mathbf{r}_e$ are the molecule and electron coordinates.
+For most of the transitions, we can treat the nuclear coordinate dependent transition dipole
+moment $\mathbf{D}\paren{\mathbf{r}}\equiv\langle e_1(\mathbf{r})|e\mathbf{r}_e|e_2(\mathbf{r})\rangle$ as a constant $\mathbf{D}$.
+Since the size of the molecular wavefunction is also usually much smaller than
+the wavelength of the transition, we can also assume $\ue^{\ui\mathbf{k}\cdot\mathbf{r}}\approx 1$,
+we have,
+\begin{align*}
+  \Omega=&\mathbf{D}\cdot\mathbf{E}\langle j_1|j_2\rangle\langle v_1|v_2\rangle
+\end{align*}
+The term $\langle j_1|j_2\rangle$ determines the angular momentum selection rule.
+The term $\langle v_1|v_2\rangle$ gives the coupling strength between vibrational states
+\footnote{Note that $\langle v_1|v_2\rangle$ does not simplify to orthogonality relation
+  when $e_1\neq e_2$ since the vibrational wavefunctions belongs to different PES.}.
+This is called the Franck-Condon principle and the square of the wavefunction overlap
+is defined as the Franck-Condon factor (FCF),
+\begin{align*}
+  \mathrm{FCF}\equiv&\abs{\langle v_1|v_2\rangle}^2
+\end{align*}
+For incoherent transition, the transition rate is proportional to $\Omega^2\propto\mathrm{FCF}$.
 
 \section{Effect of the Trap}
 
