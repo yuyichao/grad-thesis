@@ -8,6 +8,7 @@
 \todo{
   Need to measure the excited states in order to drive a two photon transition
   through the excited state.
+  Define PA
 }
 
 \section{Energy Levels}
@@ -125,11 +126,14 @@ The Hamiltonian (excluding spin for simplicity\footnote{Electron spin is implici
 \end{align*}
 where the electronic term $H_e$ and the nuclear kinetic term $T_n$ are given by
 \begin{align*}
-  H_e=&-\sum_i\frac{\hbar}{2m_e}\mathbf{\nabla}_i^2+\frac{e^2}{4\pi\varepsilon_0}\paren{\sum_{i>j}\frac{1}{\abs{\mathbf{r}_i-\mathbf{r}_j}}-\sum_{A=Na,Cs}\sum_i\frac{Z_{A}}{\abs{\mathbf{r}_i-\mathbf{R}_{A}}}+\frac{Z_{Na}Z_{Cs}}{\abs{\mathbf{R}_{Cs}-\mathbf{R}_{Na}}}}\\
+  H_e=&-\sum_i\frac{\hbar}{2m_e}\mathbf{\nabla}_i^2+\frac{e^2}{4\pi\varepsilon_0}\paren{\sum_{i>j}\frac{1}{\abs{\mathbf{r}_i-\mathbf{r}_j}}-\sum_{A=Na,Cs}\sum_i\frac{Z_{A}}{\abs{\mathbf{r}_i-\mathbf{R}_{A}}}+\frac{Z_{Na}Z_{Cs}}{\abs{\mathbf{R}_{Cs}-\mathbf{R}_{Na}}}}\numberthis{eq:pa:pes:he}\\
   T_n=&-\sum_{A=Na,Cs}\frac{\hbar^2}{2m_{A}}\mathbf{\nabla}_{A}^2
 \end{align*}
 and the sum is over all the electrons in the molecule.
-This Hamiltonian is solved using the Born-Oppenheimer approximation.
+
+\subsubsection{Born-Oppenheimer Approximation}
+
+The Hamiltonian is solved using the Born-Oppenheimer (BO) approximation.
 Because of the large mass difference between the nuclei and the electrons,
 we can assume that the electron motion follows the position of the nuclei
 instantaneously so that the motion of the nuclei and the elctrons can be treated separately.
@@ -139,6 +143,8 @@ This results in an effective potential $V_{eff}\paren{\abs{\mathbf{R}_{Na}-\math
 the potential energy surfaces (PES) for each electronic states.
 The solutions to the approximate Hamiltonians $T_n+V_{eff}$ provide
 the vibrational and rotational states of the molecule.
+
+\subsubsection{Franck-Condon Factor}
 
 In additional to the energy of the molecular bound state,
 the solution of the nuclear motion also provides information to the selection rules
@@ -171,9 +177,20 @@ is defined as the Franck-Condon factor (FCF),
 \end{align*}
 For incoherent transition, the transition rate is proportional to $\Omega^2\propto\mathrm{FCF}$.
 
-\section{Effect of the Trap}
+\subsubsection{Energy Level of $\mathrm{NaCs}$}
 
-(light shift, broadening)
+Fig~\todo{\ref{}} shows the relevant PESs for $\mathrm{NaCs}$.
+Although the spin-less electronic Hamiltonian \ref{eq:pa:pes:he} makes it easier
+to understand the molecule structure and provides good approximations for the
+transition dipoment and FCF, the absense of spin and the difficulty in exactly solving
+a multi-electron system makes it unsuitable to calculate energy levels
+for spectroscopy purpose.
+Because of this, prediction of the molecular states energies are calculated using
+PESs fitted to experimental data\todo{\cite{}}.
 
 \section{Photoassociation Spectroscopy}
 (v=0, 12, 14, etc)
+
+\section{Effect of the Trap}
+
+(light shift, broadening)
