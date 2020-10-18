@@ -226,10 +226,16 @@ In order to align the PA beam to the tweezer, we use the following alignment pro
   Due to the large detuning, the scattering rate from the PA beams
   is too low to be used for alignment.
   However, when the PA beam is set to circular polarization, it creates an effective
-  magnetic field of the form\todo{\cite{}, equation},
-  \[ B_{eff}\todo{equation} \]
-  parallel to the beam propagation direction.
-  This field causes a relative shift between the $|4,4\rangle$
+  magnetic field parallel to the beam propagation direction
+  of the form\cite{thompson_coherence_2013},
+  \[ B_{eff}=-U_0\frac{\delta_2-\delta_1}{\delta_2+2\delta_1}\mathbf{C} \]
+  where $U_0$ is the scalar light shift, $\delta_1$ and $\delta_2$ are the detuning from the
+  $\mathrm{D}_1$ and $\mathrm{D}_2$ line respectively,
+  $\mathbf{\varepsilon}$ is the polarization vector and
+  $\mathbf{C}\equiv\Im\paren{\mathbf{\varepsilon}\times\mathbf{\varepsilon}^*}$
+  qualifies the ellipticity of the polarization with
+  $\abs{C}=1$ for pure circular polarization and $\abs{C}=0$ for linear polarization.
+  This effective magnetic field causes a relative shift between the $|4,4\rangle$
   and the $|3,3\rangle$ states which can be measured using a Raman transition.\todo{figure}
   By measuring the shift as a function of the beam position,
   we can determine the size and the center of the PA beam and align the beam to the atom.
