@@ -74,7 +74,7 @@ as the projection of $\mathbf{L}$ and $\mathbf{S}$
 along $\hat{n}$ respectively.
 The total angular momentum along $\hat{n}$ is therefore $\Omega\equiv\Lambda+\Sigma$
 and it is added to the $\mathbf{N}$ which is orthogonal to $\hat{n}$ to form
-the total angular momentum $\mathbf{J}$ (Fig~\ref{fig:pa-hunds-case-a}).
+the total angular momentum $\mathbf{J}$ (Fig.~\ref{fig:pa-hunds-case-a}).
 
 The angular momenum state of the molecule is therefore fully characterized by
 $|L,\Lambda,S,\Omega,J\rangle$. $\Lambda$ can be $0,1,\dots,L$, $\Omega$ ranges from
@@ -180,7 +180,7 @@ For incoherent transition, the transition rate is proportional to $\Omega^2\prop
 
 \subsubsection{Energy Level of $\mathrm{NaCs}$}
 
-Fig~\todo{\ref{}} shows the relevant PESs for $\mathrm{NaCs}$.
+Fig.~\todo{\ref{}} shows the relevant PESs for $\mathrm{NaCs}$.
 Although the spin-less electronic Hamiltonian \ref{eq:pa:pes:he} makes it easier
 to understand the molecule structure and provides good approximations for the
 transition dipoment and FCF, the absense of spin and the difficulty in exactly solving
@@ -193,7 +193,20 @@ PESs fitted to experimental data\todo{\cite{}}.
 
 \subsection{Beampath}
 
-\todo{beam path figure}
+\begin{figure}
+  \centering
+  \includegraphics[width=0.65\textwidth]{figures/pa_beampath.pdf}
+  \caption[PA beampath]{
+    PA beampath including the relative geometry with the magnetic field
+    the glass vacuum cell and the tweezer.
+    In order to compensate for the astigmatism from pass through the glass cell window
+    at an angle, we added an correction glass plate into the PA beam path.
+    The correction plate has the same thickness and angle of incident with the glass cell window
+    but is angled vertically instead of horizontally.
+    The alignment mirro and the beam profiler can also be added to the beam path
+    in order to measure the chromatic error during alignment.
+    \label{fig:pa-beampath}}
+\end{figure}
 
 \todo{Make sure size mismatch is mentioned.}
 Due to the size mismatch between the initial atomic state and
@@ -201,10 +214,13 @@ the excited molecular state wavefunctions in PA,
 the transition typically have a small FCF and
 requires high laser intensity to improve the signal contrast.
 Because of this, we focus our PA beam onto the tweezer with a beam waist of
-$\approx10\mathrm{\mu m}$\todo{check number}.
+$\approx10\mathrm{\mu m}$\todo{check number} (Fig.~\ref{fig:pa-beampath}).
+The tight focus also increase the astigmatism when passing through
+the glass cell window at an angle which limits the minimum focus size we can achieve.
+Therefore, we added a correction glass plate to fix the astigmatism
+in order to minimize the focus size and maximize the beam intensity.
 
 In order to align the PA beam to the tweezer, we use the following alignment procedure,
-
 \begin{enumerate}
 \item Light resonant with the Cs atomic transition is sent into the PA beam path.
   This allows us to do the alignment using the procedure we used to align the
