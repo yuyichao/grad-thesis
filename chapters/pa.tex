@@ -9,6 +9,7 @@
   Need to measure the excited states in order to drive a two photon transition
   through the excited state.
   Define PA
+  Mention size mismatch challenge.
 }
 
 \section{Energy Levels}
@@ -192,14 +193,58 @@ PESs fitted to experimental data\todo{\cite{}}.
 
 \subsection{Beampath}
 
-\todo{
-  PA beam alignment
-}
+\todo{beam path figure}
+
+\todo{Make sure size mismatch is mentioned.}
+Due to the size mismatch between the initial atomic state and
+the excited molecular state wavefunctions in PA,
+the transition typically have a small FCF and
+requires high laser intensity to improve the signal contrast.
+Because of this, we focus our PA beam onto the tweezer with a beam waist of
+$\approx10\mathrm{\mu m}$\todo{check number}.
+
+In order to align the PA beam to the tweezer, we use the following alignment procedure,
+
+\begin{enumerate}
+\item Light resonant with the Cs atomic transition is sent into the PA beam path.
+  This allows us to do the alignment using the procedure we used to align the
+  atomic Raman sideband cooling beams as described in section \ref{ch:rsc:alignment}.
+  However, unlike the alignment for the atomic Raman beams,
+  due to the larger frequency difference between the PA transition and the Cs atomic
+  transition as well as the smaller beamsize,
+  we cannot use the alignment result from this step directly for the PA beam
+  due to the chromatic aberration from the optics in the PA beam path.
+\item In order to translate the alignment result from resonance Cs light to that of the PA light,
+  we insert a mirror to reflect the PA beam after the last optics in the beam path\todo{figure}
+  and place a beam profiler at the equivalent location of the tweezer.
+  This allow us to directly measure location of the focal point for the two wavelengths
+  and correct for the chromatic aberration by shifting the focus from the PA light
+  to the original focus position from the resonance Cs light.
+\item As the final alignment step and to correct for the chromatic aberration of the
+  glass window that was not corrected for in the last step,
+  we align the PA beam to the atom using signal directly from the atom.
+  Due to the large detuning, the scattering rate from the PA beams
+  is too low to be used for alignment.
+  However, when the PA beam is set to circular polarization, it creates an effective
+  magnetic field of the form\todo{\cite{}, equation},
+  \[ B_{eff}\todo{equation} \]
+  parallel to the beam propagation direction.
+  This field causes a relative shift between the $|4,4\rangle$
+  and the $|3,3\rangle$ states which can be measured using a Raman transition.\todo{figure}
+  By measuring the shift as a function of the beam position,
+  we can determine the size and the center of the PA beam and align the beam to the atom.
+\end{enumerate}
 
 \subsection{Resonance Frequencies}
 
+For the PA spectroscopy, we mainly focus on states with large binding energies
+which are expected to be good candidates as the intermediate state
+for Raman transfer\textsuperscript{(\ref{ch:raman-transfer:raman-model})}.
+In particular, we scanned the PA light frequency around the $v'=0$ and $v'=12-14$
+vibrational states in the $c^3\Sigma$ potential.
+
 \todo{
-  Energy levels (v=0, 12, 14) (reference Raman excited state selection)
+  results.
 }
 
 \subsection{Linewidth}
