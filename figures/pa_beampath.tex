@@ -1,0 +1,112 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage[colorlinks=true]{hyperref}
+\usetikzlibrary{
+  arrows,
+  calc,
+  decorations.pathmorphing,
+  decorations.pathreplacing,
+  decorations.markings,
+  fadings,
+  positioning,
+  shapes,
+  arrows.meta
+}
+\pgfdeclareradialshading{glow}{\pgfpoint{0cm}{0cm}}{
+  color(0mm)=(white);
+  color(5mm)=(white);
+  color(9mm)=(black);
+  color(10mm)=(black)
+}
+
+\begin{tikzfadingfrompicture}[name=glow fading]
+  \shade [shading=glow] (0,0) circle (1);
+\end{tikzfadingfrompicture}
+
+\ifpdf
+% Ensure reproducible output
+\pdfinfoomitdate=1
+\pdfsuppressptexinfo=-1
+\pdftrailerid{}
+\hypersetup{
+  pdfcreator={},
+  pdfproducer={}
+}
+\fi
+
+\begin{document}
+
+\begin{tikzpicture}[scale=1.2]
+  \begin{scope}
+    \clip (0, -1) rectangle (-1.5, 1);
+    \shade[shading=radial,path fading=glow fading,
+    fill opacity=0.9,inner color=red!80]
+    plot[samples=200,domain=-1.5:1.5] function {sqrt(0.0005 + x**2 / 20)}
+    -- plot[samples=200,domain=1.5:-1.5] function {-sqrt(0.0005 + x**2 / 20)};
+  \end{scope}
+  \begin{scope}
+    \clip (0, -1) rectangle (3, 1);
+    \shade[shading=radial,path fading=glow fading,
+    fill opacity=0.9,inner color=red!80]
+    plot[samples=200,domain=-3:3] function {sqrt(0.0005 + x**2 / 20)}
+    -- plot[samples=200,domain=3:-3] function {-sqrt(0.0005 + x**2 / 20)};
+  \end{scope}
+  \node[right] at (1.50, 0) {Tweezer};
+
+  \begin{scope}[shift={({1 / sin(55) + 1 / tan(55)}, -1)}, rotate=180]
+    \begin{scope}
+      \clip ({1 / sin(55) - 0.5 * cos(62.5)}, {-0.5 * sin(62.5)}) --
+      ({1 / sin(55) + 0.5 * cos(62.5)}, {0.5 * sin(62.5)}) --
+      (0, 1) -- (0, -1) -- cycle;
+      \shade[shading=radial,path fading=glow fading,
+      fill opacity=0.5,inner color=orange!80]
+      plot[samples=200,domain=-10:10] function {sqrt(0.002 + x**2 / 80)}
+      -- plot[samples=200,domain=10:-10] function {-sqrt(0.002 + x**2 / 80)};
+    \end{scope}
+    \draw[line width=1, opacity=0.7] (0, -0.3) --
+    node[opacity=1,right,align=left] {Beam\\profiler} (0, 0.3);
+   \end{scope}
+
+  \begin{scope}[rotate=-55]
+    \begin{scope}
+      \fill[green!50!black,opacity=0.5] (2.7, 0.45) -- (2.35, 0.55) -- (2.35, 0.26)
+      arc (90:270:0.1 and 0.266)
+      -- (2.35, -- -0.55) -- (2.7, -0.45)
+      node[opacity=1,below left,align=center] {Correction\\plate}
+      -- cycle;
+    \end{scope}
+    \begin{scope}
+      \clip (0, -1) rectangle (4.5, 1);
+      \shade[shading=radial,path fading=glow fading,
+      fill opacity=0.9,inner color=orange!80]
+      plot[samples=200,domain=-10:10] function {sqrt(0.002 + x**2 / 80)}
+      -- plot[samples=200,domain=10:-10] function {-sqrt(0.002 + x**2 / 80)};
+    \end{scope}
+    \begin{scope}
+      \clip (0, -0.3) rectangle (-1.2, 0.3);
+      \shade[shading=radial,path fading=glow fading,
+      fill opacity=0.9,inner color=orange!80]
+      plot[samples=200,domain=-1.:1.] function {sqrt(0.002 + x**2 / 80)}
+      -- plot[samples=200,domain=1.:-1.] function {-sqrt(0.002 + x**2 / 80)};
+    \end{scope}
+    \begin{scope}
+      \fill[green!50!black,opacity=0.5] (2.0, 0.65) -- (2.35, 0.55) -- (2.35, 0.26)
+      arc (90:270:0.1 and 0.266)
+      -- (2.35, -- -0.55) -- (2.0, -0.65) -- cycle;
+    \end{scope}
+    \node[align=center] at (4, 0.1) {PA\\beam};
+  \end{scope}
+  \begin{scope}[shift={({1 / sin(55) + 1 / tan(55)}, -1)}]
+    \draw[line width=1, dashed, opacity=0.6]
+    ({-1 / sin(55) - 0.7 * cos(62.5)}, {-0.7 * sin(62.5)})
+    node[left,align=center,opacity=1] {Alignment\\mirror} --
+    ({-1 / sin(55) + 0.7 * cos(62.5)}, {0.7 * sin(62.5)});
+  \end{scope}
+  \draw[opacity=0.4,blue,line width=3] (0.4, 1.3)
+  node[opacity=1, below right] {Glass cell}
+  -- (0.4, -1) -- (-0.4, -1) -- (-0.4, 1.3);
+
+  \draw[->,>=stealth,line width=0.7] (-0.7, 0.3) -- node[left] {\Large $B_0$} (-0.7, 0.85);
+\end{tikzpicture}
+
+\end{document}
