@@ -3,15 +3,83 @@
 \chapter{Computer Control of the Experiment}
 \label{ch:computer-control}
 
-\section{Overall Structure}
+\section{Introduction}
+
+The experiment sequence and data taking is managed by computers.
+In additional to controlling the timing and the actions during a sequence,
+the computer control system is also the main interface
+between the people running the experiment (the user),
+the data and the hardware performing the manipulation and measurements.
+Because of its central role in the experiment,
+it has to satisfy many requirements so that
+the daily operation of the lab can be performed smoothly and reliably.
+\begin{enumerate}
+\item Full control and utilization of hardware.\\
+  The control system is a layer in between the the user and the hardware
+  and will abstract and manage the hardware on behave of the user.
+  However, the abstraction must still allow the user to take advantage of
+  the full capability of the hardware, e.g. output resolution, timing accuracy etc..
+  This is because there is usually little margin between the capability of the hardware
+  and the requirement in the experiment as the specification of the hardware
+  is often selected based on the requirement to begin with.
+\item Usability for all lab members.\\
+  The lab is operated by users with specialty in physics rather than computer science.
+  Although some basic knowledge of computer programming is required for operating
+  the experiment as well as analysing data,
+  the computer control system must be fully usable for people without any experience
+  in building complex software systems.\\
+  The.inevitable complexity of the system must be fully hidden from the user
+  for normal operations although more direct control may still be allowed in certain cases.
+\item Modeling of the sequence and scan.\\
+  As an important special case of usability,
+  the computer control system must provide a model for each tasks closed to
+  the users' mental model.
+  More concretely, this means creating abstraction for concepts
+  typically used to describe the task and allow operation on these abstractions
+  matching the users' expectation.
+  We will talk about concrete examples of this requirements
+  in section \ref{ch:computer-control:frontend} regarding the sequence frontend
+  and section \ref{ch:computer-control:scan} regarding scan automation.
+\item Reproducibility.\\
+  When exploring something new in the experiment,
+  trial and error is the standard method and troubleshooting is a major part of the process.
+  The ability to do this effectively requires a high degree of reproducibility of all the result.
+  While it is impossible and also not the job of the computer control system to
+  eliminate all the fluctuation and noise in the experiment,
+  it should not add to the randomness of the system.
+  With few exceptions, identical user input should produce identical output from
+  the control system.
+\item Version control.\\
+  As a variation of the reproducibility requirement and also built on top of it,
+  we must be able to revert to a previous software configuration at a later time
+  in order to reproduce and double-check an earlier result.
+  The use of a proper version control system on the settings and code for
+  the computer control system can allow this with additional features
+  including easy visualization of setting change and parallel development of code
+  by multiple users.
+\end{enumerate}
+
+The design of the computer control system is mainly guided by these requirements
+and we will go into more detail as we describe each part of the system.
+Section \ref{ch:computer-control:frontend} will cover the frontend of the system
+which is used by the user directly to specify an experimental sequence.
+Section \ref{ch:computer-control:backend} will discuss the support for various
+hardware backends used to run a sequence.
+After that, section \ref{ch:computer-control:scan} describes how multiple sequences
+can be put together to form a scan and
+we will talk about some planned update to the system in section
+\ref{ch:computer-control:summary}.
 
 \section{Frontend}
+\label{ch:computer-control:frontend}
+
 (Abstraction)
 (Backward compatibility)
 (Flexibility)
 (Text based/version control friendly)
 
 \section{Backends}
+\label{ch:computer-control:backend}
 (communication protocol)
 (IR)
 
@@ -27,11 +95,14 @@
 (SIMD)
 
 \section{Automation of Scan}
+\label{ch:computer-control:scan}
+
 (Scan requirement)
 (Combination of scans)
 (Scope/nested structure)
 
 \section{Summary and Outlook}
+\label{ch:computer-control:summary}
 (new backend/SPCM)
 (native code generation, auto vectorization)
 (dynamic logic and dependency tracking/optimization)
