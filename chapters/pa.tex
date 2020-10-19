@@ -5,14 +5,27 @@
 
 \section{Introduction}
 
-\todo{
-  Need to measure the excited states in order to drive a two photon transition
-  through the excited state.
-  Define PA
-  Mention size mismatch challenge.
-}
+The method we use to coherently create a single molecule from atoms
+uses two photon optical transition\textsuperscript{(\ref{ch:raman-transfer})}.
+Before we can drive such a transition, however, we must locate and characterize
+the intermediate excited states of the molecule to be used in the two-photon transition.
+This can be measured using photoassociation (PA) spectroscopy
+where two atoms are driven from the atomic state to an excited molecular state
+via an optical transition.
+The flexibility of the optical tweezer platform allows us to
+prepare a clean initial state with only two atoms
+as well as accurately detect when PA has happened
+with high signal to noise ratio (\ref{pa:sequence-res}).
+
+In this chapter, we describe the molecular energy structure (section \ref{pa:structure})
+and how we use PA spectruscopy to locate and identify the molecular excited states
+(section \ref{pa:pa}).
+We also details the beampath for the measurement (\ref{pa:beampath}) including
+the alignment procedure for the PA beam and discussions about factors that can affect
+the PA linewidth (\ref{pa:linewidth}).
 
 \section{Energy Levels}
+\label{pa:structure}
 
 First we will discuss the energy levels in a diatomic molecule
 as well as the labeling system for the states.
@@ -190,8 +203,10 @@ Because of this, prediction of the molecular states energies are calculated usin
 PESs fitted to experimental data\todo{\cite{}}.
 
 \section{Photoassociation Spectroscopy}
+\label{pa:pa}
 
 \subsection{Beampath}
+\label{pa:beampath}
 
 \begin{figure}
   \centering
@@ -208,13 +223,13 @@ PESs fitted to experimental data\todo{\cite{}}.
     \label{fig:pa-beampath}}
 \end{figure}
 
-\todo{Make sure size mismatch is mentioned.}
-Due to the size mismatch between the initial atomic state and
-the excited molecular state wavefunctions in PA,
-the transition typically have a small FCF and
-requires high laser intensity to improve the signal contrast.
+The excited molecular state we would like to address has a bond length of $3-8\AA$.
+The initial atomic state, however, has an average inter-nuclear distance of $\approx1000\AA$.
+This size mismatch between the initial and final state wavefunctions
+means the transition typically have a very small FCF ($10^{-10}-10^{-8}$).
 Because of this, we focus our PA beam onto the tweezer with a beam waist between
-$10\mathrm{\mu m}$ and $30\mathrm{\mu m}$ (Fig.~\ref{fig:pa-beampath}).
+$10\mathrm{\mu m}$ and $30\mathrm{\mu m}$ (Fig.~\ref{fig:pa-beampath}) in order to
+increase the laser intensity and improve the signal contrast.
 The tight focus also increase the astigmatism when passing through
 the glass cell window at an angle which limits the minimum focus size we can achieve.
 Therefore, we added a correction glass plate to fix the astigmatism
@@ -271,6 +286,7 @@ In order to align the PA beam to the tweezer, we use the following alignment pro
 }
 
 \subsection{Experiment Sequence and Resonance Frequencies}
+\label{pa:sequence-res}
 
 For the PA spectroscopy, we mainly focus on states with large binding energies
 which are expected to be good candidates as the intermediate state
@@ -284,10 +300,12 @@ We then turn on the PA beam to a set power for a set time
 followed by separating the atoms into their respective tweezers and image the atoms.
 When we hit a PA resonance, the excited molecular state will typically decay down
 to either a molecular ground state,
-which will remain in only one of the tweezers after the separation,
+which will remain in at most one of the tweezers after the separation,
 or an atomic state with high relative motional energy and escape the trap.
-In either case, this leads to at least one empty tweezer after the separation
-and a decrease in the survival probability of both Na and Cs atoms.
+In either case, this leads to at least one empty tweezer after the separation.
+By measuring the probability of having both the Na and Cs atoms after the PA pulse
+conditioned on both atoms being initially loaded,
+we can capture the probability of PA event and locate the resonances.
 
 \todo{
   Theory prediction for v'=0
@@ -296,6 +314,7 @@ and a decrease in the survival probability of both Na and Cs atoms.
 }
 
 \subsection{Linewidth}
+\label{pa:linewidth}
 
 (Broadening)
 \todo{
