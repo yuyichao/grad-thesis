@@ -213,8 +213,8 @@ Due to the size mismatch between the initial atomic state and
 the excited molecular state wavefunctions in PA,
 the transition typically have a small FCF and
 requires high laser intensity to improve the signal contrast.
-Because of this, we focus our PA beam onto the tweezer with a beam waist of
-$\approx10\mathrm{\mu m}$\todo{check number} (Fig.~\ref{fig:pa-beampath}).
+Because of this, we focus our PA beam onto the tweezer with a beam waist between
+$10\mathrm{\mu m}$ and $30\mathrm{\mu m}$ (Fig.~\ref{fig:pa-beampath}).
 The tight focus also increase the astigmatism when passing through
 the glass cell window at an angle which limits the minimum focus size we can achieve.
 Therefore, we added a correction glass plate to fix the astigmatism
@@ -231,8 +231,9 @@ In order to align the PA beam to the tweezer, we use the following alignment pro
   we cannot use the alignment result from this step directly for the PA beam
   due to the chromatic aberration from the optics in the PA beam path.
 \item In order to translate the alignment result from resonance Cs light to that of the PA light,
-  we insert a mirror to reflect the PA beam after the last optics in the beam path\todo{figure}
-  and place a beam profiler at the equivalent location of the tweezer.
+  we insert a mirror to reflect the PA beam after the last optics in the beam path
+  and place a beam profiler at the equivalent location of the tweezer
+  (Fig.~\ref{fig:pa-beampath}).
   This allow us to directly measure location of the focal point for the two wavelengths
   and correct for the chromatic aberration by shifting the focus from the PA light
   to the original focus position from the resonance Cs light.
@@ -257,7 +258,19 @@ In order to align the PA beam to the tweezer, we use the following alignment pro
   we can determine the size and the center of the PA beam and align the beam to the atom.
 \end{enumerate}
 
-\subsection{Resonance Frequencies}
+\todo{
+  (NaCs 2017-2018 > NaCs 2018 > 1038nm vector shift)
+  20180409_174357
+  20180409_182037
+  20180409_184715
+  20180409_191155
+  20180409_192757
+  20180409_194201
+  20180409_195421
+  20180409_200840
+}
+
+\subsection{Experiment Sequence and Resonance Frequencies}
 
 For the PA spectroscopy, we mainly focus on states with large binding energies
 which are expected to be good candidates as the intermediate state
@@ -265,8 +278,21 @@ for Raman transfer\textsuperscript{(\ref{ch:raman-transfer:raman-model})}.
 In particular, we scanned the PA light frequency around the $v'=0$ and $v'=12-14$
 vibrational states in the $c^3\Sigma$ potential.
 
+In order to observe PA, we first prepare both the Na and Cs atoms in the motional ground states
+in the same tweezer\cite{liu_building_2018}.
+We then turn on the PA beam to a set power for a set time
+followed by separating the atoms into their respective tweezers and image the atoms.
+When we hit a PA resonance, the excited molecular state will typically decay down
+to either a molecular ground state,
+which will remain in only one of the tweezers after the separation,
+or an atomic state with high relative motional energy and escape the trap.
+In either case, this leads to at least one empty tweezer after the separation
+and a decrease in the survival probability of both Na and Cs atoms.
+
 \todo{
-  results.
+  Theory prediction for v'=0
+  (NaCs 2017-2018 > NaCs 2018 > Raman transfer plan to v=-1 > c3Sigma v=0 frequency prediction)
+  J states? (NaCs 2017-2018 > NaCs 2018 > c3Sigma v=0 search > Scan 4/16-4/18)
 }
 
 \subsection{Linewidth}
