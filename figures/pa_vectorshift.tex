@@ -1,0 +1,41 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{
+  arrows,
+  calc,
+  decorations.pathmorphing,
+  decorations.pathreplacing,
+  decorations.markings,
+  fadings,
+  positioning,
+  shapes,
+  arrows.meta
+}
+\pgfdeclareradialshading{glow}{\pgfpoint{0cm}{0cm}}{
+  color(0mm)=(white);
+  color(5mm)=(white);
+  color(9mm)=(black);
+  color(10mm)=(black)
+}
+
+\begin{tikzfadingfrompicture}[name=glow fading]
+  \shade [shading=glow] (0,0) circle (1);
+\end{tikzfadingfrompicture}
+
+\ifpdf
+% Ensure reproducible output
+\pdfinfoomitdate=1
+\pdfsuppressptexinfo=-1
+\pdftrailerid{}
+\fi
+
+\begin{document}
+
+\begin{tikzpicture}
+  \node at (-5, 0) {\includegraphics[height=3.8cm]{pa_vectorshift_spectrum.pdf}};
+  \node at (-2.95, 1.5) {\footnotesize (\textbf{A})};
+  \node at (0.2, -0.045) {\includegraphics[height=3.8cm]{pa_vectorshift_align.pdf}};
+  \node at (2.25, 1.5) {\footnotesize (\textbf{B})};
+\end{tikzpicture}
+
+\end{document}
