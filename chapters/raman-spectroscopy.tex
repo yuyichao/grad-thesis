@@ -121,6 +121,20 @@ which includes the following spin combinations,
     \label{fig:raman-spectroscopy:raman-beampath}}
 \end{figure}
 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/raman_spectroscopy_sequence.pdf}
+  \caption[Raman transition sequence]{
+    Raman transition pulse sequence.
+    The tweezer initially consists of only up leg power.
+    When driving the Raman transition, the up leg power is smoothly ramped down and
+    the down leg power ramped up over $t_{ramp}=10\mathrm{\mu s}$
+    while maintaining the total power of the tweezer.
+    This minimizes the heating on the atoms due to power fluctuation while maximizes the time
+    with maximum Raman Rabi frequency when the up and down leg powers are equal.
+    \label{fig:raman-spectroscopy:sequence}}
+\end{figure}
+
 In order to increase the intensity of the Raman beams to overcome the small FCF,
 we use the tweezer beam to drive the Raman transition.
 Not only does this maximizes the intensity due to the small focal size of the tweezer,
@@ -136,12 +150,17 @@ which is important for achieving coherent creation of molecule
 
 The beampath to generate the required frequencies in the tweezer is shown in
 Fig.~\ref{fig:raman-spectroscopy:raman-beampath}.
-Care must be taken to avoid interference of beam causing power fluctuation.
+The additional single pass AOM in the beampath avoids interference
+with AOM leak light causing power fluctuation and
+also increases the reachable frequency range compared to using only one double pass AOM.
+The powers at each frequencies are calibrated as a function of AOM powers
+so that we can select the desired power ratio during the experiment.
+When driving the Raman transition, instead of turning on separate beam,
+we ramp down the power at the original tweezer and ramping up the power
+in the second frequency while maintaining the total power to minimize heating of the atoms
+(Fig.~\ref{fig:raman-spectroscopy:sequence}).
 
-\todo{
-  sequence (instead of turning on the Raman beam, turn on the second frequency as seen in)
-  calibration?
-}
+\todo{tweezer polarization, reference rsc section}
 
 \subsection{Raman Resonance on $v''=-1,\ N=0$ Ground State}
 \todo{
