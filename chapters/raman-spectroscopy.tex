@@ -96,6 +96,33 @@ which includes the following spin combinations,
 
 \subsection{Driving Raman Transition using the Optical Tweezer}
 
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{figures/raman_spectroscopy_raman_beampath.pdf}
+  \caption[Beampath to allow driving Raman transition with tweezer]{
+    Beampath for generating the frequency for Raman transition in the tweezer.
+    (Beampath for fiber coupling and overall power control is not shown.)
+    The red beam path is the $0$-th order of the double pass (DP) AOM
+    which is used for the tweezer.
+    When the DP AOM is turned on, some power is redirected to the first order
+    (blue beam path) which generates the required frequency different to drive
+    the Raman transition. The two frequencies are recombined on the DP AOM.
+    The $0$-th order light is shifted by another single pass (SP) AOM
+    running on a different frequency before recombining.
+    Without this AOM, the leak light from the DP AOM will be at the same frequency
+    as the $0$-th order light which can cause a significant power fluctuation
+    due to interference. The SP AOM ensures that none of the leaking light frequency
+    coincide with either intended frequencies therefore avoiding this issue.
+    Different selection of the SP and DP AOM as well as their orders can be used
+    to cover a wide range of two photon detuning for Raman transition.
+    The experiment typically start with the SP AOM on and the DP AOM off.
+    When driving the Raman transition, the powers on both AOMs are ramped simultaneously
+    to achieve the desired power at both frequencies.
+    \label{fig:raman-spectroscopy:raman-beampath}}
+\end{figure}
+
+\ref{fig:raman-spectroscopy:raman-beampath}
+
 \todo{
   Setup/sequence
   mention use of tweezer as Raman, referenced in next chapter
