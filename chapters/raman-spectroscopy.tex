@@ -66,9 +66,35 @@ we first prepare the atom in the corresponding hyperfine state
 and drive a Raman transition to the molecular state.
 We use a Raman transition that is detuned from the $c^3\Sigma\ v'=0$ state measured
 in section \label{pa:pa}.
+\todo{Maybe move stable HF combination to interaction shift?}
+When the Na and Cs are in the same tweezer,
+they can undergo fast spin-exchange collision that changes the hyperfine state of the atom.
+This process can cause the hyperfine energy ($>1\mathrm{GHz}$) of the atoms
+to be transferred to the motional energy
+and eject the atoms from the tweezer ($<100\mathrm{MHz}$ deep).
+As a result, the measurement can only be done when the spin-exchange collision is suppressed,
+which includes the following spin combinations,
+\begin{enumerate}
+\item $F_{Na}=1$ and $F_{Cs}=3$\\
+  This is the spin state with the lowest energy and therefore the spin-exchange interaction
+  is energetically forbidden.
+  In the experiment, we use the state $|Na(1, 1),Cs(3, 3)\rangle$
+  which can be prepared from the $|Na(2, 2),Cs(4, 4)\rangle$ state from OP
+  easily by driving a Raman transition for both Na and Cs atoms.
+  This state also remains the lowest energy atomic state in the present of a weak magnetic field.
+\item $|Na(2, 2),Cs(4, 4)\rangle$ and $|Na(2, 2),Cs(3, 3)\rangle$
+  \footnote{States with opposite $m_F$, i.e.
+    $|Na(2, -2),Cs(4, -4)\rangle$ and $|Na(2, -2),Cs(3, -3)\rangle$ are also stable
+    but are omitted here since these cannot be easily prepared in our experiment.}\\
+  These spin states are stable because the spin-exchange collision conserves total $m_F$
+  of the two atoms and
+  the two states are the lowest energy states that has the same total $m_F$.
+  Inelastic collision that changes the total $m_F$ can also happen
+  but has a lower collision rate since it requires transferring angular momentum
+  between the spin and motion of the atom.
+\end{enumerate}
 
 \todo{
-  Stable HF states
   Setup/sequence/states
   N=0 bound states for different HF states
   B field dependency?
