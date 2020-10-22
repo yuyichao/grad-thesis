@@ -98,6 +98,25 @@ which includes the following spin combinations,
 
 \begin{figure}
   \centering
+  \includegraphics[width=\textwidth]{figures/raman_spectroscopy_apparatus_sequence.pdf}
+  \caption[Raman transition setup and sequence]{
+    (A) Geometry and polarization of trap and Raman beam relative to the bias magnetic field.
+    We use a bias B field of $B_0=8.8 G$ alone the tweezer polarization
+    to define the quantization axis
+    which is the same as the one used for Raman sideband cooling in Fig.~{fig:na-rsc-geometry}.
+    As a result, the atoms experiences predominately $\pi$ polarization from the tweezer.
+    (B) Raman transition pulse sequence.
+    The tweezer initially consists of only up leg power.
+    When driving the Raman transition, the up leg power is smoothly ramped down and
+    the down leg power ramped up over $t_{ramp}=10\mathrm{\mu s}$
+    while maintaining the total power of the tweezer.
+    This minimizes the heating on the atoms due to power fluctuation while maximizes the time
+    with maximum Raman Rabi frequency when the up and down leg powers are equal.
+    \label{fig:raman-spectroscopy:apparatus-sequence}}
+\end{figure}
+
+\begin{figure}
+  \centering
   \includegraphics[width=\textwidth]{figures/raman_spectroscopy_raman_beampath.pdf}
   \caption[Beampath to allow driving Raman transition with tweezer]{
     Beampath for generating the frequency for Raman transition in the tweezer.
@@ -121,22 +140,9 @@ which includes the following spin combinations,
     \label{fig:raman-spectroscopy:raman-beampath}}
 \end{figure}
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.7\textwidth]{figures/raman_spectroscopy_sequence.pdf}
-  \caption[Raman transition sequence]{
-    Raman transition pulse sequence.
-    The tweezer initially consists of only up leg power.
-    When driving the Raman transition, the up leg power is smoothly ramped down and
-    the down leg power ramped up over $t_{ramp}=10\mathrm{\mu s}$
-    while maintaining the total power of the tweezer.
-    This minimizes the heating on the atoms due to power fluctuation while maximizes the time
-    with maximum Raman Rabi frequency when the up and down leg powers are equal.
-    \label{fig:raman-spectroscopy:sequence}}
-\end{figure}
-
 In order to increase the intensity of the Raman beams to overcome the small FCF,
-we use the tweezer beam to drive the Raman transition.
+we use the tweezer beam to drive the Raman transition
+(Fig.~\ref{fig:raman-spectroscopy:apparatus-sequence}A).
 Not only does this maximizes the intensity due to the small focal size of the tweezer,
 since the atoms are trapped at the maximum of the tweezer beam,
 this also ensures that the Raman beam is aligned automatically to the atoms
@@ -152,15 +158,13 @@ The beampath to generate the required frequencies in the tweezer is shown in
 Fig.~\ref{fig:raman-spectroscopy:raman-beampath}.
 The additional single pass AOM in the beampath avoids interference
 with AOM leak light causing power fluctuation and
-also increases the reachable frequency range compared to using only one double pass AOM.
+also increases the frequency tuning range compared to using only one double pass AOM.
 The powers at each frequencies are calibrated as a function of AOM powers
 so that we can select the desired power ratio during the experiment.
 When driving the Raman transition, instead of turning on separate beam,
 we ramp down the power at the original tweezer and ramping up the power
 in the second frequency while maintaining the total power to minimize heating of the atoms
-(Fig.~\ref{fig:raman-spectroscopy:sequence}).
-
-\todo{tweezer polarization, reference rsc section}
+(Fig.~\ref{fig:raman-spectroscopy:apparatus-sequence}B).
 
 \subsection{Raman Resonance on $v''=-1,\ N=0$ Ground State}
 \todo{
