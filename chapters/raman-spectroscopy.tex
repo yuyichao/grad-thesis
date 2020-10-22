@@ -184,9 +184,10 @@ in the second frequency while maintaining the total power to minimize heating of
 \begin{table}
   \centering
   \todo{include theory prediction?}
+  \todo{numbers}
   \begin{tabular}{|c|c|c|c|}
     \hline
-    \multirow{2}{*}{Spin state}&\multicolumn{2}{c|}{Resonance (MHz)}&\multirowcell{2}{$B$ field sensitivity\\(MHz/G)}\\\cline{2-3}
+    \multirow{2}{*}{Spin state}&\multicolumn{2}{c|}{Resonance (MHz)}&\multirowcell{2}{Zeeman shift\\(MHz/G)}\\\cline{2-3}
     {}&$8.8 \mathrm{G}$&$0 \mathrm{G}$&\\\hline
     $|Na(2, 2),Cs(4, 4)\rangle$&&&\\\hline
     $|Na(1, 1),Cs(3, 3)\rangle$&&&\\\hline
@@ -208,9 +209,42 @@ $-100 \mathrm{GHz}$ from the $v'=0$ excited state and a $2 \mathrm{ms}$ pulse ti
 The tweezer also shifts the resonance frequency.
 We remove this effect by measuring the resonance at different tweezer power
 and extrapolate to zero trap powers.
-Similarly, we also measure the magnetic field sensitivity of the resonance and
+Similarly, we also measure the Zeeman shift of the resonance and
 the resonance frequency at zero magnetic field.
 The summary of the results are shown in table~\ref{table:raman-spectroscopy:n0}.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/raman_spectroscopy_spin_mixing.pdf}
+  \caption[Spin state mixing near the atomic threshold.]{
+    Spin state mixing near the atomic threshold.
+    Energy above the $s_2$ threshold only supports one molecular spin state
+    so the bound state within the $s_1$ potential in this region is
+    almost purely $s_1$.
+    Energy below the $s_2$ threshold supports both $s_1$ and $s_2$ molecular states
+    so bound states in this region may have a mixture of $s_1$ and $s_2$
+    if the two spin states are coupled.
+    This includes all the $s_2$ bound states and some of the $s_1$ bound states.
+    \label{fig:raman-spectroscopy:spin-mixing}}
+\end{figure}
+
+Note that the Zeeman shift is consistent with zero for
+the $|Na(2, 2),Cs(4, 4)\rangle$ state but is non-zero for other spin states.
+The reason for this is that Zeeman shift of the coupling between the spin states
+that has the same total $m_F$\footnote{The same coupling that leads to spin exchange collision.}.
+The $|Na(2, 2),Cs(3, 3)\rangle$ spin state is coupled to the $|Na(2, 2),Cs(4, 3)\rangle$,
+$|Na(1, 1),Cs(4, 4)\rangle$ and $|Na(2, 1),Cs(4, 4)\rangle$ states
+whereas $|Na(1, 1),Cs(3, 3)\rangle$ is coupled to the $|Na(2, 1),Cs(3, 3)\rangle$,
+$|Na(1, 1),Cs(4, 3)\rangle$, $|Na(2, 1),Cs(4, 3)\rangle$, $|Na(2, 2),Cs(3, 2)\rangle$
+and $|Na(2, 2),Cs(4, 2)\rangle$ states.
+All of these states listed above has higher energy so their bound states
+may cause spin mixing with the $|Na(2, 2),Cs(3, 3)\rangle$ and $|Na(1, 1),Cs(3, 3)\rangle$
+bound states (Fig.~\ref{fig:raman-spectroscopy:spin-mixing})
+causing them to have a different magnetic field dependency from the corresponding atomic state
+resulting in a non-zero differential Zeeman shift.
+On the other hand, the $|Na(2, 2),Cs(4, 4)\rangle$ bound state is above
+all the other spin states and therefore has a pure spin state
+and the transition has no Zeeman shift.
 
 \section{Angular momentum Coupling in $N=2$ Ground State}
 \label{ch:raman-spectroscopy:n2}
