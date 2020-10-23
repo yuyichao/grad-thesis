@@ -184,17 +184,16 @@ in the second frequency while maintaining the total power to minimize heating of
 \begin{table}
   \centering
   \todo{include theory prediction?}
-  \todo{numbers}
   \begin{tabular}{|c|c|c|c|}
     \hline
-    \multirow{2}{*}{Spin state}&\multicolumn{2}{c|}{Resonance (MHz)}&\multirowcell{2}{Zeeman shift\\(MHz/G)}\\\cline{2-3}
+    \multirow{2}{*}{Spin state}&\multicolumn{2}{c|}{Resonance (MHz)}&\multirowcell{2}{Zeeman shift\\(kHz/G)}\\\cline{2-3}
     {}&$8.8 \mathrm{G}$&$0 \mathrm{G}$&\\\hline
-    $|Na(2, 2),Cs(4, 4)\rangle$&&&\\\hline
-    $|Na(1, 1),Cs(3, 3)\rangle$&&&\\\hline
-    $|Na(2, 2),Cs(3, 3)\rangle$&&&\\\hline
+    $|Na(2, 2),Cs(4, 4)\rangle$&$297.8472(28)$&$297.8510(28)$&$-0.43(10)$\\\hline
+    $|Na(1, 1),Cs(3, 3)\rangle$&$367.7892(25)$&$369.63(29)$&$-209(33)$\\\hline
+    $|Na(2, 2),Cs(3, 3)\rangle$&$770.200516(24)$&$769.8294(22)$&$42.17(24)$\\\hline
   \end{tabular}
   \caption[Binding energies for $v''=-1,\ N=0$ states]{
-    Binding energies for $v''=-1,\ N=0$ states.
+    Binding energies and Zeeman shift for $v''=-1,\ N=0$ states.
     \label{table:raman-spectroscopy:n0}}
 \end{table}
 
@@ -228,9 +227,9 @@ The summary of the results are shown in table~\ref{table:raman-spectroscopy:n0}.
     \label{fig:raman-spectroscopy:spin-mixing}}
 \end{figure}
 
-Note that the Zeeman shift is consistent with zero for
-the $|Na(2, 2),Cs(4, 4)\rangle$ state but is non-zero for other spin states.
-The reason for this is that Zeeman shift of the coupling between the spin states
+Note that the Zeeman shift for the $|Na(2, 2),Cs(4, 4)\rangle$ state
+is signicantly smaller than that for other spin states.
+The reason for this is the magnetic coupling between the spin states
 that has the same total $m_F$\footnote{The same coupling that leads to spin exchange collision.}.
 The $|Na(2, 2),Cs(3, 3)\rangle$ spin state is coupled to the $|Na(2, 2),Cs(4, 3)\rangle$,
 $|Na(1, 1),Cs(4, 4)\rangle$ and $|Na(2, 1),Cs(4, 4)\rangle$ states
@@ -243,8 +242,8 @@ bound states (Fig.~\ref{fig:raman-spectroscopy:spin-mixing})
 causing them to have a different magnetic field dependency from the corresponding atomic state
 resulting in a non-zero differential Zeeman shift.
 On the other hand, the $|Na(2, 2),Cs(4, 4)\rangle$ bound state is above
-all the other spin states and therefore has a pure spin state
-and the transition has no Zeeman shift.
+all the other spin states and therefore has a mostly pure spin state
+and the transition has little Zeeman shift.
 
 \section{Angular momentum Coupling in $N=2$ Ground State}
 \label{ch:raman-spectroscopy:n2}
