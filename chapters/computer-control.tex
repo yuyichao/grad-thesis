@@ -78,15 +78,46 @@ we will talk about some planned update to the system in section
 \label{ch:computer-control:frontend}
 
 The frontend is the main user interface of the system to specify a sequence.
-Its API is designed around the following concepts.
+Its API is designed around the a few concepts that can be divided into two categories,
 \begin{enumerate}
-\item (Sub-)sequence
-\item Time step
-\item Channel
-\item Pulse
+\item Timing
+  \begin{enumerate}
+  \item (Sub-)sequence\\
+    This represent a series of events that has fixed relative timing.
+    Sequences can be nested in other sequences at a specific time offset
+    and are called subsequences.
+    Each sequence can only have at most one parent sequence (the top level one has none)
+    and zero or more subsequences so all the subsequences in a top level sequence forms a tree.
+  \item Time step\\
+    The time or time period in the sequence when one or more event may happen
+    is called a time step.
+    Each time step has a length and a position within a unique parent sequence.
+  \end{enumerate}
+\item Output
+  \begin{enumerate}
+  \item Channel\\
+    Each device that can generate an output are abstracted into
+    one or multiple channels that each output a single number.
+    The abstraction depends on the type of the device,
+    e.g. voltage value for a digital to analog converter,
+    or frequency and amplitude for an computer-controlled sine-wave generator.
+  \item Pulse\\
+    This represents the actual output for a particular channel.
+    The pulse itself does not contain the timing information within the sequence,
+    i.e. start and end time.
+    Instead, each pulse belongs to a unique time step that specifies the timing.
+  \end{enumerate}
+\end{enumerate}
+Operations on one category are usually independent of the other
+which allows most common modifications to the sequence to be done
+with minimum code change, including,
+\begin{enumerate}
+\item Adding/removing/changing the length of time step or subsequences
+  without affecting the relative timing or output in other part of the sequence.
+\item Enabling/disabling output or changing output values
+  without changing the time and length of the output.
 \end{enumerate}
 
-(Abstraction)
 (Backward compatibility)
 (Flexibility)
 (Text based/version control friendly)
