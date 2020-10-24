@@ -108,7 +108,7 @@ Its API is designed around the a few concepts that can be divided into two categ
     Instead, each pulse belongs to a unique time step that specifies the timing.
   \end{enumerate}
 \end{enumerate}
-Operations on one category are usually independent of the other
+Operations on concepts in one category are usually independent of the other
 which allows most common modifications to the sequence to be done
 with minimum code change, including,
 \begin{enumerate}
@@ -118,9 +118,29 @@ with minimum code change, including,
   without changing the time and length of the output.
 \end{enumerate}
 
+The sequence programming uses MATLAB as the host language.
+Despite not the best choice from the feature or performance aspect,
+it offers the following desired properties,
+\begin{enumerate}
+\item Text based language and therefore easier for version control.
+\item Familiarity for physics student.\\
+  MATLAB is often used for simulation and data processing.
+  It is one of the few languages that most new students will be familiar with.
+\item Builtin feature-rich integrated development environment (IDE).
+\item Foreign function interface (FFI).\\
+  Other parts of the system needs to be implemented in other languages
+  for various reasons including higher performance.
+  It is important that we can call into other languages to allow such a hybrid implementation.
+\item Good enough feature set.\\
+  MATLAB provides data structures like arrays and hash table
+  as well as handle classes with object identity
+  which are important to handle the representation of the sequence.
+  It also has an good enough object-oriented programming (OOP) model
+  and operator overloads which can simplify the API syntax for the user.
+\end{enumerate}
+
 (Backward compatibility)
 (Flexibility)
-(Text based/version control friendly)
 
 \section{Backends}
 \label{ch:computer-control:backend}
