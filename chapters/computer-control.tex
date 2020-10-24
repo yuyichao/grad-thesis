@@ -28,7 +28,7 @@ the daily operation of the lab can be performed smoothly and reliably.
   the experiment as well as analysing data,
   the computer control system must be fully usable for people without any experience
   in building complex software systems.\\
-  The.inevitable complexity of the system must be fully hidden from the user
+  The inevitable complexity of the system must be fully hidden from the user
   for normal operations although more direct control may still be allowed in certain cases.
 \item Modeling of the sequence and scan.\\
   As an important special case of usability,
@@ -61,6 +61,10 @@ the daily operation of the lab can be performed smoothly and reliably.
 
 The design of the computer control system is mainly guided by these requirements
 and we will go into more detail as we describe each part of the system.
+The application programming interface (API) provided for sequence and scan programming
+are mostly text based due to the flexibility and version control requirement.
+Some graphic user interface (GUI) are also included for specific tasks
+built on top of the text interface but will not be covered in this chapter.
 Section \ref{ch:computer-control:frontend} will cover the frontend of the system
 which is used by the user directly to specify an experimental sequence.
 Section \ref{ch:computer-control:backend} will discuss the support for various
@@ -72,6 +76,15 @@ we will talk about some planned update to the system in section
 
 \section{Frontend}
 \label{ch:computer-control:frontend}
+
+The frontend is the main user interface of the system to specify a sequence.
+Its API is designed around the following concepts.
+\begin{enumerate}
+\item (Sub-)sequence
+\item Time step
+\item Channel
+\item Pulse
+\end{enumerate}
 
 (Abstraction)
 (Backward compatibility)
