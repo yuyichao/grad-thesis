@@ -139,8 +139,229 @@ it offers the following desired properties,
   and operator overloads which can simplify the API syntax for the user.
 \end{enumerate}
 
-(Backward compatibility)
-(Flexibility)
+\subsection{APIs}
+The system provides the following APIs for sequence creation
+that are subject to strict backward compatibility requirements.
+
+\subsubsection{Timing}
+
+        % These functions creates sub node in the sequence DAG
+        % which can be either a step (`TimeStep`) or a subsequence (`ExpSeqBase`).
+        % (For simplicity, we may call both of these steps below.)
+        %
+        % The steps are created relative to a certain reference point,
+        % which can be,
+        % 1. Unknown (to be fixed later): `addFloating`.
+        % 2. Known now. The known time could be,
+        %     A. Current time of this (sub)sequence,
+        %        in which case one decide whether the current time should be updated.
+        %         a. Yes: `addStep`
+        %
+        %             Note that the restriction that `curTime` cannot be decreased applies
+        %             so the end of the step added this way must not be before the
+        %             previous `curTime`. An error will be thrown if the time offset
+        %             specified is too negative and cause this to happen.
+        %             (The state of the sequence is unspecified after the error is thrown.)
+        %
+        %         b. No: `addBackground`
+        %     B. A specific `TimePoint`: `addAt`.
+        %
+        % All the functions use the same syntax to specify the type of
+        % the step to be added (`TimeStep` or `ExpSeqBase`),
+        % the parameter to construct the step (length for `TimeStep` or
+        % callback with arbitrary arguments for `ExpSeqBase`),
+        % and the offset relative to the reference point for each function.
+        % (The offset cannot be specified for `addFloating`).
+        % This is handled by `addStepReal` and the allowed arguments conbinations are,
+        %
+        % 1. To construct a subsequence (`ExpSeqBase`), a callback is always required.
+        %    (The callback can be a function handle, a class, or any callable,
+        %    i.e. indexable non-numerical and non-logical object).
+        %    Therefore, to construct a subsequence the arguments are,
+        %    `([offset=0, ]callback, extra_arguments_for_callback...)`.
+        %    The sub sequence will be constructed at the specified time point
+        %    and passed to the `callback` (as first argument) followed by the extra
+        %    arguments to populate the subsequence.
+        % 2. To construct a `TimeStep`, one need to specify only the length.
+        %    Since the offset is rarely used, the arguments to construct a `TimeStep` is,
+        %    `(len[, offset=0])`. Since `len` in general must be positive, a special case
+        %    is when a single negative number is given. The `len` will then be interpreted
+        %    as the offset as well as the negative of the length
+        %    (e.g. `(-5)` represent a step of length `5` and offset `-5`).
+        %
+        % In both cases, the step constructed will be returned.
+        %% Wait API's
+        % Allow waiting for time, background sequences, everything,
+        % or specific subsequences or steps.
+
+        % function self = wait(self, t)
+        %     %% Forward current time.
+        %     self.curTime = self.curTime + t;
+        % end
+
+        % function self = waitAll(self)
+        %     %% Wait for everything that have been currently added to finish.
+        %     % This is the recursive version of `waitBackground`.
+        %     self.curTime = totalTime(self);
+        % end
+
+        % function self = waitFor(self, steps, offset)
+        %     %% Wait for all the steps or subsequences within `steps` with an offset.
+        %     % It is allowed to wait for steps or subsequences that are not a child
+        %     % of `self`. It is also allowed to wait for floating sequence provided
+        %     % that all the floating part is shared (i.e. only the common parents are floating
+        %     % and the offset between `self` and the step to be waited for is well defined).
+        %     if ~exist('offset', 'var')
+        %         offset = 0;
+        %     end
+        %     t = self.curTime;
+        %     for step = steps
+        %         if iscell(step)
+        %             % Deal with MATLAB cell array indexing weirdness....
+        %             real_step = step{:};
+        %         else
+        %             real_step = step;
+        %         end
+        %         step_toffset = real_step.tOffset;
+        %         if isnan(step_toffset)
+        %             error('Cannot get offset of floating sequence.');
+        %         elseif isa(real_step, 'TimeStep')
+        %             tstep = step_toffset + real_step.len + offset;
+        %         else
+        %             tstep = step_toffset + real_step.curTime + offset;
+        %         end
+        %         if real_step.parent ~= self
+        %             tstep = tstep + offsetDiff(self, real_step.parent);
+        %         end
+        %         if tstep > t
+        %             t = tstep;
+        %         end
+        %     end
+        %     self.curTime = t;
+        % end
+
+        % function self = waitBackground(self)
+        %     %% Wait for background steps that are added directly to this sequence
+        %     % to finish. See also `waitAll`.
+        %     function checkBackgroundTime(sub_seq)
+        %         if ~isa(sub_seq, 'ExpSeqBase')
+        %             len = sub_seq.len;
+        %         else
+        %             len = sub_seq.curTime;
+        %         end
+        %         sub_cur = sub_seq.tOffset + len;
+        %         if isnan(sub_cur)
+        %             error('Cannot wait for background with floating sub sequences.');
+        %         end
+        %         if sub_cur > self.curTime
+        %             self.curTime = sub_cur;
+        %         end
+        %     end
+        %     subSeqForeach(self, @checkBackgroundTime);
+        % end
+
+        % %% Other helper functions.
+
+        % function step = add(self, name, pulse)
+        %     %% Convenient shortcut for adding a single pulse in a step.
+        %     if ~isnumeric(pulse) && ~islogical(pulse)
+        %         error('Use addStep to add a ramp pulse.');
+        %     end
+        %     % The 10us here is just a placeholder.
+        %     % The exact length doesn't really matter except for total sequence length
+        %     step = addBackground(self, 1e-6);
+        %     add(step, name, pulse);
+        % end
+
+        % function res = alignEnd(self, seq1, seq2, offset)
+        %     %% Make sure that `seq1` and `seq2` ends at the same time and the longer
+        %     % one of which started `offset` after the current time of this sequence.
+        %     % Return the input steps as a cell array.
+        %     if ~exist('offset', 'var')
+        %         offset = 0;
+        %     end
+        %     if ~isnan(seq1.tOffset) || ~isnan(seq2.tOffset)
+        %         error('alignEnd requires two floating sequences as inputs.');
+        %     end
+        %     if ~isa(seq1, 'ExpSeqBase')
+        %         len1 = seq1.len;
+        %     else
+        %         len1 = seq1.curTime;
+        %     end
+        %     if ~isa(seq2, 'ExpSeqBase')
+        %         len2 = seq2.len;
+        %     else
+        %         len2 = seq2.curTime;
+        %     end
+        %     if len1 > len2
+        %         seq1.setTime(endTime(self), 0, offset);
+        %         seq2.setEndTime(endTime(seq1));
+        %     else
+        %         seq2.setTime(endTime(self), 0, offset);
+        %         seq1.setEndTime(endTime(seq2));
+        %     end
+        %     res = {seq1, seq2};
+        % end
+
+        % function res = totalTime(self)
+        %     res = 0;
+        %     for i = 1:self.nSubSeqs
+        %         sub_seq = self.subSeqs{i};
+        %         if isa(sub_seq, 'TimeStep')
+        %             sub_end = sub_seq.len + sub_seq.tOffset;
+        %         else
+        %             sub_end = totalTime(sub_seq) + sub_seq.tOffset;
+        %         end
+        %         if sub_end > res
+        %             res = sub_end;
+        %         end
+        %     end
+        %     if isnan(res)
+        %         error('Cannot get total time with floating sub sequence.');
+        %     end
+        %     if res < self.curTime
+        %         res = self.curTime;
+        %     end
+        % end
+
+        % function tdiff = getTimePointOffset(self, time)
+        %     % Compute the offset of a `TimePoint` relative to current sequence
+        %     if ~isa(time, 'TimePoint')
+        %         error('`TimePoint` expected.');
+        %     end
+        %     other = time.seq;
+        %     tdiff = offsetDiff(self, other);
+        %     offset = time.offset;
+        %     if time.anchor ~= 0
+        %         if ~isa(other, 'ExpSeqBase')
+        %             len = other.len;
+        %         else
+        %             len = other.curTime;
+        %         end
+        %         offset = offset + len * time.anchor;
+        %     end
+        %     tdiff = tdiff + offset;
+        % end
+
+\subsubsection{Output}
+            %% Add a pulse on a channel to the step.
+            % The channel name can be provided as a string, which will be
+            % translated and converted to the channel ID, or it can be
+            % given as the channel ID (number) directly. (See `TimeSeq::translateChannel`)
+            % The pulse can be
+            %
+            % * A number
+            %
+            %     Output the value at the beginning of the step.
+            %
+            % * A subclass of `PulseBase`
+            %
+            %     The `calcValue` method will be used to compute the output value.
+            %
+            % * Or an arbitrary callable object/function handle.
+            %
+            %     Equivalent as a `FuncPulse`. The object will be called to
+            %     compute the output value.
 
 \section{Backends}
 \label{ch:computer-control:backend}
