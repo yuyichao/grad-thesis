@@ -424,11 +424,12 @@ For the ground atomic state, since the state is stable with repect to radiative 
 this continuum cannot be the photon continuum.
 Instead, the excited state is coupled to the relative motional continuum of the atoms.
 Physically, this corresponds to a photodissociation process
-where the atoms flies away with high kinetic energies.
+where the atoms flies away with high kinetic energies corresponding
+to the detuning of the tweezer.\todo{figure}
 
 The photodissociation rate is determined by the Fermi's golden rule,
 \[
-  \Gamma=2\pi\Omega_{if}^2\rho_f
+  \Gamma=2\pi\Omega_{if}^2\ \rho_f
 \]
 where $\Omega_{if}$ is the matrix element between the initial and final state
 and $\rho_f$ is the density of state near the final state.
@@ -438,6 +439,36 @@ We calculate this by first discretizing the continuum and the rate becomes
 \]
 where $\Omega'_{if}$ is the Rabi frequency between the initial and final state
 and $\delta$ is the spacing between the discretized final states.
+
+The Rabi frequency $\Omega'_{if}$ is proportional to the square root of FCF,
+which we calculate for the atomic ground motional states by exactly diagonalization
+of the atomic wavefunction.
+However, due to the high energy $>10\mathrm{GHz}$ of the final state,
+calculating FCF for the target state using this method requires an unrealiztic number of
+states to be included.
+Instead, we approximate it using the results for the atomic ground state
+by assuming the FCF to be proportional to the probability density of non-interacting
+atomic wavefunction at zero relative distance so that,
+\[
+  \Omega'_{if}=\Omega_0\frac{\psi_f\paren{r_{rel}=0}}{\psi_0\paren{r_{rel}=0}}
+\]
+where $\Omega_0$ is the Rabi frequency between the excited state and
+the atomic motional ground state and $\psi_f$ and $\psi_0$ are the
+wavefunctions of the final and ground motional atomic state without the molecular potential.
+This approximation is justifed because,
+\begin{enumerate}
+\item The molecular potential is short ranged and the excited molecular state is small.
+\item Only the final atomic wavefunction within the molecular potential contributes to the FCF.
+  For relatively low motional energy
+  this wavefunction is proportional to the value of the wavefunction at
+  the edge of the molecular potential which is well approximated by
+  the atomic wavefunction without the molecular potential.
+  \todo{figure}
+\end{enumerate}
+This approximation remains valid until the de Broglie wavelength for the atomic state
+is comparable to the size of the molecular potential which corresponds to
+a motional energy of $\approx40\mathrm{GHz}$
+and the result can still be used as order of magnitude estimation for higher motional energies.
 
 \todo{Acknowedge Olivier}
 \todo{
