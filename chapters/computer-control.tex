@@ -140,6 +140,19 @@ it offers the following desired properties,
   and operator overloads which can simplify the API syntax for the user.
 \end{enumerate}
 
+\subsection{Channel Naming}
+Each output channel has a unique name attached for identification.
+This name is always a string of the format \verb`<device_id>/<channel>`
+where \verb`<device_id>` is an name for the (physical) device
+and \verb`<channel>` is an identification of the channel within the device.
+The \verb`<device_id>` may not contain \verb`/` but other than this
+neither \verb`<device_id>` nor \verb`<channel>` has globally predefined meaning
+and are completely up to the backend to define.
+This format allows maximum freedom for the backend to abstract its function
+into multiple channels in the most fitting way,
+while allowing the generic code to identify the device, and therefore backend,
+needed without fully interpreting the channel name.
+
 \subsection{APIs}
 The system provides the following APIs for sequence creation
 that are subject to strict backward compatibility requirements.
@@ -217,24 +230,21 @@ to manipulate \verb`curTime`,
 \end{enumerate}
 
 \subsubsection{Output}
-            %% Add a pulse on a channel to the step.
-            % The channel name can be provided as a string, which will be
-            % translated and converted to the channel ID, or it can be
-            % given as the channel ID (number) directly. (See `TimeSeq::translateChannel`)
-            % The pulse can be
-            %
-            % * A number
-            %
-            %     Output the value at the beginning of the step.
-            %
-            % * A subclass of `PulseBase`
-            %
-            %     The `calcValue` method will be used to compute the output value.
-            %
-            % * Or an arbitrary callable object/function handle.
-            %
-            %     Equivalent as a `FuncPulse`. The object will be called to
-            %     compute the output value.
+
+As mentioned before, all the output are specified on time steps
+which are represented by class \verb`TimeStep`.
+This is done via a single method \verb`add(channel_name, output)` on \verb`TimeStep`.
+The \verb`channel_name` is the channel name described above
+and \verb`output` specifies the output in one of the following way,
+\begin{enumerate}
+\item A number\\
+  This represent setting the channel to the specified value at the start time of the pulse.
+\item A function or callable object\\
+  The function will be used to compute the value to output over the whole duration of the pulse.
+  It will be called with arguments \verb`(t, len, old_val)` where
+  \verb`t` is the time within the pulse, \verb`len` is the length of the pulse
+  and \verb`old_val` is the previous value of the channel before the current pulse.
+\end{enumerate}
 
 \section{Backends}
 \label{ch:computer-control:backend}
