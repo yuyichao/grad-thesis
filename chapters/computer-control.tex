@@ -248,6 +248,19 @@ and \verb`output` specifies the output in one of the following way,
 
 \section{Backends}
 \label{ch:computer-control:backend}
+As discussed in section \ref{ch:computer-control:frontend},
+the frontend provides an API to program all the output channels in the same way
+no matter the type of the channel or device used.
+However, this is not the case for the devices generating for the output
+which often have an API specifically designed for the device
+that may be very different from one another.
+Moreover, the frontend represent the sequence as a tree structure
+that is convinient for manipulation
+whereas the device API typically uses a flat data structure like an array of numbers
+or a series of commands.
+It is therefore the job of the backend to bridge this gap
+and convert the between the multiple representations of the sequence.
+
 (communication protocol)
 (IR)
 
