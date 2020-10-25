@@ -180,45 +180,41 @@ Various methods are provided that acts differently with respect to \verb`curTime
   The time reference point is specified by \verb`time_point` which is of type \verb`TimePoint`.
   See below about \verb`TimePoint`.
 \item \verb`addFloating(<time_params>)` method\\
-  The time reference point is unspecified and must be set later
-  by the \verb`setTime` method below.
+  The time reference point is unspecified.
   The optional \verb`offset` parameter cannot be specified in \verb`<time_params>`.
+  The time reference point, however, must be specified before the sequence can run.
+  This can be done by calling the \verb`setTime(time_point, time_ratio=0, offset=0)` method
+  where \verb`time_point` is also of type of type \verb`TimePoint` described below.
+  The optional \verb`time_ratio` specifies the relative time within the subsequence
+  or time step to set the time for where a value of $0$ set the start time
+  and a value of $1$ set the end time.
 \end{enumerate}
 All methods return the new subsequence or time step constructed
 so that they can be operated on.
 
-        %% Wait API's
-        % Allow waiting for time, background sequences, everything,
-        % or specific subsequences or steps.
+The \verb`TimePoint` object used in \verb`addAt` and \verb`setTime`
+can be constructed via \verb`TimePoint(seq, time_ratio, offset)`
+which represent the time within the sequence or step \verb`seq` with a time \verb`offset`.
+\verb`time_ratio` specifies the time within the \verb`seq` where $0$ is the start time
+and $1$ is the end time.
 
-        % function self = wait(self, t)
-        %     %% Forward current time.
-        % function self = waitAll(self)
-        %     %% Wait for everything that have been currently added to finish.
-        %     % This is the recursive version of `waitBackground`.
-        % function self = waitFor(self, steps, offset)
-        %     %% Wait for all the steps or subsequences within `steps` with an offset.
-        %     % It is allowed to wait for steps or subsequences that are not a child
-        %     % of `self`. It is also allowed to wait for floating sequence provided
-        %     % that all the floating part is shared (i.e. only the common parents are floating
-        %     % and the offset between `self` and the step to be waited for is well defined).
-        % function self = waitBackground(self)
-        %     %% Wait for background steps that are added directly to this sequence
-        %     % to finish. See also `waitAll`.
-        % %% Other helper functions.
-        %%
-        % Position a currently floating step/sub sequence (`self`)
-        % The `anchor` percentage point of the current `TimeSeq` will be positioned
-        % `offset` after the time point. The length of the current sequence
-        % is the current time for sub sequences (`ExpSeqBase`)
-        % and length for steps (`TimeStep`), consistent with the logic in `TimePoint`.
-        %
-        % NOTE: The choice of the definition for `TimeStep` is obvious and the choice for
-        %   `ExpSeqBase` is because current time is what's more visible to the user
-        %   than the total length of the subsquence including all background sequence.
-        %   In fact, total length of the sequence is rarely useful/reliable
-        %   since sub-sequences within the current sequence could have late background steps
-        %   that are very hard to discover.
+Additional continence methods for \verb`ExpSeqBase` are also provided
+to manipulate \verb`curTime`,
+\begin{enumerate}
+\item \verb`wait(t)` method\\
+  Add \verb`t` to \verb`curTime`.
+  This is the only method that can change \verb`curTime` backwards.
+\item \verb`waitAll()` method\\
+  Forward \verb`curTime` to the end of all (nested) subsequences and time steps
+  within the current subsequence.
+\item \verb`waitBackground()` method\\
+  Similar to \verb`waitAll()` but only wait for the subsequences and time steps
+  directly added to the current subsequence.
+\item \verb`waitFor(seqs, offset=0)` method\\
+  Forward \verb`curTime` to the end of subsequences and time steps specified
+  within the array \verb`seqs`.
+  An optional \verb`offset` may be added to the latest end time.
+\end{enumerate}
 
 \subsubsection{Output}
             %% Add a pulse on a channel to the step.
