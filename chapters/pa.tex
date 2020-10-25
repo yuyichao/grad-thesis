@@ -426,6 +426,19 @@ Instead, the excited state is coupled to the relative motional continuum of the 
 Physically, this corresponds to a photodissociation process
 where the atoms flies away with high kinetic energies.
 
+The photodissociation rate is determined by the Fermi's golden rule,
+\[
+  \Gamma=2\pi\Omega_{if}^2\rho_f
+\]
+where $\Omega_{if}$ is the matrix element between the initial and final state
+and $\rho_f$ is the density of state near the final state.
+We calculate this by first discretizing the continuum and the rate becomes
+\[
+  \Gamma=2\pi\frac{{\Omega'_{if}}^2}{\delta}
+\]
+where $\Omega'_{if}$ is the Rabi frequency between the initial and final state
+and $\delta$ is the spacing between the discretized final states.
+
 \todo{Acknowedge Olivier}
 \todo{
   Implication on two-photon transfer
