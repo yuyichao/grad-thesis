@@ -272,6 +272,34 @@ on the same network.
 This requires network communication between the frontend machine and
 a service running on the device computer for running the sequence.
 
+We use ZeroMQ Message Transport Protocol (ZMTP) as the main protocol for network communication
+which offers the following advantages,
+\begin{enumerate}
+\item Binary protocol\\
+  The protocol allows us to send and recieve arbitrary data without having to encode it
+  in text first. This saves encoding and decoding time as well as network bandwidth
+  which allows higher performance.
+\item Feature rich and flexible\\
+  Compared to using sockets for network communication directly,
+  the message oriented protocol allows easy implementation of remote procedure call (RPC).
+  The ZeroMQ library also provides flexible interface to process the messages
+  which is useful to implement robust handling of failure
+  and parallel processing of requests.
+\item Light weight\\
+  Despite the rich feature set, the library is relatively light weight.
+  This is important because part of the computer control system
+  need to be executed in environment with limited resources.
+\item Cross platform\\
+  The library is cross platform and provide identical API on different environment.
+  Windows support is particularly important since most of the development is done
+  on Linux machines.
+\item Stable\\
+  Both the protocol and the library are stable.
+  The library version available on different machines are not always the same
+  and it is important that the same version of code can work on different machines
+  and can communicate with each other in all cases.
+\end{enumerate}
+
 \subsection{Representation of Pulse}
 
 \subsection{FPGA Backend}
