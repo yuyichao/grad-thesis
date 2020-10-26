@@ -300,7 +300,31 @@ which offers the following advantages,
   and can communicate with each other in all cases.
 \end{enumerate}
 
-\subsection{Representation of Pulse}
+\subsection{Representation of Pulses}
+Several backends require accessing the exact representation of the pulses
+outside MATLAB code and even on a different computer.
+Since the pulses can be arbitrary functions,
+this requires the ability to serialize and deserialize code.
+
+In order to do this, we developed a simple intermediate representation (IR)
+of code that runs on a register-based virtual machine.
+The IR supports three different data types, \verb`Bool`, \verb`Int32` and \verb`Float64`
+and basic arithmetic, control flow and math functions
+that are sufficient for specifying pulse shapes.
+The IR can be interpreted by an interpreter written in C++ or
+be compiled and optimized to native code for faster execution using an LLVM based compiler.
+
+In order to convert MATLAB functions specified in the sequence to the IR,
+we pass in a special object as the input argument to the MATLAB function.
+Supported operations on this object will return a new object
+that records the operation as well as input arguments.
+The value returned from the function is therefore an object representing
+all the operations needed to compute the result as a directed acyclic graph (DAG).
+We then convert each node in the DAG to an IR instruction to finish the convertion.
+This process only support pure functions.
+Conditional branch is supported via an \verb`ifelse` function
+that returnes one of the input argument based on an condition.
+Loops are not currently supported.
 
 \subsection{FPGA Backend}
 (clock generation)
@@ -313,7 +337,7 @@ which offers the following advantages,
 \subsection{USRP Backend}
 (SIMD)
 
-\section{Automation of Scan}
+\section{Automation of Scans}
 \label{ch:computer-control:scan}
 
 (Scan requirement)
