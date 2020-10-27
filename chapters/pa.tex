@@ -324,11 +324,29 @@ In order to align the PA beam to the tweezer, we use the following alignment pro
 \subsection{Experiment Sequence and Resonance Frequencies}
 \label{pa:sequence-res}
 
+\begin{table}
+  \centering
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    Vibrational State&$v'=0$&$v'=12$&$v'=13$&$v'=14$\\\hline
+    Resonance Prediction (GHz)&$288722$&$306491$&$307876$&$309252$\\\hline
+  \end{tabular}
+  \caption[PA resonance prediction]{
+    Prediction of $|\mathrm{Na(2, 2),Cs(4, 4)}\rangle$ PA resonance frequency
+    based on Dunham expansion\cite{grochola_spin-forbidden_2011,dunham_energy_1932}.
+    \label{table:pa:theory-prediction}}
+\end{table}
+
 For the PA spectroscopy, we mainly focus on states with large binding energies
 which are expected to be good candidates as the intermediate state
 for Raman transfer\textsuperscript{(\ref{ch:raman-transfer:raman-model})}.
 In particular, we scanned the PA light frequency around the $v'=0$ and $v'=12-14$
-vibrational states in the $c^3\Sigma$ potential.
+vibrational states in the $c^3\Sigma_{\Omega=1}$ potential.
+Table~\ref{table:pa:theory-prediction} shows the predicted resonance frequencies
+for the PA resonance from $|\mathrm{Na(2, 2),Cs(4, 4)}\rangle$
+based on fitting to previous measurement\cite{grochola_spin-forbidden_2011}.
+The frequencies are calculated from Dunham expansion\cite{dunham_energy_1932}
+corrected for the hyperfine structure for the atoms.
 
 In order to observe PA, we first prepare both the Na and Cs atoms in the motional ground states
 in the same tweezer\cite{liu_building_2018}.
@@ -358,8 +376,6 @@ The spectrum measured in the experiment is shown in Fig.~\todo{\ref{}}.
 }
 
 \todo{
-  Theory prediction for v'=0
-  (NaCs 2017-2018 > NaCs 2018 > Raman transfer plan to v=-1 > c3Sigma v=0 frequency prediction)
   v'=0 with 3 J states (NaCs 2017-2018 > NaCs 2018 > c3Sigma v=0 search > Scan 4/16-4/18)
   307476 GHz (NaCs 2019 > NaCs 2019 > PA/Raman again > PA with 3,3 + 2,2 state 06/02 -)
   307466.75 GHz (NaCs 2019 > NaCs 2019 > PA (466.75 GHz) 7/16 - 7/28)
