@@ -54,8 +54,9 @@ and the Hamiltonian can be expressed as,
 \begin{align*}
   H=&\sum_{i=x,y,z}\paren{\frac{M\Omega_{i}^2R_{i}^2}{2}+\frac{P_{i}^2}{2M}}+
       \left[\sum_{i=x,y,z}\paren{\frac{\mu\omega_{rel,i}^2r_{rel,i}^2}{2}+\frac{p_{rel,i}^2}{2\mu}}+
-      V_{int}\paren{\mathbf{r}_{rel}}\right]+
-      \sum_{i=x,y,z}\mu\paren{\omega_{1,i}^2 - \omega_{2,i}^2}R_ir_{rel,i}
+      V_{int}\paren{\mathbf{r}_{rel}}\right]\\
+    &+\sum_{i=x,y,z}\mu\paren{\omega_{1,i}^2 - \omega_{2,i}^2}R_ir_{rel,i}
+      \numberthis{eq:interaction-shift:full-hamiltonian}
 \end{align*}
 The first term and the second term only relies on the COM motion and relative motion
 respectively and can be solved independently. The third term mixes the COM and relative motion
@@ -66,6 +67,7 @@ As mentioned above, since the trapping frequencies for the two atoms are similar
 we will assume the mixing term is small and treat it as a small correction in the calculation.
 
 \subsection{Perturbative Calculation}
+\label{ch:interaction-shift:theory:perturb}
 
 For weak interaction, i.e. a small scattering length $a$, the effect of the interaction
 on the energy level can be calculated perturbatively.
@@ -114,6 +116,42 @@ Moreover, due to the divergence nature of the delta-function in the contact inte
 higher order perturbative calculation does not converge.
 It is therefore necessary to use a non-perturbative solution of the interacting atoms
 in order to interprete measurement of the shift for strong interaction.
+To do this, we first ignore the last term in the Hamiltonian
+\ref{eq:interaction-shift:full-hamiltonian} so that it is fully separable
+into COM and relative motion.
+
+For the relative Hamiltonian, we use the analytic cylindrical solutions
+from Ref.~\cite{idziaszek_analytical_2006}.
+These solutions require the potential to be cylindrically symmetric and
+that the ratio between the radial trapping frequency
+and the axial trapping frequency $\eta\equiv\omega_{radial}/\omega_{axial}$
+to be an integer.
+We therefore define $\eta = 6$, which is close to the actual values of $5.6$
+and ignores the $7 \%$ difference between the two radial trapping frequencies
+in order to use these solutions.
+These differences from the real Hamiltonian will be included later,
+together with the mixing term, as a correction.
+The analytic solutions are only given for the interacting states,
+but there also many relative states which have zero wavefunction at the $\delta$-function,
+and therefore are unaffected.
+We have identified these states from the perturbative calculation
+in section \ref{ch:interaction-shift:theory:perturb}
+which are states with $l\ne0$ or odd $m_z$
+after transforming to the cylindrical coordinate used by the analytic solution,
+where $l$ is the angular momentum quantum numbers for the radial part,
+and $m_z$ is quantum number for 1D harmonic oscillator for the axial part.
+The complete basis includes both the interacting states from
+Ref.~\cite{idziaszek_analytical_2006} as well as all of the non-interacting states.
+The non-interacting states are solutions to the cylindrical harmonic oscillator,
+and so are just cylindrical harmonic oscillator wavefunctions with eigenenergies
+\begin{align*}
+  \frac{E_{n,l,m_z}}{\hbar\omega_z}=&\paren{2 n + |l| + 1}\eta + \paren{m_z + 1/2}
+                                      \numberthis{eq:interaction-shift:cylind-E}
+\end{align*}
+where $n$ is the principle quantum number for the radial part.
+
+The COM Hamiltonian is a cylindrical harmonic oscillator and the energies is given by
+Eq.~\ref{eq:interaction-shift:cylind-E}.
 
 (Exact solution for anisotripic trap)
 (Correction on top of exact solution)
