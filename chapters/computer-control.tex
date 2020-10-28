@@ -154,9 +154,19 @@ while allowing the generic code to identify the device, and therefore backend,
 needed without fully interpreting the channel name.
 
 \subsection{APIs}
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{figures/computer_control_frontend_classes.pdf}
+  \caption[Frontend API classes]{
+    Frontend class inherit diagram and API lists.
+    \label{fig:computer-control:frontend-classes}}
+\end{figure}
+
 The system provides the following APIs for sequence creation
 that are subject to strict backward compatibility requirements.
 The most important APIs are listed in this section.
+Fig.~\ref{fig:computer-control:frontend-classes}
+provides a short summary of all the classes and methods mentioned in this section.
 
 \subsubsection{Timing}
 Subsequences are represented by the \verb`ExpSeqBase` class
