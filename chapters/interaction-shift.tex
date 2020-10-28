@@ -149,6 +149,38 @@ and so are just cylindrical harmonic oscillator wavefunctions with eigenenergies
                                       \numberthis{eq:interaction-shift:cylind-E}
 \end{align*}
 where $n$ is the principle quantum number for the radial part.
+In order to find the non-interacting wavefunction,
+we need to remove the interaction wavefunction from
+the cylindrical harmonic oscillator wavefunctions.
+The complication in this process is that when $\eta$ is an integer,
+as is required by the solution of the interaction,
+there is a subspace of cylindrical harmonic oscillator states with $l=0$
+and even $m_z$ that are degenerate from Eq.~\ref{eq:interaction-shift:cylind-E}.
+In each degenerate subspace with $N_{\text{deg}}$ states,
+the non-interacting states $\psi_{non-int}$
+are a linear superposition of the degenerate eigenstates $\psi_i$
+that satisfies the condition $V_{int}\psi_{non-int} = 0$ or
+$\psi_{non-int}\paren{\mathbf{r}_{rel}=0}=0$.
+We find these amplitudes $c_i$ using a Gram-Schmidt procedure,
+which from the requirement $\sum_{i=1}^{N_{\text{deg}}}  c_i \psi_i\paren{\mathbf{r}_{rel}=0} = 0$.
+In each subspace, there is only one interacting state,
+for which the analytic solution is used, and  $N_{\text{deg}}-1$ non-interacting states.
+
+For the interacting states,
+the energies are given by the transcendental equations~\cite{idziaszek_analytical_2006}
+\begin{align*}
+  \mathcal{F}\paren{-\frac{\paren{E-E_0}}{2} , \eta}=&-\frac{\sqrt{2\pi}}{a}
+\end{align*}
+where $\mathcal{F}\paren{x, \eta}$ is given by
+\begin{align*}
+  \mathcal{F}\paren{x, \eta}=
+  &\frac{\sqrt{\pi} \Gamma(x)}{\Gamma(x+\frac{1}{2})}  \sum_{m=1}^{n-1} F\paren{1,x;x+\frac{1}{2} ; e^{i(2\pi m/ \eta )}}\\
+  &-\frac{2 \sqrt{\pi} \Gamma(x)}{\Gamma(x-\frac{1}{2})}
+\end{align*}
+Here $F(a,b;c,x)$ denotes the hypergeometric function
+and $\Gamma(x)$ is the Euler gamma function.
+The energy $E$ and $E_0$ are in units of the axial trap energy $\hbar \omega_z$,
+and so the ground state energy $E_0  = \eta + 1/2$.
 
 The COM Hamiltonian is a cylindrical harmonic oscillator and the energies is given by
 Eq.~\ref{eq:interaction-shift:cylind-E}.
