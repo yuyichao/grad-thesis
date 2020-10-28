@@ -10,7 +10,7 @@
 
 The Hamiltonian for two atoms in an harmonic potential with interaction is,
 \[
-  H=\sum_{i=x,y,z}\paren{\frac{m_{1}\omega_{1,i}^2r_{1,i}^2}{2}+\frac{p_{1,i}^2}{2m_{1}}}+\sum_{i=x,y,z}\paren{\frac{m_{2}\omega_{2,i}^2r_{2,i}^2}{2}+\frac{p_{2,i}^2}{2m_{2}}}+V_{int}\paren{\mathbf{r}_1-\mathbf{r}_2}
+  H=\sum_{i=x,y,z}\paren{\frac{m_{1}\omega_{1,i}^2r_{1,i}^2}{2}+\frac{p_{1,i}^2}{2m_{1}}}+\sum_{i=x,y,z}\paren{\frac{m_{2}\omega_{2,i}^2r_{2,i}^2}{2}+\frac{p_{2,i}^2}{2m_{2}}}+V_{int}\paren{\mathbf{r}_1-\mathbf{r}_2}\numberthis{eq:interaction-shift:orig-hamiltonian}
 \]
 where $m_j$ is the mass of the $j$-th atom,
 $r_{j,i}$, $p_{j,i}$, $\omega_{j,i}$ are the coordinate, momentum and trapping frequency
@@ -52,11 +52,12 @@ The corresponding masses and trapping frequencies are,
 \end{align*}
 and the Hamiltonian can be expressed as,
 \begin{align*}
-  H=&\sum_{i=x,y,z}\paren{\frac{M\Omega_{i}^2R_{i}^2}{2}+\frac{P_{i}^2}{2M}}+
-      \left[\sum_{i=x,y,z}\paren{\frac{\mu\omega_{rel,i}^2r_{rel,i}^2}{2}+\frac{p_{rel,i}^2}{2\mu}}+
+  \begin{split}
+    H=&\sum_{i=x,y,z}\paren{\frac{M\Omega_{i}^2R_{i}^2}{2}+\frac{P_{i}^2}{2M}}+
+    \left[\sum_{i=x,y,z}\paren{\frac{\mu\omega_{rel,i}^2r_{rel,i}^2}{2}+\frac{p_{rel,i}^2}{2\mu}}+
       V_{int}\paren{\mathbf{r}_{rel}}\right]\\
     &+\sum_{i=x,y,z}\mu\paren{\omega_{1,i}^2 - \omega_{2,i}^2}R_ir_{rel,i}
-      \numberthis{eq:interaction-shift:full-hamiltonian}
+  \end{split}\numberthis{eq:interaction-shift:full-hamiltonian}
 \end{align*}
 The first term and the second term only relies on the COM motion and relative motion
 respectively and can be solved independently. The third term mixes the COM and relative motion
@@ -156,15 +157,15 @@ The complication in this process is that when $\eta$ is an integer,
 as is required by the solution of the interaction,
 there is a subspace of cylindrical harmonic oscillator states with $l=0$
 and even $m_z$ that are degenerate from Eq.~\ref{eq:interaction-shift:cylind-E}.
-In each degenerate subspace with $N_{\text{deg}}$ states,
+In each degenerate subspace with $N_{\mathrm{deg}}$ states,
 the non-interacting states $\psi_{non-int}$
 are a linear superposition of the degenerate eigenstates $\psi_i$
 that satisfies the condition $V_{int}\psi_{non-int} = 0$ or
 $\psi_{non-int}\paren{\mathbf{r}_{rel}=0}=0$.
 We find these amplitudes $c_i$ using a Gram-Schmidt procedure,
-which from the requirement $\sum_{i=1}^{N_{\text{deg}}}  c_i \psi_i\paren{\mathbf{r}_{rel}=0} = 0$.
+which from the requirement $\sum_{i=1}^{N_{\mathrm{deg}}}  c_i \psi_i\paren{\mathbf{r}_{rel}=0} = 0$.
 In each subspace, there is only one interacting state,
-for which the analytic solution is used, and  $N_{\text{deg}}-1$ non-interacting states.
+for which the analytic solution is used, and  $N_{\mathrm{deg}}-1$ non-interacting states.
 
 For the interacting states,
 the energies are given by the transcendental equations~\cite{idziaszek_analytical_2006}
@@ -174,8 +175,9 @@ the energies are given by the transcendental equations~\cite{idziaszek_analytica
 where $\mathcal{F}\paren{x, \eta}$ is given by
 \begin{align*}
   \mathcal{F}\paren{x, \eta}=
-  &\frac{\sqrt{\pi} \Gamma(x)}{\Gamma(x+\frac{1}{2})}  \sum_{m=1}^{n-1} F\paren{1,x;x+\frac{1}{2} ; e^{i(2\pi m/ \eta )}}\\
-  &-\frac{2 \sqrt{\pi} \Gamma(x)}{\Gamma(x-\frac{1}{2})}
+  &\frac{\sqrt{\pi} \Gamma(x)}{\Gamma(x+\frac{1}{2})}
+    \sum_{m=1}^{n-1} F\paren{1,x;x+\frac{1}{2} ; e^{i(2\pi m/ \eta )}}
+    -\frac{2 \sqrt{\pi} \Gamma(x)}{\Gamma(x-\frac{1}{2})}
 \end{align*}
 Here $F(a,b;c,x)$ denotes the hypergeometric function
 and $\Gamma(x)$ is the Euler gamma function.
@@ -185,8 +187,37 @@ and so the ground state energy $E_0  = \eta + 1/2$.
 The COM Hamiltonian is a cylindrical harmonic oscillator and the energies is given by
 Eq.~\ref{eq:interaction-shift:cylind-E}.
 
-(Exact solution for anisotripic trap)
-(Correction on top of exact solution)
+Now that we have the solution in the separable and cylindrical case,
+the next step is to include the non-separable and asymmetric correction terms
+by diagonalizing the total matrix in the combined COM and relative cylindrical bases.
+Compared to treating the interaction term in \ref{eq:interaction-shift:orig-hamiltonian}
+as a perturbation, the correction terms included here all have the form of
+harmonic potentials and therefore have much better convergence behavior.
+We include all states with energies up to $20 \omega_{rel,z}$ in the calculation.
+The matrix elements are calculated numerically using the cylindrical wavefunctions,
+which for completeness are given here:
+\begin{align*}
+  \Psi_{n,l,m_z}\paren{\rho,\theta,z}=
+  &\Psi^{\mathrm{radial}}_{n,l}\paren{\rho, \theta}\Psi^{\mathrm{axial}}_{m_z}\paren{z}
+\end{align*}
+with the normalized radial harmonic oscillator wavefunction,
+\begin{align*}
+  \Psi^{\mathrm{radial}}_{n,l}\paren{\rho, \theta}=
+  &\sqrt{\frac{2n!}{a_\perp^2 (n+|l|)!}} e^{-r^2/(2 a_\perp^2)} \paren{\frac{r}{a_\perp}}^{|l|}
+    L_n^{|l|}\paren{\frac{r^2}{a_\perp^2}} \frac{ e^{i l \theta}}{\sqrt{2 \pi}}
+\end{align*}
+and the normalized 1D harmonic wavefunction,
+\begin{align*}
+  \Psi^{\mathrm{axial}}_{m_z}(z)=&\frac{1}{\sqrt{2^{m_z} m_z!}} \frac{1}{\sqrt{a_z}(\pi)^{1/4}}
+                                   e^{-z^2/(2 a_z)} H_{m_z}( z/a_z)
+\end{align*}
+Here the radial and axial oscillator lengths are defined as
+$a_\perp = \sqrt{\hbar/( \mu \omega_\perp)}$ and $a_z = \sqrt{\hbar/ (\mu \omega_z)}$.
+$H_{m_z}$ are the Hermite-Gaussian functions,
+and $L^{|l|}_n$ are the generalized Laguerre polynomials.
+
+The eigenenergies of the matrix are calculated as a function of the scattering length,
+which is shown in Fig.~\todo{\ref{}}.
 
 \section{Interaction Shift Spectroscopy}
 (Sequence)
