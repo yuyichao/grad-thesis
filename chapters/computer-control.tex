@@ -159,18 +159,24 @@ that are subject to strict backward compatibility requirements.
 The most important APIs are listed in this section.
 
 \subsubsection{Timing}
-Most timing related APIs are methods on the class representing (sub-)sequences
-(\verb`ExpSeqBase`). The most important ones are the ones creating new branches
-in the subsequence tree, i.e. subsequences or time steps.
+Subsequences are represented by the \verb`ExpSeqBase` class
+and time steps are represented by the \verb`TimeStep` class.
+Both \verb`ExpSeqBase` and \verb`TimeStep` are subclasses of \verb`TimeSeq`,
+which represent an arbitrary node on the sequence tree.
+
+Most timing related APIs are methods on \verb`ExpSeqBase`.
+The most important ones are the ones creating new branches
+in the subsequence tree, i.e. \verb`TimeSeq`.
 The type of the branch created is determined by the parameters passed in
 (\verb`<time_params>`), which can be either,
 \begin{enumerate}
 \item \verb`length, offset=0`\\
-  This creates a new time step with a numerical \verb`length`
+  This creates a new \verb`TimeStep` with a numerical \verb`length`
   and an optional time \verb`offset` from a API dependent time reference point
   (see list of APIs below).
 \item \verb`offset=0, callback, <callback parameters>`\\
-  This creates a new subsequence with an optional time \verb`offset` the time reference point.
+  This creates a new \verb`ExpSeqBase` with an optional time \verb`offset`
+  the time reference point.
   The new subsequence will be populated by calling \verb`callback`
   with the new sequence followed by \verb`<callback parameters>`.
 \end{enumerate}
@@ -197,13 +203,13 @@ Various methods are provided that acts differently with respect to \verb`curTime
   The optional \verb`offset` parameter cannot be specified in \verb`<time_params>`.
   The time reference point, however, must be specified before the sequence can run.
   This can be done by calling the \verb`setTime(time_point, time_ratio=0, offset=0)` method
+  on the \verb`TimeSeq` object returned,
   where \verb`time_point` is also of type of type \verb`TimePoint` described below.
   The optional \verb`time_ratio` specifies the relative time within the subsequence
   or time step to set the time for where a value of $0$ set the start time
   and a value of $1$ set the end time.
 \end{enumerate}
-All methods return the new subsequence or time step constructed
-so that they can be operated on.
+All methods return the new \verb`TimeSeq` constructed so that they can be operated on.
 
 The \verb`TimePoint` object used in \verb`addAt` and \verb`setTime`
 can be constructed via \verb`TimePoint(seq, time_ratio, offset)`
