@@ -452,8 +452,8 @@ by our frequency resolution.
   \centering
   \includegraphics[width=\textwidth]{figures/pa_linewidth_red_twr.pdf}
   \caption[PA linewidth for red detuned tweezer]{
-    Fitting of PA linewidth for (A) $10 \mathrm{mW}$, (B) $11 \mathrm{mW}$ tweezer power,
-    showing a significant difference.
+    Fitting of PA linewidth for (A) $10 \mathrm{mW}$, (B) $1 \mathrm{mW}$ tweezer power,
+    showing a broad linewidth and a significant difference between the two.
     (C) Fitting of the PA linewidth as a function of tweezer power suggests
     a proportional relation between the two.
     \label{fig:pa:linewidth-red-twr}}
@@ -572,7 +572,8 @@ Substituting into $\Gamma$ and taking the limit of $R\rightarrow\infty$ we have
   =&\Omega_0^2\frac{n}{R}\sqrt{\frac{\pi^3}{\mu\omega_1\omega_2\omega_3}}\\
   =&\Omega_0^2\sqrt{\frac{2\pi E}{\omega_1\omega_2\omega_3}}
 \end{align*}
-For the condition in Fig.~\todo{\ref{}} we have $\Omega_0=2\pi\cdot\todo{number}...$,
+For the condition in Fig.~\ref{fig:pa:linewidth-red-twr}A
+we have $\Omega_0=2\pi\cdot\todo{number}...$,
 $E=2\pi\cdot\todo{number}...$ and $\omega_{1,2,3}=2\pi\cdot\todo{number}...$
 which predicts a broadened linewidth of $\Gamma=2\pi\cdot\todo{number}...$.
 This prediction is only an estimate due to due to the breakdown of the approximation
@@ -582,19 +583,26 @@ Nevertheless, it confirms that this broadening mechanism can explain the observe
 \todo{Acknowedge Olivier}
 
 \subsubsection{Eliminating the Broadening with Blue Detuned Tweezer}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.55\textwidth]{figures/pa_spectrum_v12_blue_10.pdf}
+  \caption[PA linewidth for blue detuned tweezer]{
+    Fitting of PA linewidth for $10 \mathrm{mW}$ tweezer power at $306612 \mathrm{GHz}$.
+    The linewidth is significantly narrower than the value measured when the tweezer
+    is red detuned from the PA resonance (\ref{fig:pa:linewidth-red-twr}).
+    \label{fig:pa:linewidth-blue-twr}}
+\end{figure}
+
 Another prediction from the theory is that if the tweezer light is blue detuned from
 the PA line, the two photon process will not couple to the motional continuum anymore
 and there should be no broadening of the line
 \footnote{Note that the tweezer is still red detuned from the atomic state which
   provides most of the trapping potential}.
 We can confirm this by measuring the linewidth of the same PA line with the tweezer
-frequency set to $...\todo{number} \mathrm{GHz}$.
-The result shown in Fig.~\todo{\ref{}} confirms that the linewidth is indeed narrower
-for this tweezer frequency.
-
-\todo{
-  v'=12 (NaCs 2019 > NaCs 2019 > PA (466.75 GHz) 7/16 - 7/28 > PA v = 12 (tweezer @ 612 G) 8/30 -
-}
+frequency set to $306612 \mathrm{GHz}$.
+The result shown in Fig.~\ref{fig:pa:linewidth-blue-twr}
+confirms that the linewidth is indeed narrower for this tweezer frequency.
 
 \subsubsection{Implication on Two Photon Transition to Ground Molecular States}
 Since the broadening is caused by two photon coupling to high energy atomic motional states,
