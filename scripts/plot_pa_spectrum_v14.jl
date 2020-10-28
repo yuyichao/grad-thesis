@@ -61,6 +61,7 @@ function model_lorentzian(x, p)
     p[1] .- p[2] ./ (1 .+ ((x .- p[3]) ./ (p[4] / 2)).^2)
 end
 fit = fit_survival(model_lorentzian, datas[1], [0.8, 0.3, 255.45, 0.13])
+@show fit.uncs
 
 figure()
 const ptrprops = Dict(:width=>2, :headlength=>6, :headwidth=>6, :color=>"C1")

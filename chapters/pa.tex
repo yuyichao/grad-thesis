@@ -373,17 +373,30 @@ Moreover, since the PA beam polarization is circular
 and has maximum overlap with the $\sigma^+$ polarization,
 the $J=2$ is expected to have the strongest coupling.
 
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{figures/pa_spectrum.pdf}
+  \caption[PA spectrum]{
+    PA spectrum for (A) $v'=0$, (B) $v'=12$, (C) $v'=13$, (D) $v'=14$.
+    The PA frequency is shown in GHz with an offset.
+    Multiple rotational states can be observed for $v'=0$ and $v'=12$.
+    $v'=0$ also shows multiple peaks that corresponds to
+    the hyperfine structure of the molecule.
+    The $v'=13$ and $v'=14$ transitions are relatively weak
+    and only the strongest line is measured as a result.
+    \label{fig:pa:spectrum}}
+\end{figure}
+
 \begin{table}
-  \todo{data}
   \centering
   \begin{tabular}{|c|c|c|c|c|c|}
     \hline
     \multicolumn{2}{|c|}{Vibrational State}&$v'=0$&$v'=12$&$v'=13$&$v'=14$\\\hline
-    \multirowcell{5}{Resonance\\(GHz)}&\multirowcell{2}{$J=1$}&$288693.3$&&-&-\\\cline{3-6}
+    \multirowcell{5}{Resonance\\(GHz)}&\multirowcell{2}{$J=1$}&$288693.3$&$306492.1$&-&-\\\cline{3-6}
     {}&&$288694.3$&-&-&-\\\cline{2-6}
-    {}&\multirowcell{2}{$J=2$}&$288698.0$&&&\\\cline{3-6}
+    {}&\multirowcell{2}{$J=2$}&$288698.0$&$306495.9$&$307879.8$&$309255.4$\\\cline{3-6}
     {}&&$288698.5$&-&-&-\\\cline{2-6}
-    {}&$J=3$&$288705.4$&&-&-\\\hline
+    {}&$J=3$&$288705.4$&$306502.0$&-&-\\\hline
   \end{tabular}
   \caption[PA resonance frequencies]{
     PA resonance frequencies for $v'=0,12-14$.
@@ -393,7 +406,7 @@ the $J=2$ is expected to have the strongest coupling.
     \label{table:pa:all-lines}}
 \end{table}
 
-Fig.~\todo{\ref{}} shows the PA spectra measured for different vibrational states
+Fig.~\ref{fig:pa:spectrum} shows the PA spectra measured for different vibrational states
 with the frequencies summarized in table~\ref{table:pa:all-lines}.
 The spectra for $v'=0$ and $v'=12$ shows three rotational states
 whereas only the strongest rotational state is measured for $v'=13$ and $v'=14$.
@@ -402,17 +415,8 @@ The $v'=0$ spectrum also shows the hyperfine structure for the lowest two rotati
 The rotational states of the molecule can be determined from the energy gap between the states
 based on the discussion in section \ref{pa:angular-momentums:deep}.
 The ratio of the spacing between the lowest $J$ states we measured are
-$...\todo{number}$ and $...\todo{number}$ for $v'=0$
-\footnote{The energy of the strongest hyperfine line is used} and $v'=12$ respectively.
-This is consistent with the ratio of $3/2$ for $\Omega=1$ states.
-
-\todo{
-  v'=0 with 3 J states (NaCs 2017-2018 > NaCs 2018 > c3Sigma v=0 search > Scan 4/16-4/18)
-  v'=12 306496.736 GHz (NaCs 2019 > NaCs 2019 > PA (466.75 GHz) 7/16 - 7/28 > PA v = 12 (~306496.7 GHz) 7/31 - 8/2)
-  v'=12 with 3 J states (NaCs 2019 > NaCs 2019 > TiSapph Spectroscopy 11/21 - > v = 12 (306496.7 GHz))
-  v'=13 (NaCs 2019 > NaCs 2019 > TiSapph Spectroscopy 11/21 - > v = 13 (307879.8 GHz))
-  v'=14 309257 GHz (tweezer power dependency) (NaCs 2019 > NaCs 2019 > PA (466.75 GHz) 7/16 - 7/28 > PA v = 14 (~309257 GHz) 8/5 - 8/17)
-}
+$1.64$ and $1.61$ for $v'=0$ \footnote{The energy of the strongest hyperfine line is used}
+and $v'=12$ respectively. This is consistent with the ratio of $3/2$ for $\Omega=1$ states.
 
 \subsection{Linewidth}
 \label{pa:linewidth}
