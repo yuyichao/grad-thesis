@@ -357,10 +357,21 @@ that returnes one of the input argument based on an condition.
 Loops are not currently supported.
 
 \subsection{FPGA Backend}
-\todo{figure (block diagram)}
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\textwidth]{figures/computer_control_backend_fpga.pdf}
+  \caption[FPGA Block Diagram]{
+    FPGA hardware block diagram.
+    The sequence data is sent to the server program running on the CPU via network.
+    The program then push the commands to the pulse controller implemented
+    in the programming logics.
+    The pulse controller executes the commands and genenerates or changes outputs
+    for clock/trigger, DDS or logical outputs.
+    \label{fig:computer-control:backend-fpga}}
+\end{figure}
 The timing of the experiment is controlled by a Xilinx ZC702 FPGA
 which contains both a processing system (PS) part, i.e. CPU,
-and a programmable logic (PL) part, i.e. FPGA.
+and a programmable logic (PL) part, i.e. FPGA (Fig.~\ref{fig:computer-control:backend-fpga}).
 The PL creates digital control signals for various peripheral devices
 which generate output for the experiment,
 including direct digital synthesizers (DDS), logical switching signal
