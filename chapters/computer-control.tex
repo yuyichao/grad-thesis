@@ -276,6 +276,9 @@ whereas the device API typically uses a flat data structure like an array of num
 or a series of commands.
 It is therefore the job of the backend to bridge this gap
 and convert the between the multiple representations of the sequence.
+The conversion is done in a ``generate'' step and
+the result is cached for each sequence to allow running the sequence
+multiple times with minimum overhead.
 
 The specific requirements and implementations for each backends are very different.
 Nevertheless, there are a few important features or components that are shared among
@@ -316,6 +319,16 @@ which offers the following advantages,
   and it is important that the same version of code can work on different machines
   and can communicate with each other in all cases.
 \end{enumerate}
+
+\subsection{Sorting of Pulses}
+The tree representation of the sequence is useful for construction and manipulation
+but contains unnecessary information for generating output,
+for which only the pulses and their start and end time
+within the top-level sequence is important but not the subsequence structure.
+Because of this, all the backends starts the generation step by
+flattening the tree to obtain a list of all pulses sorted by their start time.
+After the sorting of the pulses, the tree structure is discarded by default
+\footnote{This behavior can be disabled for debugging purpose} to reduce memory usage.
 
 \subsection{Representation of Pulses}
 Several backends require accessing the exact representation of the pulses
@@ -358,7 +371,7 @@ The server software that runs on the PS communicates with the main control compu
 via ZeroMQ (\ref{ch:computer-control:backend:net})
 and generates a custom command stream to control the PL output.
 The main job of the FPGA backend is therefore to convert
-the tree representation of the sequence to the command stream.
+the sorted pulses to the command stream.
 
 (clock generation)
 (pulse merging)
