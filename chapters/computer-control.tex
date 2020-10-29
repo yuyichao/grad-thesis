@@ -370,12 +370,25 @@ which runs an Arch Linux ARMv7 distribution.
 The server software that runs on the PS communicates with the main control computer
 via ZeroMQ (\ref{ch:computer-control:backend:net})
 and generates a custom command stream to control the PL output.
+Each command corresponds to making one change to the final output, e.g.
+logical values, DDS output amplitude or frequencies, etc.
 The main job of the FPGA backend is therefore to convert
 the sorted pulses to the command stream.
 
-(clock generation)
-(pulse merging)
-(compression)
+Due to performance concern, this conversion is done in C++ code\footnote{\url{https://github.com/nacs-lab/libnacs/blob/0076e347ff3ba674fbf74872883b40feefd82ce0/lib/seq/bytecode.cpp\#L528}}.
+The main design considerations and features are,
+\begin{enumerate}
+\item The sequence supports changing and ramping multiple channels at the same time.
+  This is not supported by the hardware due to the limit on the number of I/O ports
+  connecting the PL to the output devices requiring multiplexing of the control signal.
+  The backend manages this by interleaving the commands for different channels
+  when more than one are changed at the same time.
+\item For a continuous ramp of a channel, since the output change are discrete,
+  it may not happen at exactly the end time of the pulse.
+% \item (clock generation)
+% \item (pulse merging)
+% \item (compression)
+\end{enumerate}
 
 \subsection{NiDAQ Backend}
 (Variable clock)
