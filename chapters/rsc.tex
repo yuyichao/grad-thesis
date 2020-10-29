@@ -75,7 +75,7 @@ Using the creation ($\hat a^\dagger$) and annihilation ($\hat a$) operators and 
 $\mathbf{\hat x}=\mathbf{x}_0\paren{\hat a+\hat a^\dagger}$ where $x_0=\sqrt{\hbar/2m\omega}$
 is the harmonic oscillator length, the phase factor can be expressed as
 $\ue^{\ui\eta^R\paren{\hat a+\hat a^\dagger}}$ where $\eta^R\equiv\mathbf{\Delta k}\cdot\mathbf{x}_0$
-is the Lamb-Dicke parameter for the Raman transition \todo{\cite{}}.
+is the Lamb-Dicke parameter for the Raman transition.
 The matrix element between motional state $|n\rangle$ and $|n'\rangle$ is therefore,
 \[ M_{n,n'}=\langle n|\ue^{\ui\eta^R\paren{\hat a+\hat a^\dagger}}|n'\rangle \]
 and the final Raman Rabi frequency between motional states $n$ and $n'$ is given by,
@@ -84,7 +84,7 @@ For $n=n'$, this is called a carrier transition and the others are called sideba
 If the final state is higher than the initial one, i.e. $n'>n$, it is a heating sideband.
 Likewise, transitions with $n'<n$ are cooling sidebands.
 
-A closed form result for $M_{n,n'}$ is given in \todo{\cite{}},
+A closed form result for $M_{n,n'}$ is given in \cite{wineland_experimental_1998},
 \[ M_{n,n'}=\ue^{\paren{\eta^R}^2/2}\sqrt{\frac{n_<!}{n_>!}}\paren{\eta^R}^{|n-n'|}L_{n_<}^{|n-n'|}\paren{\paren{\eta^R}^2} \]
 where $n_<$ and $n_>$ are the lesser and greater, respectively, of $n$ and $n'$,
 and $L_n^\alpha$ is the generalized Laguerre polynomial,
@@ -149,7 +149,7 @@ This also allow us to reuse the MOT light source and simplifies our setup.
 
 \section{Raman Sideband Thermometry}
 
-\todo{\cite{?}}From the discussion in section \ref{ch:rsc-basic-theory-raman},
+From the discussion in section \ref{ch:rsc-basic-theory-raman},
 we see that the strength of the sideband transition depends on the initial motional state
 as well as the Lamb-Dicke parameter $\eta^R$ of the atom.
 This dependency allows us to infer the motional state of the atom
@@ -247,7 +247,6 @@ In 3D with cooling along multiple axis with different trapping frequency
 is replaced by a weighted average of different axis depending on the frequency
 each axis is cooled in the sequence.
 
-\todo{change r to x in the plot to be consistent with text}
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{figures/na_rsc_challenges.pdf}
@@ -286,7 +285,8 @@ The other important effect is the dependency of matrix element $M_{n,n+1}$
 on the motional level $n$.
 While this dependency is not a new effect, since the $\sqrt{n}$ dependency
 on the cooling sideband strength exist even in the LD regime
-and must be taken into account with pulse time variation\todo{\cite{}}
+and must be taken into account with pulse time variation
+\cite{wineland_experimental_1998,liu_molecular_2019}
 to achieve efficient cooling, the high Lamb-Dicke parameter adds even more complications.
 As shown in Fig.~\ref{fig:na-rsc-challenges}B, rather than a simple $\sqrt{n}$ dependency,
 it is a non-monotonic function and more importantly has multiple minima, so-called ``dead-zone'',
@@ -304,7 +304,6 @@ which further complicates the optimization of the cooling sequence.
 \section{Solution: High Order Sidebands}
 \label{ch:rsc-solution-high-orders}
 
-\todo{change r to x in the plot to be consistent with text}
 \begin{figure}
   \centering
   \includegraphics[width=8cm]{figures/na_rsc_mele_raman.pdf}
@@ -366,7 +365,7 @@ Including higher order sidebands in the sideband thermometry could in principle
 give us enough information about the state distribution but doing
 so for a non-thermal distribution is not easy or reliable.
 We therefore use a Monte-Carlo simulation to guide our search
-for the optimal sequence \todo{\cite{}}.
+for the optimal sequence \cite{dalibard_wave-function_1992}.
 The simulation includes accurate scattering rate and branching ratios
 from the tweezer, Raman and OP beams.
 For best simulation performance, the atom is assumed to be in a single motional state,
@@ -504,7 +503,8 @@ However, reducing the lineiwth of the transition also increase the susceptibilit
 to resonance fluctuation.
 Therefore the desired solution is to reduce the off-resonance coupling of the Raman beam
 for large detuning while increasing or maintaining the coupling for small detuning.
-We achieve this by using a Blackman pulse shape for the Raman transition \todo{\cite{}}.
+We achieve this by using a Blackman pulse shape for the Raman transition
+\cite{kasevich_laser_1992}.
 \footnote{While more complex pulses can be constructed to achieve a even sharp detuning cutoff,
   \todo{\cite{}} such pulses generally significantly increases the pulse time
   and can cause more heating during cooling due to scattering and other heating mechanisms.
@@ -597,6 +597,8 @@ The full sequence including calibrated parameters can be found in appendix \ref{
     \label{fig:na-rsc-rabi-flop}}
 \end{FPfigure}
 \afterpage{\clearpage}
+
+\todo{}
 
 \section{Conclusion}
 
