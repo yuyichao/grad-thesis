@@ -383,15 +383,44 @@ The main design considerations and features are,
   connecting the PL to the output devices requiring multiplexing of the control signal.
   The backend manages this by interleaving the commands for different channels
   when more than one are changed at the same time.
-\item For a continuous ramp of a channel, since the output change are discrete,
-  it may not happen at exactly the end time of the pulse.
-% \item (clock generation)
-% \item (pulse merging)
-% \item (compression)
+  A set of active pulses are maintained as the conversion proceed through sequence time.
+  Pulses are added to the active set when the start time is reached
+  and retired from the set when the end time is reached.
+\item For a continuous ramp of a channel, since the output changes are discrete,
+  it may not happen at exactly the end time of the pulse
+  which requires special care to ensure the correctness of the channel value after a pulse.
+  For example, a linear ramp from $0$ to $0.5$ on a channel from time $0 \mathrm{\mu s}$
+  to $5 \mathrm{\mu s}$ may only receive update at time $0, 2, 4 \mathrm{\mu s}$
+  with values $0.0, 0.2, 0.4$ respectively due to discretization.
+  However, the user should expect the value of the channel (absence of other pulses)
+  long after the pulse to be $0.5$ instead.
+  This is handled in the backend by checking the last update from the pulse
+  against its expected ending value before retiring it.
+  A final update to the ending value is generated if the two values are different.
+\item The output has finite resolution.
+  If an update changes the value that is unresolved by the hardware
+  (typical during a slow ramp), the update will be omitted.
+\item Some command corresponds to more than one action/pulse in the sequence.
+  For example, more than one logical outputs can be updated at the same time
+  and some commands also accept a variable wait time afterwards
+  (in additional to a special purpose wait command).
+  The backend examines neighboring operations and may merge multiple commands into one.
+  This is especially useful for logical outputs.
+  In fact, logical outputs changes that is specified to happen at the same time in the sequence
+  are guaranteed to happen at the same time in the experiment as well.
+\item The PL command is fixed length to allow a simpler implementation
+  of command parsing in the PL.
+  However, since not all command contain the same amount of information,
+  the command includes padding for alignment.
+  In order to save network bandwidth, a compressed format with variable command length
+  and no padding is used to transfer the command through the network.
+  The decompression is done when running the sequence on the CPU right before
+  sending to the PL for execution.
 \end{enumerate}
 
 \subsection{NiDAQ Backend}
 (Variable clock)
+% \item (clock generation)
 
 \subsection{USRP Backend}
 (SIMD)
