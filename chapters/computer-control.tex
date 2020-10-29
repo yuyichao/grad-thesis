@@ -282,6 +282,7 @@ Nevertheless, there are a few important features or components that are shared a
 different backends.
 
 \subsection{Network Communication}
+\label{ch:computer-control:backend:net}
 With one current exception, the output device is not directly connected to
 the computer running the frontend but is only connected to another computer
 on the same network.
@@ -344,7 +345,20 @@ Loops are not currently supported.
 
 \subsection{FPGA Backend}
 \todo{figure (block diagram)}
-The timing of the experiment is controlled by a Xilinx ZC702 FPGA.
+The timing of the experiment is controlled by a Xilinx ZC702 FPGA
+which contains both a processing system (PS) part, i.e. CPU,
+and a programmable logic (PL) part, i.e. FPGA.
+The PL creates digital control signals for various peripheral devices
+which generate output for the experiment,
+including direct digital synthesizers (DDS), logical switching signal
+and clock or trigger signal for other devices.
+The PS consists of a dual core Cortex-A9 CPU
+which runs an Arch Linux ARMv7 distribution.
+The server software that runs on the PS communicates with the main control computer
+via ZeroMQ (\ref{ch:computer-control:backend:net})
+and generates a custom command stream to control the PL output.
+The main job of the FPGA backend is therefore to convert
+the tree representation of the sequence to the command stream.
 
 (clock generation)
 (pulse merging)
