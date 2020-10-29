@@ -411,7 +411,7 @@ The main design considerations and features are,
 \item The output has finite resolution.
   If an update changes the value that is unresolved by the hardware
   (typical during a slow ramp), the update will be omitted.
-\item Some command corresponds to more than one action/pulse in the sequence.
+\item Some commands correspond to more than one action/pulse in the sequence.
   For example, more than one logical outputs can be updated at the same time
   and some commands also accept a variable wait time afterwards
   (in additional to a special purpose wait command).
@@ -419,12 +419,12 @@ The main design considerations and features are,
   This is especially useful for logical outputs.
   In fact, logical outputs changes that is specified to happen at the same time in the sequence
   are guaranteed to happen at the same time in the experiment as well.
-\item The PL command is fixed length to allow a simpler implementation
+\item The PL commands are fixed length to allow a simpler implementation
   of command parsing in the PL.
-  However, since not all command contain the same amount of information,
-  the command includes padding for alignment.
+  However, since not all commands contain the same amount of information,
+  some include padding for alignment.
   In order to save network bandwidth, a compressed format with variable command length
-  and no padding is used to transfer the command through the network.
+  and no padding is used to transfer the commands through the network.
   The decompression is done when running the sequence on the CPU right before
   sending to the PL for execution.
 \end{enumerate}
