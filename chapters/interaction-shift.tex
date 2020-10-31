@@ -188,6 +188,32 @@ and so the ground state energy $E_0  = \eta + 1/2$.
 The COM Hamiltonian is a cylindrical harmonic oscillator and the energies is given by
 Eq.~\ref{eq:interaction-shift:cylind-E}.
 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/interaction_shift_energies.pdf}
+  \caption[Result of interaction shift calculation.]{
+    Energy levels as a function of scattering length
+    (in unit of the axial relative motion oscillator length
+    $\beta_{rel,z}$) from the non-perturbative calculation.
+    The dashed straight light is the result from first order perturbation
+    for the motional ground state which shows good agreement with the exact calculation
+    at small scattering length.
+    Only states that are in the radial motional (both relative and COM) ground state
+    are shown because of the high radial motional energy scale ($100\mathrm{kHz}$).
+    The states are labeled with their relative and COM axial motional quantum numbers
+    $m_{rel,z}$ and $m_{COM,z}$.
+    Due to the relative and COM motion mixing term and the resulting avoided crossings
+    in the energy levels, these are not true quantum number
+    and are not constants along the same line.
+    The number shown in the plot are for the state at large negative scattering length.
+    States with even total parity, i.e. $m_{rel,z} + m_{COM,z}$, are plotted in solid lines
+    whereas ones with odd total parity are plotted in dashed lines.
+    Since the Hamiltonian conserves total parity,
+    there is no coupling between the between the two sets of states
+    which results in the level crossing shown in the plot.
+    \label{fig:interaction-shift:energies}}
+\end{figure}
+
 Now that we have the solution in the separable and cylindrical case,
 the next step is to include the non-separable and asymmetric correction terms
 by diagonalizing the total matrix in the combined COM and relative cylindrical bases.
@@ -217,8 +243,8 @@ $a_\perp = \sqrt{\hbar/( \mu \omega_\perp)}$ and $a_z = \sqrt{\hbar/ (\mu \omega
 $H_{m_z}$ are the Hermite-Gaussian functions,
 and $L^{|l|}_n$ are the generalized Laguerre polynomials.
 
-The eigenenergies of the matrix are calculated as a function of the scattering length,
-which is shown in Fig.~\todo{\ref{}}.
+The eigenenergies of the matrix are calculated as a function of the scattering length.
+The results for the lowest energy ones are shown in Fig.~\ref{fig:interaction-shift:energies}.
 
 \section{Interaction Shift Spectroscopy}
 (Sequence)
