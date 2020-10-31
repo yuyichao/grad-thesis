@@ -246,16 +246,43 @@ On the other hand, the $|\mathrm{Na(2, 2),Cs(4, 4)}\rangle$ bound state is above
 all the other spin states and therefore has a mostly pure spin state
 and the transition has little Zeeman shift.
 
-\section{Angular momentum Coupling in $N=2$ Ground State}
+\section{Angular Momentum Coupling in $N=2$ Ground State}
 \label{ch:raman-spectroscopy:n2}
 
-In additional to the $N=0$ state, the Raman spectroscopy also allows us
-to measure the energies of rotational excited states.
+In additional to the $N=0$ state, we also measure the energies of rotational excited states.
+Not only do these measurements allow us to verify the rotational state for our previous results,
+we can also take advantage of the precision of the Raman spectroscopy
+to study the rich interaction between the nuclear rotation and atomic spin.
 
-\todo{
-  Richer angular momentum
-  Selection rules
-}
+Due to parity conservation in the Raman transition,
+the final molecular state must have an even $N$
+so the lowest rotational excited state we can address is $N=2$.
+Moreover, we select $F_{\mathrm{atom}}=6$ as the final total atomic spin state
+since this includes the $m_{F_{\mathrm{atom}}}=6$ state which has minimum
+Zeeman shift as discussed in the previous section.
+
+Since the full Hamiltonian is rotaionally symmetric for rotation around the field direction,
+$m_F=m_{F_{\mathrm{atom}}}+m_{N}=6$ is conserved in the Raman transition,
+which includes a total of three states.
+However, the exact states we are coupling to and the good quantum numbers depends on
+the strength of the external field.
+
+At zero or very low external field,
+the good quantum number is $\mathbf{F}=\mathbf{F}_{\mathrm{atom}}+\mathbf{N}$
+due to coupling between $\mathbf{F}_{\mathrm{atom}}$ and $\mathbf{N}$.
+as discussed in section \ref{pa:structure:near-threshold}.
+In this basis, the three energy eigenstates are
+$|F=6,m_F=6\rangle$, $|F=7,m_F=6\rangle$ and $|F=8,m_F=6\rangle$.
+
+External field, both magnetic and electric\footnote{Light field from the tweezer.},
+couples mostly to the atomic spin $\mathbf{F}_{\mathrm{atom}}$
+\footnote{More precisely the electron spin within $\mathbf{F}_{\mathrm{atom}}$.}
+rather than the nuclear rotation $\mathbf{N}$.
+Therefore, at high field $\mathbf{F}_{\mathrm{atom}}$ and $\mathbf{N}$
+decouples and becomes good quantum numbers individually.
+In this basis, the three energy eigenstates are
+$|m_{F_\mathrm{atom}}=6,m_N=0\rangle$, $|m_{F_\mathrm{atom}}=5,m_N=1\rangle$ and
+$|m_{F_\mathrm{atom}}=4,m_N=2\rangle$.
 
 \todo{
   N=2 bound states/field dependency
