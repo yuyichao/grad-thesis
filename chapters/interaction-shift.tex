@@ -247,6 +247,8 @@ The eigenenergies of the matrix are calculated as a function of the scattering l
 The results for the lowest energy ones are shown in Fig.~\ref{fig:interaction-shift:energies}.
 
 \section{Interaction Shift Spectroscopy}
+
+\subsection{Experiment Sequence}
 The absolute energies shown in Fig.~\ref{fig:interaction-shift:energies} have an arbitrary global
 offset and are therefore not directly measurable.
 Instead, the measurable quantities are the energy differences between different states,
@@ -254,14 +256,25 @@ which can be done either by changing the scattering length, i.e. moving along th
 or by changing the motional state of the atoms, i.e. moving along the y axis.
 
 In our experiment, we measure the interaction shifts by flipping the spin state of
-one but not the other atom using a Raman transition.
+one but not the other atom using Raman transition.
 Since the scattering length depends on the spin state,
 this allow us to measure the difference between energy levels for different scattering lengths
 by comparing the resonance frequency in the absence of the other atom \todo{figure}.
 The spin flip is done in the same $8.8 \mathrm{G}$ we use for Raman sideband cooling
 (section \ref{ch:rsc:setup}).
+We drive the transition using two Raman beams that are co-propagating
+which imprints no phase gradient on the atomic wavefunction (section \ref{ch:rsc-basic-theory-raman}).
+This reduces the number of observable resonances and provides a cleaner spectrum since,
+\begin{enumerate}
+\item Parity is conserved during the transition.\\
+  Starting from the motional ground state, this means that all dashed lines in
+  Fig.~\ref{fig:interaction-shift:energies} are uncoupled.
+\item Coupling to different motional states are surpressed.\\
+  In particular, this reduces the coupling to COM motional states in the strong
+  interaction limit and to motional states for the unaddressed atom in the weak interaction limit.
+\end{enumerate}
 
-(Result)
+\subsection{Results}
 \label{ch:interaction-shift:result}
 (motional sideband, scattering length result)
 
