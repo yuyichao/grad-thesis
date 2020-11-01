@@ -430,8 +430,16 @@ The main design considerations and features are,
 \end{enumerate}
 
 \subsection{NiDAQ Backend}
-(Variable clock)
-% \item (clock generation)
+For outputing slowly varying voltage signal, we use an DAQ PCI card.
+The software driver for the card accepts an array of numbers as the voltages
+to output at each cycle for each channels.
+Since the values in these arrays can be computed for each channels independently,
+the logic for generating is relatively straightforward.
+
+\todo{
+  Measured noise due to refreshing
+  Variable clock
+}
 
 \subsection{USRP Backend}
 (SIMD)
