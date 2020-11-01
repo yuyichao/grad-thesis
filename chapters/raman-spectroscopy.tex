@@ -296,12 +296,81 @@ and $...\todo{} \mathrm{mW}$ of tweezer power
 where three resonances can be clearly seen as expected.
 This single measurement, however, does not allow us to directly identify the states
 that correspond to each of the resonances.
+Because of this, we measured the resonance at various tweezer powers and magnetic field
+as shown in Fig.~\ref{fig:raman-spectroscopy:n2-fit}.
+Each dot in the plot corresponds to an observed resonance frequency.
 
-\todo{
-  N=2 bound states/field dependency
-}
-\todo{
-  (NaCs 2017-2018 > NaCs 2018 > Raman transfer 10/5 - 10/8 > v=-1 N=2 properties 11/03 - 11/07)
-}
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{figures/raman_spectroscopy_n2_fit.pdf}
+  \caption[$N=2$ Raman resonances and fitting to external field strengths.]{
+    Dependency of $N=2$ Raman resonances on the tweezer power at
+    (A) $8.8\mathrm{G}$ and (B) $5.28\mathrm{G}$ magnetic field.
+    The different colors shows the resonance frequency for the states with
+    the lowest (blue), second lowest (orange) and highest (green) binding energies.
+    All of the data are taken in the intermediate field regime
+    and therefore in a mixture of different spin states.
+    The lines are fits to the resonance frequencies using a field dependent Hamiltonian.
+    \label{fig:raman-spectroscopy:n2-fit}}
+\end{figure}
+
+\begin{table}
+  \centering
+  \begin{tabular}{|@{}c@{}|}
+    \hline
+    $H_0$ parameters\\\hline
+    \begin{tabularx}{0.7\textwidth}{Y|Y|Y|Y}
+      $E_0$ (MHz)&$\Delta E_6$ (MHz)&$\Delta E_7$ (MHz)&$\Delta E_8$ (MHz)\\\hline
+      $-99.196(89)$&$-0.146(87)$&$-0.652(78)$&$0.80(11)$
+    \end{tabularx}\\\hline
+    AC Stark shift parameters\\\hline
+    \begin{tabularx}{0.7\textwidth}{Y|Y|Y}
+      $a_0$ (MHz/mW)&$a_1$ (MHz/mW)&$a_2$ (MHz/mW)\\\hline
+      $1.015(18)$&$0.721(21)$&$6.4(22)\times10^{-2}$
+    \end{tabularx}\\\hline
+    Zeeman shift parameters\\\hline
+    \begin{tabularx}{0.7\textwidth}{Y|Y|Y}
+      $b_0$ (MHz/G)&$b_1$ (MHz/G)&$b_2$ (MHz/G)\\\hline
+      $-0.237(22)$&$-0.222(22)$&$-0.947(23)$
+    \end{tabularx}\\\hline
+  \end{tabular}
+  \caption[$N=2$ effective Hamiltonian parameters.]{
+    Fitted parameters for the $N=2$ Hamiltonian. Since the $\Delta E_F$s are not independent
+    $\Delta E_8$ is not a free parameter and is rather $-\Delta E_6-\Delta E_7$.
+    Also note that the fit is directly from the binding energy measured
+    in Fig.~\ref{fig:raman-spectroscopy:n2-fit} so the zero energy of the Hamiltonian is
+    the atomic $|\mathrm{Na(2, 2),Cs(4, 4)}\rangle$ state
+    which also has non-zero Zeeman an AC Stark shifts.
+    \label{table:raman-spectroscopy:n2}}
+\end{table}
+
+In order to understand the dependency of the resonances on the external fields
+we use the following phenomenological model.
+The Hamiltonian in the $m_F=6$ subspace we coupled to can be expressed as,
+\begin{align*}
+  H=&H_0+H_1
+\end{align*}
+where $H_0$ is the zero field term due to the coupling
+between $\mathbf{F}_{\mathrm{atom}}$ and $\mathbf{N}$,
+and the $H_1$ term is due to the coupling to external fields.
+At zero external field, the eigenstates are the $F$ and $m_F$ basis
+and the most generic term is,
+\begin{align*}
+  H_0=&E_0+\!\!\sum_{F=6,7,8}\Delta E_F|F,m_F=6\rangle\langle F,m_F=6|
+\end{align*}
+where $E_0$ is the ``average'' energy and $\Delta E_F$ are the shift for each $F$ states
+with $\sum_{F=6,7,8}\Delta E_F = 0$.
+The term for coupling to the external fields couples to the $m_{F_\mathrm{atom}},m_N$ basis
+and the generic expression for such a term is,
+\begin{align*}
+  H_1=&\sum_{i=0,1,2}\paren{P_{\mathrm{tweezer}}\cdot a_i+B\cdot b_i}|m_{F_\mathrm{atom}}=6-i,m_N=i\rangle\langle m_{F_\mathrm{atom}}=6-i,m_N=i|
+\end{align*}
+where $P_{\mathrm{tweezer}}$ is the tweezer power, $B$ is the magnetic field,
+and $a_i$ and $b_i$ are the state dependent AC Stark shift and Zeeman shift
+of the binding energies.
+We numerically diagnolize this Hamiltonian and fit to the experimental data
+as shown in the lines in Fig.~\ref{fig:raman-spectroscopy:n2-fit}.
+The free parameters of the Hamiltonian we obtained are shown in
+table~\ref{table:raman-spectroscopy:n2}.
 
 \section{Summary and Outlook}
