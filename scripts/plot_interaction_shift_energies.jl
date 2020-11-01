@@ -44,7 +44,7 @@ figure()
 plot([-0.5, 0.5], [-0.5 * perturb_slope, 0.5 * perturb_slope],
      ls="dotted", color="gray")
 plot(data[:, 1], data[:, 2], "C0") # 0, 0
-text(-0.065, -16.4, "\$|m_{rel,z},m_{COM,z}\\rangle\\!=\\!|0,0\\rangle\$",
+text(-0.065, -16.4, "\$|m_{\\mathrm{rel},z},m_{\\mathrm{COM},z}\\rangle\\!=\\!|0,0\\rangle\$",
      color="C0", fontsize=14)
 plot(data[:, 1], data[:, 3], "C1--") # 1, 0
 text(-0.200, -10.0, "\$|0,1\\rangle\$", color="C1", fontsize=14)
@@ -65,7 +65,7 @@ grid()
 xlim([-0.5, 0.5])
 ylim([-50, 50])
 ylabel("Energies (kHz)")
-xlabel("\$a / \\beta_{rel,z}\$")
+xlabel("\$a / \\beta_{\\mathrm{rel},z}\$")
 NaCsPlot.maybe_save("$(prefix)")
 
 const state_prop = Dict(:ha=>"center", :va=>"center")
@@ -97,7 +97,7 @@ grid()
 xlim([-0.5, 0.5])
 ylim([-50, 50])
 ylabel("Energies (kHz)")
-xlabel("\$a / \\beta_{rel,z}\$")
+xlabel("\$a / \\beta_{\\mathrm{rel},z}\$")
 NaCsPlot.maybe_save("$(prefix)_42_32")
 
 figure()
@@ -126,7 +126,7 @@ grid()
 xlim([-0.5, 0.5])
 ylim([-50, 50])
 ylabel("Energies (kHz)")
-xlabel("\$a / \\beta_{rel,z}\$")
+xlabel("\$a / \\beta_{\\mathrm{rel},z}\$")
 NaCsPlot.maybe_save("$(prefix)_32_31")
 
 NaCsPlot.maybe_show()

@@ -31,7 +31,7 @@ plot(fit.plotx .- fit.param[2], fit.ploty, "C0")
 grid()
 ylim([0, ylim()[2]])
 ylabel("Resonance Shift")
-xlabel("Distance from center (\$\\mathrm{\\mu m}\$)")
+xlabel("Distance from Center (\$\\mathrm{\\mu m}\$)")
 NaCsPlot.maybe_save("$(prefix)")
 
 NaCsPlot.maybe_show()

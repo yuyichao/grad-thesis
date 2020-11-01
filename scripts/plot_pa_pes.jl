@@ -46,7 +46,7 @@ ax = gca()
 ax.spines["top"].set_visible(false)
 ax.spines["right"].set_visible(false)
 xticks([3, 4, 5, 6, 7, 8, 9])
-xlabel("Internuclear distance (\$\\mathrm{\\AA}\$)")
+xlabel("Internuclear Distance (\$\\mathrm{\\AA}\$)")
 ylabel("Energy (THz)")
 NaCsPlot.maybe_save("$(prefix)")
 

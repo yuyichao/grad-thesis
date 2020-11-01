@@ -56,8 +56,8 @@ NaCsPlot.plot_survival_data(NaCsData.map_params((i, v)->v - fit_cs0.param[2], da
 plot(fit_cs1.plotx .- fit_cs0.param[2], fit_cs1.ploty, "C1")
 grid()
 ylim([0, 1])
-ylabel("F=3 population")
-xlabel("Detuning from resonance (kHz)")
+ylabel("F=3 Population")
+xlabel("Detuning from Resonance (kHz)")
 legend(loc="upper left", handlelength=0.6, handletextpad=0.3)
 NaCsPlot.maybe_save("$(prefix)")
 

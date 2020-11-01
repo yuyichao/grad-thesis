@@ -41,7 +41,7 @@ grid()
 xlim([0, 3080])
 ylim([0, 7.3])
 ylabel("Probability Density")
-xlabel("R (\$\\AA\$)")
+xlabel("R (\$\\mathrm{\\AA}\$)")
 legend(fontsize="x-small")
 NaCsPlot.maybe_save("$(prefix)")
 

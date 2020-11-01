@@ -63,7 +63,7 @@
       \draw[pyblue!60!black,line width=1]
       plot[domain={-0.8:0.8},smooth,variable=\x] ({\x * 1.7}, {(\x)^2 * 3.75});
       \draw[pyblue!60!black,line width=0.8] ({-sqrt(0.9 / 3.75) * 1.7}, 0.9) --
-      coordinate (Shift1) ({sqrt(0.9 / 3.75) * 1.7}, 0.9) node[black,right] {$E_{int}$};
+      coordinate (Shift1) ({sqrt(0.9 / 3.75) * 1.7}, 0.9) node[black,right] {$E_{\mathrm{int}}$};
       \draw[->,>=stealth,line width=1] ($(Shift1) + (-0.18, -0.35)$)
       -- ($(Shift1) + (-0.18, 0.35)$);
       \fill[green!40!black] ($(Shift1) + (-0.18, 0)$) circle (0.16);
@@ -77,7 +77,7 @@
       plot[domain={-0.8:0.8},smooth,variable=\x] ({\x * 1.7 + 1.25}, {(\x)^2 * 3.75 - 2.6});
       \draw[pyblue!60!black,line width=0.8] ({-sqrt(0.9 / 3.75) * 1.7 + 1.25}, 0.9 - 2.6) --
       coordinate (Shift2) ({sqrt(0.9 / 3.75) * 1.7 + 1.25}, 0.9 - 2.6)
-      node[black,right] {$E_{int}'$};
+      node[black,right] {$E_{\mathrm{int}}'$};
       \draw[<-,>=stealth,line width=1] ($(Shift2) + (-0.18, -0.35)$)
       -- ($(Shift2) + (-0.18, 0.35)$);
       \fill[green!40!black] ($(Shift2) + (-0.18, 0)$) circle (0.16);
