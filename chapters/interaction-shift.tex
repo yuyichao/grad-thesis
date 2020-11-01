@@ -11,12 +11,12 @@
 
 The Hamiltonian for two atoms in an harmonic potential with interaction is,
 \[
-  H=\sum_{i=x,y,z}\paren{\frac{m_{1}\omega_{1,i}^2r_{1,i}^2}{2}+\frac{p_{1,i}^2}{2m_{1}}}+\sum_{i=x,y,z}\paren{\frac{m_{2}\omega_{2,i}^2r_{2,i}^2}{2}+\frac{p_{2,i}^2}{2m_{2}}}+V_{int}\paren{\mathbf{r}_1-\mathbf{r}_2}\numberthis{eq:interaction-shift:orig-hamiltonian}
+  H=\sum_{i=x,y,z}\paren{\frac{m_{1}\omega_{1,i}^2r_{1,i}^2}{2}+\frac{p_{1,i}^2}{2m_{1}}}+\sum_{i=x,y,z}\paren{\frac{m_{2}\omega_{2,i}^2r_{2,i}^2}{2}+\frac{p_{2,i}^2}{2m_{2}}}+V_{\mathrm{int}}\paren{\mathbf{r}_1-\mathbf{r}_2}\numberthis{eq:interaction-shift:orig-hamiltonian}
 \]
 where $m_j$ is the mass of the $j$-th atom,
 $r_{j,i}$, $p_{j,i}$, $\omega_{j,i}$ are the coordinate, momentum and trapping frequency
 for the $j$-th atom along the $i$-th axis.
-$V_{int}$ is the interaction potential between the two atoms which is only a function
+$V_{\mathrm{int}}$ is the interaction potential between the two atoms which is only a function
 of the relative coordinate between the atoms $\mathbf{r}_1-\mathbf{r}_2$.
 
 Since the two atoms experience the same trapping light field,
@@ -24,40 +24,40 @@ their trapping potential has the same center and the same shape.
 However, due to the difference in the polarizability between the atoms,
 the trap depth can be different.
 Nevertheless, in our experiment, depending on the trapping wavelength,
-we have $\omega_{1,i}\approx\omega_{2,i}$ to within $10\%$ to $20\%$
+we have $\omega_{1,i}\approx\omega_{2,i}$ to within $10~\%$ to $20~\%$
 and this is the regime we will mainly focus on in this section.
 
-The interaction potential $V_{int}$ is the original for
+The interaction potential $V_{\mathrm{int}}$ is the original for
 the molecular bound states and its exact form will be discussed in chapter \ref{ch:pa},
 \ref{ch:raman-spectroscopy} and \ref{ch:raman-transfer}.
 However, since the range of the potential is much smaller than
 the size of the atomic wavefunction, we can ignore the short range details of the potential
 and treat it as a contact interaction characterized only by the scattering length $a$.
 \[
-  V_{int}\paren{\mathbf{r}}=\frac{2\pi\hbar^2a}{\mu}\delta_{reg}\paren{\mathbf{r}}
+  V_{\mathrm{int}}\paren{\mathbf{r}}=\frac{2\pi\hbar^2a}{\mu}\delta_{\mathrm{reg}}\paren{\mathbf{r}}
 \]
 where $\mu = m_1m_2/\paren{m_1+m_2}$ is the reduced mass and
-$\delta_{reg}\paren{\mathbf{r}}\equiv\delta^{(3)}\paren{\mathbf{r}}\paren{\partial/\partial r}r$
+$\delta_{\mathrm{reg}}\paren{\mathbf{r}}\equiv\delta^{(3)}\paren{\mathbf{r}}\paren{\partial/\partial r}r$
 is the regularized delta-function.
 
 In order to calculate the interaction term, we can change from the coordinates for
 the two individual atoms to the center of mass (COM) and relative coordinates.
 \begin{align*}
-  R_i=&\ \frac{m_1r_{1,i}+m_2r_{2,i}}{m_1+m_2}&r_{rel,i}=&\ r_{1,i}-r_{2,i}\\
-  P_i=&\ p_{1,i}+p_{2,i}&p_{rel,i}=&\ \frac{m_2p_{1,i}-m_1p_{2,i}}{m_1+m_2}
+  R_i=&\ \frac{m_1r_{1,i}+m_2r_{2,i}}{m_1+m_2}&r_{\mathrm{rel},i}=&\ r_{1,i}-r_{2,i}\\
+  P_i=&\ p_{1,i}+p_{2,i}&p_{\mathrm{rel},i}=&\ \frac{m_2p_{1,i}-m_1p_{2,i}}{m_1+m_2}
 \end{align*}
 The corresponding masses and trapping frequencies are,
 \begin{align*}
   M=&\ m_1+m_2&\mu=&\ \frac{m_1m_2}{m_1+m_2}\\
-  \Omega_i^2=&\ \frac{m_1\omega_{1,i}^2+m_2\omega_{2,i}^2}{m_1+m_2}&\omega_{rel,i}^2=&\ \frac{m_2\omega_{1,i}^2+m_1\omega_{2,i}^2}{m_1+m_2}
+  \Omega_i^2=&\ \frac{m_1\omega_{1,i}^2+m_2\omega_{2,i}^2}{m_1+m_2}&\omega_{\mathrm{rel},i}^2=&\ \frac{m_2\omega_{1,i}^2+m_1\omega_{2,i}^2}{m_1+m_2}
 \end{align*}
 and the Hamiltonian can be expressed as,
 \begin{align*}
   \begin{split}
     H=&\sum_{i=x,y,z}\paren{\frac{M\Omega_{i}^2R_{i}^2}{2}+\frac{P_{i}^2}{2M}}+
-    \left[\sum_{i=x,y,z}\paren{\frac{\mu\omega_{rel,i}^2r_{rel,i}^2}{2}+\frac{p_{rel,i}^2}{2\mu}}+
-      V_{int}\paren{\mathbf{r}_{rel}}\right]\\
-    &+\sum_{i=x,y,z}\mu\paren{\omega_{1,i}^2 - \omega_{2,i}^2}R_ir_{rel,i}
+    \left[\sum_{i=x,y,z}\paren{\frac{\mu\omega_{\mathrm{rel},i}^2r_{\mathrm{rel},i}^2}{2}+\frac{p_{\mathrm{rel},i}^2}{2\mu}}+
+      V_{\mathrm{int}}\paren{\mathbf{r}_{\mathrm{rel}}}\right]\\
+    &+\sum_{i=x,y,z}\mu\paren{\omega_{1,i}^2 - \omega_{2,i}^2}R_ir_{\mathrm{rel},i}
   \end{split}\numberthis{eq:interaction-shift:full-hamiltonian}
 \end{align*}
 The first term and the second term only relies on the COM motion and relative motion
@@ -78,34 +78,34 @@ as well as providing an intuitive understanding of the shift and its dependency
 on different parameters.
 
 For simplicity, we will assume all the trapping frequencies are the same,
-i.e. $\omega_{1,i}=\omega_{2,i}=\omega_{rel,i}=\Omega_i=\omega_i$,
+i.e. $\omega_{1,i}=\omega_{2,i}=\omega_{\mathrm{rel},i}=\Omega_i=\omega_i$,
 so that we only need to consider the relative motion,
 \[
-  H_{rel}=\sum_{i=x,y,z}\paren{\frac{\mu\omega_{i}^2r_{rel,i}^2}{2}+\frac{p_{rel,i}^2}{2\mu}}+
-  V_{int}\paren{\mathbf{r}_{rel}}
+  H_{\mathrm{rel}}=\sum_{i=x,y,z}\paren{\frac{\mu\omega_{i}^2r_{\mathrm{rel},i}^2}{2}+\frac{p_{\mathrm{rel},i}^2}{2\mu}}+
+  V_{\mathrm{int}}\paren{\mathbf{r}_{\mathrm{rel}}}
 \]
 When treating the interaction as perturbation, the base solution is the harmonic oscillator
-states for the relative motion $|n_{rel,x},n_{rel,y},n_{rel,z}\rangle$.
+states for the relative motion $|n_{\mathrm{rel},x},n_{\mathrm{rel},y},n_{\mathrm{rel},z}\rangle$.
 The energy level pertubation is then,
 \begin{align*}
-  \Delta_{n_{rel,x},n_{rel,y},n_{rel,z}}=&\langle n_{rel,x},n_{rel,y},n_{rel,z}|V_{int}\paren{\mathbf{r}_{rel}}|n_{rel,x},n_{rel,y},n_{rel,z}\rangle\\
-  =&\frac{2\pi\hbar^2a}{\mu}\langle n_{rel,x},n_{rel,y},n_{rel,z}|\delta_{reg}\paren{\mathbf{r}_{rel}}|n_{rel,x},n_{rel,y},n_{rel,z}\rangle\\
-  =&\frac{2\pi\hbar^2a}{\mu}\abs{\psi_{n_{rel,x},n_{rel,y},n_{rel,z}}(0)}^2\numberthis{eq:interaction-shift-perturb-shift}
+  \Delta_{n_{\mathrm{rel},x},n_{\mathrm{rel},y},n_{\mathrm{rel},z}}=&\langle n_{\mathrm{rel},x},n_{\mathrm{rel},y},n_{\mathrm{rel},z}|V_{\mathrm{int}}\paren{\mathbf{r}_{\mathrm{rel}}}|n_{\mathrm{rel},x},n_{\mathrm{rel},y},n_{\mathrm{rel},z}\rangle\\
+  =&\frac{2\pi\hbar^2a}{\mu}\langle n_{\mathrm{rel},x},n_{\mathrm{rel},y},n_{\mathrm{rel},z}|\delta_{reg}\paren{\mathbf{r}_{\mathrm{rel}}}|n_{\mathrm{rel},x},n_{\mathrm{rel},y},n_{\mathrm{rel},z}\rangle\\
+  =&\frac{2\pi\hbar^2a}{\mu}\abs{\psi_{n_{\mathrm{rel},x},n_{\mathrm{rel},y},n_{\mathrm{rel},z}}(0)}^2\numberthis{eq:interaction-shift-perturb-shift}
 \end{align*}
-where $\abs{\psi_{n_{rel,x},n_{rel,y},n_{rel,z}}(0)}^2$ is the probability density
+where $\abs{\psi_{n_{\mathrm{rel},x},n_{\mathrm{rel},y},n_{\mathrm{rel},z}}(0)}^2$ is the probability density
 for zero distance between the atoms.
 
 For the motional ground state, the shift is,
 \begin{align*}
-  \Delta_{0,0,0}=&a\frac{2\hbar^2}{\mu\sqrt{\pi}}\prod_{i=x,y,z}\frac{1}{\beta_{rel,i}}
+  \Delta_{0,0,0}=&a\frac{2\hbar^2}{\mu\sqrt{\pi}}\prod_{i=x,y,z}\frac{1}{\beta_{\mathrm{rel},i}}
 \end{align*}
-where $\beta_{rel,i}\equiv\sqrt{\hbar/\mu\omega_{rel,i}}$ is the relative motion
+where $\beta_{\mathrm{rel},i}\equiv\sqrt{\hbar/\mu\omega_{\mathrm{rel},i}}$ is the relative motion
 oscillator length along the $i$-th axis.
 The shift is proportional to the strength of the interaction $a$,
 and is also stronger for stronger confinement where the wavefunction density is higher.
 
 We can see from (\ref{eq:interaction-shift-perturb-shift}) that the shift is only
-non-zero when all of $n_{rel,i}$'s are even.
+non-zero when all of $n_{\mathrm{rel},i}$'s are even.
 The shift is also smaller for higher motional excited state with smaller wavefunction density.
 This means that the shift will only be observable if the atom is cooled to closed to
 the motional ground state and will be small or zero for hot atoms.
@@ -113,7 +113,7 @@ the motional ground state and will be small or zero for hot atoms.
 \subsection{Non-perturbative Calculation}
 
 The first order perturbative result breaks down for large $a$ when the energy shift
-approaches the motional energy scale $\omega_{rel,i}$.
+approaches the motional energy scale $\omega_{\mathrm{rel},i}$.
 Moreover, due to the divergence nature of the delta-function in the contact interaction potential,
 higher order perturbative calculation does not converge.
 It is therefore necessary to use a non-perturbative solution of the interacting atoms
@@ -126,10 +126,10 @@ For the relative Hamiltonian, we use the analytic cylindrical solutions
 from Ref.~\cite{idziaszek_analytical_2006}.
 These solutions require the potential to be cylindrically symmetric and
 that the ratio between the radial trapping frequency
-and the axial trapping frequency $\eta\equiv\omega_{radial}/\omega_{axial}$
+and the axial trapping frequency $\eta\equiv\omega_{\mathrm{radial}}/\omega_z$
 to be an integer.
 We therefore define $\eta = 6$, which is close to the actual values of $5.6$
-and ignores the $7 \%$ difference between the two radial trapping frequencies
+and ignores the $7~\%$ difference between the two radial trapping frequencies
 in order to use these solutions.
 These differences from the real Hamiltonian will be included later,
 together with the mixing term, as a correction.
@@ -159,12 +159,12 @@ as is required by the solution of the interaction,
 there is a subspace of cylindrical harmonic oscillator states with $l=0$
 and even $m_z$ that are degenerate from Eq.~\ref{eq:interaction-shift:cylind-E}.
 In each degenerate subspace with $N_{\mathrm{deg}}$ states,
-the non-interacting states $\psi_{non-int}$
+the non-interacting states $\psi_{\mathrm{non-int}}$
 are a linear superposition of the degenerate eigenstates $\psi_i$
-that satisfies the condition $V_{int}\psi_{non-int} = 0$ or
-$\psi_{non-int}\paren{\mathbf{r}_{rel}=0}=0$.
+that satisfies the condition $V_{\mathrm{int}}\psi_{\mathrm{non-int}} = 0$ or
+$\psi_{\mathrm{non-int}}\paren{\mathbf{r}_{\mathrm{rel}}=0}=0$.
 We find these amplitudes $c_i$ using a Gram-Schmidt procedure,
-which from the requirement $\sum_{i=1}^{N_{\mathrm{deg}}}  c_i \psi_i\paren{\mathbf{r}_{rel}=0} = 0$.
+which from the requirement $\sum_{i=1}^{N_{\mathrm{deg}}}  c_i \psi_i\paren{\mathbf{r}_{\mathrm{rel}}=0} = 0$.
 In each subspace, there is only one interacting state,
 for which the analytic solution is used, and  $N_{\mathrm{deg}}-1$ non-interacting states.
 
@@ -182,8 +182,8 @@ where $\mathcal{F}\paren{x, \eta}$ is given by
 \end{align*}
 Here $F(a,b;c,x)$ denotes the hypergeometric function
 and $\Gamma(x)$ is the Euler gamma function.
-The energy $E$ and $E_0$ are in units of the axial trap energy $\hbar \omega_z$,
-and so the ground state energy $E_0  = \eta + 1/2$.
+The energy $E$ and $E_0$ are in units of the axial trapping frequency $\omega_z$,
+and so the ground state energy $E_0 = \eta + 1/2$.
 
 The COM Hamiltonian is a cylindrical harmonic oscillator and the energies is given by
 Eq.~\ref{eq:interaction-shift:cylind-E}.
@@ -194,19 +194,19 @@ Eq.~\ref{eq:interaction-shift:cylind-E}.
   \caption[Result of interaction shift calculation.]{
     Energy levels as a function of scattering length
     (in unit of the axial relative motion oscillator length
-    $\beta_{rel,z}$) from the non-perturbative calculation.
+    $\beta_{\mathrm{rel},z}$) from the non-perturbative calculation.
     The dashed straight light is the result from first order perturbation
     for the motional ground state which shows good agreement with the exact calculation
     at small scattering length.
     Only states that are in the radial motional (both relative and COM) ground state
-    are shown because of the high radial motional energy scale ($100\mathrm{kHz}$).
+    are shown because of the high radial motional energy scale ($100~\mathrm{kHz}$).
     The states are labeled with their relative and COM axial motional quantum numbers
-    $m_{rel,z}$ and $m_{COM,z}$.
+    $m_{\mathrm{rel},z}$ and $m_{\mathrm{COM},z}$.
     Due to the relative and COM motion mixing term and the resulting avoided crossings
     in the energy levels, these are not true quantum number
     and are not constants along the same line.
     The number shown in the plot are for the state at large negative scattering length.
-    States with even total parity, i.e. $m_{rel,z} + m_{COM,z}$, are plotted in solid lines
+    States with even total parity, i.e. $m_{\mathrm{rel},z} + m_{\mathrm{COM},z}$, are plotted in solid lines
     whereas ones with odd total parity are plotted in dashed lines.
     Since the Hamiltonian conserves total parity,
     there is no coupling between the between the two sets of states
@@ -220,7 +220,7 @@ by diagonalizing the total matrix in the combined COM and relative cylindrical b
 Compared to treating the interaction term in \ref{eq:interaction-shift:orig-hamiltonian}
 as a perturbation, the correction terms included here all have the form of
 harmonic potentials and therefore have much better convergence behavior.
-We include all states with energies up to $20 \omega_{rel,z}$ in the calculation.
+We include all states with energies up to $20 \omega_{\mathrm{rel},z}$ in the calculation.
 The matrix elements are calculated numerically using the cylindrical wavefunctions,
 which for completeness are given here:
 \begin{align*}
@@ -275,7 +275,7 @@ Since the scattering length depends on the spin state,
 this allow us to measure the difference between energy levels for different scattering lengths
 by comparing the resonance frequency in the absence of the other atom
 (Fig.~\ref{fig:interaction-shift:measure}).
-The spin flip is done in the same $8.8 \mathrm{G}$ we use for Raman sideband cooling
+The spin flip is done in the same $8.8~\mathrm{G}$ we use for Raman sideband cooling
 (section \ref{ch:rsc:setup}).
 We drive the transition using two Raman beams that are co-propagating
 which imprints no phase gradient on the atomic wavefunction
@@ -302,7 +302,7 @@ The orange line shows the bare $|\Cs(4, 4)\rangle$ to $|\Cs(3, 3)\rangle$ resona
 the present of the Na atom whereas the blue line shows the resonances
 including the interaction with the Na atom.
 The largest peak on the left is the shifted ground motional state
-$|m_{rel,z},m_{COM,z}\rangle = |0,0\rangle$ and the smaller peak on the right
+$|m_{\mathrm{rel},z},m_{\mathrm{COM},z}\rangle = |0,0\rangle$ and the smaller peak on the right
 corresponds to the $|2,0\rangle$ state (Fig.~\todo{}).
 A even smaller resonance for $|4,0\rangle$ is also visible further right (not shown in Fig.~\todo{}).
 The $|0,0\rangle$ resonance gives the difference of the interaction shifts
@@ -342,8 +342,8 @@ using the binding energy of the least bound state $v''=-1$
 The absense of spin mixing for this state allows its binding energy to be related
 to the scattering length directly through
 the two-scale single-channel quantum defect theory (QDT).
-For the van der Waals coefficients, we use $C_6=3227\mathrm{a.u.}$ and
-$C_8=3.681\times10^5\mathrm{a.u.}$ from
+For the van der Waals coefficients, we use $C_6=3227~\mathrm{a.u.}$ and
+$C_8=3.681\times10^5~\mathrm{a.u.}$ from
 Refs. \cite{docenko_coupling_2006,mcguyer_high-precision_2015,porsev_accurate_2003}.
 From here, we can use the result of the calculation above to obtain all the
 absolute interaction shifts and scattering lengths.

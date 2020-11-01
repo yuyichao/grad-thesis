@@ -21,12 +21,12 @@
   \caption[Schematics of Raman sideband cooling for Sodium.]{
     Single Na atom Raman sideband cooling scheme.
     The Raman transitions couples $|2,2;n\rangle$ and $|1,1;n+\Delta n\rangle$
-    through the intermediate states $|e_i\rangle$ in the $3^2P_{3/2}$ electronic states.
+    through the intermediate states $|e_i\rangle$ in the $\mathrm{3^2P_{3/2}}$ electronic states.
     The transitions have a one-photon detuning $\Delta_i\approx75$ GHz.
     Two-photon detuning, $\delta$, is defined relative to the $\Delta n=0$ carrier transition.
     For optical pumping, we use two $\sigma^+$ polarized transitions,
-    one to pump the atom state out of $|1,1\rangle$ via $3^2P_{3/2}$
-    and one to pump atoms out of $|2,1\rangle$ via $3^2P_{1/2}$
+    one to pump the atom state out of $|1,1\rangle$ via $\mathrm{3^2P_{3/2}}$
+    and one to pump atoms out of $|2,1\rangle$ via $\mathrm{3^2P_{1/2}}$
     to minimize heating of the $|2,2\rangle$ state.
     \label{fig:na-rsc-schematics}}
 \end{figure}
@@ -57,7 +57,7 @@ and a Raman transition is used to drive the atom to the $|s_2\rangle\equiv|1,1\r
 where $|F,m_F\rangle$ denotes the $F$ and $m_F$ quantum number for the sodium atom.
 The full Rabi frequency for such a transition is given by
 \begin{align}
-  \Omega_R^0=&\sum_{i}\frac{\Omega_{1i}\Omega_{2i}^*}{2\Delta_i}\label{rsc-basic-theory-raman-rabi}
+  \Omega_{\mathrm{R}}^0=&\sum_{i}\frac{\Omega_{1i}\Omega_{2i}^*}{2\Delta_i}\label{rsc-basic-theory-raman-rabi}
 \end{align}
 where the sum is over all the coupled excited states,
 $\Omega_{ai}\equiv\langle a|\mathbf{d}\cdot\mathbf{E}_a|e_i\rangle$ is the single photon
@@ -74,33 +74,33 @@ where $\mathbf{\Delta k}$ is the wavevector difference between the two Raman bea
 Using the creation ($\hat a^\dagger$) and annihilation ($\hat a$) operators and the relation
 $\mathbf{\hat x}=\mathbf{x}_0\paren{\hat a+\hat a^\dagger}$ where $x_0=\sqrt{\hbar/2m\omega}$
 is the harmonic oscillator length, the phase factor can be expressed as
-$\ue^{\ui\eta^R\paren{\hat a+\hat a^\dagger}}$ where $\eta^R\equiv\mathbf{\Delta k}\cdot\mathbf{x}_0$
+$\ue^{\ui\eta^{\mathrm{R}}\paren{\hat a+\hat a^\dagger}}$ where $\eta^{\mathrm{R}}\equiv\mathbf{\Delta k}\cdot\mathbf{x}_0$
 is the Lamb-Dicke parameter for the Raman transition.
 The matrix element between motional state $|n\rangle$ and $|n'\rangle$ is therefore,
-\[ M_{n,n'}=\langle n|\ue^{\ui\eta^R\paren{\hat a+\hat a^\dagger}}|n'\rangle \]
+\[ M_{n,n'}=\langle n|\ue^{\ui\eta^{\mathrm{R}}\paren{\hat a+\hat a^\dagger}}|n'\rangle \]
 and the final Raman Rabi frequency between motional states $n$ and $n'$ is given by,
-\[ \Omega_{R}^{n,n'}=M_{n,n'}\Omega_R^0 \]
+\[ \Omega_{\mathrm{R}}^{n,n'}=M_{n,n'}\Omega_{\mathrm{R}}^0 \]
 For $n=n'$, this is called a carrier transition and the others are called sideband transitions.
 If the final state is higher than the initial one, i.e. $n'>n$, it is a heating sideband.
 Likewise, transitions with $n'<n$ are cooling sidebands.
 
 A closed form result for $M_{n,n'}$ is given in \cite{wineland_experimental_1998},
-\[ M_{n,n'}=\ue^{\paren{\eta^R}^2/2}\sqrt{\frac{n_<!}{n_>!}}\paren{\eta^R}^{|n-n'|}L_{n_<}^{|n-n'|}\paren{\paren{\eta^R}^2} \]
+\[ M_{n,n'}=\ue^{\paren{\eta^{\mathrm{R}}}^2/2}\sqrt{\frac{n_<!}{n_>!}}\paren{\eta^{\mathrm{R}}}^{|n-n'|}L_{n_<}^{|n-n'|}\paren{\paren{\eta^{\mathrm{R}}}^2} \]
 where $n_<$ and $n_>$ are the lesser and greater, respectively, of $n$ and $n'$,
 and $L_n^\alpha$ is the generalized Laguerre polynomial,
 \[ L_n^\alpha(x)\equiv\sum_{m=0}^n(-1)^m\begin{pmatrix}n+\alpha\\n-m\end{pmatrix}\frac{x^m}{m!} \]
 
-An important limit is the so-called Lamb-Dicke (LD) regime defined by $\paren{\eta^R}^2(2n+1)\ll 1$.
-In this case, we can approximate the phase factor in leading order of $\eta^R$,
-\[ \ue^{\ui\eta^R\paren{\hat a+\hat a^\dagger}}\approx1+\ui\eta^R\paren{\hat a+\hat a^\dagger} \]
+An important limit is the so-called Lamb-Dicke (LD) regime defined by $\paren{\eta^{\mathrm{R}}}^2(2n+1)\ll 1$.
+In this case, we can approximate the phase factor in leading order of $\eta^{\mathrm{R}}$,
+\[ \ue^{\ui\eta^{\mathrm{R}}\paren{\hat a+\hat a^\dagger}}\approx1+\ui\eta^{\mathrm{R}}\paren{\hat a+\hat a^\dagger} \]
 and the matrix element
-\[ M_{n,n'}\approx\delta_{n,n'}+\ui\eta^R\sqrt{n+1}\delta_{n+1,n'}+\ui\eta^R\sqrt{n}\delta_{n,n'+1} \]
+\[ M_{n,n'}\approx\delta_{n,n'}+\ui\eta^{\mathrm{R}}\sqrt{n+1}\delta_{n+1,n'}+\ui\eta^{\mathrm{R}}\sqrt{n}\delta_{n,n'+1} \]
 the three terms corresponds to the carrier ($n'=n$),
 the first order heating sideband ($n'=n+1$)
 and the first order cooling sideband ($n'=n-1$) with corresponding strength
-$1$, $\eta^R\sqrt{n+1}$ and $\eta^R\sqrt{n}$.
+$1$, $\eta^{\mathrm{R}}\sqrt{n+1}$ and $\eta^{\mathrm{R}}\sqrt{n}$.
 We can clearly see from this approximation that the coupling to other motional state
-is stronger for a larger $\eta^R$ and higher motional quantum number $n$.
+is stronger for a larger $\eta^{\mathrm{R}}$ and higher motional quantum number $n$.
 We will discuss this effect outside the LD regime and its implication
 on the cooling performance in more detail in section \ref{ch:rsc-challenges}.
 
@@ -117,7 +117,7 @@ The rate of the scattering is
 \end{align*}
 where $\Gamma_{ei}$ is the linewidth of the excited state $|e_i\rangle$.
 Together with (\ref{rsc-basic-theory-raman-rabi}), we see that approximately
-$\Gamma/\Omega_R\propto1/\Delta$ so a larger detuning should be used
+$\Gamma/\Omega_{\mathrm{R}}\propto1/\Delta$ so a larger detuning should be used
 in order to reduce the scattering during RSC.
 
 \subsection{Optical Pumping}
@@ -134,11 +134,13 @@ However, if this is done using scattering from a $F=2$ to $F'=3$ transition,
 the OP beam will allow continuous photon cycle
 between the $|2,2\rangle$ and the $|3',3\rangle$ causing unnecessary motional heating during OP.
 Therefore, the OP must be done on a $F=2$ to $F'=2$ transition.
-Unfortunately, for Na, the corresponding transition from $3^2S_{1/2}$ to $3^2P_{3/2}$
+Unfortunately, for Na, the corresponding transition
+from $\mathrm{3^2S_{1/2}}$ to $\mathrm{3^2P_{3/2}}$
 that is used for the MOT is not useable due to the small energy difference of
 $60 \mathrm{MHz}$ (or $6$ line widths) between the $F'=2$ and $F'=3$ states
 \cite{steck_sodium_nodate}.
-Instead, we must use the sodium $\mathrm{D1}$ line, i.e. $3^2S_{1/2}$ to $3^2P_{1/2}$ transition,
+Instead, we must use the sodium $\mathrm{D1}$ line,
+i.e. $\mathrm{3^2S_{1/2}}$ to $\mathrm{3^2P_{1/2}}$ transition,
 which lacks a $F'=3$ excited state.
 The $\mathrm{D1}$ light with $\sigma^+$ polarization is only used to pump atoms from
 $F=2$ states (in particular $|2,1\rangle$ which is populated during the OP process).
@@ -151,22 +153,22 @@ This also allow us to reuse the MOT light source and simplifies our setup.
 
 From the discussion in section \ref{ch:rsc-basic-theory-raman},
 we see that the strength of the sideband transition depends on the initial motional state
-as well as the Lamb-Dicke parameter $\eta^R$ of the atom.
+as well as the Lamb-Dicke parameter $\eta^{\mathrm{R}}$ of the atom.
 This dependency allows us to infer the motional state of the atom
 by measuring the sideband height, i.e. the so-called sideband thermometry.
 
 In particular, for atom with temperature $T$,
 the probability for the atom to be in motional state $|n\rangle$ is,
 \[ p_n=\frac{\ue^{-n\hbar\omega/k_BT}}{1-\ue^{-\hbar\omega/k_BT}} \]
-for a Raman pulse with full Rabi frequency $\Omega_R^0$ and time $t$,
+for a Raman pulse with full Rabi frequency $\Omega_{\mathrm{R}}^0$ and time $t$,
 the peak height for the first order heating (+) and cooling (-) sidebands,
 \begin{align*}
-  h_\pm=&\sum_{n=0}^\infty p_n\sin^2\paren{\frac{\Omega_R^0t}{2}M_{n,n\pm1}}
+  h_\pm=&\sum_{n=0}^\infty p_n\sin^2\paren{\frac{\Omega_{\mathrm{R}}^0t}{2}M_{n,n\pm1}}
 \end{align*}
 note that $p_{n+1}=p_n\ue^{-\hbar\omega/k_BT}$, $M_{n,n'}=M_{n',n}$ and $M_{n,-1}=0$, we have
 \begin{align*}
-  h_-=&\sum_{n=0}^\infty p_n\sin^2\paren{\frac{\Omega_R^0t}{2}M_{n,n-1}}\\
-  =&\ue^{-\hbar\omega/k_BT}\sum_{n=1}^\infty p_{n-1}\sin^2\paren{\frac{\Omega_R^0t}{2}M_{n-1,n}}\\
+  h_-=&\sum_{n=0}^\infty p_n\sin^2\paren{\frac{\Omega_{\mathrm{R}}^0t}{2}M_{n,n-1}}\\
+  =&\ue^{-\hbar\omega/k_BT}\sum_{n=1}^\infty p_{n-1}\sin^2\paren{\frac{\Omega_{\mathrm{R}}^0t}{2}M_{n-1,n}}\\
   =&\ue^{-\hbar\omega/k_BT}h_+
 \end{align*}
 Therefore, if we measure the ratio of the cooling and heating sideband heights
@@ -202,11 +204,11 @@ we address the motion along the three principle axis of the tweezer using differ
 of Raman beams.
 In order to maximize the beam intensity so that a larger single photon detuning can be used
 while maintaining the same Raman Rabi frequency,
-we focus the Raman beam onto the single atom with a waist of $\approx100 \mathrm{\mu m}$.
-The maximum powers within each Raman beam are between $1$ and $6 \mathrm{mW}$
-which give us a maximum Raman Rabi frequency of $50$ to $200 \mathrm{kHz}$.
+we focus the Raman beam onto the single atom with a waist of $\approx100~\mathrm{\mu m}$.
+The maximum powers within each Raman beam are between $1$ and $6~\mathrm{mW}$
+which give us a maximum Raman Rabi frequency of $50$ to $200~\mathrm{kHz}$.
 
-We apply an external bias magnetic field of $8.8 \mathrm{G}$ parallel to the polarization
+We apply an external bias magnetic field of $8.8~\mathrm{G}$ parallel to the polarization
 of the tweezer beam (and orthogonal to the tweezer beam propagation direction).
 This makes the field orthogonal to the effective magnetic field of the tweezer,
 which minimizes the vector light shifts~\cite{kaufman_cooling_2012,thompson_coherence_2013}.
@@ -232,19 +234,19 @@ the strongest first order cooling sideband.
 The energy removed for atom driven in one Raman pulse is therefore, $\Delta E_-=\omega$.
 In order to reinitialize the hyperfine state, the sodium atom needs to scatter on average
 $2$ photons from the OP pulse which increases the average energy of the driven atom
-by $\Delta E_+=4\omega_r$
+by $\Delta E_+=4\omega_{\mathrm{recoil}}$
 \footnote{The factor of 4 comes from 2 absorbed photons and 2 reemitted photons.}
-where $\omega_r\equiv \hbar k^2/2m$ is the recoil energy\cite{steck_sodium_nodate}
+where $\omega_{\mathrm{recoil}}\equiv \hbar k^2/2m$ is the recoil energy\cite{steck_sodium_nodate}
 and $k$ is the OP light wave vector.
 The heating to cooling ratio in one RSC pulse cycle is therefore,
 \begin{align*}
   \frac{\Delta E_+}{\Delta E_-}=&\frac{2\hbar k^2}{m\omega}=4k^2x_0^2\\
-  =&4\paren{\eta^{OP}}^2
+  =&4\paren{\eta^{\mathrm{OP}}}^2
 \end{align*}
-where $\eta^{OP}\equiv kx_0$ is the Lamb-Dicke parameter for OP.
-Therefore, in order to achieve net cooling, we need $\paren{\eta^{OP}}^2<0.25$.
+where $\eta^{\mathrm{OP}}\equiv kx_0$ is the Lamb-Dicke parameter for OP.
+Therefore, in order to achieve net cooling, we need $\paren{\eta^{\mathrm{OP}}}^2<0.25$.
 In 3D with cooling along multiple axis with different trapping frequency
-(and therefore different $\eta^{OP}$), the $\paren{\eta^{OP}}^2$ in the requirement
+(and therefore different $\eta^{\mathrm{OP}}$), the $\paren{\eta^{\mathrm{OP}}}^2$ in the requirement
 is replaced by a weighted average of different axis depending on the frequency
 each axis is cooled in the sequence.
 
@@ -254,7 +256,7 @@ each axis is cooled in the sequence.
   \caption[Optical pumping motional-state redistribution and Raman coupling]{
     Optical pumping motional-state redistribution and Raman coupling for large LD parameters
     for the axial direction ($z$).
-    The range plotted covers $95$\% of the initial thermal distribution.
+    The range plotted covers $95~\%$ of the initial thermal distribution.
     (A) Motional state distribution after one OP cycle for different initial states motion,
     $n_{\textrm{init}}$.
     Due to photon-recoil and the large LD parameter, $\eta^{\textrm{OP}}_z=0.55$,
@@ -265,9 +267,9 @@ each axis is cooled in the sequence.
 \end{figure}
 
 In our experiment, the OP Lamb-Dicke parameters are
-$\eta^{OP}_x, \eta^{OP}_y, \eta^{OP}_z = 0.25, 0.25, 0.55$.
+$\eta^{\mathrm{OP}}_x, \eta^{\mathrm{OP}}_y, \eta^{\mathrm{OP}}_z = 0.25, 0.25, 0.55$.
 Based on the metric above, any cooling sequences
-that have fewer than $78\%$ cooling pulse for $z$ (axial) axis, which is generally the case,
+that have fewer than $78~\%$ cooling pulse for $z$ (axial) axis, which is generally the case,
 should have a net cooling effect.
 This, however, does not guarantee cooling into the ground motional state,
 nor does it fully characterize the efficiency of the cooling sequence
@@ -275,9 +277,11 @@ since the averaging hides a few critical aspect of having a large Lamb-Dicke par
 
 One of the important effects can be seen in Fig.~\ref{fig:na-rsc-challenges}A showing
 the motional state distribution after one OP cycle
-for different initial motional states $n_{init}$.
-Although the average heating is fixed at $4\omega_r$, independent of $n_{init}$,
-the spread or the uncertainty of $n$ after the OP is significantly higher for high $n_{init}$.
+for different initial motional states $n_{\mathrm{init}}$.
+Although the average heating is fixed at $4\omega_{\mathrm{recoil}}$,
+independent of $n_{\mathrm{init}}$,
+the spread or the uncertainty of $n$ after the OP is significantly
+higher for high $n_{\mathrm{init}}$.
 This effect significantly increases the difficulty in controlling the state during the
 RSC sequence. It can negatively impact the cooling performance and
 may lead to increased loss during cooling due to atom escaping to higher motional states.
@@ -374,7 +378,8 @@ i.e. with a certain $n_x$, $n_y$ and $n_z$, after each Raman or OP step
 \footnote{This assumes no coherence between different motional state,
   which is the case as long as each Raman pulses are separated from each other by OP pulses.}.
 It is also assumed that each Raman pulse drives only the intended sideband order,
-which is a property that needs to be ensured in the experiment (see section \ref{ch:rsc:implementation:pulse-shaping}).
+which is a property that needs to be ensured in the experiment
+(see section \ref{ch:rsc:implementation:pulse-shaping}).
 For each cooling sequence simulated,
 the Raman beam power and frequency, and the OP beam power and polarization purity
 are varies slightly around the respective expected values
@@ -434,7 +439,7 @@ beams to be ... \todo{number, maybe table} which corresponds to a total of $...$
 scattering event on average during the whole cooling sequence and
 should not be a limiting factor for the cooling performance.
 
-The OP beam has a much larger waist ($\approx1\mathrm{mm}$)
+The OP beam has a much larger waist ($\approx1~\mathrm{mm}$)
 and therefore require less alignment in the beam position.
 However, in order to take advantage of the dark state optical pumping and
 minimize unnecessary scattering for atoms in the $|2,2\rangle$ state,
@@ -472,7 +477,7 @@ of the OP beam can contribute significantly to the polarization impurity and
 must be avoided. In particular, since the Raman beam R1 counter propagate with the OP beam,
 it is possible for the OP beam to be coupled into the Raman fiber and then retro-reflected
 to be focused onto the atom through the Raman beam path at a wrong polarization.
-Since the Raman beam size is much smaller, we have observed as much as $3\%$
+Since the Raman beam size is much smaller, we have observed as much as $3~\%$
 polarization impurity caused by this mechanism despite only a small amount of
 power being reflected. This issue, along with other reflections,
 are reduced by avoiding optics with normal incident on the exit path of the OP beam
@@ -526,7 +531,7 @@ of the optical tweezers via perturbation theory.
 In the paraxial approximation, we find $A_{i,n}=\frac{-3n\hbar}{4\pi m d_i^2}$,
 where $d_i$ equals the beam radius for the radial directions and
 $d_z\approx\pi w_{0,x}w_{0,y}/\lambda_{\textrm{trap}}$.
-Numerically, $\{A_{x,n},A_{y,n},A_{z,n}\}=\{-1.4, -1.4, -0.16\}n$~kHz.
+Numerically, $\{A_{x,n},A_{y,n},A_{z,n}\}=\{-1.4, -1.4, -0.16\}n~\mathrm{kHz}$.
 For the states addressed by high order sidebands,
 this broadens and shifts high-order sidebands
 due to the $n$-dependence of the transitions.
@@ -547,7 +552,7 @@ and is therefore ignored. The calibration measures
 only the carrier and first order heating sideband which has the highest signal after cooling
 (an example of which is shown in the cooled Rabi flopping signal in Fig.~\ref{fig:na-rsc-rabi-flop}).
 The Raman Rabi frequencies measured on these two transitions are used to calculate
-the full Rabi frequency $\Omega_R^0$ and the Lamb-Dicke parameter,
+the full Rabi frequency $\Omega_{\mathrm{R}}^0$ and the Lamb-Dicke parameter,
 which are in-turn used to calculate the Rabi frequency on other sideband orders.
 
 Since the final calibration of both the Raman Rabi frequency and resonance requires a working
@@ -585,14 +590,14 @@ The full sequence including calibrated parameters can be found in appendix \ref{
     that includes a thermal distribution of motional states~\cite{meekhof_generation_1996}
     as well as off-resonant scattering from the Raman beams.
 
-    The blue lines correspond to a ground state probability of (A-D) $98.1$\% along radial axis
-    and (E-F) $95$\% along the axial axis after cooling.
-    The red lines correspond to a thermal distribution of $80$ $\mu$K before RSC.
-    The horizontal dashed lines in all the plots correspond to the $4\,\%$ probability
+    The blue lines correspond to a ground state probability of (A-D) $98.1~\%$ along radial axis
+    and (E-F) $95~\%$ along the axial axis after cooling.
+    The red lines correspond to a thermal distribution of $80~\mathrm{\mu K}$ before RSC.
+    The horizontal dashed lines in all the plots correspond to the $4~\%$ probability
     of imaging loss.
 
     The green dashed line in (F) includes the additional decoherence due to
-    a fluctuation of the hyperfine splitting of magnitude $3$ kHz.
+    a fluctuation of the hyperfine splitting of magnitude $3~\mathrm{kHz}$.
     We see that the decoherence effect is strongest for the post-cooling data on
     the axial $\Delta n_z=1$ sideband where the Rabi frequency is the lowest.
     \label{fig:na-rsc-rabi-flop}}

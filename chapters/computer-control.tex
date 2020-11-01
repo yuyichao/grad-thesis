@@ -400,8 +400,8 @@ The main design considerations and features are,
 \item For a continuous ramp of a channel, since the output changes are discrete,
   it may not happen at exactly the end time of the pulse
   which requires special care to ensure the correctness of the channel value after a pulse.
-  For example, a linear ramp from $0$ to $0.5$ on a channel from time $0 \mathrm{\mu s}$
-  to $5 \mathrm{\mu s}$ may only receive update at time $0, 2, 4 \mathrm{\mu s}$
+  For example, a linear ramp from $0$ to $0.5$ on a channel from time $0~\mathrm{\mu s}$
+  to $5~\mathrm{\mu s}$ may only receive update at time $0, 2, 4~\mathrm{\mu s}$
   with values $0.0, 0.2, 0.4$ respectively due to discretization.
   However, the user should expect the value of the channel (absence of other pulses)
   long after the pulse to be $0.5$ instead.

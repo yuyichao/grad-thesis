@@ -10,14 +10,14 @@
 \section{Raman Transition Beyond Three-Level Model}
 \label{ch:raman-transfer:raman-model}
 
-For a Raman transition with Raman Rabi frequency $\Omega_R$ and total scattering rate
+For a Raman transition with Raman Rabi frequency $\Omega_{\mathrm{R}}$ and total scattering rate
 $\Gamma$, defined as the sum of the scattering rate for the initial and final states,
 the probability of scattering during a $\pi$ pulse is,
 \begin{align*}
-  p_{scatter}=&\frac{\Gamma t_{\pi}}{2}\\
-  =&\frac{\pi\Gamma}{2\Omega_R}
+  p_{\mathrm{s}}=&\frac{\Gamma t_{\pi}}{2}\\
+  =&\frac{\pi\Gamma}{2\Omega_{\mathrm{R}}}
 \end{align*}
-which is proportional to the ratio $\Gamma/\Omega_R$.
+which is proportional to the ratio $\Gamma/\Omega_{\mathrm{R}}$.
 In an ideal three-level system, this is the only source of decoherence
 which can be made arbitrarily small by using a large single photon detuning
 \textsuperscript{(\ref{ch:rsc-basic-theory-raman-scatter})}.
@@ -69,12 +69,12 @@ which can in tern be coupled to the initial and final states
 by an off-resonance Raman transition.
 The leakage is suppressed by the detuning from the Raman resonance,
 i.e. $\omega'_i$ and $\omega'_f$.
-This puts a limit on the Raman Rabi frequency $\Omega_R$ to be smaller
+This puts a limit on the Raman Rabi frequency $\Omega_{\mathrm{R}}$ to be smaller
 than the smallest energy gap, which in turns puts a limit on the minimum Raman transfer time.
 In our experiment, the minimum energy gap comes from axial motional excitation of
-the atomic initial states which is between $2\pi\times10 - 30$~kHz
+the atomic initial states which is between $2\pi\times10 - 30~\mathrm{kHz}$
 depending on the trap depth used.
-The typical Raman $\pi$ time we can realize is $0.5 - 5$~ms so this effect
+The typical Raman $\pi$ time we can realize is $0.5 - 5~\mathrm{ms}$ so this effect
 is not a major limiting factor for our transfer efficiency.
 
 \subsection{Additional Excited States}
@@ -86,8 +86,8 @@ is not a major limiting factor for our transfer efficiency.
   \caption[Raman transition with additional excited states]{
     Effect of additional excited states $|e'\rangle$ on the Raman transition efficiency.
     (A) Depending on the sign of the coupling, there could be constructive (blue)
-    or destructive (orange) interference on the Raman Rabi frequency $\Omega_{Raman}$.
-    (B) Increased scattering rate $\Gamma_{scatter}$ caused by $|e'\rangle$ with a minimal
+    or destructive (orange) interference on the Raman Rabi frequency $\Omega_{\mathrm{R}}$.
+    (B) Increased scattering rate $\Gamma_{\mathrm{s}}$ caused by $|e'\rangle$ with a minimal
     between the two states.
     (C) Optimal detunine exists between the two states with maximum transfer efficiency
     corresponds to a fraction of the state spacing.
@@ -100,7 +100,7 @@ by the Raman beams and can cause a change in both the Raman Rabi frequency
 and the scattering rate.
 The total Raman Rabi frequency (Fig.~\ref{fig:raman-transfer-extra-ext-states}A) is,
 \[
-  \Omega_{Raman}=\frac{\Omega_1\Omega_2}{2\Delta}+\frac{\Omega'_1\Omega'_2}{2(\Delta-\omega'_e)}
+  \Omega_{\mathrm{R}}=\frac{\Omega_1\Omega_2}{2\Delta}+\frac{\Omega'_1\Omega'_2}{2(\Delta-\omega'_e)}
 \]
 where $\Omega'_1$ and $\Omega'_2$ are the single photon Rabi frequencies coupling $|e'\rangle$
 to $|i\rangle$ and $|f\rangle$ respectively.
@@ -116,14 +116,14 @@ between the excited states (Fig.~\ref{fig:raman-transfer-extra-ext-states}C).
 
 Despite the difference in the position and value of the maximum for different
 $|e'\rangle$ parameters, we can summarize the effect on the transfer efficiency
-as a limit on the maximum detuning $\Delta_{max}$ to a fraction of the spacing
+as a limit on the maximum detuning $\Delta_{\max}$ to a fraction of the spacing
 between the excited states ($\omega'_e$).
 As an example, the blue and orange maxima in Fig.~\ref{fig:raman-transfer-extra-ext-states}C
 corresponds to a limit on single photon detuning of $0.5\omega'_e$ and $0.15\omega'_e$.
 As one would expected, a larger excited state spacing usually result in
 a larger detuning limit and a better transfer efficiency.
 
-Summarizing the effect of additional excited state as a single number $\Delta_{max}$ allows
+Summarizing the effect of additional excited state as a single number $\Delta_{\max}$ allows
 us to keep using the equation for Raman transition with minor corrections
 and makes it easier to compare different state selection and transition schemes.
 It is also worth noting that although only one additional excited state $|e'\rangle$
@@ -141,9 +141,9 @@ is another important effect in our experiment.
 Without the cross coupling, the total off resonance scattering rate for
 the initial and the final states is
 \[
-  \Gamma_{scatter0}=\frac{\Gamma_e\left(\Omega_1^2+\Omega_2^2\right)}{4\Delta^2}
+  \Gamma_{\mathrm{s}0}=\frac{\Gamma_e\left(\Omega_1^2+\Omega_2^2\right)}{4\Delta^2}
 \]
-For a given Raman Rabi frequency $\Omega_{Raman}\propto\Omega_1\Omega_2$, this is
+For a given Raman Rabi frequency $\Omega_{\mathrm{R}}\propto\Omega_1\Omega_2$, this is
 minimized when $\Omega_1=\Omega_2$.
 
 When cross coupling is taken into account, however, the total scattering rate becomes,
@@ -154,16 +154,16 @@ When cross coupling is taken into account, however, the total scattering rate be
   This would also require choosing an excited state with the same or lower angular momentum
   as the ground states in order to avoid cross coupling to different excited states.}
 \begin{align}
-  \Gamma_{scatter}=&\frac{\Gamma_e\Omega_1^2}{4M_1^2}\left(\frac{M_1^2}{\Delta^2}+\frac{M_2^2}{(\Delta+\delta)^2}\right)+\frac{\Gamma_e\Omega_2^2}{4M_2^2}\left(\frac{M_2^2}{\Delta^2}+\frac{M_1^2}{(\Delta-\delta)^2}\right)\\
+  \Gamma_{\mathrm{s}}=&\frac{\Gamma_e\Omega_1^2}{4M_1^2}\left(\frac{M_1^2}{\Delta^2}+\frac{M_2^2}{(\Delta+\delta)^2}\right)+\frac{\Gamma_e\Omega_2^2}{4M_2^2}\left(\frac{M_2^2}{\Delta^2}+\frac{M_1^2}{(\Delta-\delta)^2}\right)\\
   \propto&\frac{\Gamma_eP_1}{4}\left(\frac{M_1^2}{\Delta^2}+\frac{M_2^2}{(\Delta+\delta)^2}\right)+\frac{\Gamma_eP_2}{4}\left(\frac{M_2^2}{\Delta^2}+\frac{M_1^2}{(\Delta-\delta)^2}\right)
 \end{align}
 where $P_{1,2}\propto\Omega_{1,2}^2/M_{1,2}^2$ are the powers of the laser beams 1 and 2.
 When $\delta\ll\Delta$ such as our experiment,
 \begin{align*}
-  \Gamma_{scatter}\approx&\frac{\Gamma_e\left(M_1^2+M_2^2\right)}{4\Delta^2}\left(\frac{\Omega_1^2}{M_1^2}+\frac{\Omega_2^2}{M_2^2}\right)\\
+  \Gamma_{\mathrm{s}}\approx&\frac{\Gamma_e\left(M_1^2+M_2^2\right)}{4\Delta^2}\left(\frac{\Omega_1^2}{M_1^2}+\frac{\Omega_2^2}{M_2^2}\right)\\
   \propto&\frac{\Gamma_e\left(M_1^2+M_2^2\right)}{4\Delta^2}\left(P_1+P_2\right)
 \end{align*}
-For a given Raman Rabi frequency $\Omega_{Raman}\propto\Omega_1\Omega_2\propto\sqrt{P_1P_2}$,
+For a given Raman Rabi frequency $\Omega_{\mathrm{R}}\propto\Omega_1\Omega_2\propto\sqrt{P_1P_2}$,
 this is minimized when $P_1=P_2$.
 Hence, due to the strong cross coupling, we need to use the same power in both Raman beams
 rather than adjusting the powers to match their single photon Rabi frequencies.
@@ -171,7 +171,7 @@ rather than adjusting the powers to match their single photon Rabi frequencies.
 Moreover, at the minimum scattering rate, we have $\Omega_2=\Omega_1M_2/M_1$
 and the ratio between Raman Rabi frequency and scattering rate is,
 \begin{align*}
-  \frac{\Omega_{Raman}}{\Gamma_{scatter}}=&\frac{\Omega_1\Omega_2}{2\Delta}\frac{4\Delta^2}{\Gamma_e\left(M_1^2+M_2^2\right)}\left/\left(\frac{\Omega_1^2}{M_1^2}+\frac{\Omega_2^2}{M_2^2}\right)\right.\\
+  \frac{\Omega_{\mathrm{R}}}{\Gamma_{\mathrm{s}}}=&\frac{\Omega_1\Omega_2}{2\Delta}\frac{4\Delta^2}{\Gamma_e\left(M_1^2+M_2^2\right)}\left/\left(\frac{\Omega_1^2}{M_1^2}+\frac{\Omega_2^2}{M_2^2}\right)\right.\\
   =&\frac{2\Delta\Omega_1\Omega_2}{\Gamma_e\left(M_1^2+M_2^2\right)}\left/\left(\frac{\Omega_1^2}{M_1^2}+\frac{\Omega_2^2}{M_2^2}\right)\right.\\
   =&\frac{\Delta\Omega_1^2M_2}{\Gamma_eM_1\left(M_1^2+M_2^2\right)}\frac{M_1^2}{\Omega_1^2}\\
   =&\frac{\Delta}{\Gamma_e}\frac{M_1M_2}{M_1^2+M_2^2}
@@ -196,7 +196,7 @@ which is also minimized when $P_1=P_2$ at a given Raman Rabi frequency.
 
 The ratio with the Raman Rabi frequency is,
 \begin{align*}
-  \frac{\Delta\delta}{\Omega_{Raman}}\approx&\frac{M_1^2-M_2^2}{4\Delta}\left(\frac{\Omega_1^2}{M_1^2}+\frac{\Omega_2^2}{M_2^2}\right)\frac{2\Delta}{\Omega_1\Omega_2}\\
+  \frac{\Delta\delta}{\Omega_{\mathrm{R}}}\approx&\frac{M_1^2-M_2^2}{4\Delta}\left(\frac{\Omega_1^2}{M_1^2}+\frac{\Omega_2^2}{M_2^2}\right)\frac{2\Delta}{\Omega_1\Omega_2}\\
   =&\frac{M_1^2-M_2^2}{2\Omega_1\Omega_2}\left(\frac{\Omega_1^2}{M_1^2}+\frac{\Omega_2^2}{M_2^2}\right)\\
   =&\frac{M_1^2-M_2^2}{M_1M_2}
 \end{align*}
@@ -204,10 +204,10 @@ the absolute value of which is also minimized when the ratio $M_1/M_2$ is the cl
 
 Due to the coupling strength difference, we have $M_2\gg M_1$ in our experiment, which means,
 \begin{align*}
-  \left|\frac{\Delta\delta}{\Omega_{Raman}}\right|\approx&\frac{M_2}{M_1}
+  \left|\frac{\Delta\delta}{\Omega_{\mathrm{R}}}\right|\approx&\frac{M_2}{M_1}
 \end{align*}
 In order to keep the resonance stable within the linewidth of the Raman resonance,
-i.e. $\Omega_{Raman}$, we need to maintain a relative stability of $\Delta\delta$,
+i.e. $\Omega_{\mathrm{R}}$, we need to maintain a relative stability of $\Delta\delta$,
 therefore relative stability of the laser power to better than $M_1/M_2$.
 
 \section{STIRAP}
@@ -278,19 +278,19 @@ Since $\Omega_2$ is the upper bound of $\abs{\Omega_2(t)}$ we have,
 \end{align*}
 The total scattering probability is,
 \begin{align*}
-  p_{scatter0}=&\int_0^T \Gamma_e|c_e^2(t)| \ud t\\
+  p_{\mathrm{s}0}=&\int_0^T \Gamma_e|c_e^2(t)| \ud t\\
   \geqslant&\frac{\Gamma_e}{T}\abs{\int_0^T c_e(t) \ud t}^2\\
   \geqslant&\frac{4\Gamma_e}{\Omega_2^2T}
 \end{align*}
 From similar argument, we also have,
 \begin{align*}
-  p_{scatter0}\geqslant&\frac{4\Gamma_e}{\Omega_1^2T}
+  p_{\mathrm{s}0}\geqslant&\frac{4\Gamma_e}{\Omega_1^2T}
 \end{align*}
 which is the same as the previous result for a three-level STIRAP system
 where $\Omega_1=\Omega_2$.
 In the generic case, these give us a lower bound on the scattering probability,
 \begin{align*}
-  \min\paren{p_{scatter0}}=&\frac{4\Gamma_e}{\min\paren{\Omega_1^2, \Omega_2^2}T}
+  \min\paren{p_{\mathrm{s}0}}=&\frac{4\Gamma_e}{\min\paren{\Omega_1^2, \Omega_2^2}T}
 \end{align*}
 whereas the full scattering is larger than this lower bound by a pulse shape dependent
 small constant factor.
@@ -334,7 +334,7 @@ the Rabi frequency coupling the dark state $|D(t)\rangle$ to the excited state $
 \end{align*}
 The addtional scattering caused by this is,
 \begin{align*}
-  p'_{scatter}=&\int_0^T \frac{\Gamma'_e\Omega'^2(t)}{4{\omega'_e}^2} \ud t\\
+  p'_{\mathrm{s}}=&\int_0^T \frac{\Gamma'_e\Omega'^2(t)}{4{\omega'_e}^2} \ud t\\
   =&\frac{\Gamma'_e}{4{\omega'_e}^2}
      \paren{\frac{\Omega'_1}{\Omega_1}-\frac{\Omega'_2}{\Omega_2}}^2
      \int_0^T \frac{\Omega_1^2(t)\Omega_2^2(t)}{\Omega_1^2(t)+\Omega_2^2(t)} \ud t\\
@@ -356,7 +356,7 @@ The total scattering probability caused by the cross coupling is
 \footnote{Here we are making the same assumption of identical matrix elements for the two beams
   as the one we made for Raman transition in section \ref{ch:raman-transfer:cross-couple}.},
 \begin{align*}
-  p''_{scatter}=&\int_0^T \frac{\Gamma_e\Omega_1^2(t)}{4M_1^2}\frac{M_2^2}{\delta^2}\abs{c_f(t)}^2+\frac{\Gamma_e\Omega_2^2(t)}{4M_2^2}\frac{M_1^2}{\delta^2}\abs{c_i(t)}^2 \ud t\\
+  p''_{\mathrm{s}}=&\int_0^T \frac{\Gamma_e\Omega_1^2(t)}{4M_1^2}\frac{M_2^2}{\delta^2}\abs{c_f(t)}^2+\frac{\Gamma_e\Omega_2^2(t)}{4M_2^2}\frac{M_1^2}{\delta^2}\abs{c_i(t)}^2 \ud t\\
   =&\frac{\Gamma_e}{4\delta^2}\int_0^T \frac{M_2^2}{M_1^2}\frac{\Omega_1^4(t)}{\Omega_1^2(t)+\Omega_2^2(t)}+\frac{M_1^2}{M_2^2}\frac{\Omega_2^4(t)}{\Omega_1^2(t)+\Omega_2^2(t)} \ud t\\
   =&\frac{\Gamma_eT}{4\delta^2}\paren{C''_1\frac{M_2^2}{M_1^2}\frac{\Omega_1^4}{\Omega_1^2+\Omega_2^2}+C''_2\frac{M_1^2}{M_2^2}\frac{\Omega_2^4}{\Omega_1^2+\Omega_2^2}}
 \end{align*}
@@ -384,7 +384,7 @@ This is the case where excited state separation $\omega_e'$ is significantly sma
 to the ground state separation $\delta$.
 By choosing an optimal pulse time, the minimum scattering probability for the STIRAP is,
 \begin{align*}
-  p_{scatter}^{STIRAP}\approx&2\sqrt{\frac{4\Gamma_e}{\min\paren{\Omega_1^2, \Omega_2^2}}\frac{\Gamma'_e}{4{\omega'_e}^2}\paren{\frac{\Omega'_1}{\Omega_1}-\frac{\Omega'_2}{\Omega_2}}^2\frac{\Omega_1^2\Omega_2^2}{\Omega_1^2+\Omega_2^2}}\\
+  p_{\mathrm{s}}^{\mathrm{STIRAP}}\approx&2\sqrt{\frac{4\Gamma_e}{\min\paren{\Omega_1^2, \Omega_2^2}}\frac{\Gamma'_e}{4{\omega'_e}^2}\paren{\frac{\Omega'_1}{\Omega_1}-\frac{\Omega'_2}{\Omega_2}}^2\frac{\Omega_1^2\Omega_2^2}{\Omega_1^2+\Omega_2^2}}\\
   =&\frac{\sqrt{\Gamma_e\Gamma'_e}}{\omega'_e}
      \abs{\frac{\Omega'_1}{\Omega_1}-\frac{\Omega'_2}{\Omega_2}}
      \frac{2\max\paren{\Omega_1, \Omega_2}}{\sqrt{\Omega_1^2+\Omega_2^2}}\\
@@ -393,16 +393,16 @@ By choosing an optimal pulse time, the minimum scattering probability for the ST
 \end{align*}
 For Raman $\pi$ pulse,
 \begin{align*}
-  p_{scatter}^{RAMAN}=&\frac{\pi\Gamma}{2\Omega_R}\\
-  =&\frac{\pi}{2}\frac{\Gamma_e\paren{\Omega_1^2+\Omega_2^2}}{4\Delta_{max}^2}
-     \frac{2\Delta_{max}}{\Omega_1\Omega_2}\\
-  =&\frac{\pi\Gamma_e}{4\Delta_{max}}\frac{\paren{\Omega_1^2+\Omega_2^2}}{\Omega_1\Omega_2}\\
-  \geqslant&\frac{\pi\Gamma_e}{2\Delta_{max}}
+  p_{\mathrm{s}}^{\mathrm{Raman}}=&\frac{\pi\Gamma}{2\Omega_{\mathrm{R}}}\\
+  =&\frac{\pi}{2}\frac{\Gamma_e\paren{\Omega_1^2+\Omega_2^2}}{4\Delta_{\max}^2}
+     \frac{2\Delta_{\max}}{\Omega_1\Omega_2}\\
+  =&\frac{\pi\Gamma_e}{4\Delta_{\max}}\frac{\paren{\Omega_1^2+\Omega_2^2}}{\Omega_1\Omega_2}\\
+  \geqslant&\frac{\pi\Gamma_e}{2\Delta_{\max}}
 \end{align*}
 The last inequality for both take the equal sign when $\Omega_1=\Omega_2$.
-Comparing the result and note that $\Delta_{max}$ is a fraction of $\omega_e'$,
+Comparing the result and note that $\Delta_{\max}$ is a fraction of $\omega_e'$,
 we see that the two scales similarly to the excited state spacing.
-However, given that in the common cases we have $\Delta_{max}<\omega_e'$ and
+However, given that in the common cases we have $\Delta_{\max}<\omega_e'$ and
 $\abs{\Omega'_1/\Omega_1-\Omega'_2/\Omega_2}<1$ using STIRAP can potentially reduce
 the total scattering in this case.
 
@@ -411,19 +411,19 @@ the total scattering in this case.
 With the assumption of $C''_1\approx C''_2\approx1$ the scattering due to
 cross coupling for STIRAP is now,
 \begin{align*}
-  p''_{scatter}=&\frac{\Gamma_eT}{4\delta^2}\paren{\frac{M_2^2}{M_1^2}\frac{\Omega_1^4}{\Omega_1^2+\Omega_2^2}+\frac{M_1^2}{M_2^2}\frac{\Omega_2^4}{\Omega_1^2+\Omega_2^2}}\\
+  p''_{\mathrm{s}}=&\frac{\Gamma_eT}{4\delta^2}\paren{\frac{M_2^2}{M_1^2}\frac{\Omega_1^4}{\Omega_1^2+\Omega_2^2}+\frac{M_1^2}{M_2^2}\frac{\Omega_2^4}{\Omega_1^2+\Omega_2^2}}\\
   \geqslant&\frac{\Gamma_eT}{2\delta^2}\paren{\Omega_1^2+\Omega_2^2}\frac{M_1^2M_2^2}{\paren{M_1^2+M_2^2}^2}
 \end{align*}
 and the minimum is taken when $M_2/M_1=\Omega_2/\Omega_1$\footnote{Same as Raman transition.}
 The minimum total scattering rate for STIRAP is therefore,
 \begin{align*}
-  p_{scatter}^{STIRAP}\approx&2\sqrt{\frac{4\Gamma_e}{\min\paren{\Omega_1^2, \Omega_2^2}}\frac{\Gamma_e}{2\delta^2}\paren{\Omega_1^2+\Omega_2^2}\frac{M_1^2M_2^2}{\paren{M_1^2+M_2^2}^2}}\\
+  p_{\mathrm{s}}^{\mathrm{STIRAP}}\approx&2\sqrt{\frac{4\Gamma_e}{\min\paren{\Omega_1^2, \Omega_2^2}}\frac{\Gamma_e}{2\delta^2}\paren{\Omega_1^2+\Omega_2^2}\frac{M_1^2M_2^2}{\paren{M_1^2+M_2^2}^2}}\\
   =&2\sqrt{2}\frac{\Gamma_e}{\delta}\frac{M_1M_2}{M_1^2+M_2^2}\frac{\sqrt{\Omega_1^2+\Omega_2^2}}{\min\paren{\Omega_1, \Omega_2}}\\
   =&2\sqrt{2}\frac{\Gamma_e}{\delta}\frac{\max\paren{M_1, M_2}}{\sqrt{M_1^2+M_2^2}}\approx2\sqrt{2}\frac{\Gamma_e}{\delta}
 \end{align*}
 For Raman transition
 \begin{align*}
-  p_{scatter}^{RAMAN}=&\frac{\pi\Gamma}{2\Omega_R}\\
+  p_{\mathrm{s}}^{\mathrm{Raman}}=&\frac{\pi\Gamma}{2\Omega_{\mathrm{R}}}\\
   =&\frac{\pi\Gamma_e}{2\Delta}\frac{M_1^2+M_2^2}{M_1M_2}\\
   \approx&\frac{\pi\Gamma_e}{2\Delta}\frac{\max\paren{M_1,M_2}}{\min\paren{M_1,M_2}}
 \end{align*}
@@ -437,10 +437,10 @@ then the scattering probability for a Raman transition can be made smaller than 
 
 \subsubsection{Conclusion}
 
-In our experiment, we have an initial and final state separation of $< 1\mathrm{GHz}$
+In our experiment, we have an initial and final state separation of $< 1~\mathrm{GHz}$
 and an matrix element ratio of $< 30$.
 This means that as long as we can use a single photon detuning of more than
-$\approx 30\mathrm{GHz}$, the total scattering probability for Raman transition
+$\approx 30~\mathrm{GHz}$, the total scattering probability for Raman transition
 will be smaller than that of STIRAP.
 Since this detuning can be achieved easily,
 a Raman $\pi$ pulse should be preferred in our experiment.
@@ -488,7 +488,7 @@ affects the choices of states we use for the Raman transfer.
     This causes a significant change in the relative wavefunction especially at short
     intranuclear distance ($R$).
     Compared to other spin states with weaker interaction,
-    the wavefunction at short distance ($R<100\mathrm{\AA}$) is significantly enhanced.
+    the wavefunction at short distance ($R<100~\mathrm{\AA}$) is significantly enhanced.
     \label{fig:raman-transfer-atomic-wavefunction}}
 \end{figure}
 
@@ -525,19 +525,20 @@ as seen in section \ref{ch:interaction-shift:result}.
     Comparison between using a weakly bound and a deeply bound excited state
     as intermediate state for the Raman transition.
     The (A) deeply bound excited state ($v'=0$) has a smaller Raman Rabi frequency
-    ($\Omega_{Raman}$) compared to the (B) weakly bound excited state ($v'=63$)
+    ($\Omega_{\mathrm{R}}$) compared to the (B) weakly bound excited state ($v'=63$)
     at a given detuning.
-    However, the lower scattering rate ($\Gamma_{scatter}$) allows a much larger
-    $\Delta_{max}$,
+    However, the lower scattering rate ($\Gamma_{\mathrm{s}}$) allows a much larger
+    $\Delta_{\max}$,
     which results in a larger Raman Rabi frequency to scattering rate ratio.
     \label{fig:raman-transfer-v0-vs-v63}}
 \end{figure}
 
 Based on theory calculation, most of the molecular excited states have a linewidth $\Gamma_e'$
-very similar to that of the Cesium D lines between $2\pi\times5 \mathrm{MHz}$ to
-$2\pi\times10 \mathrm{MHz}$ due to optical decay process.
-States above the Cesium $6^2P_{1/2}$ state,
-however, could non-radiatively decay to the Cs $6^2P_{1/2}$ and Na $3^2S_{1/2}$ states
+very similar to that of the Cesium D lines between $2\pi\times5~\mathrm{MHz}$ to
+$2\pi\times10~\mathrm{MHz}$ due to optical decay process.
+States above the Cesium $\mathrm{6^2P_{1/2}}$ state,
+however, could non-radiatively decay to the Cs $\mathrm{6^2P_{1/2}}$
+and Na $\mathrm{3^2S_{1/2}}$ states
 via pre-dissociation which significantly increases the linewidth and should be avoided.
 
 \todo{make sure size mismatch and FCF are mentioned somewhere before this}
@@ -547,9 +548,9 @@ previous attempt at Raman spectroscopy typically use an excited state
 closed to the dissociative threshold as the intermediate state
 \cite{wynar_molecules_2000,rom_state_2004}.
 However, the smaller inter-state spacing and the smaller detuning from
-the atomic excited state means that these state have a relatively small $\Delta_{max}$
+the atomic excited state means that these state have a relatively small $\Delta_{\max}$
 and therefore a lower coherent transfer efficiency.
-On the other hand, a deeply bound excited state has a significantly higher $\Delta_{max}$
+On the other hand, a deeply bound excited state has a significantly higher $\Delta_{\max}$
 and is the preferred choice for coherent Raman transfer.
 
 In the experiment, we use numerical simulation to calculate the Raman transfer efficiency
@@ -579,7 +580,7 @@ This also means a longer transfer time over which the Raman lasers must remain c
 In order to lower the requirement on our Raman and tweezer laser,
 we select the first bound state, i.e. smallest binding energy, as the final molecular state.
 This ensures the maximum Raman Rabi frequency.
-Additionally, the typical binding energy for these states are $<1\mathrm{GHz}$
+Additionally, the typical binding energy for these states are $<1~\mathrm{GHz}$
 which is a frequency difference that can be generated using AOM's
 so that the coherence between the two beams is greatly improved.
 \todo{Make sure AOM is defined before and reference/add beam path description,
