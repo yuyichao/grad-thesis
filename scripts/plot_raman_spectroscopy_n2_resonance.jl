@@ -12,9 +12,10 @@ using PyPlot
 using DataStructures
 using LsqFit
 
+const expdir = joinpath(@__DIR__, "../../../experiments")
+
 const inames = ["nacs_201810/data/data_20181103_165031.mat"]
-const datas = [NaCsData.load_striped_mat(joinpath(@__DIR__, "../../../experiments", iname))
-               for iname in inames]
+const datas = [NaCsData.load_striped_mat(joinpath(expdir, iname)) for iname in inames]
 const maxcnts = [typemax(Int)]
 const specs = [(81:0.06:90) .* 2 .- 60]
 
