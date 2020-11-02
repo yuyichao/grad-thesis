@@ -86,6 +86,8 @@ fit_nacs_na_2 = fit_survival(model_gaussian, filter(x->48 < x < 63, data_nacs_na
 @show fit_nacs_na_0.uncs
 @show fit_nacs_na_2.uncs
 
+const ptrprops = Dict(:width=>2, :headlength=>6, :headwidth=>6, :color=>"m")
+
 figure()
 errorbar([], [], [], fmt="C1s-", label="Cs only")
 errorbar([], [], [], fmt="C0o-", label="Na + Cs")
@@ -104,9 +106,15 @@ plot(fit_nacs_cs_h.plotx .- fit_cs.param[2], fit_nacs_cs_h.ploty, "C0")
 plot(fit_nacs_cs_2.plotx .- fit_cs.param[2], fit_nacs_cs_2.ploty, "C0")
 grid()
 legend(fontsize="small")
-text(-90, 0.70, ("    \$|\\mathrm{Na(2,2)\\ Cs(4,4)}\\rangle\$\n" *
+text(-90, 0.79, ("    \$|\\mathrm{Na(2,2)\\ Cs(4,4)}\\rangle\$\n" *
                  "\$\\rightarrow|\\mathrm{Na(2,2)\\ Cs(3,3)}\\rangle\$"),
      ha="left", va="top", fontsize=13)
+x_cs_0 = fit_nacs_cs_0.param[2] - fit_cs.param[2]
+annotate("\$|0,0\\rangle\$", xy=(x_cs_0, 0.54),
+         xytext=(x_cs_0, 0.60), arrowprops=ptrprops, fontsize=14, ha="center", color="m")
+x_cs_2 = fit_nacs_cs_2.param[2] - fit_cs.param[2]
+annotate("\$|2,0\\rangle\$", xy=(x_cs_2, 0.20),
+         xytext=(x_cs_2, 0.26), arrowprops=ptrprops, fontsize=14, ha="center", color="m")
 ylim([0, 0.8])
 xlabel("Frequency Shift (kHz)")
 ylabel("Cs Spin Flip")
@@ -125,9 +133,15 @@ plot(fit_nacs_na_0.plotx .- fit_na.param[2], fit_nacs_na_0.ploty, "C0")
 plot(fit_nacs_na_2.plotx .- fit_na.param[2], fit_nacs_na_2.ploty, "C0")
 grid()
 legend(fontsize="small")
-text(-70, 0.70, ("    \$|\\mathrm{Na(2,2)\\ Cs(3,3)}\\rangle\$\n" *
+text(-70, 0.79, ("    \$|\\mathrm{Na(2,2)\\ Cs(3,3)}\\rangle\$\n" *
                  "\$\\rightarrow|\\mathrm{Na(1,1)\\ Cs(3,3)}\\rangle\$"),
      ha="left", va="top", fontsize=13)
+x_na_0 = fit_nacs_na_0.param[2] - fit_na.param[2]
+annotate("\$|0,0\\rangle\$", xy=(x_na_0, 0.45),
+         xytext=(x_na_0, 0.51), arrowprops=ptrprops, fontsize=14, ha="center", color="m")
+x_na_2 = fit_nacs_na_2.param[2] - fit_na.param[2]
+annotate("\$m_{\\mathrm{rel},z}\\!+\\!m_{\\mathrm{COM},z}\\!=\\!2\$", xy=(x_na_2, 0.11),
+         xytext=(x_na_2, 0.17), arrowprops=ptrprops, fontsize=14, ha="center", color="m")
 ylim([0, 0.8])
 xlabel("Frequency Shift (kHz)")
 ylabel("Na Spin Flip")
