@@ -3100,7 +3100,7 @@ L 418.530938 12.898828
    </g>
    <g id="text_15">
     <!--     $|\mathrm{Na(2,2)\ Cs(4,4)}\rangle$ -->
-    <g transform="translate(61.964943 26.235228)scale(0.13 -0.13)">
+    <g transform="translate(61.964943 25.569948)scale(0.13 -0.13)">
      <defs>
       <path d="M 21 76.421875 
 L 21 -23.578125 
@@ -3191,7 +3191,7 @@ z
      <use transform="translate(964.403972 0.578125)" xlink:href="#DejaVuSans-10217"/>
     </g>
     <!-- $\rightarrow|\mathrm{Na(2,2)\ Cs(3,3)}\rangle$ -->
-    <g transform="translate(61.964943 41.367228)scale(0.13 -0.13)">
+    <g transform="translate(61.964943 40.701948)scale(0.13 -0.13)">
      <defs>
       <path d="M 78.90625 33.546875 
 L 78.90625 29.15625 
@@ -3269,8 +3269,30 @@ z
      <use transform="translate(212.207031 0.578125)" xlink:href="#DejaVuSans-10217"/>
     </g>
    </g>
+   <g id="patch_9">
+    <path d="M 400.199852 241.125434 
+Q 400.199852 245.426121 400.199852 249.726809 
+L 402.199852 249.726809 
+Q 400.699852 252.726419 399.199852 255.726028 
+Q 397.699852 252.726419 396.199852 249.726809 
+L 398.199852 249.726809 
+Q 398.199852 245.426121 398.199852 241.125434 
+L 400.199852 241.125434 
+z
+" style="fill:#bf00bf;stroke:#bf00bf;stroke-linecap:round;"/>
+   </g>
+   <g id="text_18">
+    <!-- $|4,0\rangle$ -->
+    <g style="fill:#bf00bf;" transform="translate(381.559852 235.767628)scale(0.14 -0.14)">
+     <use transform="translate(0 0.578125)" xlink:href="#DejaVuSans-124"/>
+     <use transform="translate(33.691406 0.578125)" xlink:href="#DejaVuSans-52"/>
+     <use transform="translate(97.314453 0.578125)" xlink:href="#DejaVuSans-44"/>
+     <use transform="translate(148.583984 0.578125)" xlink:href="#DejaVuSans-48"/>
+     <use transform="translate(212.207031 0.578125)" xlink:href="#DejaVuSans-10217"/>
+    </g>
+   </g>
    <g id="legend_1">
-    <g id="patch_9">
+    <g id="patch_10">
      <path d="M 286.021463 75.134341 
 L 406.868938 75.134341 
 Q 410.200938 75.134341 410.200938 71.802341 
@@ -3306,7 +3328,7 @@ z
       <use style="fill:#ff7f0e;stroke:#ff7f0e;stroke-linejoin:miter;" x="306.013463" xlink:href="#m2f4e12baed" y="34.720825"/>
      </g>
     </g>
-    <g id="text_18">
+    <g id="text_19">
      <!-- Cs only -->
      <g transform="translate(336.001463 40.551825)scale(0.1666 -0.1666)">
       <defs>
@@ -3369,7 +3391,7 @@ z
       <use style="fill:#1f77b4;stroke:#1f77b4;" x="306.013463" xlink:href="#mcb2457e3ba" y="59.174581"/>
      </g>
     </g>
-    <g id="text_19">
+    <g id="text_20">
      <!-- Na + Cs -->
      <g transform="translate(336.001463 65.005581)scale(0.1666 -0.1666)">
       <defs>

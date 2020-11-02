@@ -106,8 +106,8 @@ plot(fit_nacs_cs_h.plotx .- fit_cs.param[2], fit_nacs_cs_h.ploty, "C0")
 plot(fit_nacs_cs_2.plotx .- fit_cs.param[2], fit_nacs_cs_2.ploty, "C0")
 grid()
 legend(fontsize="small")
-text(-90, 0.79, ("    \$|\\mathrm{Na(2,2)\\ Cs(4,4)}\\rangle\$\n" *
-                 "\$\\rightarrow|\\mathrm{Na(2,2)\\ Cs(3,3)}\\rangle\$"),
+text(-90, 0.792, ("    \$|\\mathrm{Na(2,2)\\ Cs(4,4)}\\rangle\$\n" *
+                  "\$\\rightarrow|\\mathrm{Na(2,2)\\ Cs(3,3)}\\rangle\$"),
      ha="left", va="top", fontsize=13)
 x_cs_0 = fit_nacs_cs_0.param[2] - fit_cs.param[2]
 annotate("\$|0,0\\rangle\$", xy=(x_cs_0, 0.54),
@@ -115,6 +115,9 @@ annotate("\$|0,0\\rangle\$", xy=(x_cs_0, 0.54),
 x_cs_2 = fit_nacs_cs_2.param[2] - fit_cs.param[2]
 annotate("\$|2,0\\rangle\$", xy=(x_cs_2, 0.20),
          xytext=(x_cs_2, 0.26), arrowprops=ptrprops, fontsize=14, ha="center", color="m")
+x_cs_4 = 76.2
+annotate("\$|4,0\\rangle\$", xy=(x_cs_4, 0.07),
+         xytext=(x_cs_4, 0.13), arrowprops=ptrprops, fontsize=14, ha="center", color="m")
 ylim([0, 0.8])
 xlabel("Frequency Shift (kHz)")
 ylabel("Cs Spin Flip")
@@ -133,8 +136,8 @@ plot(fit_nacs_na_0.plotx .- fit_na.param[2], fit_nacs_na_0.ploty, "C0")
 plot(fit_nacs_na_2.plotx .- fit_na.param[2], fit_nacs_na_2.ploty, "C0")
 grid()
 legend(fontsize="small")
-text(-70, 0.79, ("    \$|\\mathrm{Na(2,2)\\ Cs(3,3)}\\rangle\$\n" *
-                 "\$\\rightarrow|\\mathrm{Na(1,1)\\ Cs(3,3)}\\rangle\$"),
+text(-70, 0.792, ("    \$|\\mathrm{Na(2,2)\\ Cs(3,3)}\\rangle\$\n" *
+                  "\$\\rightarrow|\\mathrm{Na(1,1)\\ Cs(3,3)}\\rangle\$"),
      ha="left", va="top", fontsize=13)
 x_na_0 = fit_nacs_na_0.param[2] - fit_na.param[2]
 annotate("\$|0,0\\rangle\$", xy=(x_na_0, 0.45),
