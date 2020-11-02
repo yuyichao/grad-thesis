@@ -4,6 +4,7 @@
 \label{ch:computer-control}
 
 \section{Introduction}
+\label{ch:computer-control:introduction}
 
 The experiment sequence and data taking is managed by computers.
 In additional to controlling the timing and the actions during a sequence,
@@ -141,6 +142,7 @@ it offers the following desired properties,
 \end{enumerate}
 
 \subsection{Channel Naming}
+\label{ch:computer-control:frontend:channel}
 Each output channel has a unique name attached for identification.
 This name is always a string of the format \verb`<device_id>/<channel>`
 where \verb`<device_id>` is an name for the (physical) device
@@ -154,6 +156,7 @@ while allowing the generic code to identify the device, and therefore backend,
 needed without fully interpreting the channel name.
 
 \subsection{APIs}
+\label{ch:computer-control:frontend:api}
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{figures/computer_control_frontend_classes.pdf}
@@ -321,6 +324,7 @@ which offers the following advantages,
 \end{enumerate}
 
 \subsection{Sorting of Pulses}
+\label{ch:computer-control:backend:sort-pulse}
 The tree representation of the sequence is useful for construction and manipulation
 but contains unnecessary information for generating output,
 for which only the pulses and their start and end time
@@ -331,6 +335,7 @@ After the sorting of the pulses, the tree structure is discarded by default
 \footnote{This behavior can be disabled for debugging purpose} to reduce memory usage.
 
 \subsection{Representation of Pulses}
+\label{ch:computer-control:backend:pulse-repr}
 Several backends require accessing the exact representation of the pulses
 outside MATLAB code and even on a different computer.
 Since the pulses can be arbitrary functions,
@@ -357,6 +362,7 @@ that returnes one of the input argument based on an condition.
 Loops are not currently supported.
 
 \subsection{FPGA Backend}
+\label{ch:computer-control:backend:fpga}
 \begin{figure}
   \centering
   \includegraphics[width=0.9\textwidth]{figures/computer_control_backend_fpga.pdf}
@@ -430,6 +436,7 @@ The main design considerations and features are,
 \end{enumerate}
 
 \subsection{NiDAQ Backend}
+\label{ch:computer-control:backend:nidaq}
 For outputing slowly varying voltage signal, we use an DAQ PCI card.
 The software driver for the card accepts an array of numbers as the voltages
 to output at each cycle for each channels.
@@ -442,6 +449,7 @@ the logic for generating is relatively straightforward.
 }
 
 \subsection{USRP Backend}
+\label{ch:computer-control:backend:usrp}
 (SIMD)
 
 \section{Automation of Scans}
