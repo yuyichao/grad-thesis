@@ -159,13 +159,13 @@ needed without fully interpreting the channel name.
   \includegraphics[width=\textwidth]{figures/computer_control_frontend_classes.pdf}
   \caption[Frontend API classes]{
     Frontend class inherit diagram and API lists.
-    \label{fig:computer-control:frontend-classes}}
+    \label{fig:computer-control:frontend:classes}}
 \end{figure}
 
 The system provides the following APIs for sequence creation
 that are subject to strict backward compatibility requirements.
 The most important APIs are listed in this section.
-Fig.~\ref{fig:computer-control:frontend-classes}
+Fig.~\ref{fig:computer-control:frontend:classes}
 provides a short summary of all the classes and methods mentioned in this section.
 
 \subsubsection{Timing}
@@ -367,11 +367,11 @@ Loops are not currently supported.
     in the programming logics.
     The pulse controller executes the commands and genenerates or changes outputs
     for clock/trigger, DDS or logical outputs.
-    \label{fig:computer-control:backend-fpga}}
+    \label{fig:computer-control:backend:fpga}}
 \end{figure}
 The timing of the experiment is controlled by a Xilinx ZC702 FPGA
 which contains both a processing system (PS) part, i.e. CPU,
-and a programmable logic (PL) part, i.e. FPGA (Fig.~\ref{fig:computer-control:backend-fpga}).
+and a programmable logic (PL) part, i.e. FPGA (Fig.~\ref{fig:computer-control:backend:fpga}).
 The PL creates digital control signals for various peripheral devices
 which generate output for the experiment,
 including direct digital synthesizers (DDS), logical switching signal

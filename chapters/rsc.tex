@@ -13,7 +13,7 @@
 \todo{Maybe move some intro about large LD parameter here}
 
 \section{Basic Theory}
-\label{ch:rsc-basic-theory}
+\label{ch:rsc:basic-theory}
 
 \begin{figure}
   \centering
@@ -28,11 +28,11 @@
     one to pump the atom state out of $|1,1\rangle$ via $\mathrm{3^2P_{3/2}}$
     and one to pump atoms out of $|2,1\rangle$ via $\mathrm{3^2P_{1/2}}$
     to minimize heating of the $|2,2\rangle$ state.
-    \label{fig:na-rsc-schematics}}
+    \label{fig:rsc:na-schematics}}
 \end{figure}
 
 The relevant energy diagram and the laser frequencies for RSC are shown in
-Fig.~\ref{fig:na-rsc-schematics}.
+Fig.~\ref{fig:rsc:na-schematics}.
 We approximate the trapping potential using a harmonic oscillator.
 Since this is a separable potential, we can use only the 1D motional state $|n\rangle$
 and the result can be easily generalized to the full 3D system.
@@ -45,19 +45,19 @@ and reduce the entropy of the system.
 This sequence is then repeated until the system reaches the ground motional state
 where there is no more motional energy to be taken out of the system via the Raman pulse.
 In this section, we will discuss the theory of each types of pulses individually.
-We will cover how the pulses affect cooling performance in section \ref{ch:rsc-challenges}.
+We will cover how the pulses affect cooling performance in section \ref{ch:rsc:challenges}.
 
 \subsection{Raman Transition}
-\label{ch:rsc-basic-theory-raman}
+\label{ch:rsc:basic-theory:raman}
 
-As shown in Fig.~\ref{fig:na-rsc-schematics},
+As shown in Fig.~\ref{fig:rsc:na-schematics},
 the cooling sequence starts with the sodium atom in the
 $|s_1\rangle\equiv|2,2\rangle$ hyperfine state,
 and a Raman transition is used to drive the atom to the $|s_2\rangle\equiv|1,1\rangle$ state,
 where $|F,m_F\rangle$ denotes the $F$ and $m_F$ quantum number for the sodium atom.
 The full Rabi frequency for such a transition is given by
 \begin{align}
-  \Omega_{\mathrm{R}}^0=&\sum_{i}\frac{\Omega_{1i}\Omega_{2i}^*}{2\Delta_i}\label{rsc-basic-theory-raman-rabi}
+  \Omega_{\mathrm{R}}^0=&\sum_{i}\frac{\Omega_{1i}\Omega_{2i}^*}{2\Delta_i}\label{eq:rsc:basic-theory:raman-rabi}
 \end{align}
 where the sum is over all the coupled excited states,
 $\Omega_{ai}\equiv\langle a|\mathbf{d}\cdot\mathbf{E}_a|e_i\rangle$ is the single photon
@@ -102,10 +102,10 @@ $1$, $\eta^{\mathrm{R}}\sqrt{n+1}$ and $\eta^{\mathrm{R}}\sqrt{n}$.
 We can clearly see from this approximation that the coupling to other motional state
 is stronger for a larger $\eta^{\mathrm{R}}$ and higher motional quantum number $n$.
 We will discuss this effect outside the LD regime and its implication
-on the cooling performance in more detail in section \ref{ch:rsc-challenges}.
+on the cooling performance in more detail in section \ref{ch:rsc:challenges}.
 
 \subsubsection{Scattering from Raman Beams}
-\label{ch:rsc-basic-theory-raman-scatter}
+\label{ch:rsc:basic-theory:raman-scatter}
 
 In additional to driving the Raman transition, the Raman beams can also cause scattering.
 The rate of the scattering is
@@ -116,12 +116,12 @@ The rate of the scattering is
   \Gamma=&\sum_{i}\frac{\Gamma_{ei}\Omega_{1i}^2}{4\Delta_i^2}
 \end{align*}
 where $\Gamma_{ei}$ is the linewidth of the excited state $|e_i\rangle$.
-Together with (\ref{rsc-basic-theory-raman-rabi}), we see that approximately
+Together with (\ref{eq:rsc:basic-theory:raman-rabi}), we see that approximately
 $\Gamma/\Omega_{\mathrm{R}}\propto1/\Delta$ so a larger detuning should be used
 in order to reduce the scattering during RSC.
 
 \subsection{Optical Pumping}
-\label{ch:rsc-basic-theory-op}
+\label{ch:rsc:basic-theory:op}
 
 Driving the system on a cooling sideband with Raman transition can reduce the
 motional energy of the atom. However, this is a fully coherent process that does
@@ -151,7 +151,7 @@ This also allow us to reuse the MOT light source and simplifies our setup.
 
 \section{Raman Sideband Thermometry}
 
-From the discussion in section \ref{ch:rsc-basic-theory-raman},
+From the discussion in section \ref{ch:rsc:basic-theory:raman},
 we see that the strength of the sideband transition depends on the initial motional state
 as well as the Lamb-Dicke parameter $\eta^{\mathrm{R}}$ of the atom.
 This dependency allows us to infer the motional state of the atom
@@ -195,10 +195,10 @@ in the following sections.
     R1 and R2 address the radial $y$-mode.
     R3 and R4 address the axial $z$-mode, where the beams also couple to radial motion,
     but this coupling can be neglected when the atoms is cooled to the ground state of motion.
-    \label{fig:na-rsc-geometry}}
+    \label{fig:rsc:na-geometry}}
 \end{figure}
 
-The geometry of all the beams and field involved is shown in Fig.~\ref{fig:na-rsc-geometry}.
+The geometry of all the beams and field involved is shown in Fig.~\ref{fig:rsc:na-geometry}.
 In order to make the cooling more efficient and simplify the sideband thermometry,
 we address the motion along the three principle axis of the tweezer using different pairs
 of Raman beams.
@@ -216,7 +216,7 @@ Since the optical pumping beam requires $\sigma^+$ polarization,
 it is setup to propagate parallel to the applied magnetic field.
 
 \section{Cooling Performance and Challenge with Large Lamb-Dicke Parameter}
-\label{ch:rsc-challenges}
+\label{ch:rsc:challenges}
 
 \todo{some might belong to introduction of the chapter}
 RSC is typically performed in the LD regime where the coupling
@@ -263,7 +263,7 @@ each axis is cooled in the sequence.
     there is a high probability of $n$ changing.
     (B) Matrix elements for Raman transition on the first order cooling sideband
     deviate from $\sqrt{n}$ scaling with multiple minima.
-    \label{fig:na-rsc-challenges}}
+    \label{fig:rsc:na-challenges}}
 \end{figure}
 
 In our experiment, the OP Lamb-Dicke parameters are
@@ -275,7 +275,7 @@ This, however, does not guarantee cooling into the ground motional state,
 nor does it fully characterize the efficiency of the cooling sequence
 since the averaging hides a few critical aspect of having a large Lamb-Dicke parameter.
 
-One of the important effects can be seen in Fig.~\ref{fig:na-rsc-challenges}A showing
+One of the important effects can be seen in Fig.~\ref{fig:rsc:na-challenges}A showing
 the motional state distribution after one OP cycle
 for different initial motional states $n_{\mathrm{init}}$.
 Although the average heating is fixed at $4\omega_{\mathrm{recoil}}$,
@@ -293,7 +293,7 @@ on the cooling sideband strength exist even in the LD regime
 and must be taken into account with pulse time variation
 \cite{wineland_experimental_1998,liu_molecular_2019}
 to achieve efficient cooling, the high Lamb-Dicke parameter adds even more complications.
-As shown in Fig.~\ref{fig:na-rsc-challenges}B, rather than a simple $\sqrt{n}$ dependency,
+As shown in Fig.~\ref{fig:rsc:na-challenges}B, rather than a simple $\sqrt{n}$ dependency,
 it is a non-monotonic function and more importantly has multiple minima, so-called ``dead-zone'',
 within the range of motional states we are interested in.
 The coupling strength for states in the dead-zones can be reduced by more than ten times
@@ -307,7 +307,7 @@ Raman sideband spectroscopy making these states nearly invisible to sideband the
 which further complicates the optimization of the cooling sequence.
 
 \section{Solution: High Order Sidebands}
-\label{ch:rsc-solution-high-orders}
+\label{ch:rsc:solution-high-orders}
 
 \begin{figure}
   \centering
@@ -317,14 +317,14 @@ which further complicates the optimization of the cooling sequence.
     During cooling, we utilize the fact that high motional states couple most effectively
     to sidebands with large $|\Delta n|$ in order to overcome the issue with
     variation and dead zone in the coupling strengths.
-    \label{fig:na-rsc-mele-raman}}
+    \label{fig:rsc:na-mele-raman}}
 \end{figure}
 
 The main solution to the issues related to the large Lamb-Dicke parameter
 is in fact the large Lamb-Dicke parameter itself.
 The increased coupling to other motional state for large Lamb-Dicke parameter
 and high motional states applies not only to $|\Delta n|=1$ but to higher $\Delta n$ as well.
-Fig.~\ref{fig:na-rsc-mele-raman} shows the coupling to higher order cooling sidebands
+Fig.~\ref{fig:rsc:na-mele-raman} shows the coupling to higher order cooling sidebands
 which all have comparable strengths as the first order sidebands in different ranges
 of motional states.
 
@@ -356,9 +356,9 @@ the need to vary the pulse times for all but the pulses on the first order sideb
     at the end of the cooling sequence when most of the population is below $n=3$.
     The Raman cooling and spectroscopy pulses have Blackman envelopes~\cite{kasevich_laser_1992}
     to reduce off-resonant coupling,
-    while the measurement Rabi pulses in Fig.~\ref{fig:na-rsc-rabi-flop}
+    while the measurement Rabi pulses in Fig.~\ref{fig:rsc:na-rabi-flop}
     have square envelopes to simplify analysis.
-    \label{fig:na-rsc-sequence}}
+    \label{fig:rsc:na-sequence}}
 \end{figure}
 
 The change in cooling technique by including higher order sidebands, however,
@@ -384,15 +384,15 @@ For each cooling sequence simulated,
 the Raman beam power and frequency, and the OP beam power and polarization purity
 are varies slightly around the respective expected values
 in order to confirm the robustness of the sequence against fluctuation in the experiment.
-Fig.~\ref{fig:na-rsc-sequence} demostrate the resulting optimal sequence from the simulation.
+Fig.~\ref{fig:rsc:na-sequence} demostrate the resulting optimal sequence from the simulation.
 In particular, we find that alternating the cooling pulses between two
 neighboring orders for the axial direction and $\Delta n=-2$ and $\Delta n=-1$
 for the radial directions
 eliminates the accumulation of population in motional states with small Raman coupling.
 The simulation also confirms that setting the coupling strength of each sideband
 to drive a Rabi $\pi$-pulse corresponding to the maximum matrix element motional state
-(i.e. the maxima in Fig.~\ref{fig:na-rsc-mele-raman}) yields efficient cooling, initially,
-as we expected from section \ref{ch:rsc-solution-high-orders}.
+(i.e. the maxima in Fig.~\ref{fig:rsc:na-mele-raman}) yields efficient cooling, initially,
+as we expected from section \ref{ch:rsc:solution-high-orders}.
 The efficiency of cooling on higher-order sidebands diminishes
 as the atom approaches the ground state, so the final cycles utilize only
 the $\Delta n=-1$ sideband while alternating between the three axes.
@@ -520,7 +520,7 @@ We achieve this by using a Blackman pulse shape for the Raman transition
 \subsection{Calibration}
 
 The Raman sideband frequencies are calibrated by measuring the Raman spectrum before cooling
-(an example of which is shown in the initial spectrum in Fig.~\ref{fig:na-rsc-spectrum}).
+(an example of which is shown in the initial spectrum in Fig.~\ref{fig:rsc:na-spectrum}).
 However, since high sideband orders are mainly used to cool atoms in high motional state,
 the resonance frequency for these sideband are not equal spacing anymore due to
 the anharmonicity of the trap.
@@ -550,7 +550,7 @@ This offers a more direct and sensitive measurement for the cooling sequence par
 Unlike resonance frequency, the anharmonicity only has a second order effect on the Rabi frequency
 and is therefore ignored. The calibration measures
 only the carrier and first order heating sideband which has the highest signal after cooling
-(an example of which is shown in the cooled Rabi flopping signal in Fig.~\ref{fig:na-rsc-rabi-flop}).
+(an example of which is shown in the cooled Rabi flopping signal in Fig.~\ref{fig:rsc:na-rabi-flop}).
 The Raman Rabi frequencies measured on these two transitions are used to calculate
 the full Rabi frequency $\Omega_{\mathrm{R}}^0$ and the Lamb-Dicke parameter,
 which are in-turn used to calculate the Rabi frequency on other sideband orders.
@@ -569,11 +569,11 @@ the calibration process is applied iteratively as the cooling performance is imp
     The height of the cooling sidebands (positive detuning)
     are strongly suppressed after cooling which suggests most of the atoms are cooled
     to the motional ground state in the trap.
-    \label{fig:na-rsc-spectrum}}
+    \label{fig:rsc:na-spectrum}}
 \end{figure}
 
-Our final cooling results are shown in Fig.~\ref{fig:na-rsc-spectrum} and
-\ref{fig:na-rsc-rabi-flop}.
+Our final cooling results are shown in Fig.~\ref{fig:rsc:na-spectrum} and
+\ref{fig:rsc:na-rabi-flop}.
 In total, $540$ cooling pulses (total duration $53~\mathrm{ms}$) are applied
 along three axes with cooling beginning on the radial second order and axial fifth order.
 The full sequence including calibrated parameters can be found in appendix \ref{appendex:rsc}.
@@ -603,7 +603,7 @@ The full sequence including calibrated parameters can be found in appendix \ref{
     a fluctuation of the hyperfine splitting of magnitude $3~\mathrm{kHz}$.
     We see that the decoherence effect is strongest for the post-cooling data on
     the axial $\Delta n_z=1$ sideband where the Rabi frequency is the lowest.
-    \label{fig:na-rsc-rabi-flop}}
+    \label{fig:rsc:na-rabi-flop}}
 \end{FPfigure}
 
 \section{Summary and Outlook}
