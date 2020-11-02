@@ -105,7 +105,7 @@ xinit = -0.2323
 xfinal = 0.0046
 yinit = interpolate_data(xinit, 2)
 yfinal1 = interpolate_data(xfinal, 2)
-yfinal2 = interpolate_data(xfinal, 5)
+yfinal2 = interpolate_data(xfinal, 6)
 axvline(xinit, color="green", ls="dotted")
 axvline(xfinal, color="red", ls="dotted")
 plot(data[:, 1], data[:, 2], "C0") # 0, 0
