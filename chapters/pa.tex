@@ -6,7 +6,7 @@
 \section{Introduction}
 
 The method we use to coherently create a single molecule from atoms
-uses two photon optical transition\textsuperscript{(\ref{ch:raman-transfer})}.
+uses two-photon optical transition\textsuperscript{(\ref{ch:raman-transfer})}.
 Before we can drive such a transition, however, we must locate and characterize
 the intermediate excited states of the molecule to be used in the two-photon transition.
 This can be measured using photoassociation (PA) spectroscopy
@@ -472,7 +472,7 @@ is shown in Fig~.\ref{fig:pa:linewidth:red-twr}B with a significantly narrower l
 of $27.3(97)~\mathrm{MHz}$.
 In fact, the linewidth appears to be proportional to the tweezer power
 as shown in Fig~.\ref{fig:pa:linewidth:red-twr}C,
-which suggests that the linewidth may be broadened by a two photon process.
+which suggests that the linewidth may be broadened by a two-photon process.
 
 \begin{figure}
   \centering
@@ -493,17 +493,17 @@ coupling the excited molecular state to another state at a higher energy
 (Fig.~\ref{fig:pa:linewidth:up-vs-down}A).
 If this is the case, we would expect the broadening to be a function of
 the sum of the tweezer and PA light frequency depending on the detuning from the nearest
-two photon excited state.
+two-photon excited state.
 However, the broadening does not change significantly when the tweezer frequency
 is changed by $\approx10~\mathrm{GHz}$ and
 is also observed for other excited states including $v'=0$ and $v'=14$
 which have very different resonance frequencies.
 It is therefore unlikely that this is the broadening mechanism we observe.
-Instead, we believe the effect is caused by a $\Lambda$ type two photon process
+Instead, we believe the effect is caused by a $\Lambda$ type two-photon process
 coupling the excited state to the atomic ground states.
 In the following section, I will provide an estimation for such a broadening process.
 
-\subsubsection{Two Photon Coupling to the Atomic Motional Continuum}
+\subsubsection{Two-Photon Coupling to the Atomic Motional Continuum}
 The broadening of the PA line requires coupling the excited state to a continuum of states.
 For the ground atomic state, since the state is stable with repect to radiative decay,
 this continuum cannot be the photon continuum.
@@ -610,7 +610,7 @@ Nevertheless, it confirms that this broadening mechanism can explain the observe
 \end{figure}
 
 Another prediction from the theory is that if the tweezer light is blue detuned from
-the PA line, the two photon process will not couple to the motional continuum anymore
+the PA line, the two-photon process will not couple to the motional continuum anymore
 and there should be no broadening of the line
 \footnote{Note that the tweezer is still red detuned from the atomic state which
   provides most of the trapping potential}.
@@ -619,15 +619,36 @@ frequency set to $306612~\mathrm{GHz}$.
 The result shown in Fig.~\ref{fig:pa:linewidth:blue-twr}
 confirms that the linewidth is indeed narrower for this tweezer frequency.
 
-\subsubsection{Implication on Two Photon Transition to Ground Molecular States}
-Since the broadening is caused by two photon coupling to high energy atomic motional states,
+\subsubsection{Implication on Two-Photon Transition to Ground Molecular States}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.88\textwidth]{figures/pa_two_photon_down_raman.pdf}
+  \caption[Two-photon transition from molecular state.]{
+    Effect of two-photon coupling to atomic contimuum on molecular state
+    with a single atomic spin state.
+    (A) Raman transition from the atomic ground state $|g\rangle$
+    to the molecular bound state $|m\rangle$ using two Raman beams with frequencies
+    $\omega_1$ and $\omega_2$.
+    (B-E) Two photon transitions starting from the molecular state $|m\rangle$
+    with different frequency combinations.
+    (B) This is the reverse Raman transition and reaches the initial atomic state.
+    (C,D) The frequency pairs couples back to $|m\rangle$.
+    (E) This couples to an energy below $|m\rangle$.
+    Note that none of the two-photon transitions from $|m\rangle$ ends up in
+    the atomic motional continuum and therefore unaffected by the broadening mechanism
+    discussed in this section.
+    \label{fig:pa:linewidth:two-photon-down-raman}}
+\end{figure}
+
+Since the broadening is caused by two-photon coupling to high energy atomic motional states,
 the observed linewidth in a PA measurement cannot be directly translated to
-the scattering rate during a two photon transition that uses different set of laser frequencies.
+the scattering rate during a two-photon transition that uses different set of laser frequencies.
 
 In fact, with a single ground atomic spin state, the scattering rate for the final molecular
-state during a two photon transition is not affected by this effect.
-As shown in Fig.~\todo{\ref{}}, the molecular state cannot reach the atomic motional continuum
-via a two photon transition.
+state during a two-photon transition is not affected by this effect.
+As shown in Fig.~\ref{fig:pa:linewidth:two-photon-down-raman},
+the molecular state cannot reach the atomic motional continuum via a two-photon transition.
 The atomic state, on the other hand, can reach the continuum though the loss rate is in general
 much lower than the molecular state
 and is usually not the limiting factor for the transfer efficiency.
@@ -651,5 +672,5 @@ also creates unique challenges that can lead to dissociation or loss of the atom
 We studied one of the effect and confirmed our model for the loss process with
 additional measurements and discussed its implication for future experiment.
 The identification of the excited molecular state opens up the pathway
-to formation of ground state single molecule via two photon process
+to formation of ground state single molecule via two-photon process
 and will be focus of later chapters.
