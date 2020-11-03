@@ -156,7 +156,9 @@
 
 % This code gets dropped into place for the \begin{FPfigure} command
 \newcommand{\FP@floatBegin}[1]{%
-  \clearpage %Added to clear the page  -- Andrew Leifer 2012
+  % Removed clearpage since it seems to only cause a page break where the figure
+  % was in the sourcecode but doesn't actually put the figure there.
+  % \clearpage %Added to clear the page  -- Andrew Leifer 2012
   \gdef\@captype{#1}%
   \global\let\FP@savedCaptionCommand\caption %Caption command before it gets redefined!!
   \global\let\FP@savedLabelCommand\label%
