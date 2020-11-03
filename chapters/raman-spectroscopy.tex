@@ -187,6 +187,9 @@ the atoms~(Fig.~\ref{fig:raman-spectroscopy:apparatus-sequence}B).
 \begin{table}
   \centering
   \todo{include theory prediction?}
+  \caption[Binding energies for $v''=-1,\ N=0$ states]{
+    Binding energies and Zeeman shift for $v''=-1,\ N=0$ states.
+    \label{table:raman-spectroscopy:n0}}
   \begin{tabular}{|c|c|c|c|}
     \hline
     \multirow{2}{*}{Spin state}&\multicolumn{2}{c|}{Resonance (MHz)}&\multirowcell{2}{Zeeman shift\\(kHz/G)}\\\cline{2-3}
@@ -195,9 +198,6 @@ the atoms~(Fig.~\ref{fig:raman-spectroscopy:apparatus-sequence}B).
     $|\mathrm{Na(1, 1),Cs(3, 3)}\rangle$&$367.7892(25)$&$369.63(29)$&$-209(33)$\\\hline
     $|\mathrm{Na(2, 2),Cs(3, 3)}\rangle$&$770.200516(24)$&$769.8294(22)$&$42.17(24)$\\\hline
   \end{tabular}
-  \caption[Binding energies for $v''=-1,\ N=0$ states]{
-    Binding energies and Zeeman shift for $v''=-1,\ N=0$ states.
-    \label{table:raman-spectroscopy:n0}}
 \end{table}
 
 We first measure the binding energy for the $v=''-1,\ N=0$ state
@@ -331,6 +331,14 @@ Each dot in the plot corresponds to an observed resonance frequency.
 
 \begin{table}
   \centering
+  \caption[$N=2$ effective Hamiltonian parameters.]{
+    Fitted parameters for the $N=2$ Hamiltonian. Since the $\Delta E_F$s are not independent
+    $\Delta E_8$ is not a free parameter and is rather $-\Delta E_6-\Delta E_7$.
+    Also note that the fit is directly from the binding energy measured
+    in Fig.~\ref{fig:raman-spectroscopy:n2-fit} so the zero energy of the Hamiltonian is
+    the atomic $|\mathrm{Na(2, 2),Cs(4, 4)}\rangle$ state
+    which also has non-zero Zeeman an AC Stark shifts.
+    \label{table:raman-spectroscopy:n2}}
   \begin{tabular}{|@{}c@{}|}
     \hline
     $H_0$ parameters\\\hline
@@ -349,14 +357,6 @@ Each dot in the plot corresponds to an observed resonance frequency.
       $-0.237(22)$&$-0.222(22)$&$-0.947(23)$
     \end{tabularx}\\\hline
   \end{tabular}
-  \caption[$N=2$ effective Hamiltonian parameters.]{
-    Fitted parameters for the $N=2$ Hamiltonian. Since the $\Delta E_F$s are not independent
-    $\Delta E_8$ is not a free parameter and is rather $-\Delta E_6-\Delta E_7$.
-    Also note that the fit is directly from the binding energy measured
-    in Fig.~\ref{fig:raman-spectroscopy:n2-fit} so the zero energy of the Hamiltonian is
-    the atomic $|\mathrm{Na(2, 2),Cs(4, 4)}\rangle$ state
-    which also has non-zero Zeeman an AC Stark shifts.
-    \label{table:raman-spectroscopy:n2}}
 \end{table}
 
 In order to understand the dependency of the resonances on the external fields
