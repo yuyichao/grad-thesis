@@ -162,7 +162,7 @@ by measuring the sideband height, i.e. the so-called sideband thermometry
 
 In particular, for atom with temperature $T$,
 the probability for the atom to be in motional state $|n\rangle$ is,
-\[ p_n=\frac{\ue^{-n\hbar\omega/k_BT}}{1-\ue^{-\hbar\omega/k_BT}} \]
+\[ p_n=\paren{1-\ue^{-\hbar\omega/k_BT}}\ue^{-n\hbar\omega/k_BT} \]
 for a Raman pulse with full Rabi frequency $\Omega_{\mathrm{R}}^0$ and time $t$,
 the peak height for the first order heating (+) and cooling (-) sidebands,
 \begin{align*}
@@ -179,10 +179,15 @@ $\alpha\equiv h_-/h_+$, we can calculate the temperature of the atom with
 $\ue^{-\hbar\omega/k_BT}=\alpha$.
 The corresponding ground state probability is,
 \begin{align*}
-  p_0=&\frac{1}{1-\ue^{-\hbar\omega/k_BT}}\\
-  =&\frac{1}{1-\alpha}
+  p_0=&1-\ue^{-\hbar\omega/k_BT}\\
+  =&1-\alpha\numberthis{eq:rsc:thermometry:p0}
 \end{align*}
-We will use this to experimentally characterize the performance of the cooling sequence
+and the average motional state
+\begin{align*}
+  \bar{n}=&\sum_nn\alpha^n\\
+  =&\frac{\alpha}{1-\alpha}\numberthis{eq:rsc:thermometry:nbar}
+\end{align*}
+We will use these to experimentally characterize the performance of the cooling sequence
 in the following sections.
 
 \section{Setup}
@@ -584,22 +589,22 @@ In total, $540$ cooling pulses (total duration $53~\mathrm{ms}$) are applied
 along three axes with cooling beginning on the radial second order and axial fifth order.
 The full sequence including calibrated parameters can be found in appendix \ref{appendex:rsc}.
 
+For the more tightly confined radial directions,
+we observe clear $\Delta n=1$, $\Delta n=-1$, and $\Delta n=-2$ sidebands before RSC,
+as is shown in Fig.~\ref{fig:rsc:na-spectrum}A and B.
+After RSC, the $\Delta n=-1$ and $\Delta n=-2$ sidebands
+on both radial axes are strongly reduced.
+Using Eq.~\ref{eq:rsc:thermometry:p0} and \ref{eq:rsc:thermometry:nbar},
+we obtain $\bar{n}_x=0.019(4)$ and $\bar{n}_y=0.024(3)$ from the spectrum which
+correspond to ground-state fractions of $98.1(5)~\%$ and $97.6(3)~\%$,
+in agreement with fitted values of $98(1)~\%$ and $95(3)~\%$
+from the Rabi flopping curves~\cite{meekhof_generation_1996}
+in Fig.~\ref{fig:rsc:na-rabi-flop}A-D.
+The initial temperature of $80~\mathrm{\mu K}$ before RSC is obtained from similar fits.
+
 \todo{
   To characterize the single atom thermal state before and after cooling,
   we perform Raman sideband thermometry~\cite{Monroe1995, Meekhof1996}.
-  For the more tightly confined radial directions,
-  we observe clear $\Delta n=1$, $\Delta n=-1$, and $\Delta n=-2$ sidebands before RSC,
-  as is shown in Fig.~\ref{f-radial}A.
-  After RSC, the $\Delta n=-1$ and $\Delta n=-2$ sidebands on both radial axes are strongly reduced.
-  The formula that equates the ratio of $\Delta n=-1$ and $\Delta n=1$ sideband heights to
-  $\bar{n}/(\bar{n}+1)$ ($\bar{n}$ is the mean motional quantum number of the assumed thermal state)
-  was derived in the LD regime~\cite{Monroe1995}.
-  However, it is also valid outside the LD regime.
-  The resulting $\bar{n}_x=0.019(4)$ and $\bar{n}_y=0.024(3)$ correspond to
-  ground-state fractions of 98.1(5)\% and 97.6(3)\%,
-  in agreement with fitted values of 98(1)\% and 95(3)\%
-  from the Rabi flopping curves~\cite{Meekhof1996} in Fig.~\ref{f-radial}B and \ref{f-radial}C.
-  The initial temperature of $80\,\mu$K before RSC is obtained from similar fits.
 
   For the weak axial direction, cooling is challenging because the atom starts outside the LD regime.
   We observe up to 5th-order Raman cooling sidebands initially,
