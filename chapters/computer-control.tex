@@ -9,7 +9,7 @@
 The experiment sequence and data taking is managed by computers.
 In additional to controlling the timing and the actions during a sequence,
 the computer control system is also the main interface
-between the people running the experiment (the user),
+between the people running the experiment~(the user),
 the data and the hardware performing the manipulation and measurements.
 Because of its central role in the experiment,
 it has to satisfy many requirements so that
@@ -39,8 +39,8 @@ the daily operation of the lab can be performed smoothly and reliably.
   typically used to describe the task and allow operation on these abstractions
   matching the users' expectation.
   We will talk about concrete examples of this requirements
-  in section \ref{ch:computer-control:frontend} regarding the sequence frontend
-  and section \ref{ch:computer-control:scan} regarding scan automation.
+  in section~\ref{ch:computer-control:frontend} regarding the sequence frontend
+  and section~\ref{ch:computer-control:scan} regarding scan automation.
 \item Reproducibility.\\
   When exploring something new in the experiment,
   trial and error is the standard method and troubleshooting is a major part of the process.
@@ -62,18 +62,18 @@ the daily operation of the lab can be performed smoothly and reliably.
 
 The design of the computer control system is mainly guided by these requirements
 and we will go into more detail as we describe each part of the system.
-The application programming interface (API) provided for sequence and scan programming
+The application programming interface~(API) provided for sequence and scan programming
 are mostly text based due to the flexibility and version control requirement.
-Some graphic user interface (GUI) are also included for specific tasks
+Some graphic user interface~(GUI) are also included for specific tasks
 built on top of the text interface but will not be covered in this chapter.
-Section \ref{ch:computer-control:frontend} will cover the frontend of the system
+Section~\ref{ch:computer-control:frontend} will cover the frontend of the system
 which is used by the user directly to specify an experimental sequence.
-Section \ref{ch:computer-control:backend} will discuss the support for various
+Section~\ref{ch:computer-control:backend} will discuss the support for various
 hardware backends used to run a sequence.
-After that, section \ref{ch:computer-control:scan} describes how multiple sequences
+After that, section~\ref{ch:computer-control:scan} describes how multiple sequences
 can be put together to form a scan and
-we will talk about some planned update to the system in section
-\ref{ch:computer-control:summary}.
+we will talk about some planned update to the system in
+section~\ref{ch:computer-control:summary}.
 
 \section{Frontend}
 \label{ch:computer-control:frontend}
@@ -128,8 +128,8 @@ it offers the following desired properties,
 \item Familiarity for physics student.\\
   MATLAB is often used for simulation and data processing.
   It is one of the few languages that most new students will be familiar with.
-\item Builtin feature-rich integrated development environment (IDE).
-\item Foreign function interface (FFI).\\
+\item Builtin feature-rich integrated development environment~(IDE).
+\item Foreign function interface~(FFI).\\
   Other parts of the system needs to be implemented in other languages
   for various reasons including higher performance.
   It is important that we can call into other languages to allow such a hybrid implementation.
@@ -137,7 +137,7 @@ it offers the following desired properties,
   MATLAB provides data structures like arrays and hash table
   as well as handle classes with object identity
   which are important to handle the representation of the sequence.
-  It also has an good enough object-oriented programming (OOP) model
+  It also has an good enough object-oriented programming~(OOP) model
   and operator overloads which can simplify the API syntax for the user.
 \end{enumerate}
 
@@ -180,8 +180,8 @@ which represent an arbitrary node on the sequence tree.
 Most timing related APIs are methods on \verb`ExpSeqBase`.
 The most important ones are the ones creating new branches
 in the subsequence tree, i.e. \verb`TimeSeq`.
-The type of the branch created is determined by the parameters passed in
-(\verb`<time_params>`), which can be either,
+The type of the branch created is determined by the parameters passed in~(\verb`<time_params>`),
+which can be either,
 \begin{enumerate}
 \item \verb`length, offset=0`\\
   This creates a new \verb`TimeStep` with a numerical \verb`length`
@@ -194,7 +194,7 @@ The type of the branch created is determined by the parameters passed in
   with the new sequence followed by \verb`<callback parameters>`.
 \end{enumerate}
 Since most sequences are built in series, \verb`ExpSeqBase` maintains
-a current time (\verb`curTime`) of the sequence.
+a current time~(\verb`curTime`) of the sequence.
 Various methods are provided that acts differently with respect to \verb`curTime`.
 \begin{enumerate}
 \item \verb`addStep(<time_params>)` method\\
@@ -267,7 +267,7 @@ and \verb`output` specifies the output in one of the following way,
 
 \section{Backends}
 \label{ch:computer-control:backend}
-As discussed in section \ref{ch:computer-control:frontend},
+As discussed in section~\ref{ch:computer-control:frontend},
 the frontend provides an API to program all the output channels in the same way
 no matter the type of the channel or device used.
 However, this is not the case for the devices generating for the output
@@ -295,7 +295,7 @@ on the same network.
 This requires network communication between the frontend machine and
 a service running on the device computer for running the sequence.
 
-We use ZeroMQ Message Transport Protocol (ZMTP) as the main protocol for network communication
+We use ZeroMQ Message Transport Protocol~(ZMTP) as the main protocol for network communication
 which offers the following advantages,
 \begin{enumerate}
 \item Binary protocol\\
@@ -304,7 +304,7 @@ which offers the following advantages,
   which allows higher performance.
 \item Feature rich and flexible\\
   Compared to using sockets for network communication directly,
-  the message oriented protocol allows easy implementation of remote procedure call (RPC).
+  the message oriented protocol allows easy implementation of remote procedure call~(RPC).
   The ZeroMQ library also provides flexible interface to process the messages
   which is useful to implement robust handling of failure
   and parallel processing of requests.
@@ -341,7 +341,7 @@ outside MATLAB code and even on a different computer.
 Since the pulses can be arbitrary functions,
 this requires the ability to serialize and deserialize code.
 
-In order to do this, we developed a simple intermediate representation (IR)
+In order to do this, we developed a simple intermediate representation~(IR)
 of code that runs on a register-based virtual machine.
 The IR supports three different data types, \verb`Bool`, \verb`Int32` and \verb`Float64`
 and basic arithmetic, control flow and math functions
@@ -354,7 +354,7 @@ we pass in a special object as the input argument to the MATLAB function.
 Supported operations on this object will return a new object
 that records the operation as well as input arguments.
 The value returned from the function is therefore an object representing
-all the operations needed to compute the result as a directed acyclic graph (DAG).
+all the operations needed to compute the result as a directed acyclic graph~(DAG).
 We then convert each node in the DAG to an IR instruction to finish the convertion.
 This process only support pure functions.
 Conditional branch is supported via an \verb`ifelse` function
@@ -376,16 +376,16 @@ Loops are not currently supported.
     \label{fig:computer-control:backend:fpga}}
 \end{figure}
 The timing of the experiment is controlled by a Xilinx ZC702 FPGA
-which contains both a processing system (PS) part, i.e. CPU,
-and a programmable logic (PL) part, i.e. FPGA (Fig.~\ref{fig:computer-control:backend:fpga}).
+which contains both a processing system~(PS) part, i.e. CPU,
+and a programmable logic~(PL) part, i.e. FPGA~(Fig.~\ref{fig:computer-control:backend:fpga}).
 The PL creates digital control signals for various peripheral devices
 which generate output for the experiment,
-including direct digital synthesizers (DDS), logical switching signal
+including direct digital synthesizers~(DDS), logical switching signal
 and clock or trigger signal for other devices.
 The PS consists of a dual core Cortex-A9 CPU
 which runs an Arch Linux ARMv7 distribution.
 The server software that runs on the PS communicates with the main control computer
-via ZeroMQ (\ref{ch:computer-control:backend:net})
+via ZeroMQ~(section~\ref{ch:computer-control:backend:net})
 and generates a custom command stream to control the PL output.
 Each command corresponds to making one change to the final output, e.g.
 logical values, DDS output amplitude or frequencies, etc.

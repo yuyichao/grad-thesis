@@ -32,7 +32,7 @@ we have $\omega_{1,i}\approx\omega_{2,i}$ to within $10~\mathrm{\%}$ to $20~\mat
 and this is the regime we will mainly focus on in this section.
 
 The interaction potential $V_{\mathrm{int}}$ is the original for
-the molecular bound states and its exact form will be discussed in chapter \ref{ch:pa},
+the molecular bound states and its exact form will be discussed in chapter~\ref{ch:pa},
 \ref{ch:raman-spectroscopy} and \ref{ch:raman-transfer}.
 However, since the range of the potential is much smaller than
 the size of the atomic wavefunction, we can ignore the short range details of the potential
@@ -45,7 +45,7 @@ $\delta_{\mathrm{reg}}\paren{\mathbf{r}}\equiv\delta^{(3)}\paren{\mathbf{r}}\par
 is the regularized delta-function.
 
 In order to calculate the interaction term, we can change from the coordinates for
-the two individual atoms to the center of mass (COM) and relative coordinates.
+the two individual atoms to the center of mass~(COM) and relative coordinates.
 \begin{align*}
   R_i=&\ \frac{m_1r_{1,i}+m_2r_{2,i}}{m_1+m_2}&r_{\mathrm{rel},i}=&\ r_{1,i}-r_{2,i}\\
   P_i=&\ p_{1,i}+p_{2,i}&p_{\mathrm{rel},i}=&\ \frac{m_2p_{1,i}-m_1p_{2,i}}{m_1+m_2}
@@ -108,7 +108,7 @@ oscillator length along the $i$-th axis.
 The shift is proportional to the strength of the interaction $a$,
 and is also stronger for stronger confinement where the wavefunction density is higher.
 
-We can see from (\ref{eq:interaction-shift-perturb-shift}) that the shift is only
+We can see from Eq.~\ref{eq:interaction-shift-perturb-shift} that the shift is only
 non-zero when all of $n_{\mathrm{rel},i}$'s are even.
 The shift is also smaller for higher motional excited state with smaller wavefunction density.
 This means that the shift will only be observable if the atom is cooled to closed to
@@ -123,8 +123,8 @@ Moreover, due to the divergence nature of the delta-function in the contact inte
 higher order perturbative calculation does not converge.
 It is therefore necessary to use a non-perturbative solution of the interacting atoms
 in order to interprete measurement of the shift for strong interaction.
-To do this, we first ignore the last term in the Hamiltonian
-\ref{eq:interaction-shift:full-hamiltonian} so that it is fully separable
+To do this, we first ignore the last term in
+the Hamiltonian~\ref{eq:interaction-shift:full-hamiltonian} so that it is fully separable
 into COM and relative motion.
 
 For the relative Hamiltonian, we use the analytic cylindrical solutions
@@ -142,7 +142,7 @@ The analytic solutions are only given for the interacting states,
 but there also many relative states which have zero wavefunction at the $\delta$-function,
 and therefore are unaffected.
 We have identified these states from the perturbative calculation
-in section \ref{ch:interaction-shift:theory:perturb}
+in section~\ref{ch:interaction-shift:theory:perturb}
 which are states with $l\ne0$ or odd $m_z$
 after transforming to the cylindrical coordinate used by the analytic solution,
 where $l$ is the angular momentum quantum numbers for the radial part,
@@ -176,13 +176,13 @@ for which the analytic solution is used, and  $N_{\mathrm{deg}}-1$ non-interacti
 For the interacting states,
 the energies are given by the transcendental equations~\cite{idziaszek_analytical_2006}
 \begin{align*}
-  \mathcal{F}\paren{-\frac{\paren{E-E_0}}{2} , \eta}=&-\frac{\sqrt{2\pi}}{a}
+  \mathcal{F}\paren{-\frac{\paren{E-E_0}}{2}, \eta}=&-\frac{\sqrt{2\pi}}{a}
 \end{align*}
 where $\mathcal{F}\paren{x, \eta}$ is given by
 \begin{align*}
   \mathcal{F}\paren{x, \eta}=
   &\frac{\sqrt{\pi} \Gamma(x)}{\Gamma(x+\frac{1}{2})}
-    \sum_{m=1}^{n-1} F\paren{1,x;x+\frac{1}{2} ; e^{i(2\pi m/ \eta )}}
+    \sum_{m=1}^{n-1} F\paren{1,x;x+\frac{1}{2} ; e^{\ui(2\pi m/ \eta)}}
     -\frac{2 \sqrt{\pi} \Gamma(x)}{\Gamma(x-\frac{1}{2})}
 \end{align*}
 Here $F(a,b;c,x)$ denotes the hypergeometric function
@@ -204,7 +204,7 @@ Eq.~\ref{eq:interaction-shift:cylind-E}.
     for the motional ground state which shows good agreement with the exact calculation
     at small scattering length.
     Only states that are in the radial motional (both relative and COM) ground state
-    are shown because of the high radial motional energy scale ($100~\mathrm{kHz}$).
+    are shown because of the high radial motional energy scale~($100~\mathrm{kHz}$).
     The states are labeled with their relative and COM axial motional quantum numbers
     $m_{\mathrm{rel},z}$ and $m_{\mathrm{COM},z}$.
     Due to the relative and COM motion mixing term and the resulting avoided crossings
@@ -222,7 +222,7 @@ Eq.~\ref{eq:interaction-shift:cylind-E}.
 Now that we have the solution in the separable and cylindrical case,
 the next step is to include the non-separable and asymmetric correction terms
 by diagonalizing the total matrix in the combined COM and relative cylindrical bases.
-Compared to treating the interaction term in \ref{eq:interaction-shift:orig-hamiltonian}
+Compared to treating the interaction term in Eq.~\ref{eq:interaction-shift:orig-hamiltonian}
 as a perturbation, the correction terms included here all have the form of
 harmonic potentials and therefore have much better convergence behavior.
 We include all states with energies up to $20 \omega_{\mathrm{rel},z}$ in the calculation.
@@ -241,10 +241,10 @@ with the normalized radial harmonic oscillator wavefunction,
 and the normalized 1D harmonic wavefunction,
 \begin{align*}
   \Psi^{\mathrm{axial}}_{m_z}(z)=&\frac{1}{\sqrt{2^{m_z} m_z!}} \frac{1}{\sqrt{a_z}(\pi)^{1/4}}
-                                   e^{-z^2/(2 a_z)} H_{m_z}( z/a_z)
+                                   e^{-z^2/(2 a_z)} H_{m_z}(z/a_z)
 \end{align*}
 Here the radial and axial oscillator lengths are defined as
-$a_\perp = \sqrt{\hbar/( \mu \omega_\perp)}$ and $a_z = \sqrt{\hbar/ (\mu \omega_z)}$.
+$a_\perp = \sqrt{\hbar/(\mu \omega_\perp)}$ and $a_z = \sqrt{\hbar/ (\mu \omega_z)}$.
 $H_{m_z}$ are the Hermite-Gaussian functions,
 and $L^{|l|}_n$ are the generalized Laguerre polynomials.
 
@@ -269,8 +269,8 @@ or by changing the motional state of the atoms, i.e. moving along the y axis.
     Schematics of interaction shift spectroscopy using Raman transitions.
     Left: Raman resonance for atomic spin flip with only one atom in the tweezer.
     Right: The energy shifts by a spin state dependent amount with the present of
-    the second (red) atom. This causes a shift in the spin flip resonance frequency
-    for the first (green) atom compared to the one atom case.
+    the second~(red) atom. This causes a shift in the spin flip resonance frequency
+    for the first~(green) atom compared to the one atom case.
     The shift corresponds to the difference in the interaction shift between the
     two spin states.
     \label{fig:interaction-shift:measure}}
@@ -280,13 +280,13 @@ In our experiment, we measure the interaction shifts by flipping the spin state 
 one but not the other atom using Raman transition.
 Since the scattering length depends on the spin state,
 this allow us to measure the difference between energy levels for different scattering lengths
-by comparing the resonance frequency in the absence of the other atom
-(Fig.~\ref{fig:interaction-shift:measure}).
-The spin flip is done in the same $8.8~\mathrm{G}$ we use for Raman sideband cooling
-(section \ref{ch:rsc:setup}).
+by comparing the resonance frequency in the absence of
+the other atom~(Fig.~\ref{fig:interaction-shift:measure}).
+The spin flip is done in the same $8.8~\mathrm{G}$ we use for
+Raman sideband cooling~(section~\ref{ch:rsc:setup}).
 We drive the transition using two Raman beams that are co-propagating
-which imprints no phase gradient on the atomic wavefunction
-(section \ref{ch:rsc:basic-theory:raman}).
+which imprints no phase gradient on
+the atomic wavefunction~(section~\ref{ch:rsc:basic-theory:raman}).
 This reduces the number of observable resonances and provides a cleaner spectrum since,
 \begin{enumerate}
 \item Parity is conserved during the transition.\\
@@ -333,7 +333,7 @@ the present of the Na atom whereas the blue line shows the resonances
 including the interaction with the Na atom.
 The largest peak on the left is the shifted ground motional state
 $|m_{\mathrm{rel},z},m_{\mathrm{COM},z}\rangle = |0,0\rangle$ and the smaller peak on the right
-corresponds to the $|2,0\rangle$ state (Fig.~\ref{fig:interaction-shift:results}B).
+corresponds to the $|2,0\rangle$ state~(Fig.~\ref{fig:interaction-shift:results}B).
 A even smaller resonance for $|4,0\rangle$ is also visible further right
 (not shown in Fig.~\ref{fig:interaction-shift:results}B).
 The $|0,0\rangle$ resonance gives the difference of the interaction shifts
@@ -347,8 +347,8 @@ Similarly, Fig.~\ref{fig:interaction-shift:results}C shows the result for
 the $|\mathrm{Na(2, 2),Cs(3, 3)}\rangle$ to $|\mathrm{Na(1, 1),Cs(3, 3)}\rangle$
 measured by driving a Na Raman transition.
 Two interaction shifted resonances were observed which corresponds to
-the motional ground state and unresolved states with two total Na and Cs motional excitation
-(Fig.~\ref{fig:interaction-shift:results}D).
+the motional ground state and unresolved states with two total
+Na and Cs motional excitation~(Fig.~\ref{fig:interaction-shift:results}D).
 
 \begin{table}
   \centering
@@ -369,14 +369,14 @@ the motional ground state and unresolved states with two total Na and Cs motiona
 
 Since the measurement only give the energy difference between different scattering lengths,
 we determine an absolute interaction shift of the $|\mathrm{Na(2, 2),Cs(4, 4)}\rangle$
-using the binding energy of the least bound state $v''=-1$
-(see section \ref{ch:raman-spectroscopy:states:n0}).
+using the binding energy of
+the least bound state $v''=-1$~(section~\ref{ch:raman-spectroscopy:states:n0}).
 The absense of spin mixing for this state allows its binding energy to be related
 to the scattering length directly through
-the two-scale single-channel quantum defect theory (QDT).
+the two-scale single-channel quantum defect theory~(QDT).
 For the van der Waals coefficients, we use $C_6=3227~\mathrm{a.u.}$ and
 $C_8=3.681\times10^5~\mathrm{a.u.}$ from
-Refs. \cite{docenko_coupling_2006,mcguyer_high-precision_2015,porsev_accurate_2003}.
+Refs.~\cite{docenko_coupling_2006,mcguyer_high-precision_2015,porsev_accurate_2003}.
 From here, we can use the result of the calculation above to obtain all the
 absolute interaction shifts and scattering lengths.
 The final result for all the spin states is summarized in
@@ -389,7 +389,7 @@ Here, we started our exploration of the interaction by measuring the most import
 for $s$-wave scattering process at ultracold temperature, the scattering length $a$.
 The results from these measurement can be used to refine theory model of the NaCs molecule,
 including predictions of the molecule binding energy
-and Feshbach resonances\cite{hood_multichannel_2020}.
+and Feshbach resonances~\cite{hood_multichannel_2020}.
 More properties of the interaction will be studied in the following chapters.
 
 Additionally, the combination of the tight confinement from the optical tweezer
@@ -399,5 +399,5 @@ As we have seen in this chapter, the degeneracy of carrier Raman transition
 for different motional state is lifted by the interaction.
 As a result, driving on the $|0,0\rangle\rightarrow|0,0\rangle$ interaction shifted resonance
 allow us to prepare a system that is completely in the ground state of the relative motion.
-This will be used when we coherently create the molecules (see chapter \ref{ch:raman-transfer})
+This will be used when we coherently create the molecules~(chapter~\ref{ch:raman-transfer})
 to lower the requirement for the cooling and reduce the background caused by hot atoms.

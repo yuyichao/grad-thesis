@@ -20,8 +20,8 @@ the probability of scattering during a $\pi$ pulse is,
 \end{align*}
 which is proportional to the ratio $\Gamma/\Omega_{\mathrm{R}}$.
 In an ideal three-level system, this is the only source of decoherence
-which can be made arbitrarily small by using a large single photon detuning
-\textsuperscript{(\ref{ch:rsc:basic-theory:raman-scatter})}.
+which can be made arbitrarily small by using a large
+single photon detuning~(section~\ref{ch:rsc:basic-theory:raman-scatter}).
 However, in a real system, there are often other effects that increases the scattering
 and may also put a lower limit on the scattering probability during the transfer.
 Fig.~\ref{fig:raman-transfer:generic-raman-model} shows a generic model
@@ -41,8 +41,8 @@ and frequency also needs to be taken into account.
     The corresponding matrix elements (arbitrary unit) are $M_1$ and $M_2$.
     The Raman beams are detuned by $\Delta$ from the primary excited state $|e\rangle$,
     which has a decay rate of $\Gamma_e$.
-    We also consider additional states near the initial ($|i'\rangle$),
-    final ($|f'\rangle$) and intermediate excited $|e'\rangle$ states which are
+    We also consider additional states near the initial~($|i'\rangle$),
+    final~($|f'\rangle$) and intermediate excited $|e'\rangle$ states which are
     separated from the corresponding Raman transition states by $\omega'_i$,
     $\omega'_f$ and $\omega'_e$ respectively.
     Only one additional state of each kinds are included to simplify the discussion
@@ -51,7 +51,7 @@ and frequency also needs to be taken into account.
 \end{figure}
 
 In the experiment, we find the parameter range that gives the best transfer efficiency
-using numerical simulation (see section \ref{ch:raman-transfer:state-selction}).
+using numerical simulation~(section~\ref{ch:raman-transfer:state-selction}).
 Nevertheless, in order to develop a general approach that can be applied to other systems,
 it is also important to understand the various physical mechanism that leads
 to the optimal parameters.
@@ -86,8 +86,8 @@ is not a major limiting factor for our transfer efficiency.
   \includegraphics[width=\textwidth]{figures/raman_transfer_extra_ext_states.pdf}
   \caption[Raman transition with additional excited states]{
     Effect of additional excited states $|e'\rangle$ on the Raman transition efficiency.
-    (A) Depending on the sign of the coupling, there could be constructive (blue)
-    or destructive (orange) interference on the Raman Rabi frequency $\Omega_{\mathrm{R}}$.
+    (A) Depending on the sign of the coupling, there could be constructive~(blue)
+    or destructive~(orange) interference on the Raman Rabi frequency $\Omega_{\mathrm{R}}$.
     (B) Increased scattering rate $\Gamma_{\mathrm{s}}$ caused by $|e'\rangle$ with a minimal
     between the two states.
     (C) Optimal detunine exists between the two states with maximum transfer efficiency
@@ -99,27 +99,29 @@ Next, we will consider the effect of the $|e'\rangle$ state near the excited int
 These states can be coupled to the ground states, both $|i\rangle$ and $|f\rangle$,
 by the Raman beams and can cause a change in both the Raman Rabi frequency
 and the scattering rate.
-The total Raman Rabi frequency (Fig.~\ref{fig:raman-transfer:raman:extra-ext-states}A) is,
+The total Raman Rabi frequency~(Fig.~\ref{fig:raman-transfer:raman:extra-ext-states}A) is,
 \[
   \Omega_{\mathrm{R}}=\frac{\Omega_1\Omega_2}{2\Delta}+\frac{\Omega'_1\Omega'_2}{2(\Delta-\omega'_e)}
 \]
 where $\Omega'_1$ and $\Omega'_2$ are the single photon Rabi frequencies coupling $|e'\rangle$
 to $|i\rangle$ and $|f\rangle$ respectively.
-Depending on whether $\Omega'_1\Omega'_2$ has the same (orange line)
-or different (blue line) sign as $\Omega_1\Omega_2$, the total Raman Rabi frequency
+Depending on whether $\Omega'_1\Omega'_2$ has the same~(orange line)
+or different~(blue line) sign as $\Omega_1\Omega_2$, the total Raman Rabi frequency
 may be cancelled or enhanced between the two excited states.
-On the other hand, the total scattering rate (Fig.~\ref{fig:raman-transfer:raman:extra-ext-states}B)
+On the other hand,
+the total scattering rate~(Fig.~\ref{fig:raman-transfer:raman:extra-ext-states}B)
 is almost always increased due to the additional state, creating a local minimum
 between the excited states.
 Combining the two effects, the ratio between the Raman Rabi frequency and
 the scattering rate, which determines the transfer efficiency, always have local maximum
-between the excited states (Fig.~\ref{fig:raman-transfer:raman:extra-ext-states}C).
+between the excited states~(Fig.~\ref{fig:raman-transfer:raman:extra-ext-states}C).
 
 Despite the difference in the position and value of the maximum for different
 $|e'\rangle$ parameters, we can summarize the effect on the transfer efficiency
 as a limit on the maximum detuning $\Delta_{\max}$ to a fraction of the spacing
-between the excited states ($\omega'_e$).
-As an example, the blue and orange maxima in Fig.~\ref{fig:raman-transfer:raman:extra-ext-states}C
+between the excited states~($\omega'_e$).
+As an example, the blue and orange maxima in
+Fig.~\ref{fig:raman-transfer:raman:extra-ext-states}C
 corresponds to a limit on single photon detuning of $0.5\omega'_e$ and $0.15\omega'_e$.
 As one would expected, a larger excited state spacing usually result in
 a larger detuning limit and a better transfer efficiency.
@@ -178,7 +180,7 @@ and the ratio between Raman Rabi frequency and scattering rate is,
   =&\frac{\Delta}{\Gamma_e}\frac{M_1M_2}{M_1^2+M_2^2}
 \end{align*}
 Therefore, for a given excited state linewidth $\Gamma_e$
-and maximum detuning (section \ref{ch:raman-transfer:raman:extra-ext}) the transfer efficiency
+and maximum detuning~(section~\ref{ch:raman-transfer:raman:extra-ext}) the transfer efficiency
 maximizes for the smallest $M_1M_2/(M_1^2+M_2^2)$ which happens when the ratio
 $M_1/M_2$ is the closest to $1$.
 
@@ -215,7 +217,7 @@ therefore relative stability of the laser power to better than $M_1/M_2$.
 \label{ch:raman-transfer:stirap}
 
 An alternative method often used to create and prepare the internal states of ultracold molecule
-is stimulated Raman adiabatic passage (STIRAP)\cite{vitanov_coherent_2001}.
+is stimulated Raman adiabatic passage~(STIRAP)~\cite{vitanov_coherent_2001}.
 Compared to Raman transition, which uses detuning from the excited state
 to reduce scattering during the transfer, STIRAP relies on a superposition between
 the initial and final state as a dark state to achieve the same goal.
@@ -226,8 +228,8 @@ Similar to Raman transfer, STIRAP in an ideal three-level system can achieve
 full coherent transfer with arbitrarily small scattering probability
 when given unlimited time and power budget.
 However, in reality, states and coupling that exist outside the ideal three-level system
-always cause a non-zero probability of scattering loss
-(see Fig.~\ref{fig:raman-transfer:generic-stirap-model}).
+always cause a non-zero probability of
+scattering loss~(Fig.~\ref{fig:raman-transfer:generic-stirap-model}).
 In this section, we will apply the approach we took for Raman transition to STIRAP.
 We will then compare the loss caused by different practical limitations
 and discuss which approach should be taken under certain circumstance.
@@ -266,7 +268,7 @@ we use the fact that the wavefunction amplitude in the final state $c_f$
 is the integral of the excited state amplitude $c_e$ and the down leg Rabi frequency $\Omega_2$,
 i.e.,\footnote{This equation and the lower bound on scattering probability applies generically
   to all two photon transfer process including Raman $\pi$ pulse.
-  The equation we used in section \ref{ch:raman-transfer:raman} is a refinement
+  The equation we used in section~\ref{ch:raman-transfer:raman} is a refinement
   on this limit.}
 \begin{align*}
   c_f(t)=&\int_0^t \frac{\ui\Omega_2(t)}{2}c_e(t') \ud t'
@@ -307,7 +309,7 @@ other effects in the system can favor one approach over the other one.
 \subsection{Additional Initial and Final States}
 \label{ch:raman-transfer:stirap:extra-init-final}
 
-Similar to Raman transition (section \ref{ch:raman-transfer:raman:extra-init-final}),
+Similar to Raman transition~(section~\ref{ch:raman-transfer:raman:extra-init-final}),
 the additional initial and final states causes potential leakage out of the three-level system.
 This limits the minimum time of the transfer in a way similar to that of Raman transition.
 
@@ -356,11 +358,11 @@ $C'$ is a dimensionless number depending only on the pulse shape defined as
 \subsection{Cross Coupling Between Light Addressing Initial and Final States}
 \label{ch:raman-transfer:stirap:cross-couple}
 
-As is the case for Raman transition\textsuperscript{(\ref{ch:raman-transfer:raman:cross-couple})},
+As is the case for Raman transition~(section~\ref{ch:raman-transfer:raman:cross-couple}),
 the coupling of each beam on the other initial or final state can cause increased scattering.
 The total scattering probability caused by the cross coupling is
 \footnote{Here we are making the same assumption of identical matrix elements for the two beams
-  as the one we made for Raman transition in section \ref{ch:raman-transfer:raman:cross-couple}.},
+  as the one we made for Raman transition in section~\ref{ch:raman-transfer:raman:cross-couple}.},
 \begin{align*}
   p''_{\mathrm{s}}=&\int_0^T \frac{\Gamma_e\Omega_1^2(t)}{4M_1^2}\frac{M_2^2}{\delta^2}\abs{c_f(t)}^2+\frac{\Gamma_e\Omega_2^2(t)}{4M_2^2}\frac{M_1^2}{\delta^2}\abs{c_i(t)}^2 \ud t\\
   =&\frac{\Gamma_e}{4\delta^2}\int_0^T \frac{M_2^2}{M_1^2}\frac{\Omega_1^4(t)}{\Omega_1^2(t)+\Omega_2^2(t)}+\frac{M_1^2}{M_2^2}\frac{\Omega_2^4(t)}{\Omega_1^2(t)+\Omega_2^2(t)} \ud t\\
@@ -458,7 +460,7 @@ in our experiment.
 
 \begin{enumerate}
 \item We use the tweezer beam as the Raman beam for transfer in order to reduce scattering
-  from external sources\textsuperscript{\ref{ch:raman-spectroscopy:states}}.
+  from external sources~(section~\ref{ch:raman-spectroscopy:states}).
   Doing this for STIRAP while optimizing the pulse shape for transfer is more challenging.
 \item In additional to scattering, the additional excited and ground state
   also causes a power, and therefore time, dependent light shift.
@@ -476,9 +478,9 @@ STIRAP can have an advantage over Raman transition.
 \section{States Selection}
 \label{ch:raman-transfer:state-selction}
 
-From section \ref{ch:raman-transfer:raman} we see that the transfer efficiency
+From section~\ref{ch:raman-transfer:raman} we see that the transfer efficiency
 is directly related to the excited state linewidth, the maximum usuable detuning
-and the matrix elements ratio ($M_1/M_2$).
+and the matrix elements ratio~($M_1/M_2$).
 In this section, we will discuss how these, as well as other technical constraints
 affects the choices of states we use for the Raman transfer.
 
@@ -493,9 +495,9 @@ affects the choices of states we use for the Raman transfer.
     The large scattering length for the $\mathrm{Na(2,2),Cs(3,3)}$ state
     creates an interaction shift comparable to the axial trapping frequency.
     This causes a significant change in the relative wavefunction especially at short
-    intranuclear distance ($R$).
+    intranuclear distance~($R$).
     Compared to other spin states with weaker interaction,
-    the wavefunction at short distance ($R<100~\mathrm{\AA}$) is significantly enhanced.
+    the wavefunction at short distance~($R<100~\mathrm{\AA}$) is significantly enhanced.
     \label{fig:raman-transfer:atomic-wavefunction}}
 \end{figure}
 
@@ -503,11 +505,11 @@ The choice of initial state can affect the transfer efficiency
 by changing the matrix element $M_1$ and therefore the matrix elements ratio.
 Since for most choices of the atomic and molecular states we have $M_1<M_2$,
 we would like to choose an atomic initial state with the largest $M_1$ possible.
-Unlike the selection of final state (see \ref{ch:raman-transfer:state-selction:final})
+Unlike the selection of final state~(section~\ref{ch:raman-transfer:state-selction:final})
 maximizing $M_1$ can improve the matrix element ratio as well as
 shortening the transfer time to decrease sensitivity to technical noise at the same time.
 
-As discussed in section \ref{ch:pa:linewidth},
+As discussed in section~\ref{ch:pa:linewidth},
 $M_1$ is only sensitive to the wavefunction at a short inter-atomic distance
 that is comparable to the size of the molecule.
 Therefore, states with a large wavefunction value at short inter-atomic distance
@@ -519,7 +521,7 @@ can significantly change the relative motional wavefunction of the atoms.
 This effect can be seen in Fig.~\ref{fig:raman-transfer:atomic-wavefunction}
 and is especially significant for the $|\mathrm{Na(2,2),Cs(3,3)}\rangle$ state
 when the interaction energy scale is comparable to that of the motional energy
-as seen in section \ref{ch:interaction-shift:spectroscopy:results}.
+as seen in section~\ref{ch:interaction-shift:spectroscopy:results}.
 
 \subsection{Excited State}
 \label{ch:raman-transfer:state-selction:ext}
@@ -531,10 +533,10 @@ as seen in section \ref{ch:interaction-shift:spectroscopy:results}.
   as intermediate state for the Raman transition]{
     Comparison between using a weakly bound and a deeply bound excited state
     as intermediate state for the Raman transition.
-    The (A) deeply bound excited state ($v'=0$) has a smaller Raman Rabi frequency
-    ($\Omega_{\mathrm{R}}$) compared to the (B) weakly bound excited state ($v'=63$)
-    at a given detuning.
-    However, the lower scattering rate ($\Gamma_{\mathrm{s}}$) allows a much larger
+    The (A) deeply bound excited state~($v'=0$) has a smaller
+    Raman Rabi frequency`($\Omega_{\mathrm{R}}$) compared to the
+    (B) weakly bound excited state~($v'=63$) at a given detuning.
+    However, the lower scattering rate~($\Gamma_{\mathrm{s}}$) allows a much larger
     $\Delta_{\max}$,
     which results in a larger Raman Rabi frequency to scattering rate ratio.
     \label{fig:raman-transfer:v0-vs-v63}}
@@ -552,8 +554,8 @@ via pre-dissociation which significantly increases the linewidth and should be a
 The other factor that affects excited state selection is the maximum detuning.
 Due to larger FCF with the ground atomic and weakly bound molecular state,
 previous attempt at Raman spectroscopy typically use an excited state
-closed to the dissociative threshold as the intermediate state
-\cite{wynar_molecules_2000,rom_state_2004}.
+closed to the dissociative threshold as
+the intermediate state~\cite{wynar_molecules_2000,rom_state_2004}.
 However, the smaller inter-state spacing and the smaller detuning from
 the atomic excited state means that these state have a relatively small $\Delta_{\max}$
 and therefore a lower coherent transfer efficiency.

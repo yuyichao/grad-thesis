@@ -6,23 +6,23 @@
 \section{Introduction}
 
 The method we use to coherently create a single molecule from atoms
-uses two-photon optical transition\textsuperscript{(\ref{ch:raman-transfer})}.
+uses two-photon optical transition~(chapter~\ref{ch:raman-transfer}).
 Before we can drive such a transition, however, we must locate and characterize
 the intermediate excited states of the molecule to be used in the two-photon transition.
-This can be measured using photoassociation (PA) spectroscopy
+This can be measured using photoassociation~(PA) spectroscopy
 where two atoms are driven from the atomic state to an excited molecular state
 via an optical transition.
 The flexibility of the optical tweezer platform allows us to
 prepare a clean initial state with only two atoms
 as well as accurately detect when PA has happened
-with high signal to noise ratio (\ref{ch:pa:sequence-res}).
+with high signal to noise ratio~(section~\ref{ch:pa:sequence-res}).
 
-In this chapter, we describe the molecular energy structure (section \ref{ch:pa:structure})
-and how we use PA spectruscopy to locate and identify the molecular excited states
-(section \ref{ch:pa:pa}).
-We also details the beampath for the measurement (\ref{ch:pa:beampath}) including
+In this chapter, we describe the molecular energy structure~(section~\ref{ch:pa:structure})
+and how we use PA spectruscopy to locate and
+identify the molecular excited states~(section~\ref{ch:pa:pa}).
+We also details the beampath for the measurement~(section~\ref{ch:pa:beampath}) including
 the alignment procedure for the PA beam and discussions about factors that can affect
-the PA linewidth (\ref{ch:pa:linewidth}).
+the PA linewidth~(section~\ref{ch:pa:linewidth}).
 
 \section{Energy Levels}
 \label{ch:pa:structure}
@@ -31,7 +31,7 @@ First we will discuss the energy levels in a diatomic molecule
 as well as the labeling system for the states.
 We will focus mainly on the electronic excited states measured in this chapter
 but most of the discussion here applies to ground electronic states as well
-and will be useful for chapter \ref{ch:raman-spectroscopy} and \ref{ch:raman-transfer}.
+and will be useful for chapter~\ref{ch:raman-spectroscopy} and \ref{ch:raman-transfer}.
 
 \subsection{Angular Momentums}
 
@@ -61,15 +61,15 @@ strength can be easily ordered.
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{figures/pa_hunds_case_a.pdf}
-  \caption[Hund's case (a)]{
-    Angular momentum coupling for \textit{Hund's case (a)}.
+  \caption[Hund's~case~(a)]{
+    Angular momentum coupling for \textit{Hund's~case~(a)}.
     $\mathbf{L}$ and $\mathbf{S}$ are coupled to the internuclear axis $\hat n$
     and the sum of the projections $\Omega=\Lambda+\Sigma$ is then
     added with the orthogonal compoment $\mathbf{N}$ to form $\mathbf{J}$.
     \label{fig:pa:hunds-case-a}}
 \end{figure}
 
-This is described by the \textit{Hund's case (a)}\cite[p.~523-626]{bransden_physics_2003}.
+This is described by the \textit{Hund's~case~(a)}~\cite[p.~523-626]{bransden_physics_2003}.
 Molecular states with large binding energies mostly experience interactions
 between the atoms at short range where the electric static interaction is very strong.
 This couples the the two electron spins into a total electron spin
@@ -88,14 +88,14 @@ as the projection of $\mathbf{L}$ and $\mathbf{S}$
 along $\hat{n}$ respectively.
 The total angular momentum along $\hat{n}$ is therefore $\Omega\equiv\Lambda+\Sigma$
 and it is added to the $\mathbf{N}$ which is orthogonal to $\hat{n}$ to form
-the total angular momentum $\mathbf{J}$ (Fig.~\ref{fig:pa:hunds-case-a}).
+the total angular momentum $\mathbf{J}$~(Fig.~\ref{fig:pa:hunds-case-a}).
 
 The angular momenum state of the molecule is therefore fully characterized by
 $|L,\Lambda,S,\Omega,J\rangle$. $\Lambda$ can be $0,1,\dots,L$, $\Omega$ ranges from
 $\abs{\Lambda-S}$ to $\Lambda+S$ and $J\geqslant\Omega$.
 The $L$ quantum number is specified by the electronic state and will be discussed
-in section \ref{ch:pa:pes} and the rest of the angular momentum quantum numbers
-are represented by the \textit{Hund's case (a)} term symbol,
+in section~\ref{ch:pa:pes} and the rest of the angular momentum quantum numbers
+are represented by the \textit{Hund's~case~(a)} term symbol,
 \[ ^{2S+1}\Lambda_\Omega \]
 similar to the atomic term symbol $^{2S+1}L_J$.
 Just as the use of capital English letters $S,P,D,\dots$ to represent
@@ -118,7 +118,7 @@ The nuclear rotational energy is given by,
   E_{rot}=B\langle \mathbf{N}^2 \rangle
 \]
 where $B$ is the rotational constant of the molecule.
-For \textit{Hund's case (a)} this is,
+For \textit{Hund's~case~(a)} this is,
 \begin{align*}
   E_{rot}=&B\langle \mathbf{J}^2 - \Omega^2 \rangle\\
   =&B\langle \mathbf{J}^2 - \Omega^2 \rangle\\
@@ -143,7 +143,7 @@ for the individual atoms forms $\mathbf{F}_{\mathrm{atom}}=\mathbf{F}_1+\mathbf{
 which is then coupled to the nuclear rotation $\mathbf{N}$
 to form $\mathbf{F}=\mathbf{F}_{\mathrm{atom}}+\mathbf{N}$.
 We will discuss this regime in more detail
-when we characterize the weakly bound ground states in chapter \ref{ch:raman-spectroscopy}.
+when we characterize the weakly bound ground states in chapter~\ref{ch:raman-spectroscopy}.
 
 \subsection{Potential Energy Surface}
 \label{ch:pa:pes}
@@ -151,7 +151,7 @@ when we characterize the weakly bound ground states in chapter \ref{ch:raman-spe
 Due to the different angular momentum coupling in different regimes,
 there is not a consistent way to label the interaction between the two atoms
 at both short and long distance.
-Nevertheless, by convention, we use the \textit{Hund's case (a)} term symbol
+Nevertheless, by convention, we use the \textit{Hund's~case~(a)} term symbol
 since it more accurately represents the state when the interaction energy dominates.
 
 The Hamiltonian (excluding spin for simplicity\footnote{Electron spin is implicitly included,
@@ -168,14 +168,14 @@ and the sum is over all the electrons in the molecule.
 
 \subsubsection{Born-Oppenheimer Approximation}
 
-The Hamiltonian is solved using the Born-Oppenheimer (BO) approximation.
+The Hamiltonian is solved using the Born-Oppenheimer~(BO) approximation.
 Because of the large mass difference between the nuclei and the electrons,
 we can assume that the electron motion follows the position of the nuclei
 instantaneously so that the motion of the nuclei and the elctrons can be treated separately.
 Formally, this mean that the electron wavefunctions is solved using the
 electrionic term $H_e$ for a given nuclear position $\mathbf{R}_{\Na}$ and $\mathbf{R}_{\Cs}$.
 This results in an effective potential $V_{\mathrm{eff}}\paren{\abs{\mathbf{R}_{\Na}-\mathbf{R}_{\Cs}}}$ called
-the potential energy surfaces (PES) for each electronic states.
+the potential energy surfaces~(PES) for each electronic states.
 The solutions to the approximate Hamiltonians $T_n+V_{\mathrm{eff}}$ provide
 the vibrational and rotational states of the molecule.
 
@@ -203,12 +203,12 @@ we have,
 \end{align*}
 The term $\langle j_1|j_2\rangle$ determines the angular momentum selection rule which is
 $\Delta\Lambda=0,\pm1$, $\Delta S=\Delta\Sigma=0$, $\Delta\Omega=0,\pm1$ and $\Delta J=0,\pm1$
-for \textit{Hund's case (a)}\cite[p.~14-15]{straughan_spectroscopy_1976}.
+for \textit{Hund's~case~(a)}~\cite[p.~14-15]{straughan_spectroscopy_1976}.
 The term $\langle v_1|v_2\rangle$ gives the coupling strength between vibrational states
 \footnote{Note that $\langle v_1|v_2\rangle$ does not simplify to orthogonality relation
   when $e_1\neq e_2$ since the vibrational wavefunctions belongs to different PES.}.
 This is called the Franck-Condon principle and the square of the wavefunction overlap
-is defined as the Franck-Condon factor (FCF),
+is defined as the Franck-Condon factor~(FCF),
 \begin{align*}
   \mathrm{FCF}\equiv&\abs{\langle v_1|v_2\rangle}^2
 \end{align*}
@@ -220,7 +220,7 @@ For incoherent transition, the transition rate is proportional to $\Omega^2\prop
   \centering
   \includegraphics[width=0.9\textwidth]{figures/pa_pes.pdf}
   \caption[NaCs potential energy surfaces]{
-    Potential energy surfaces of NaCs with \textit{Hund's case (a)} labels.
+    Potential energy surfaces of NaCs with \textit{Hund's~case~(a)} labels.
     Due to spin-orbit coupling, the potentials are not independent of each other.
     The real energy eigenstates of the molecule may be a superposition of multiple
     electronic and spin states.
@@ -228,13 +228,13 @@ For incoherent transition, the transition rate is proportional to $\Omega^2\prop
 \end{figure}
 
 Fig.~\ref{fig:pa:pes} shows the relevant PESs for $\mathrm{NaCs}$.
-Although the spin-less electronic Hamiltonian \ref{eq:pa:pes:he} makes it easier
+Although the spin-less electronic Hamiltonian~\ref{eq:pa:pes:he} makes it easier
 to understand the molecule structure and provides good approximations for the
 transition dipoment and FCF, the absense of spin and the difficulty in exactly solving
 a multi-electron system makes it unsuitable to calculate energy levels
 for spectroscopy purpose.
 Because of this, prediction of the molecular states energies are calculated using
-PESs fitted to experimental data\cite{docenko_coupling_2006,zaharova_solution_2009,grochola_spin-forbidden_2011,grochola_investigation_2010}.
+PESs fitted to experimental data~\cite{docenko_coupling_2006,zaharova_solution_2009,grochola_spin-forbidden_2011,grochola_investigation_2010}.
 
 \section{Photoassociation Spectroscopy}
 \label{ch:pa:pa}
@@ -261,9 +261,9 @@ The excited molecular state we would like to address has a bond length of $3-8~\
 The initial atomic state, however, has an average inter-nuclear distance of
 $\approx1000~\mathrm{\AA}$.
 This size mismatch between the initial and final state wavefunctions
-means the transition typically have a very small FCF ($10^{-10}-10^{-8}$).
+means the transition typically have a very small FCF~($10^{-10}-10^{-8}$).
 Because of this, we focus our PA beam onto the tweezer with a beam waist between
-$10~\mathrm{\mu m}$ and $30~\mathrm{\mu m}$ (Fig.~\ref{fig:pa:beampath}) in order to
+$10~\mathrm{\mu m}$ and $30~\mathrm{\mu m}$~(Fig.~\ref{fig:pa:beampath}) in order to
 increase the laser intensity and improve the signal contrast.
 The tight focus also increase the astigmatism when passing through
 the glass cell window at an angle which limits the minimum focus size we can achieve.
@@ -287,7 +287,7 @@ In order to align the PA beam to the tweezer, we use the following alignment pro
 \begin{enumerate}
 \item Light resonant with the Cs atomic transition is sent into the PA beam path.
   This allows us to do the alignment using the procedure we used to align the
-  atomic Raman sideband cooling beams as described in section \ref{ch:rsc:alignment}.
+  atomic Raman sideband cooling beams as described in section~\ref{ch:rsc:alignment}.
   However, unlike the alignment for the atomic Raman beams,
   due to the larger frequency difference between the PA transition and the Cs atomic
   transition as well as the smaller beamsize,
@@ -295,8 +295,8 @@ In order to align the PA beam to the tweezer, we use the following alignment pro
   due to the chromatic aberration from the optics in the PA beam path.
 \item In order to translate the alignment result from resonance Cs light to that of the PA light,
   we insert a mirror to reflect the PA beam after the last optics in the beam path
-  and place a beam profiler at the equivalent location of the tweezer
-  (Fig.~\ref{fig:pa:beampath}).
+  and place a beam profiler at the equivalent location of
+  the tweezer~(Fig.~\ref{fig:pa:beampath}).
   This allow us to directly measure location of the focal point for the two wavelengths
   and correct for the chromatic aberration by shifting the focus from the PA light
   to the original focus position from the resonance Cs light.
@@ -307,7 +307,7 @@ In order to align the PA beam to the tweezer, we use the following alignment pro
   is too low to be used for alignment.
   However, when the PA beam is set to circular polarization, it creates an effective
   magnetic field parallel to the beam propagation direction
-  of the form\cite{thompson_coherence_2013},
+  of the form~\cite{thompson_coherence_2013},
   \[ B_{\mathrm{eff}}=-U_0\frac{\delta_2-\delta_1}{\delta_2+2\delta_1}\mathbf{C} \]
   where $U_0$ is the scalar light shift, $\delta_1$ and $\delta_2$ are the detuning from the
   $\mathrm{D}_1$ and $\mathrm{D}_2$ line respectively,
@@ -316,11 +316,11 @@ In order to align the PA beam to the tweezer, we use the following alignment pro
   qualifies the ellipticity of the polarization with
   $\abs{C}=1$ for pure circular polarization and $\abs{C}=0$ for linear polarization.
   This effective magnetic field causes a relative shift between the $|4,4\rangle$
-  and the $|3,3\rangle$ states which can be measured using a Raman transition
-  (Fig.~\ref{fig:pa:alignment}A).
+  and the $|3,3\rangle$ states which can be measured using
+  a Raman transition~(Fig.~\ref{fig:pa:alignment}A).
   By measuring the shift as a function of the beam position,
-  we can determine the size and the center of the PA beam and align the beam to the atom
-  (Fig.~\ref{fig:pa:alignment}B).
+  we can determine the size and the center of the PA beam and align the beam to
+  the atom~(Fig.~\ref{fig:pa:alignment}B).
 \end{enumerate}
 
 \subsection{Experiment Sequence and Resonance Frequencies}
@@ -335,23 +335,23 @@ In order to align the PA beam to the tweezer, we use the following alignment pro
   \end{tabular}
   \caption[PA resonance prediction]{
     Prediction of $|\mathrm{Na(2, 2),Cs(4, 4)}\rangle$ PA resonance frequency
-    based on Dunham expansion\cite{grochola_spin-forbidden_2011,dunham_energy_1932}.
+    based on Dunham expansion~\cite{grochola_spin-forbidden_2011,dunham_energy_1932}.
     \label{table:pa:theory-prediction}}
 \end{table}
 
 For the PA spectroscopy, we mainly focus on states with large binding energies
 which are expected to be good candidates as the intermediate state
-for Raman transfer\textsuperscript{(\ref{ch:raman-transfer:raman})}.
+for Raman transfer~(section~\ref{ch:raman-transfer:raman}).
 In particular, we scanned the PA light frequency around the $v'=0$ and $v'=12-14$
 vibrational states in the $c^3\Sigma_{\Omega=1}$ potential.
 Table~\ref{table:pa:theory-prediction} shows the predicted resonance frequencies
 for the PA resonance from $|\mathrm{Na(2, 2),Cs(4, 4)}\rangle$
-based on fitting to previous measurement\cite{grochola_spin-forbidden_2011}.
-The frequencies are calculated from Dunham expansion\cite{dunham_energy_1932}
+based on fitting to previous measurement~\cite{grochola_spin-forbidden_2011}.
+The frequencies are calculated from Dunham expansion~\cite{dunham_energy_1932}
 corrected for the hyperfine structure for the atoms.
 
 In order to observe PA, we first prepare both the Na and Cs atoms in the motional ground states
-in the same tweezer\cite{liu_building_2018}.
+in the same tweezer~\cite{liu_building_2018}.
 We then turn on the PA beam for a set time
 followed by separating the atoms into their respective tweezers and image the atoms.
 When we hit a PA resonance, the excited molecular state will typically decay down
@@ -414,7 +414,7 @@ whereas only the strongest rotational state is measured for $v'=13$ and $v'=14$.
 The $v'=0$ spectrum also shows the hyperfine structure for the lowest two rotational states.
 
 The rotational states of the molecule can be determined from the energy gap between the states
-based on the discussion in section \ref{ch:pa:angular-momentums:deep}.
+based on the discussion in section~\ref{ch:pa:angular-momentums:deep}.
 The ratio of the spacing between the lowest $J$ states we measured are
 $1.64$ and $1.61$ for $v'=0$ \footnote{The energy of the strongest hyperfine line is used}
 and $v'=12$ respectively.
@@ -429,9 +429,9 @@ In additional to the energy, another property of the excited state
 that is important for driving a two-photon transition using the state is the linewidth.
 This determines the scattering or decoherence rate of
 the two-photon transition which then determines
-the transfer efficiency\textsuperscript{(\ref{ch:raman-transfer})}.
-The linewidth, or decay rate, due to electric dipole transitions is
-\cite[p.~197]{bransden_physics_2003},
+the transfer efficiency~(chapter~\ref{ch:raman-transfer}).
+The linewidth, or decay rate, due to electric dipole transitions
+is~\cite[p.~197]{bransden_physics_2003},
 \begin{align*}
   \Gamma=&\sum_{i}\frac{\omega_i^3d_i^2\mathrm{FCF}_i}{3\pi\varepsilon_0\hbar c^3}
 \end{align*}
@@ -461,17 +461,17 @@ by our frequency resolution.
 \end{figure}
 
 This is, however, not what is observed in the experiment.
-Fig~.\ref{fig:pa:linewidth:red-twr}A shows the narrowest spectrum of the $v'=12, J=2$ PA line
+Fig.~\ref{fig:pa:linewidth:red-twr}A shows the narrowest spectrum of the $v'=12, J=2$ PA line
 we measured when the tweezer frequency is set to $306344.~\mathrm{GHz}$
 with $10~\mathrm{mW}$ of power. The linewidth is determined to be $167(32)~\mathrm{MHz}$
 which is much greater than the theory prediction.
 
 Furthermore, the observed linewidth appears to be dependent on the tweezer power.
 The same PA line measured with $1~\mathrm{mW}$ tweezer power
-is shown in Fig~.\ref{fig:pa:linewidth:red-twr}B with a significantly narrower linewidth
+is shown in Fig.~\ref{fig:pa:linewidth:red-twr}B with a significantly narrower linewidth
 of $27.3(97)~\mathrm{MHz}$.
 In fact, the linewidth appears to be proportional to the tweezer power
-as shown in Fig~.\ref{fig:pa:linewidth:red-twr}C,
+as shown in Fig.~\ref{fig:pa:linewidth:red-twr}C,
 which suggests that the linewidth may be broadened by a two-photon process.
 
 \begin{figure}
@@ -489,8 +489,8 @@ which suggests that the linewidth may be broadened by a two-photon process.
 \end{figure}
 
 We initially suspected that the source of this broadening is due to the tweezer light
-coupling the excited molecular state to another state at a higher energy
-(Fig.~\ref{fig:pa:linewidth:up-vs-down}A).
+coupling the excited molecular state to another state at
+a higher energy~(Fig.~\ref{fig:pa:linewidth:up-vs-down}A).
 If this is the case, we would expect the broadening to be a function of
 the sum of the tweezer and PA light frequency depending on the detuning from the nearest
 two-photon excited state.
@@ -510,7 +510,7 @@ this continuum cannot be the photon continuum.
 Instead, the excited state is coupled to the relative motional continuum of the atoms.
 Physically, this corresponds to a photodissociation process
 where the atoms flies away with high kinetic energies corresponding
-to the detuning of the tweezer (Fig.~\ref{fig:pa:linewidth:up-vs-down}B).
+to the detuning of the tweezer~(Fig.~\ref{fig:pa:linewidth:up-vs-down}B).
 
 The photodissociation rate is determined by the Fermi's golden rule,
 \[
@@ -528,7 +528,7 @@ and $\delta$ is the spacing between the discretized final states.
 The Rabi frequency $\Omega'_{if}$ is proportional to the square root of FCF,
 which we calculate for the atomic ground motional states by exactly diagonalization
 of the atomic wavefunction.
-However, due to the high energy ($>10~\mathrm{GHz}$) of the final state,
+However, due to the high energy~($>10~\mathrm{GHz}$) of the final state,
 calculating FCF for the target state using this method requires an unrealiztic number of
 states to be included.
 Instead, we approximate it using the results for the atomic ground state
@@ -605,7 +605,7 @@ Nevertheless, it confirms that this broadening mechanism can explain the observe
   \caption[PA linewidth for blue detuned tweezer]{
     Fitting of PA linewidth for $10~\mathrm{mW}$ tweezer power at $306612~\mathrm{GHz}$.
     The linewidth is significantly narrower than the value measured when the tweezer
-    is red detuned from the PA resonance (\ref{fig:pa:linewidth:red-twr}).
+    is red detuned from the PA resonance~(Fig.~\ref{fig:pa:linewidth:red-twr}).
     \label{fig:pa:linewidth:blue-twr}}
 \end{figure}
 
@@ -658,11 +658,11 @@ much lower than the molecular state
 and is usually not the limiting factor for the transfer efficiency.
 
 The molecular state can also couple to a different motional continuum if there are other
-atomic spin state with lower energy (Fig.~\ref{fig:pa:linewidth:two-photon-down-raman}F).
+atomic spin state with lower energy~(Fig.~\ref{fig:pa:linewidth:two-photon-down-raman}F).
 Since stable atomic state has the lowest energy amount all the ones with the same total $m_F$,
 such state must have a different total $m_F$ than the initial state.
 Therefore, such coupling is forbidden if the two Raman beams both has $\pi$ polarization,
-as is the case for the Raman transition in chapter \ref{ch:raman-spectroscopy}
+as is the case for the Raman transition in chapter~\ref{ch:raman-spectroscopy}
 and \ref{ch:raman-transfer}, and will not cause any loss due to this mechanism.
 Polarization impurity, however, can allow such coupling and enable this loss process.
 
