@@ -31,19 +31,6 @@ Nevertheless, in our experiment, depending on the trapping wavelength,
 we have $\omega_{1,i}\approx\omega_{2,i}$ to within $10~\mathrm{\%}$ to $20~\mathrm{\%}$
 and this is the regime we will mainly focus on in this section.
 
-The interaction potential $V_{\mathrm{int}}$ is the original for
-the molecular bound states and its exact form will be discussed in chapter~\ref{ch:pa},
-\ref{ch:raman-spectroscopy} and \ref{ch:raman-transfer}.
-However, since the range of the potential is much smaller than
-the size of the atomic wavefunction, we can ignore the short range details of the potential
-and treat it as a contact interaction characterized only by the scattering length $a$.
-\[
-  V_{\mathrm{int}}\paren{\mathbf{r}}=\frac{2\pi\hbar^2a}{\mu}\delta_{\mathrm{reg}}\paren{\mathbf{r}}
-\]
-where $\mu = m_1m_2/\paren{m_1+m_2}$ is the reduced mass and
-$\delta_{\mathrm{reg}}\paren{\mathbf{r}}\equiv\delta^{(3)}\paren{\mathbf{r}}\paren{\partial/\partial r}r$
-is the regularized delta-function.
-
 In order to calculate the interaction term, we can change from the coordinates for
 the two individual atoms to the center of mass~(COM) and relative coordinates.
 \begin{align*}
@@ -71,6 +58,27 @@ If the trapping frequencies are the same for the two atoms, the third term is $0
 the solution is fully separateable.
 As mentioned above, since the trapping frequencies for the two atoms are similar,
 we will assume the mixing term is small and treat it as a small correction in the calculation.
+
+The interaction potential $V_{\mathrm{int}}$ is the original for
+the molecular bound states and its exact form will be discussed in chapter~\ref{ch:pa},
+\ref{ch:raman-spectroscopy} and \ref{ch:raman-transfer}.
+However, since the range of the potential is much smaller than
+the size of the atomic wavefunction, we can ignore the short range details of the potential
+and treat it as a contact interaction characterized only by
+the scattering length $a$~\cite{busch_two_1998},
+\[
+  V_{\mathrm{int}}\paren{\mathbf{r}}=\frac{2\pi\hbar^2a}{\mu}\delta_{\mathrm{reg}}\paren{\mathbf{r}}
+\]
+where $\mu = m_1m_2/\paren{m_1+m_2}$ is the reduced mass and
+$\delta_{\mathrm{reg}}\paren{\mathbf{r}}\equiv\delta^{(3)}\paren{\mathbf{r}}\paren{\partial/\partial r}r$
+is the regularized delta-function.
+The validity of the pseudo-potential is characterized by the ratio of
+the van der Waals length $\beta_6 = (2\mu C_6 / \hbar^2)^{1/4}$
+to the relative harmonic oscillator lengths $\beta_{\mathrm{rel},i}$~\cite{
+  bolda_effective-scattering-length_2002,blume_fermi_2002}.
+In our experiment, these are $\beta_6 \approx 6~\mathrm{nm}$,
+$\beta_{\mathrm{rel},x} \approx \beta_{\mathrm{rel},x}\approx 66~\mathrm{nm}$ for the radial axes,
+and  $\beta_{\mathrm{rel},z} \approx 158~\mathrm{nm}$ for the axial axis.
 
 \subsection{Perturbative Calculation}
 \label{ch:interaction-shift:theory:perturb}
@@ -137,7 +145,8 @@ We therefore define $\eta = 6$, which is close to the actual values of $5.6$
 and ignores the $7~\mathrm{\%}$ difference between the two radial trapping frequencies
 in order to use these solutions.
 These differences from the real Hamiltonian will be included later,
-together with the mixing term, as a correction.
+together with the mixing term, as a correction~\cite{
+  bertelsen_association_2007,deuretzbacher_heteronuclear_2008}.
 The analytic solutions are only given for the interacting states,
 but there also many relative states which have zero wavefunction at the $\delta$-function,
 and therefore are unaffected.
@@ -373,7 +382,9 @@ using the binding energy of
 the least bound state $v''=-1$~(section~\ref{ch:raman-spectroscopy:states:n0}).
 The absense of spin mixing for this state allows its binding energy to be related
 to the scattering length directly through
-the two-scale single-channel quantum defect theory~(QDT).
+the single-channel quantum defect theory~(QDT)~\cite{
+  gao_quantum-defect_1998,gao_angular-momentum-insensitive_2001,gao_general_2008}
+but extended to two-scale by including the $-C_8/r^8$ potential.
 For the van der Waals coefficients, we use $C_6=3227~\mathrm{a.u.}$ and
 $C_8=3.681\times10^5~\mathrm{a.u.}$ from
 Refs.~\cite{docenko_coupling_2006,mcguyer_high-precision_2015,porsev_accurate_2003}.
