@@ -67,7 +67,7 @@
 \usepackage{ragged2e}
 \RaggedRight
 \RequirePackage{graphicx}
-\usepackage{fixltx2e}
+% \usepackage{fixltx2e} % Not needed after TexLive 2015
 \parindent 12pt
 \RequirePackage{lettrine}
 \RequirePackage{setspace}
