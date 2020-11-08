@@ -6,18 +6,56 @@
 \section{Introduction}
 \label{ch:rsc:introduction}
 
-The trapping of the single atoms in the optical tweezers in section \ref{ch:loading:loading}
+The trapping of the single atoms in the optical tweezers in section~\ref{ch:loading:loading}
 improves our control on the motional degrees of freedom of the atoms
 by confining it to the focus of the tweezer.
-\todo{however, still hot}
+However, the temperature of the atoms directly after loading
+is still relatively high~($\todo{number}~\mathrm{mK}$ for Na and
+$\todo{number}~\mathrm{mK}$ for Cs)
+compared to the trapping frequencies~($80\sim600~\mathrm{kHz}$ or $4\sim150~\mathrm{mK}$ for Na
+and $20\sim160~\mathrm{kHz}$ or $1\sim8~\mathrm{mK}$ for Cs)
+of the tweazer causing a large number of motional states
+to be occupied~($\approx\todo{number}$ for Na and $\approx\todo{number}$ for Cs).
+Further cooling into the motional ground state of the tweezer for both atoms
+are required in our experiment for two reasons,
+\begin{enumerate}
+\item Our assembly approach relies on the preparation of atomic quantum states
+  to realize full control of the molecule.
+  More concretely, the temperature and motional states of the molecule we create
+  is directly related to the cooling of the atoms in the tweezer.
+\item Cooling to the motional ground state reduces the size of the atomic wavefunction.
+  This increases the interaction between the atoms and
+  improves the coupling to the molecular states as will be shown in later chapters.
+\end{enumerate}
 
-(In order to achieve full quantum control on molecules, we need to control atoms first.)
-(An example of such control)
-(Motional degrees of freedom)
-(PGC cools to ...)
-(RSC to further cool.)
-\todo{Define abbreviation RSC}
-\todo{Maybe move some intro about large LD parameter here}
+The confinement provided by the optical tweezer and the relatively high trapping frequencies
+enables the potential the use of Raman sideband cooling~(RSC)
+in our experiment to reach the motional ground state.
+Originally developed for ion systems to take advantage of the tight confinement from ion traps,
+resolved sideband cooling has been later implemented for neutral atomic systems
+using Raman transitions using both optical lattices and optical tweezers
+on multiple species. Still, the application of RSC requires a favorable initial cooling
+and very tight confinement from the trap and remains challenging and underexplored
+outside this regime (formally known as the Lamb-Dicke regime,
+which is defined later in section~\ref{ch:rsc:basic-theory:raman}).
+The efficient polarization gradient cooling for Cs atoms allows RSC
+to be implemented in a similar fashion\todo{cite} as previous experiments
+achiving a ground state probability of $\todo{number}~\mathrm{\%}$.
+
+Unfortunately, the parameter achievable for Na lands outside the Lamb-Dicke regime
+making the implementation of RSC much more challenging.
+In this chapter, we will discuss how we overcome these challanges
+and achieved ground state cooling using RSC in our experiment.
+We will start in section~\ref{ch:rsc:basic-theory} and \ref{ch:rsc:thermometry}
+with a description of the theory for RSC and the related thermometry technique.
+Section~\ref{ch:rsc:setup} describes the experimental setup for RSC.
+The challenges related to cooling outside the Lambd-Dicke regime are analyzed in detail
+in section~\ref{ch:rsc:challenges} followed by
+section~\ref{ch:rsc:solution-high-orders} and \ref{ch:rsc:simulation}
+listing the solution we developed to overcome these challenges.
+The experimental realization and result of the cooling sequence
+are discussed in section~\ref{ch:rsc:alignment}, \ref{ch:rsc:implementation}
+and \ref{ch:rsc:performance} before the summary in section~\ref{ch:rsc:summary}.
 
 \todo{
   Make sure state detection method is mentioned at least in this chapter
