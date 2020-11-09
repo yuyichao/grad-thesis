@@ -236,6 +236,8 @@
 
 \newcommand{\copyrightpage}{
   \newpage
+  \phantomsection
+  \addcontentsline{toc}{chapter}{Copyright}
   \thispagestyle{empty}
   \vspace*{\fill}
   \scshape \noindent \small \copyright \small \@degreeyear\hspace{3pt}-- \theauthor \\
@@ -246,8 +248,9 @@
 }
 
 \newcommand{\abstractpage}[1]{
-  \pdfbookmark{Abstract}{Abstract}
   \newpage
+  \phantomsection
+  \addcontentsline{toc}{chapter}{Abstract}
   \pagenumbering{roman}
   \setcounter{page}{3}
   \pagestyle{fancy}
@@ -268,14 +271,15 @@
 }
 
 \newcommand{\contentspage}{
-  \pdfbookmark{\contentsname}{Contents}
+  \phantomsection
+  \addcontentsline{toc}{chapter}{\contentsname}
   \tableofcontents
 }
 
 \newcommand{\dedicationpage}[1]{
   \cleardoublepage
   \phantomsection
-  \pdfbookmark{Dedication}{Dedication}
+  \addcontentsline{toc}{chapter}{Dedication}
   \newpage \thispagestyle{fancy} \vspace*{\fill}
   \scshape \noindent #1
   \vspace*{\fill} \newpage \rm
@@ -284,6 +288,7 @@
 
 \newcommand{\acknowledgments}[1]{
   \chapter*{Acknowledgments}
+  \addcontentsline{toc}{chapter}{Acknowledgments}
   \noindent
   \begin{spacing}{\dnormalspacing}
     #1
