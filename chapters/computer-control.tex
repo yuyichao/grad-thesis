@@ -473,7 +473,16 @@ of clock signals to the card at the beginning of the sequence to work around thi
 
 \subsection{USRP Backend}
 \label{ch:computer-control:backend:usrp}
-(SIMD)
+
+In additional to the DDSs attached to the FPGA, we also support generation of
+radio frequency signals using universal software radio peripheral~(USRP).
+Compared to the DDS, which can only output a single frequency at at time,
+USRP support output of arbitrary spectrum within a certain range.
+
+\todo{
+  SIMD
+  Trigger
+}
 
 \section{Automation of Scans}
 \label{ch:computer-control:scan}
