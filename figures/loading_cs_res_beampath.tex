@@ -1,0 +1,226 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage[colorlinks=true]{hyperref}
+\usetikzlibrary{
+  arrows,
+  calc,
+  decorations.pathmorphing,
+  decorations.pathreplacing,
+  decorations.markings,
+  fadings,
+  positioning,
+  shapes,
+  arrows.meta
+}
+\tikzfading[name = lens fading,inner color = transparent!0,outer color = transparent!100]
+\tikzfading[name = pbs fading,top color = transparent!0,bottom color = transparent!100]
+\tikzset{
+  mid arrow/.style={postaction={decorate,decoration={
+        markings,
+        mark=at position .5 with {\arrow[#1]{stealth}}
+      }}},
+  mid arrow2/.style={postaction={decorate,decoration={
+        markings,
+        mark=at position .5 with {\arrow[>=stealth]{><}}
+      }}},
+}
+
+\newcommand\drawellipseshade[5][inner color=black,outer color=black]{
+  % 1: shading option
+  % 2: center (x, y)
+  % 3: xsize
+  % 4: ysize
+  % 5: angle
+  \begin{scope}
+    \clip[rotate around={#5:#2}] #2 ellipse ({#3} and {#4});
+    \begin{scope}[transform canvas={shift={#2}, rotate=#5}]
+      \shade[shading=radial,path fading=lens fading, #1] (0, 0) ellipse ({#3} and {#4});
+    \end{scope}
+  \end{scope}
+}
+\newcommand\drawlens[3]{
+  % 1: center (x, y)
+  % 2: size
+  % 3: angle
+  \drawellipseshade[inner color=blue,outer color=blue!40!cyan]{#1}{#2}{{0.14 * #2}}{#3}
+}
+\newcommand\drawwaveplate[3]{
+  % 1: center (x, y)
+  % 2: size
+  % 3: angle
+  \drawellipseshade[inner color=blue!50!black,outer color=blue!80!black]{#1}{#2}{{0.07 * #2}}{#3}
+}
+\newcommand\drawaom[4]{
+  % 1: center (x, y)
+  % 2: xsize
+  % 3: ysize
+  % 4: angle
+  \drawellipseshade[inner color=orange,outer color=orange]{#1}{#2}{#3}{#4}
+  \begin{scope}[rotate around={#4:#1}]
+    \fill[orange, even odd rule, opacity=0.8]
+    ($#1 + ({#2}, 0)$) arc (0:360:{#2} and {#3})
+    -- ($#1 + ({#2}, {#3})$) -- ($#1 + (-{#2}, {#3})$) -- ($#1 + (-{#2}, -{#3})$)
+    -- ($#1 + ({#2}, -{#3})$) --cycle;
+    \draw ($#1 + ({#2}, {#3})$) -- ($#1 + (-{#2}, {#3})$) -- ($#1 + (-{#2}, -{#3})$)
+    -- ($#1 + ({#2}, -{#3})$) --cycle;
+  \end{scope}
+}
+\newcommand\drawpbs[3]{
+  % 1: center (x, y)
+  % 2: size
+  % 3: angle
+  \begin{scope}
+    \begin{scope}
+      \clip[rotate around={#3:#1}] ($#1 - ({#2}, {#2})$) rectangle ($#1 + ({#2}, {#2})$);
+      \begin{scope}[transform canvas={shift={#1}, rotate=#3}]
+        \shade[bottom color=blue!60!cyan, top color=blue!50!cyan, path fading=pbs fading]
+        (-{#2}, -{#2}) rectangle ({#2}, {#2});
+        \draw[line width=1] (-{#2}, -{#2}) -- ({#2}, {#2});
+      \end{scope}
+    \end{scope}
+    % Make sure the frame is not clipped
+    \draw[rotate around={#3:#1}] ($#1 - ({#2}, {#2})$) rectangle ($#1 + ({#2}, {#2})$);
+  \end{scope}
+}
+
+\ifpdf
+% Ensure reproducible output
+\pdfinfoomitdate=1
+\pdfsuppressptexinfo=-1
+\pdftrailerid{}
+\hypersetup{
+  pdfcreator={},
+  pdfproducer={}
+}
+\fi
+
+\begin{document}
+
+\begin{tikzpicture}
+  % F3 input
+  \draw[red,line width=1.6,mid arrow] (0, 3)
+  node[above,align=center] {\large From\\\large F3 Laser} -- (0, 1);
+  \draw[red,line width=1.6] (0, 1) -- (0, 0);
+  % F3 MOT AOM input
+  \draw[red,line width=1.6] (0, 0) -- (-0.6, 0);
+  \draw[red,line width=1.6,mid arrow] (-0.6, 0) -- (-2, 0);
+  % F3 MOT
+  \draw[red,line width=1.6,mid arrow] (-2, 0) -- node[above] {\large F3 MOT} (-6, 0.2);
+  % F3 OP DP PBS input
+  \draw[red,line width=1.6,mid arrow] (0, 0) -- (0, -3);
+  \draw[red,line width=1.6] (0, -3) -- (0, -4.2);
+  % F3 OP DP AOM input
+  \draw[red,line width=1.6,mid arrow2] (0, -4.2) -- (0, -6);
+  % F3 OP DP
+  \draw[red,line width=1.6] (0, -6) -- (0.1, -7.5 + 0.1);
+  \draw[red,line width=1.6,mid arrow2] (0.1, -7.5 + 0.1) -- (-1.5, -7.5 + 0.2);
+  \draw[red,line width=1.6] (-1.5, -7.5 + 0.2) -- (-2.0, -7.5 + 0.2);
+  \draw[red,line width=1.6,mid arrow2] (-2.0, -7.5 + 0.2) -- (-3.5, -7.5 + 0.2);
+  % F3 OP
+  \draw[red,line width=1.6,mid arrow] (0, -3) -- (-4.5, -3);
+  \draw[red,line width=1.6,mid arrow] (-4.5, -3) -- (-4.5, -10.5);
+  \draw[red,line width=1.6,mid arrow] (-4.5, -10.5) -- node[above] {\large F3 OP} (-2, -10.5);
+  \draw[red,line width=1.6] (-2, -10.5) -- (-0.5, -10.5);
+
+  % F4 input
+  \draw[red,line width=1.6,mid arrow] (6, 3)
+  node[above,align=center] {\large From\\\large F4 Laser} -- (6, 1);
+  \draw[red,line width=1.6] (6, 1) -- (6, 0);
+  % F4 MOT AOM input
+  \draw[red,line width=1.6] (6, 0) -- (6, -0.6);
+  \draw[red,line width=1.6,mid arrow] (6, -0.6) -- (6, -2);
+  % F4 MOT
+  \draw[red,line width=1.6,mid arrow] (6, -2) -- (6.1, -4.2);
+  \draw[red,line width=1.6,mid arrow] (6.1, -4.2) -- (0, -4.2);
+  \draw[red,line width=1.6,mid arrow] (0, -4.2) -- (-6, -4.2);
+  \draw[red,line width=1.6,mid arrow] (-6, -4.2) --
+  node[above,rotate=90] {\large F4 MOT} (-6, 0.2);
+  % F4 OP AOM input
+  \draw[red,line width=1.6] (6, 0) -- (6 - 0.6, 0);
+  \draw[red,line width=1.6,mid arrow] (6 - 0.6, 0) -- (3.5, 0);
+  \draw[red,line width=1.6,mid arrow] (3.5, 0) -- (3.5, -6);
+  % F4 OP
+  \draw[red,line width=1.6,mid arrow] (3.5, -6) -- (4.1, -13.5);
+  \draw[red,line width=1.6,mid arrow] (4.1, -13.5) -- (-0.5, -13.5);
+  \draw[red,line width=1.6,mid arrow] (-0.5, -13.5) --
+  node[above,rotate=-90] {\large F4 OP} (-0.5, -11);
+  \draw[red,line width=1.6] (-0.5, -11) -- (-0.5, -10.5);
+
+  % MOT output
+  \draw[red,line width=1.6,mid arrow] (-6, 0.2) -- (-6, 2.6);
+  \draw[red,line width=1.6] (-6, 2.6) -- (-6, 3.1);
+  \draw[red,line width=1.6,mid arrow] (-6, 3.1) -- (-6, 3.6) node[above] {\large To MOT};
+
+  % OP output
+  \draw[red,line width=1.6,mid arrow] (-0.5, -10.5) -- (6, -10.5);
+  \draw[red,line width=1.6] (6, -10.5) -- (6.9, -10.5);
+  \draw[red,line width=1.6,mid arrow] (6.9, -10.5) -- (7.5, -10.5)
+  node[below] {\large To OP};
+
+  % F3 input HWP
+  \drawwaveplate{(0, 1.5)}{1}{0}
+  \node[blue!80!black,above,rotate=90] at (0 - 0.8, 1.5) {\large $\lambda/2$};
+  % F3 input PBS
+  \drawpbs{(0, 0)}{0.7}{0}
+  \node[blue!40!cyan,above,rotate=-90,align=center] at (0 + 0.7, 0) {\large F3 PBS};
+  % F3 MOT AOM
+  \drawaom{(-2, 0)}{1}{0.5}{-90}
+  \node[rotate=-90,align=center] at (-2, 0) {\large F3 MOT\\\large AOM};
+  % F3 OP DP PBS
+  \drawpbs{(0, -3)}{0.7}{90}
+  \node[blue!40!cyan,above,rotate=-90,align=center] at (0 + 0.7, -3) {\large F3 DP\\\large PBS};
+  % F3 OP DP AOM
+  \drawaom{(0, -6)}{1}{0.5}{0}
+  \node[rotate=0,align=center] at (0, -6) {\large F3 OP\\\large DP AOM};
+  % F3 OP DP mirror 1
+  \draw[line width=3] (0 - 0.7, -7.5 - 0.7) -- (0 + 0.7, -7.5 + 0.7);
+  % F3 OP DP lens
+  \drawlens{(-1.5, -7.5)}{1}{90}
+  % F3 OP DP QWP
+  \drawwaveplate{(-2.0, -7.5)}{1}{90}
+  \node[blue!80!black,above] at (-2.0, -7.5 + 0.8) {\large $\lambda/4$};
+  % F3 OP DP mirror 2
+  \draw[line width=3] (-3.5, -7.5 + 0.1) -- (-3.5, -7.5 + 0.8);
+  % F3 OP DP output mirrors
+  \draw[line width=3] (-4.5 - 0.7, -3 - 0.7) -- (-4.5 + 0.7, -3 + 0.7);
+  \draw[line width=3] (-4.5 - 0.7, -10.5 + 0.7) -- (-4.5 + 0.7, -10.5 - 0.7);
+  % F3 OP HWP
+  \drawwaveplate{(-1.8, -10.5)}{1}{90}
+  \node[blue!80!black,above] at (-1.8, -10.5 + 0.8) {\large $\lambda/2$};
+
+  % F4 input HWP
+  \drawwaveplate{(6, 1.5)}{1}{0}
+  \node[blue!80!black,above,rotate=90] at (6 - 0.8, 1.5) {\large $\lambda/2$};
+  % F4 input PBS
+  \drawpbs{(6, 0)}{0.7}{0}
+  \node[blue!40!cyan,above,rotate=-90,align=center] at (6 + 0.7, 0) {\large F4 PBS};
+  % F4 MOT AOM
+  \drawaom{(6, -2)}{1}{0.5}{0}
+  \node[rotate=0,align=center] at (6, -2) {\large F4 MOT\\\large AOM};
+  % F4 MOT output mirrors
+  \draw[line width=3] (6.1 - 0.7, -4.2 - 0.7) -- (6.1 + 0.7, -4.2 + 0.7);
+  \draw[line width=3] (-6 - 0.7, -4.2 + 0.7) -- (-6 + 0.7, -4.2 - 0.7);
+  % F4 OP input mirror
+  \draw[line width=3] (3.5 - 0.7, 0 - 0.7) -- (3.5 + 0.7, 0 + 0.7);
+  % F4 OP AOM
+  \drawaom{(3.5, -6)}{1}{0.5}{0}
+  \node[rotate=0,align=center] at (3.5, -6) {\large F4 OP\\\large AOM};
+  % F4 OP output mirrors
+  \draw[line width=3] (4.1 - 0.7, -13.5 - 0.7) -- (4.1 + 0.7, -13.5 + 0.7);
+  \draw[line width=3] (-0.5 - 0.7, -13.5 + 0.7) -- (-0.5 + 0.7, -13.5 - 0.7);
+
+  % MOT PBS
+  \drawpbs{(-6, 0.2)}{0.7}{90}
+  \node[blue!40!cyan,above,rotate=90,align=center] at (-6 - 0.7, 0.2) {\large MOT\\\large PBS 1};
+  \drawpbs{(-6, 2.2)}{0.6}{90}
+  \node[blue!40!cyan,above,rotate=90,align=center] at (-6 - 0.7, 2.2) {\large MOT\\\large PBS 2};
+
+  % OP PBS
+  \drawpbs{(-0.5, -10.5)}{0.7}{0}
+  \node[blue!40!cyan,above,align=center]
+  at (-0.5, -10.5 + 0.7) {\large OP\\\large PBS 1};
+  \drawpbs{(6, -10.5)}{0.6}{0}
+  \node[blue!40!cyan,above,align=center] at (6, -10.5 + 0.7) {\large OP\\\large PBS 2};
+\end{tikzpicture}
+
+\end{document}
