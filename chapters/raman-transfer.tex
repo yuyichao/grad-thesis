@@ -102,6 +102,7 @@ and the scattering rate.
 There are two relevant limiting cases that needs to be discussed separately.
 
 \subsubsection{Excited State Spacing Larger than Single-Photon Detuning}
+\label{ch:raman-transfer:raman:extra-ext:large-spacing}
 In this case, the single photon frequency falls in between the two excited states
 $|e\rangle$ and $|e'\rangle$,
 which happens when $|e'\rangle$ is a different vibrational or electronic state.
@@ -142,6 +143,7 @@ and scattering rate and the effects on the final transition efficiency can be si
 treated as a change in the maximum detuning.
 
 \subsubsection{Excited State Spacing Much Smaller than Single-Photon Detuning}
+\label{ch:raman-transfer:raman:extra-ext:tight-spacing}
 This is typically the case when $|e'\rangle$ is a different rotational or hyperfine state.
 In this case, the Raman transition is detuned from both $|e\rangle$ and $|e'\rangle$
 at the same time and the two excited states behaves similar to an effective state $|e''\rangle$
@@ -362,7 +364,6 @@ This limits the minimum time of the transfer in a way similar to that of Raman t
 
 \subsection{Additional Excited States}
 \label{ch:raman-transfer:stirap:extra-ext}
-\todo{\subsubsection{Excited State Spacing Much Smaller than Single-Photon Detuning}}
 
 For additional excited states that are farther away than the single photon Rabi frequency
 $\Omega_1$ and $\Omega_2$, the contribution to the coherent transfer is minimum.
@@ -372,6 +373,9 @@ Excited state will only contribute significantly to the scattering if it causes 
 from the dark state, which happens if $\Omega_1(t)/\Omega_2(t)\neq\Omega'_1(t)/\Omega'_2(t)$,
 where $\Omega'_1(t)$ and $\Omega'_2(t)$ are the time dependent single photon Rabi frequencies
 coupling $|e'\rangle$ to $|i\rangle$ and $|f\rangle$ respectively.
+As discussed in section~\ref{ch:raman-transfer:raman:extra-ext:tight-spacing},
+this does not happen for excited state with the same vibrational and electronic states
+when the initial and final spin and rotational states are identical.
 Similar to $\Omega_1$ and $\Omega_2$, we can also define
 $\Omega'_1\equiv\max\paren{\Omega'_1(t)}$ and $\Omega'_2\equiv\max\paren{\Omega'_2(t)}$.
 Since $\Omega'_1(t)$($\Omega'_2(t)$) and $\Omega_1(t)$($\Omega_2(t)$)
@@ -402,6 +406,14 @@ $C'$ is a dimensionless number depending only on the pulse shape defined as
 \begin{align*}
   C'\equiv&\frac{\Omega_1^2+\Omega_2^2}{\Omega_1^2\Omega_2^2T}\int_0^T \frac{\Omega_1^2(t)\Omega_2^2(t)\ud t}{\Omega_1^2(t)+\Omega_2^2(t)}
 \end{align*}
+
+It is worth noting that although there aren't two different cases similar to
+the discussion for Raman transition in section~\ref{ch:raman-transfer:raman:extra-ext}
+due to the lack of detuning in STIRAP,
+the difference between excited states with different spacings may still play an important role
+when comparing Raman transition to STIRAP.
+This is discussed breifly at the end of
+section~\ref{ch:raman-transfer:stirap:raman-vs-stirap:extra-ext}.
 
 \subsection{Cross Coupling Between Light Addressing Initial and Final States}
 \label{ch:raman-transfer:stirap:cross-couple}
@@ -437,6 +449,7 @@ Raman $\pi$ pulse in two limiting case depending on whether the contribution
 from the additional excited or ground state are more significant.
 
 \subsubsection{More Significant Contribution from Additional Excited State}
+\label{ch:raman-transfer:stirap:raman-vs-stirap:extra-ext}
 
 This is the case where excited state separation $\omega_e'$ is significantly smaller compared
 to the ground state separation $\delta$.
@@ -464,7 +477,22 @@ However, given that in the common cases we have $\Delta_{\max}<\omega_e'$ and
 $\abs{\Omega'_1/\Omega_1-\Omega'_2/\Omega_2}<1$ using STIRAP can potentially reduce
 the total scattering in this case.
 
+Note that the discussion above implicitly assumes that the relevant $\omega_e'$
+is the same for Raman transition and STIRAP.
+However, as we saw in section~\ref{ch:raman-transfer:stirap:extra-ext} and
+\ref{ch:raman-transfer:raman:extra-ext:tight-spacing},
+this may not be the case for hyperfine and rotational structure
+in the excited state when the initial and final states have different spin states.
+The $\omega_e'$ for STIRAP in this case is the hyperfine or rotational splitting
+and may be significantly smaller compared to the $\omega_e'$ for Raman transition,
+which is the vibrational state spacing.
+As a result, STIRAP may not be as favorable compared to Raman anymore.
+The best option in this case would require more in-depth comparison
+of the different effects and will not be discussed here in more detail
+since it is not relevant in our experiment.
+
 \subsubsection{More Significant Contribution from Additional Ground State}
+\label{ch:raman-transfer:stirap:raman-vs-stirap:cross-couple}
 
 With the assumption of $C''_1\approx C''_2\approx1$ the scattering due to
 cross coupling for STIRAP is now,
