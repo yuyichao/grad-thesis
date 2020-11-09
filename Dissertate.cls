@@ -117,6 +117,12 @@
 \renewcommand{\cftchapfont}{\normalsize \scshape}
 \renewcommand\listfigurename{Listing of figures}
 \renewcommand\listtablename{Listing of tables}
+\let\DS@oldlistoffigures\listoffigures
+\renewcommand\listoffigures{
+  \phantomsection
+  \addcontentsline{toc}{chapter}{\listfigurename}
+  \DS@oldlistoffigures
+}
 
 % Endmatter
 \renewcommand{\setthesection}{\arabic{chapter}.A\arabic{section}}
