@@ -98,12 +98,12 @@
 
 \begin{tikzpicture}
   % Input
-  \node[red,above] at (2, 0) {\large From Laser};
+  \node[red,above] at (2, 0) {\large\textbf{From Laser}};
   \draw[red,line width=1.6,mid arrow] (2, 0) -- (0, 0);
   % Wavemeter
   \draw[red,line width=1.6] (0, 0) -- (0, -1);
   \draw[red,line width=1.6,mid arrow] (0, -1) -- (0, -2);
-  \node[red,below] at (0, -2) {\large To wavemeter};
+  \node[red,below] at (0, -2) {\large\textbf{To wavemeter}};
   % Between PBS and DP AOM
   \draw[red,line width=1.6,mid arrow2] (-2, 0) -- (0, 0);
   \begin{scope}
@@ -124,10 +124,10 @@
     \draw[blue,line width=1.6] (0, 0) -- (0, 1);
     \draw[blue,line width=1.6,mid arrow] (0, 1) -- (0, 2.5);
   \end{scope}
-  \node[red] at (0, 2.8) {\large To Experiment};
+  \node[red] at (0, 2.8) {\large\textbf{To Experiment}};
   \begin{scope}
     \clip (-2, 2.8) rectangle (2, 4);
-    \node[blue] at (0, 2.8) {\large To Experiment};
+    \node[blue] at (0, 2.8) {\large\textbf{To Experiment}};
   \end{scope}
   \draw[red,line width=1.6,mid arrow2] (-2, 0) -- (-6, 0);
   \draw[blue,line width=1.6,mid arrow2] (-2, 0) -- (-6 - 0.3, 0 + 0.3);

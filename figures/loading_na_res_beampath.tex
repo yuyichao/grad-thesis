@@ -99,7 +99,7 @@
 \begin{tikzpicture}
   % F2 DP PBS input
   \draw[red,line width=1.6,mid arrow] (0, 2)
-  node[above,align=center] {\large From\\\large D2 Laser} -- (0, 0);
+  node[above,align=center] {\large\textbf{From}\\\large\textbf{D2 Laser}} -- (0, 0);
   % F2 DP AOM input
   \draw[red,line width=1.6] (0, 0) -- (0.6, 0);
   \draw[red,line width=1.6,mid arrow2] (0.6, 0) -- (2, 0);
@@ -159,7 +159,7 @@
   \draw[red,line width=1.6,mid arrow] (4.5 + 0.6, -10.5 - 0.1 - 7 / 9 * 0.2) -- (5.5, -9);
   \draw[red,line width=1.6] (5.5, -9) -- (5.5, -10);
   \draw[red,line width=1.6,mid arrow] (5.5, -10) -- (5.5, -12.5)
-  node[below] {\large To MOT};
+  node[below] {\large\textbf{To MOT}};
   % OP AOM input
   \draw[red,line width=1.6] (2.5, -10.5) -- (4.5, -10.5);
   \draw[red,line width=1.6,mid arrow] (4.5, -10.5) -- (8, -10.5);
@@ -170,11 +170,11 @@
   \node[red,above] at (11.1, -12) {\large D2 OP};
   % D1 OP
   \draw[red,line width=1.6,mid arrow] (12.5, -14)
-  node[below] {\large From D1 Laser} -- (12.5, -12);
+  node[below] {\large\textbf{From D1 Laser}} -- (12.5, -12);
   % OP output
   \draw[red,line width=1.6] (12.5, -12) -- (12.5, -9.5);
   \draw[red,line width=1.6,mid arrow] (12.5, -9.5) -- (12.5, -8)
-  node[above] {\large To OP};
+  node[above] {\large\textbf{To OP}};
 
   % F2 DP PBS
   \drawpbs{(0, 0)}{0.7}{90}

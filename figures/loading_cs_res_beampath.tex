@@ -99,7 +99,7 @@
 \begin{tikzpicture}
   % F3 input
   \draw[red,line width=1.6,mid arrow] (0, 3)
-  node[above,align=center] {\large From\\\large F3 Laser} -- (0, 1);
+  node[above,align=center] {\large\textbf{From}\\\large\textbf{F3 Laser}} -- (0, 1);
   \draw[red,line width=1.6] (0, 1) -- (0, 0);
   % F3 MOT AOM input
   \draw[red,line width=1.6] (0, 0) -- (-0.6, 0);
@@ -124,7 +124,7 @@
 
   % F4 input
   \draw[red,line width=1.6,mid arrow] (6, 3)
-  node[above,align=center] {\large From\\\large F4 Laser} -- (6, 1);
+  node[above,align=center] {\large\textbf{From}\\\large\textbf{F4 Laser}} -- (6, 1);
   \draw[red,line width=1.6] (6, 1) -- (6, 0);
   % F4 MOT AOM input
   \draw[red,line width=1.6] (6, 0) -- (6, -0.6);
@@ -149,13 +149,13 @@
   % MOT output
   \draw[red,line width=1.6,mid arrow] (-6, 0.2) -- (-6, 2.6);
   \draw[red,line width=1.6] (-6, 2.6) -- (-6, 3.1);
-  \draw[red,line width=1.6,mid arrow] (-6, 3.1) -- (-6, 3.6) node[above] {\large To MOT};
+  \draw[red,line width=1.6,mid arrow] (-6, 3.1) -- (-6, 3.6) node[above] {\large\textbf{To MOT}};
 
   % OP output
   \draw[red,line width=1.6,mid arrow] (-0.5, -10.5) -- (6, -10.5);
   \draw[red,line width=1.6] (6, -10.5) -- (6.9, -10.5);
   \draw[red,line width=1.6,mid arrow] (6.9, -10.5) -- (7.5, -10.5)
-  node[below] {\large To OP};
+  node[below] {\large\textbf{To OP}};
 
   % F3 input HWP
   \drawwaveplate{(0, 1.5)}{1}{0}
