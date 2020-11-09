@@ -99,6 +99,12 @@ Next, we will consider the effect of the $|e'\rangle$ state near the excited int
 These states can be coupled to the ground states, both $|i\rangle$ and $|f\rangle$,
 by the Raman beams and can cause a change in both the Raman Rabi frequency
 and the scattering rate.
+There are two relevant limiting cases that needs to be discussed separately.
+
+\subsubsection{Excited State Spacing Larger than Single-Photon Detuning}
+In this case, the single photon frequency falls in between the two excited states
+$|e\rangle$ and $|e'\rangle$,
+which happens when $|e'\rangle$ is a different vibrational or electronic state.
 The total Raman Rabi frequency~(Fig.~\ref{fig:raman-transfer:raman:extra-ext-states}A) is,
 \[
   \Omega_{\mathrm{R}}=\frac{\Omega_1\Omega_2}{2\Delta}+\frac{\Omega'_1\Omega'_2}{2(\Delta-\omega'_e)}
@@ -134,6 +140,47 @@ is considered here, this result can be generalized when more excited states are 
 as well. These states introduces additional smooth variation in both the Raman Rabi frequency
 and scattering rate and the effects on the final transition efficiency can be similarly
 treated as a change in the maximum detuning.
+
+\subsubsection{Excited State Spacing Much Smaller than Single-Photon Detuning}
+This is typically the case when $|e'\rangle$ is a different rotational or hyperfine state.
+In this case, the Raman transition is detuned from both $|e\rangle$ and $|e'\rangle$
+at the same time and the two excited states behaves similar to an effective state $|e''\rangle$
+with modified coupling strengths and decay rate.
+
+When the initial and final ground states have (nearly) identical spin and rotational state,
+which is the case for the our transition to $N=0$ states
+discussed in section~\ref{ch:raman-spectroscopy:states:n0},
+the new effective state will behave very similar to the original ones.
+This is because the coupling between the ground states and excited states is determined by,
+\begin{align*}
+  \Omega_{1,2}^{i}=&\Omega_{1,2}^{0}\langle\mathrm{F}_e^i|\mathrm{F}_g\rangle
+\end{align*}
+where the superscript $i$ represents different excited states,
+the subscript $1,2$ represents the initial~(1) and final~(2) ground state,
+$\Omega_{1,2}^{0}$ is the reduced Rabi frequency without the angular momentum projection,
+and $\mathrm{F}_e^i$ and $\mathrm{F}_g$ are the rotation and spin state for the excited
+and ground state respectively. Note that the ground states $|i\rangle$ and $|f\rangle$
+both have the same $\mathrm{F}_g$. This means
+\begin{align*}
+  \frac{\Omega_1^{i}}{\Omega_2^{i}}=&\frac{\Omega_1^{0}}{\Omega_2^{0}}
+\end{align*}
+which is a constant.
+Given that the excited state linewidth for different rotation and hyperfine states
+are very similar, we have the Rabi frequency to scattering rate ratio.
+\begin{align*}
+  \frac{\Omega_{\mathrm{R}}}{\Gamma_{\mathrm{s}}}\approx&\paren{\sum_i\frac{\Omega_1^i\Omega_2^i}{2\Delta}}\left/\paren{\sum_i\frac{{\Omega_1^i}^2+{\Omega_2^i}^2}{4\Delta^2}}\right.\\
+  =&\frac{\Omega_1\Omega_2}{2\Delta}\left/\frac{{\Omega_1}^2+{\Omega_2}^2}{4\Delta^2}\right.
+\end{align*}
+which is the same as the expression for a single excited state.
+
+The properties of the effective state can be very different, however,
+when the initial and final spin and rotational states are different.
+Nevertheless, other than the special case of complete destructive interference
+on the Raman Rabi frequency,
+the new excited state will generally have a worse ratio $\Omega_{\mathrm{R}}/\Gamma_{\mathrm{s}}$
+by a constant factor.
+The dependency of the ratio on the detuning is not changed significantly
+for large detuning.
 
 \subsection{Cross Coupling Between Light Addressing Initial and Final States}
 \label{ch:raman-transfer:raman:cross-couple}
@@ -315,6 +362,7 @@ This limits the minimum time of the transfer in a way similar to that of Raman t
 
 \subsection{Additional Excited States}
 \label{ch:raman-transfer:stirap:extra-ext}
+\todo{\subsubsection{Excited State Spacing Much Smaller than Single-Photon Detuning}}
 
 For additional excited states that are farther away than the single photon Rabi frequency
 $\Omega_1$ and $\Omega_2$, the contribution to the coherent transfer is minimum.
