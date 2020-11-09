@@ -120,20 +120,6 @@
 
 % Endmatter
 \renewcommand{\setthesection}{\arabic{chapter}.A\arabic{section}}
-% Set secnumdepth back to 2 in appendix
-\newcounter{DS@oldsecnumdepth}
-\let\DS@appendices\appendices
-\let\DS@endappendices\endappendices
-\renewenvironment{appendices}
-{
-  \setcounter{DS@oldsecnumdepth}{\value{secnumdepth}}
-  \setcounter{secnumdepth}{2}
-  \DS@appendices
-}
-{
-  \DS@endappendices
-  \setcounter{secnumdepth}{\value{DS@oldsecnumdepth}}
-}
 
 % References.
 \renewcommand\bibname{References}
