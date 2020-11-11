@@ -9,21 +9,10 @@
   decorations.pathmorphing,
   decorations.pathreplacing,
   decorations.markings,
-  fadings,
   positioning,
   shapes,
   arrows.meta
 }
-\pgfdeclareradialshading{glow}{\pgfpoint{0cm}{0cm}}{
-  color(0mm)=(white);
-  color(5mm)=(white);
-  color(9mm)=(black);
-  color(10mm)=(black)
-}
-
-\begin{tikzfadingfrompicture}[name=glow fading]
-  \shade [shading=glow] (0,0) circle (1);
-\end{tikzfadingfrompicture}
 
 \ifpdf
 % Ensure reproducible output
