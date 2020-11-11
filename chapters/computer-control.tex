@@ -482,17 +482,27 @@ This can be useful when more than one frequency is needed on a single channel,
 e.g. for fast modulation of the amplitude using beating,
 or to generate multiple diffraction orders on an acousto optical beam deflector~(AOBD).
 
-\todo{
-  Channel name mapping.
-}
+Since most usage of the USRP output involves creating multiple discrete frequencies,
+the hardware is modelled in our system accordingly.
+Instead of mapping the physical output channel to a fixed number of parameters
+similar to all the previously mentioned backends,
+a ``virtual'' output channel is created for each tone in the output,
+and can be controlled independently similar to all other channels.
+The \verb`<device_id>` component of the channel name has format \verb`CH<n>/<param>`
+where \verb`<n>` is a number identifying the virtual channel
+and \verb`<param>` is the parameter controlling the virtual channel,
+e.g. \verb`FREQ` for frequency or \verb`AMP` for amplitude.
 
-The API for USRP is very similar to that of the NI output card
+The driver API for USRP is very similar to that of the NI output card
 and requires the output value to be provided at regular time interval.
 However, due to the constant changing nature of the RF output and the higher sampling rate,
 the memory requirement would be too high if we take the same approach as the NiDAQ backend
 and compute all the output values before the sequences start.
 Instead, the backend uses a command stream similar to the one used by the FPGA backend
 to encode the change to the output spectrum.
+Unlike the FPGA backend, however, commands can be issued
+for all the virtual channels simultaneously,
+removing the need to interleave update for different channels.
 
 \todo{
   SIMD
