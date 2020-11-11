@@ -94,6 +94,13 @@ relying on stochastic process or the fine tuning of parameters in previous exper
 The molecules created using this approach are also well isolated from each other,
 preventing loss due to collisions.
 
+\todo{
+  In additional to motional control, the confinement of the tweezer
+  also decreases the distance between the atoms and thus increases the coupling
+  between the atomic state and the molecular state.
+  % all optical
+}
+
 The molecule we use to implement this approach is NaCs.
 The Na and Cs froming the molecule can be cooled and manipulated
 using many existing techniques developped for alkali atoms.
@@ -117,14 +124,21 @@ The steps we propose to create the molecules in the tweezer are as follows,
   Using the precise control of the atoms from optical tweezers,
   we can merge a single Na and Cs that is trapped and cooled in separate tweezers
   into a single one deterministically.
-\item Creation of weakly bound molecule.\\
-  \todo{}
-\item Creation of rovibrational ground state molecule.\\
-  \todo{}
+\item Creation of weakly bound molecule and rovibrational ground state molecule.\\
+  In order to create the rovibrational ground state molecules from atoms,
+  we must remove the $\approx100~\mathrm{THz}$ binding energy coherently from the system,
+  which is typically done using a two-photon optical transition.
+  However, due to the significant mismatch in the wavefunction size
+  between the atomic motional ground state~($\approx1000\text{\AA}$)
+  and the rovibrational ground state of the molecule~($\approx4\text{\AA}$),
+  it is challenging to achieve a high transition strength,
+  causing technical difficulties in maintaining the laser coherence during the transition.
+  In order to work around this problem,
+  the association is done by first creating a weakly bound molecule,
+  where the small energy difference makes it easier to maintain laser coherence,
+  and then transfering to the final state,
+  which has stronger coupling and shorter transition time.
 \end{enumerate}
-\todo{
-  mention the general approach using two steps
-}
 
 \section{Contents of this Thesis}
 \label{ch:introduction:contents}
