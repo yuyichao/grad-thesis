@@ -530,15 +530,46 @@ the reading of the COM port on the server computer.
 \section{Automation of Scans}
 \label{ch:computer-control:scan}
 
+\todo{}
+
 (Scan requirement)
 (Combination of scans)
 (Scope/nested structure)
 
 \section{Summary and Outlook}
 \label{ch:computer-control:summary}
-\todo{
-  Multiple FPGA
-}
-(new backend/SPCM)
-(native code generation, auto vectorization)
-(dynamic logic and dependency tracking/optimization)
+
+We have designed a computer control system for the experiment
+that is power and flexible yet requires minimum low level knowledge from the user.
+All the measurements done in this thesis are implemented using this system.
+
+The design of the system, especially the user API,
+guarantees that continuous improvement can be made
+without major changes to existing user code.
+Examples of further improvements that could be made to the system includes,
+\begin{enumerate}
+\item Unlike other backends, the FPGA determines the timing of the experiment
+  and only one instance of such device is allowed per experiment.
+  This limits the number of output channels we can use that is attached to the FPGA
+  (i.e., DDS and logical outputs).
+  Allowing the FPGA to use an external clock could make it possible
+  to use more than one FPGA in the experiment
+  and thus increase the number of channels available.
+\item Support for more devices can be added to the system.\\
+  One such updated in progress uses the arbitrary waveform generator~(AWG) boards
+  from Spectrum Instrumentation.
+  These are very similar to the USRP devices but the output have higher bandwidth
+  and significantly lower noise.
+\item The IR execution is one of the main factors affecting the performance
+  of the sequence compilation.
+  In additional to the compilation to native code mentioned previously,
+  the function can also be vectorized to take advantage of SIMD instructions
+  in order to further improve the performance.
+\item The sequence is currently static and cannot depend on measured value
+  during the experiment as feedback.
+  Dynamic or runtime logic can be added to the sequence
+  by recording and encoding the necessary logic that needs to be happened at runtime
+  in a similar way we convert MATLAB code to the IR.
+  Such capability will be important for implement rearrangement of tweezers
+  in order to achieve high filling fractions.
+\end{enumerate}
