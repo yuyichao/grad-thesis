@@ -504,10 +504,28 @@ Unlike the FPGA backend, however, commands can be issued
 for all the virtual channels simultaneously,
 removing the need to interleave update for different channels.
 
-\todo{
-  SIMD
-  Trigger
-}
+From the command stream, we generate the output at a sampling rate of $50~\mathrm{MS/s}$.
+The samples are computed on the fly which allows maximum flexibility
+and minimizes the time needed to generate the data before each sequence.
+The data throughput necessary to generate samples at the high rate is achieved
+thanks to the AVX2 instructions,
+which allows computation of multiple sine and cosine functions simultaneously\footnote{
+  The AVX2 implementation of the math functions used is based on work by
+  \href{https://github.com/reyoung}{Yu Yang} at \url{https://github.com/reyoung/avx_mathfun}
+  which is based on work at \url{http://software-lisc.fbk.eu/avx_mathfun/}
+  by \href{mailto:garberoglio@fbk.eu}{garberoglio@fbk.eu}.
+}. In order not to interfere with the user interface tasks
+and to achieve more reliable performance for the sample generation,
+the program directly managing the USRP device runs on a separate computer running Linux.
+The communication with the main computer is done via ZMTP.
+
+The USRP device does not have builtin support for triggering,
+which is necessary to synchronize its output with other devices.
+We implement this in software by converting the trigger signal to a COM port signal
+using an Arduino board and monitoring the COM port in the USRP server program.
+The trigger has a timing accuracy of $1~\mathrm{ms}$
+which is limited either by the timing of on the Arduino or
+the reading of the COM port on the server computer.
 
 \section{Automation of Scans}
 \label{ch:computer-control:scan}
@@ -518,6 +536,9 @@ removing the need to interleave update for different channels.
 
 \section{Summary and Outlook}
 \label{ch:computer-control:summary}
+\todo{
+  Multiple FPGA
+}
 (new backend/SPCM)
 (native code generation, auto vectorization)
 (dynamic logic and dependency tracking/optimization)
