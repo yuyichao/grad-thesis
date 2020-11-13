@@ -533,14 +533,92 @@ the reading of the COM port on the server computer.
 The core of the control system, as described in the previous sections,
 deals with the specification and realization of experimental sequences,
 which are the building block for all measurements we do.
-However, most experiments requires running multiple sequences
-for reducing statistical uncertainty and to measure the effect of varying certain parameters.
+However, most experiments require running multiple sequences
+to reduce statistical uncertainty and measure the effect of varying certain parameters.
+We add the concept of scans to the system in order to satisfy this requirement.
+A scan is a set of sequences where one or more experimental parameters are varied
+across the sequences.
+When running the scan, the system automatically selects sequences
+from the scan to run in random order in order to reduce potential systematic effects
+due to interference between sequences.
+The scan can be configured to run for a set number of times
+or until some pre-determined conditions are satisfied,
+which in our experiment typically happens
+when a certain number of single atom loading events happens.
 
-\todo{
-  (Scan requirement)
-  (Combination of scans)
-  (Scope/nested structure)
-}
+The scan interacts with the sequence constructing code
+by storing the parameters for the scan in the sequence object \verb`s` as a nested structure,
+which is accessed as \verb`s.C`.
+Each substructures within the parameters can be accessed and passed independently
+which allows multiple instances of a common subsequence
+to store their parameters in the same way within the parent structure.
+As an example, a subsequence construction function may be implemented as
+\begin{lstlisting}[language=Matlab]
+  function subseq(s, p)
+    % Access parameter1, with default value 0
+    parameter1 = p.parameter1(0);
+    % Access parameter2, which must be pre-defined
+    parameter2 = p.parameter2();
+    % ... Use parameter1 and parameter2 to construct s.
+  end
+\end{lstlisting}
+which may be used in the parent sequence as
+\begin{lstlisting}[language=Matlab]
+  % Construct one instance of the subsequence
+  % using substructure under Instance1
+  s.addStep(@subseq, s.C.Instance1);
+  % ...
+  % Construct another instance of the subsequence
+  % using substructure under Instance2
+  s.addStep(@subseq, s.C.Instance2);
+\end{lstlisting}
+
+The scan is represented by a \verb`ScanGroup` object,
+which provides the following functions to construct a scan.
+\begin{itemize}
+\item A \verb`ScanGroup` can store multiple basic scans each containing
+  a multiple dimensional scan (see below) of parameters.
+  The basic scans within a \verb`ScanGroup` \verb`sg` can be accessed through
+  indexing, e.g. \verb`sg(1)`.
+\item Multiple \verb`ScanGroup` \verb`sg1`, \verb`sg2`, \verb`sg3`, or the basic scans included
+  can be concatenated into a single \verb`ScanGroup` via the concatination syntax, e.g.
+  \begin{lstlisting}[language=Matlab]
+  [sg1, sg2, sg3(1), sg3(4)]
+\end{lstlisting}
+  This allows multiple different scans to run simultaneously,
+  which is useful when running the experiment unattended for a long time, e.g. overnight.
+\item Within a basic scan,
+  the parameter can be set to a fixed value via assignment, e.g.
+  \begin{lstlisting}[language=Matlab]
+  sg(2).Instance1.parameter1 = 2;
+\end{lstlisting}
+\item Each basic scan allow multiple parameters to be scanned simultaneously
+  forming a multidimensional array of parameters.
+  A scan of the parameter along dimension \verb`i` can be configured
+  by assigning to \verb`.scan(i)` for the parameter, e.g.
+  \begin{lstlisting}[language=Matlab]
+  sg(1).Instance1.parameter2.scan(2) = [1, 2, 3, 4];
+\end{lstlisting}
+\item Multiple parameters can also be scanned along the same dimension
+  in which case the length of the parameter values must be the same. E.g.
+  \begin{lstlisting}[language=Matlab]
+  sg(1).Instance1.parameter2.scan(2) = [1, 2, 3, 4];
+  sg(1).Instance2.parameter2.scan(2) = [2, 3, 4, 5];
+\end{lstlisting}
+  is supported whereas
+  \begin{lstlisting}[language=Matlab]
+  sg(1).Instance1.parameter2.scan(2) = [1, 2, 3, 4];
+  sg(1).Instance2.parameter1.scan(2) = [2, 3, 4];
+\end{lstlisting}
+  will raise an error.
+\item Parameters, fixed or scanned, can be set for all the basic scans in the \verb`ScanGroup`
+  by assigning to the emtpy index, e.g.
+  \begin{lstlisting}[language=Matlab]
+  sg().Instance1.parameter1 = 3;
+  sg().Instance1.parameter2.scan(1) = [2, 3, 4];
+\end{lstlisting}
+\end{itemize}
+
 \section{Summary and Outlook}
 \label{ch:computer-control:summary}
 
