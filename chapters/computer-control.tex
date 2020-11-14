@@ -3,8 +3,6 @@
 \chapter{Computer Control of the Experiment}
 \label{ch:computer-control}
 
-\todo{ref appendix}
-
 \section{Introduction}
 \label{ch:computer-control:introduction}
 
@@ -393,6 +391,8 @@ Each command corresponds to making one change to the final output, e.g.
 logical values, DDS output amplitude or frequencies, etc.
 The main job of the FPGA backend is therefore to convert
 the sorted pulses to the command stream.
+See appendix~\ref{appendex:computer-control:fpga} and \ref{appendex:computer-control:dds}
+for more info about the hardware specification.
 
 Due to performance concern, this conversion is done in C++ code\footnote{\url{https://github.com/nacs-lab/libnacs/blob/0076e347ff3ba674fbf74872883b40feefd82ce0/lib/seq/bytecode.cpp\#L528}}.
 The main design considerations and features are,
@@ -439,7 +439,8 @@ The main design considerations and features are,
 
 \subsection{NiDAQ Backend}
 \label{ch:computer-control:backend:nidaq}
-For outputing slowly varying voltage signal, we use an DAQ PCI card.
+For outputing slowly varying voltage signal, we use an DAQ PCI card
+(more detail in appendix~\ref{appendex:computer-control:nidaq}).
 The software driver for the card accepts an array of numbers as the voltages
 to output at each cycle for each channels.
 Since the values in these arrays can be computed for each channels independently,
@@ -477,7 +478,8 @@ of clock signals to the card at the beginning of the sequence to work around thi
 \label{ch:computer-control:backend:usrp}
 
 In additional to the DDSs attached to the FPGA, we also support generation of
-radio frequency~(RF) signals using universal software radio peripheral~(USRP).
+radio frequency~(RF) signals using universal software radio peripheral~(USRP)
+(more detail in appendix~\ref{appendex:computer-control:nidaq}).
 Compared to the DDS, which can only output a single frequency at at time,
 USRP support output of arbitrary spectrum within a certain range.
 This can be useful when more than one frequency is needed on a single channel,
