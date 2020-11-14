@@ -3,10 +3,52 @@
 \chapter{Computer Control Hardware Specification}
 \label{appendex:computer-control}
 
-NI DAQ
+In this appendex we list the specification of the important hardware
+used in our computer control system.
+See section~\ref{ch:computer-control:backend} for the integration
+of these hardware into the system.
 
-FPGA
+\section{FPGA}
+\label{appendex:computer-control:fpga}
 
-DDS
+We use the ZC702 evaluation board~(part number EK-Z7-ZC702-G).
+The CPU has a maximum clock speed of $666.667~\mathrm{MHz}$
+and supports the VFPv3 and NEON extension for floating point and SIMD instructions.
+The FPGA is configured to run at $100~\mathrm{MHz}$ which determines
+the highest timing resolution of $10~\mathrm{ns}$ in our experiment.
 
-USRP
+\todo{
+  hardware IO port
+  number of outputs
+  DDS connection
+  potential concurrency capability
+}
+
+\section{DDS}
+\label{appendex:computer-control:fpga}
+
+\todo{
+  Part number
+  Clock speed, bandwidth
+  output amplifier, maximum power, noise, cross talk minimized by shielding
+  Programming mode
+}
+
+\section{NI DAQ Card}
+
+\todo{
+  Part number
+  Voltage range, resolution
+  refresh speed
+  external trigger and clock
+  Ground isolation
+}
+
+\section{USRP}
+
+\todo{
+  Part number
+  Daughter board, noise with higher frequency daughter board
+  sampling rate/bandwidth
+  output power
+}
