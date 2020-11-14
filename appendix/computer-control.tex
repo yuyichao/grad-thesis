@@ -36,10 +36,19 @@ and only one update at a time is allowed.
 \section{DDS}
 \label{appendex:computer-control:dds}
 
+The DDS we use is \href{https://www.analog.com/en/products/ad9914.html}{AD9914}
+from Analog Devices.
+The chip runs on an external clock of $3.5~\mathrm{GHz}$,
+which sets the sampling rate of $3.5~\mathrm{GS/s}$,
+and can directly output frequency up to $1.4~\mathrm{GHz}$.
+
+We use a \href{https://www.minicircuits.com/WebStore/dashboard.html?model=ERA-4XSM\%2B}{ERA-4XSM+}
+gain block to amplify the signal from the DDS which gives a maximum power of $12~\mathrm{dBm}$
+at low frequencies~($\leqslant100~\mathrm{MHz}$) and gradually decreases to $8~\mathrm{dBm}$
+around $1~\mathrm{GHz}$.
+
 \todo{
-  Part number
-  Clock speed, bandwidth
-  output amplifier, maximum power, noise, cross talk minimized by shielding
+  noise, cross talk minimized by shielding
   Programming mode
 }
 
