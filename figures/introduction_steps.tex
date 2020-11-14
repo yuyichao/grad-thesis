@@ -1,0 +1,157 @@
+\documentclass[border={0pt 0pt 0pt 0pt}]{standalone}
+
+\usepackage{hyperref}
+\usepackage{tikz}
+
+\usetikzlibrary{decorations.pathreplacing,
+  arrows,
+  calc,
+  decorations.pathmorphing,
+  decorations.pathreplacing,
+  decorations.markings,
+  fadings,
+  positioning,
+  shapes,
+  3d
+}
+\usepgfmodule{oo}
+
+\pgfdeclareradialshading{glow2}{\pgfpoint{0cm}{0cm}}{
+  color(0mm)=(white);
+  color(2mm)=(white);
+  color(8mm)=(black);
+  color(10mm)=(black)
+}
+\pgfdeclareradialshading{glow}{\pgfpoint{0cm}{0cm}}{
+  color(0mm)=(white);
+  color(5mm)=(white);
+  color(9mm)=(black);
+  color(10mm)=(black)
+}
+
+\begin{tikzfadingfrompicture}[name=glow fading]
+  \shade [shading=glow] (0,0) circle (1);
+\end{tikzfadingfrompicture}
+
+\begin{tikzfadingfrompicture}[name=glow2 fading]
+  \shade [shading=glow2] (0,0) circle (1);
+\end{tikzfadingfrompicture}
+
+\tikzstyle{snakearrow} = [decorate, decoration={pre length=0.2cm,
+  post length=0.2cm, snake, amplitude=.4mm,
+  segment length=2mm},thick, ->]
+
+\ifpdf
+% Ensure reproducible output
+\pdfinfoomitdate=1
+\pdfsuppressptexinfo=-1
+\pdftrailerid{}
+\hypersetup{
+  pdfcreator={},
+  pdfproducer={}
+}
+\fi
+
+\pgfdeclarelayer{tweezer}
+\pgfsetlayers{tweezer,main}
+\pgfooclass{tweezer}{
+  \method tweezer() {
+  }
+  \method drawTweezer(#1,#2,#3) {
+    \begin{pgfonlayer}{tweezer}
+      \shade[shading=radial,path fading=glow fading,shift={(#1,#2)},rotate=90,yscale=1,
+      fill opacity=0.9,inner color=#3]
+      plot[draw,samples=200,domain=-1.5:1.5] function {sqrt(0.01 + x**2 / 5)}
+      -- plot[draw,samples=200,domain=1.5:-1.5] function {-sqrt(0.01 + x**2 / 5)};
+    \end{pgfonlayer}
+  }
+  \method drawAtom(#1,#2,#3,#4) {
+    \fill [#4,path fading=glow2 fading] (#1,#2) circle (#3);
+  }
+  \method drawNaAtom(#1,#2,#3) {
+    \pgfoothis.drawAtom(#1,#2,#3,orange);
+  }
+  \method drawCsAtom(#1,#2,#3) {
+    \pgfoothis.drawAtom(#1,#2,#3,blue);
+  }
+  \method drawNaTweezer(#1,#2) {
+    \pgfoothis.drawTweezer(#1,#2,orange!35!black!30);
+  }
+  \method drawCsTweezer(#1,#2) {
+    \pgfoothis.drawTweezer(#1,#2,blue!30!black!30);
+  }
+  \method up(#1,#2) {
+    \pgfoothis.drawCsTweezer(#1,#2);
+    \pgfoothis.drawNaAtom(#1,#2+0.06,0.12);
+    \pgfoothis.drawCsAtom(#1,#2-0.06,0.16);
+  }
+  \method down(#1,#2) {
+    \pgfoothis.drawCsTweezer(#1,#2);
+    \pgfoothis.drawCsAtom(#1,#2+0.06,0.16);
+    \pgfoothis.drawNaAtom(#1,#2-0.06,0.12);
+  }
+  \method naTrap(#1,#2) {
+    \pgfoothis.drawNaTweezer(#1,#2);
+    \pgfoothis.drawNaAtom(#1,#2,0.12);
+  }
+  \method csTrap(#1,#2) {
+    \pgfoothis.drawCsTweezer(#1,#2);
+    \pgfoothis.drawCsAtom(#1,#2,0.16);
+  }
+}
+\pgfoonew \mytweezer=new tweezer()
+
+\makeatletter
+\def\convertto#1#2{\strip@pt\dimexpr #2*65536/\number\dimexpr 1#1}
+\makeatother
+
+\begin{document}
+\begin{tikzpicture}
+  \node[left,align=center] at (-2, 2.4) {\textbf{Loading and}\\\textbf{Cooling}};
+  \node[left] at (-2, 0) {\textbf{Merging}};
+  \node[left,align=center] at (-2, -2.4) {\textbf{Weakly Bound}\\\textbf{Molecules}};
+  \node[left,align=center] at (-2, -4.8) {\textbf{Rovibronic Ground}\\\textbf{State Molecules}};
+  \foreach \x in {0, 1, 2} {
+    \begin{scope}[shift={(\x * 3.5, 0)}]
+
+      \draw[->,>=stealth,orange,dotted,line width=1.2,opacity=0.7] (-1, 2.2) -- (-1, 0.2);
+      \draw[->,>=stealth,blue,dotted,domain=1.0:-1.0,
+      smooth,variable=\y,line width=1.2,opacity=0.7]
+      plot ({atan(\y * 6.5) / 170 - 0.5},{\y + 1.2});
+
+      \foreach \y in {1, 2} {
+        \begin{scope}[shift={(0, -2.4 * \y)}]
+          \draw[->,>=stealth,blue!50!orange,dotted,line width=1.2] (-1, 2.2) -- (-1, 0.2);
+        \end{scope}
+      }
+
+      \begin{scope}[shift={(0, 2.4)}]
+        \mytweezer.drawCsTweezer(0, 0)
+        \mytweezer.drawNaTweezer(-1, 0)
+        \mytweezer.drawCsAtom(0.0, 0, 0.07)
+        \mytweezer.drawNaAtom(-1.0, 0, 0.11)
+      \end{scope}
+
+      \begin{scope}[shift={(0, 0)}]
+        \mytweezer.drawCsTweezer(-1, 0)
+        \mytweezer.drawNaAtom(-1.10, 0.05, 0.11)
+        \mytweezer.drawCsAtom(-0.90, -0.05, 0.07)
+      \end{scope}
+
+      \begin{scope}[shift={(0, -2.4)}]
+        \mytweezer.drawCsTweezer(-1, 0)
+        \draw[line width=1] (-1.07, 0.075) -- (-0.93, -0.075);
+        \mytweezer.drawNaAtom(-1.07, 0.075, 0.11)
+        \mytweezer.drawCsAtom(-0.93, -0.075, 0.07)
+      \end{scope}
+
+      \begin{scope}[shift={(0, -4.8)}]
+        \mytweezer.drawCsTweezer(-1, 0)
+        \draw[line width=1] (-1.07, 0.075) -- (-0.93, -0.075);
+        \mytweezer.drawNaAtom(-1.07, 0.075, 0.11)
+        \mytweezer.drawCsAtom(-0.93, -0.075, 0.07)
+      \end{scope}
+    \end{scope}
+  }
+\end{tikzpicture}
+\end{document}
