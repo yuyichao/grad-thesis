@@ -106,14 +106,13 @@
 \makeatother
 
 \begin{document}
-\begin{tikzpicture}
-  \node[left,align=center] at (-2, 2.4) {\textbf{Loading and}\\\textbf{Cooling}};
-  \node[left] at (-2, 0) {\textbf{Merging}};
-  \node[left,align=center] at (-2, -2.4) {\textbf{Weakly Bound}\\\textbf{Molecules}};
-  \node[left,align=center] at (-2, -4.8) {\textbf{Rovibronic Ground}\\\textbf{State Molecules}};
+\begin{tikzpicture}[scale=1.2]
+  \node[left,align=center] at (-1.5, 2.4) {\textbf{Loading and}\\\textbf{Cooling}};
+  \node[left] at (-1.5, 0) {\textbf{Merging}};
+  \node[left,align=center] at (-1.5, -2.4) {\textbf{Weakly Bound}\\\textbf{Molecules}};
+  \node[left,align=center] at (-1.5, -4.8) {\textbf{Rovibronic Ground}\\\textbf{State Molecules}};
   \foreach \x in {0, 1, 2} {
-    \begin{scope}[shift={(\x * 3.5, 0)}]
-
+    \begin{scope}[shift={(\x * 3.0, 0)}]
       \draw[->,>=stealth,orange,dotted,line width=1.2,opacity=0.7] (-1, 2.2) -- (-1, 0.2);
       \draw[->,>=stealth,blue,dotted,domain=1.0:-1.0,
       smooth,variable=\y,line width=1.2,opacity=0.7]
