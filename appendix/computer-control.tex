@@ -11,15 +11,21 @@ of these hardware into the system.
 \section{FPGA}
 \label{appendex:computer-control:fpga}
 
-We use the ZC702 evaluation board~(part number EK-Z7-ZC702-G).
-The CPU has a maximum clock speed of $666.667~\mathrm{MHz}$
+We use the \href{https://www.xilinx.com/products/boards-and-kits/ek-z7-zc702-g.html}{ZC702 evaluation board}~(part number EK-Z7-ZC702-G).
+The on board CPU has a maximum clock speed of $666.667~\mathrm{MHz}$
 and supports the VFPv3 and NEON extension for floating point and SIMD instructions.
+The board also includes $1~\mathrm{GiB}$ of DDR3 RAM connected to the CPU.
 The FPGA is configured to run at $100~\mathrm{MHz}$ which determines
 the highest timing resolution of $10~\mathrm{ns}$ in our experiment.
 
+We connect the FPGA to the peripherals using two FMC LPC connectors
+each containing 68 pins used for single-ended signals.
+Each FMC connector is used to control 11 DDS's,
+which will be described in section~\ref{appendex:computer-control:fpga},
+and one of the connector is also used to output 32 logical control signals
+and the clock to synchronize with other devices.
+
 \todo{
-  hardware IO port
-  number of outputs
   DDS connection
   potential concurrency capability
 }
