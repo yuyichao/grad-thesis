@@ -74,16 +74,23 @@ we also use additional methods including filtering, RF switches,
 light shutters~(when the channel is driving an AOM)
 and offsetting the output frequencies from each other to minimize any crosstalk effects.
 
-\section{NI DAQ Card}
+\section{NI DAQ Board}
 \label{appendex:computer-control:nidaq}
 
-\todo{
-  Part number
-  Voltage range, resolution
-  refresh speed
-  external trigger and clock
-  Ground isolation
-}
+We use a \href{https://www.ni.com/en-us/support/model.pci-6733.html}
+{NI PCI-6733 analog output board} connected to a
+\href{https://www.ni.com/en-us/support/model.bnc-2110.html}{BNC-2110 BNC connector block}
+to generate low frequency voltage output.
+Other analog output board that support trigger and external clock should also be supported.
+The board support a sampling rate of $769~\mathrm{kS/s}$ when using all output channels
+and we use $500~\mathrm{kS/s}$ in the experiment.
+The output swing is $-10~\mathrm{V}$ to $10~\mathrm{V}$ with a 16-bit resolution.
+
+Unfortunately, different output channels on the board shares the same ground.
+This causes ground loop when connected to different devices,
+which significantly increases the noise on the output voltage.
+To fix this problem, a \href{AD8429}{https://www.analog.com/en/products/ad8429.html}
+instrumentation amplifier is used on each channel to isolate the output.
 
 \section{USRP}
 \label{appendex:computer-control:usrp}
