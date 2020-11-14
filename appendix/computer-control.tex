@@ -41,6 +41,16 @@ from Analog Devices.
 The chip runs on an external clock of $3.5~\mathrm{GHz}$,
 which sets the sampling rate of $3.5~\mathrm{GS/s}$,
 and can directly output frequency up to $1.4~\mathrm{GHz}$.
+We configure the chip to use a single profile and output a fixed frequency and amplitude
+at any given time.
+Using the 16-bit data bus,
+the amplitude has a resolution of 12-bit taking one 16-bit write to update or $160~\mathrm{ns}$,
+whereas the frequency has a resolution of 31-bit
+taking two 16-bit write to update or $240~\mathrm{ns}$\footnote{
+  Currently we conservatively wait for a total of $500~\mathrm{ns}$
+  before issuing the next command.
+  However, it is likely that this wait time can be shortened.
+}.
 
 We use a \href{https://www.minicircuits.com/WebStore/dashboard.html?model=ERA-4XSM\%2B}{ERA-4XSM+}
 gain block to amplify the signal from the DDS which gives a maximum power of $12~\mathrm{dBm}$
@@ -63,10 +73,6 @@ For important noise sensitive channels,
 we also use additional methods including filtering, RF switches,
 light shutters~(when the channel is driving an AOM)
 and offsetting the output frequencies from each other to minimize any crosstalk effects.
-
-\todo{
-  Programming mode
-}
 
 \section{NI DAQ Card}
 \label{appendex:computer-control:nidaq}
