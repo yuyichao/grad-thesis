@@ -95,9 +95,27 @@ instrumentation amplifier is used on each channel to isolate the output.
 \section{USRP}
 \label{appendex:computer-control:usrp}
 
-\todo{
-  Part number
-  Daughter board, noise with higher frequency daughter board
-  sampling rate/bandwidth
-  output power
-}
+The USRP system we use has two parts,
+a motherboard, which is used to convert the data to analog signal,
+and a daughterboard, which can be used to further process the output.
+We use the \href{https://www.ettus.com/all-products/x310-kit/}{USRP X310}
+motherboard which supports up to $200~\mathrm{MHz}$ master clock frequency
+and a sampling rate of any integer fraction of the clock.
+We tested two different daughterboards.
+\begin{enumerate}
+\item \href{https://www.ettus.com/all-products/ubx160/}{UBX 160}\\
+  This daughterboard support upshifting the output frequency
+  by mixing with a local oscillator~(LO) frequency.
+  However, we observed strong leakage of the LO frequency
+  and high heating rate of the atom when using the output on the AOM controling the tweezer.
+\item \href{https://www.ettus.com/all-products/basictx/}{BasicTX}\\
+  This daughterboard directly output the signal from the motherboard
+  without additional signal generation on board.
+  Although we still see increased heating on the atom using this daughterboard
+  the rate is lower than when using the UBX 160 daughterboard.
+\end{enumerate}
+From the test result, we use the BasicTX daughterboard in the experiment
+for it's lower noise and limit the use of the output
+to low frequency signals $<100~\mathrm{MHz}$.
+We use a sampling rate of $50~\mathrm{MS/s}$ and a center frequency of $60~\mathrm{MHz}$.
+The maximum total power we get is around $10~\mathrm{dBm}$.
