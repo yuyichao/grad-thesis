@@ -25,10 +25,12 @@ which will be described in section~\ref{appendex:computer-control:fpga},
 and one of the connector is also used to output 32 logical control signals
 and the clock to synchronize with other devices.
 
-\todo{
-  DDS connection
-  potential concurrency capability
-}
+The DDS's on each FMC connector are controlled using a shared bus with 7-bit address
+and 16-bit data, and a chip select pin is used to enable the relevant DDS for update.
+The setup allows, in general case, one DDS on each FMC connector to be programmed
+simultaneously while at the same time updating the logical outputs.
+This concurrently update capability, however, is not currently used in the experiment
+and only one update at a time is allowed.
 
 \section{DDS}
 \label{appendex:computer-control:fpga}
