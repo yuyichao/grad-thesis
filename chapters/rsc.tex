@@ -500,7 +500,17 @@ should not be a limiting factor for the cooling performance.
 
 The OP beam has a much larger waist~($\approx1~\mathrm{mm}$)
 and therefore require less alignment in the beam position.
-However, in order to take advantage of the dark state optical pumping and
+However, since the OP beam needs to be on resonant with the excited state,
+the strong light shift from the tweezer can significantly affect the OP efficiency.
+Fortunately, the method described in section~\ref{ch:loading:loading}
+that fixes this problem for the loading of the atom in the tweezer can also be used here.
+In this case, however, only the tweezer light is being switched on and off at $2.5~\mathrm{MHz}$
+and not the OP light for simplicity.
+Due to the low intensity and Rabi frequency of the OP light,
+the OP will be completely stopped during the on-cycle of the tweezer
+causing the OP to happen only during the off-cycle when there is zero light shift.
+
+In order to take advantage of the dark state optical pumping and
 minimize unnecessary scattering for atoms in the $|2,2\rangle$ state,
 the OP beam need to have a pure $\sigma^+$ polarization.
 This requires the OP beam to propagate parallel to the magnetic field
@@ -517,8 +527,9 @@ the OP beam for Sodium and Cesium are aligned to each other by overlapping them
 using mechanical target to better than $0.08^\circ$ first
 before the magnetic field direction is aligned to the OP beams by minimizing depumping.
 For polarization alignment, we first clean up the linear polarization of the light
-using a Thorlabs nanoparticle linear film polarizer\todo{part number} with better than $100,000:1$
-extinction ratio. After that we use both a half waveplate and a quater waveplate
+using the LPVISC050-MP2  nanoparticle linear film polarizer from Thorlabs
+with better than $100,000:1$ extinction ratio.
+After that we use both a half waveplate and a quater waveplate
 to generate a circularly polarized light.
 We observed that both the polarization cleanup and the half waveplate is necessary
 to obtain the best polarization alignment in order to compensate for the polarization
@@ -529,7 +540,6 @@ using Raman transitions\footnote{One from $|2,2\rangle$ to $|1,1\rangle$
   and a second one from $|1,1\rangle$ to $|2,1\rangle$.}.
 From this measurement we determined that the purity of the OP polarization
 to be ... \todo{number}.
-\todo{decide if thin film polarizer should be mentioned earlier}
 
 Other than the alignment procedure above, we have also observed that reflection
 of the OP beam can contribute significantly to the polarization impurity and
@@ -543,7 +553,6 @@ are reduced by avoiding optics with normal incident on the exit path of the OP b
 as well as changing the propagation direction of the R1 Raman beam
 to have a small angle with the OP beam which reduces the OP power coupled into
 the Raman beam fiber.
-\todo{Make sure that the importance of tweezer switching on OP is mentioned before this}
 
 \section{Implementing Optimized RSC Sequence}
 \label{ch:rsc:implementation}
