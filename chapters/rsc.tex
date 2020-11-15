@@ -57,10 +57,6 @@ The experimental realization and result of the cooling sequence
 are discussed in section~\ref{ch:rsc:alignment}, \ref{ch:rsc:implementation}
 and \ref{ch:rsc:performance} before the summary in section~\ref{ch:rsc:summary}.
 
-\todo{
-  Make sure state detection method is mentioned at least in this chapter
-}
-
 \section{Basic Theory}
 \label{ch:rsc:basic-theory}
 
@@ -274,6 +270,23 @@ which minimizes the vector light shifts~\cite{kaufman_cooling_2012,thompson_cohe
 Since the optical pumping beam requires $\sigma^+$ polarization,
 it is setup to propagate parallel to the applied magnetic field.
 
+Since both the Raman transition and the optical pumping changes the hyperfine state of the atom,
+the states of the atoms can be used to detect and calibrate these process.
+This is done in our experiment using state sensitive ``push-out'' as follows,
+\begin{enumerate}
+\item Light resonant with the $|F=2,m_F=2\rangle$ to $|F'=3,m_{F'}=3\rangle$ cycling transition
+  is sent in through the OP beam path.
+  Due to the small differential Zeeman shift, this is also closed to resonance
+  for all other Zeeman states with $F=2$ and will pump them to the $|F=2,m_F=2\rangle$.
+  Since the cycling transition is protected by $F$ and $m_F$ selection rule
+  as well as the stronger coupling compared to all other transitions,
+  the atom can scatter $>10000$ photons before decaying to $F=1$ state.
+\item The OP light is turned off and depth of the trap is lowered so that
+  atom that is heated by the OP light will leave the trap.
+\item The trap depth is ramped back up and an image of the left over atom
+  is taken to measure the probability of atom in the $F=1$ states.
+\end{enumerate}
+
 \section{Cooling Performance and Challenge with Large Lamb-Dicke Parameter}
 \label{ch:rsc:challenges}
 
@@ -481,7 +494,6 @@ This process is then repeated with lower power in the Raman beam path until the 
 position sensitivity is reached.
 
 \todo{appendex about scattering branching ratio calculation}
-\todo{make sure spin state detection method (and the ``pushout'' concept) is mentioned}
 In order to verify the alignment of the tweezer without any physical change to the beam path,
 we use a second method to calibrate the single photon Rabi frequency of the Raman light.
 This method requires a working OP to initialize the spin state of the atom
