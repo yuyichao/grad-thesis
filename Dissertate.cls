@@ -129,7 +129,7 @@
 
 % References.
 \renewcommand\bibname{References}
-\RequirePackage[square,comma,numbers]{natbib}
+\RequirePackage[square,comma,numbers,sort&compress]{natbib}
 \renewcommand{\bibnumfmt}[1]{[#1]}
 \RequirePackage[palatino]{quotchap}
 \renewcommand*{\chapterheadstartvskip}{\vspace*{-0.5\baselineskip}}
