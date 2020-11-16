@@ -9,14 +9,14 @@
 * Na CMOT temperature: ?mK
 * Na PGC temperature: ?mK
 * Cs PGC temperature: ?mK
-* Na trap volume: ?um^3
-* Cs trap volume: ?um^3
-* Na MOT atom in tweezer: ?
-* Cs MOT atom in tweezer: ?
-* Na peak light shift: ?MHz
+* Na trap volume: 1.3um^3
+* Cs trap volume: 4.1um^3
+* Na MOT atom in tweezer: 0.004
+* Cs MOT atom in tweezer: 0.01
+* Na peak light shift: >200MHz
 * Number of Na motional states in tweezer after PGC: ?
 * Number of Cs motional states in tweezer after PGC: ?
-* Cs RSC ground state probability: ?%
+* Cs RSC ground state probability: 96(3)%
 * Na Raman beam single photon Rabi frequencies:
     * F1 Up: ?MHz
     * F1 Down: ?MHz
