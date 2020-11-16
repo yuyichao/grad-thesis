@@ -1,9 +1,9 @@
-* MOT beam diameter: ?mm
-* Na MOT power: ?mW / beam
-* Cs MOT power: ?mW / beam
-* MOT diameter: ?mm
-* Na MOT atom number: ?
-* Cs MOT atom number: ?
+* MOT beam diameter: 4mm ISO 11146 diameter
+* Na MOT power: 0.5~0.9mW / beam
+* Cs MOT power: 0.3~0.5mW / beam
+* MOT diameter: 0.1~0.2mm
+* Na MOT atom number: 10k~50k
+* Cs MOT atom number: 3k~20k
 * Na MOT temperature: ?mK
 * Cs MOT temperature: ?mK
 * Na CMOT temperature: ?mK
