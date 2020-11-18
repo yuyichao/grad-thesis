@@ -701,10 +701,24 @@ so that the coherence between the two beams is greatly improved.
 The setup and sequence for forming the molecule is very similar to that of the Raman spectsocopy
 previously mentioned in section~\ref{ch:raman-spectroscopy:states:raman-tweezer}
 that drives the two-photon transition by adding a second frequency to the tweezer light.
+Nevertheless, a few changes were made to the sequence in order to improve
+the transfer efficiency and the signal to noise.
+\begin{enumerate}
+\item The initial $|\mathrm{Na(2,2),Cs(3,3)}\rangle$ state is prepared by driving the
+  interaction shift resonance from $|\mathrm{Na(2,2),Cs(4,4)}\rangle$
+  after the two atoms are merged into the same tweezer.
+  As discussed in section~\ref{ch:interaction-shift:summary},
+  the strong interaction between the atoms allows preparation of
+  relative motional ground state with low background.
+\item Instead of using smaller detuning and longer time to maximize the signal of the resonance,
+  we increased the single photon detuning to $145~\mathrm{GHz}$
+  and use short pulse times~($<1~\mathrm{ms}$)
+  to reduce the scattering and the linewidth of the resonance.
+\item We added an narrow bandpass filter to reduce the spectral noise from the laser.
+  This will be discussed in more detail below.\todo{ref}
+\end{enumerate}
 
 \todo{
-  Use interaction shift to prepare initial state
-  larger detuning/shorter time to obtain a narrower linewidth.
   (Show data using one ASE filter)
   Got Fourier limited linewidth (factor of 0.8?)
   Signal that the transfer is in coherent regime.
