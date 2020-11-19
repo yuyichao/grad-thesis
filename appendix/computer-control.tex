@@ -54,17 +54,17 @@ taking two 16-bit write to update or $240~\mathrm{ns}$\footnote{
 
 We use a \href{https://www.minicircuits.com/WebStore/dashboard.html?model=ERA-4XSM\%2B}{ERA-4XSM+}
 gain block to amplify the signal from the DDS which gives a maximum power of $12~\mathrm{dBm}$
-at low frequencies~($\leqslant100~\mathrm{MHz}$) and gradually decreases to $8~\mathrm{dBm}$
+at low frequencies~($\leqslant\!100~\mathrm{MHz}$) and gradually decreases to $8~\mathrm{dBm}$
 around $1~\mathrm{GHz}$.
 We measure the noise on the output after the amplifier.
 We saw a low second harmonic power of $-40\sim-50~\mathrm{dBc}$
 over a wide frequency range of $80\sim900~\mathrm{MHz}$.
 We also observed distortion when the output frequency is closed to
 a fraction of the clock frequency but the effect is also relatively small
-($\approx-40~\mathrm{dBc}$).
+($\approx\!-40~\mathrm{dBc}$).
 Finally, we measure the crosstalk between different channels.
 With a single channel outputing at maximum amplitude,
-we observed a $\approx-40\sim-50~\mathrm{dBc}$ crosstalk between the channels.
+we observed a $\approx\!-40\sim-50~\mathrm{dBc}$ crosstalk between the channels.
 This is comparable to other noise on the output, however,
 the effect can be greater on a DDS outputting lower power.
 For this reason, we ensure the DDS are outputting maximum power most of the time
@@ -116,6 +116,6 @@ We tested two different daughterboards.
 \end{enumerate}
 From the test result, we use the BasicTX daughterboard in the experiment
 for it's lower noise and limit the use of the output
-to low frequency signals $<100~\mathrm{MHz}$.
+to low frequency signals $<\!100~\mathrm{MHz}$.
 We use a sampling rate of $50~\mathrm{MS/s}$ and a center frequency of $60~\mathrm{MHz}$.
 The maximum total power we get is around $10~\mathrm{dBm}$.
