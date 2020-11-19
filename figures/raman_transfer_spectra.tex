@@ -1,0 +1,35 @@
+\documentclass[border={-4pt -6pt -4pt -4pt}]{standalone}
+
+\usepackage{hyperref}
+\usepackage{tikz}
+
+\usetikzlibrary{decorations.pathreplacing,
+  arrows,
+  calc,
+  decorations.pathmorphing,
+  decorations.pathreplacing,
+  decorations.markings,
+  positioning,
+  shapes,
+  3d
+}
+
+\ifpdf
+% Ensure reproducible output
+\pdfinfoomitdate=1
+\pdfsuppressptexinfo=-1
+\pdftrailerid{}
+\hypersetup{
+  pdfcreator={},
+  pdfproducer={}
+}
+\fi
+
+\begin{document}
+\begin{tikzpicture}
+  \node at (0.0, 0) {\includegraphics[height=4.586cm]{raman_transfer_spectrum_prefilter.pdf}};
+  \node at (6.1, 0) {\includegraphics[height=4.586cm]{raman_transfer_spectrum_postfilter.pdf}};
+  \node at (-1.85, 1.95) {\scriptsize (\textbf{A})};
+  \node at (4.13, 1.95) {\scriptsize (\textbf{B})};
+\end{tikzpicture}
+\end{document}
