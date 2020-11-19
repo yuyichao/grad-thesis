@@ -739,11 +739,13 @@ This is the first time coherent optical transfer from atoms to molecules has bee
 without the help of an excited state with narrow linewidth.
 Nevertheless, the transfer efficiency is lower than the prediction from the theory.
 Below, we will discuss some of the possible cause for the transfer efficiency.
+In section~\ref{ch:raman-transfer:results:ase} we will focus on technical sources
+and in section~\ref{ch:raman-transfer:results:scaling}
+we will measure the properties of the molecular state and the transition
+in order to compare it to the theory prediction.
 
 \subsection{Effect of laser spectral noise}
 \label{ch:raman-transfer:results:ase}
-
-\todo{define ASE}
 
 \begin{figure}
   \centering
@@ -756,12 +758,48 @@ Below, we will discuss some of the possible cause for the transfer efficiency.
     The exact position of this band depends on the scan setting
     which causes it to be slightly different between the two spectra.
     (A) The spectrum before the ASE filter clearly shows a broad band spectral impurity
-    that spans tens of nm potentially covering multiple molecular excited states.
+    approximately matching the gain bandwidth of the laser diode.
+    This noise spans tens of nm and can potentially cover multiple molecular excited states
+    causing increased scattering.
     (B) With the ASE filter, the spectrum is consistent with the background.
     \label{fig:raman-transfer:results:ase:spectra}}
 \end{figure}
 
-\ref{fig:raman-transfer:results:ase:spectra}
+One of the most important technical sources affecting the transfer efficiency
+is the spectral noise from the tweezer.
+The $1038~\mathrm{nm}$ tweezer light we used is generated
+by amplifing a external-cavity diode laser~(ECDL) seed using a Raman fiber amplifier.
+In a typical ECDL setup using grating feedback,
+although the external cavity selects a single preferred mode
+within the gain bandwidth of the laser diode in the feedback path,
+the output path does not have a similar filter
+allowing the amplified spontaneous emission~(ASE)
+from the diode to get into the laser output.
+We observed this effect on our laser using an optical spectrum analyser,
+as shown in Fig.~\ref{fig:raman-transfer:results:ase:spectra}A.
+
+\todo{
+  It's a problem because it allows coupling to more excited states.
+  Filter out with ASE filter. (spec of filter) show spectrum.
+  This is the condition where the data above was taken.
+  Compared to the Rabi flopping of ... significantly worse without filter
+  corresponding to a ... change in the molecule lifetime.
+
+  Another similar effect comes from the fiber.
+  Non-linear effect in fiber can also generate additional frequencies after the fiber.
+  Seen in other experiments.
+  Although we do not see such noise on the spectrum
+  depending on the frequency of the noise it could cause problem even if it's below our threshold.
+  We therefore tested adding another filter after the fiber.
+  The best result we've got is ... suggesting that the noice
+  from the fiber could be a source as well.
+  However, since the filter after the fiber potentially have negetive impact on other properties
+  of the beam including beam shape, pointing and power stability,
+  we were not yet able to make consistent measurement using this.
+  Therefore, for the study of the ... below, we use the scattering data from one ASE filter setup.
+  For properties that are not directly related to scattering including light shift
+  and Rabi frequency, we will also use data that includes no ASE filter.
+}
 
 \subsection{Scaling of Raman Transition Parameters}
 \label{ch:raman-transfer:results:scaling}
