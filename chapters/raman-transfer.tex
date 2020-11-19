@@ -781,16 +781,24 @@ Although the absolute power in the ASE is very low,
 it could resonantly couple to multiple molecular lines
 causing significant scattering during the Raman transition.
 
-Fortunately, techniques have already been developed to resolve this problem
-for experiments that require high spectral purity from the laser.
+Fortunately, this is a common problem for systems with a large number of excited states,
+especially molecules, and ASE filters have been developed to address this.
+In our experiment, we use SureBlock ultra narrow-band notch filter from Ondax
+with part number 114-ER407-015,
+which is based on a volume holographic grating and has a FWHM of $\approx30~\mathrm{GHz}$.
+We added the filter after the Raman fiber amplifier\footnote{
+  Before passing through the beampath shown in Fig.~\ref{fig:raman-spectroscopy:raman-beampath}
+} and the spectrum of the laser after the filter is shown in
+Fig.~\ref{fig:raman-transfer:results:ase:spectra}B.
+As mentioned above, this is the condition under which the Rabi flopping
+in Fig.~\todo{ref} is taken.
+Comparing it to a similar measurement without the ASE filter shown in Fig.~\todo{ref},
+we can see the filter clearly improved the contrast of the oscillation.
+More quantitatively, the Raman Rabi frequency is not affected by the filter as expected
+whereas the coherence time of the oscillation increased from $\todo{number}~\mathrm{ms}$
+to $\todo{number}~\mathrm{ms}$.
 
 \todo{
-  The solution we use is ...
-  Filter out with ASE filter. (spec of filter) show spectrum.
-  This is the condition where the data above was taken.
-  Compared to the Rabi flopping of ... significantly worse without filter
-  corresponding to a ... change in the molecule lifetime.
-
   Another similar effect comes from the fiber.
   Non-linear effect in fiber can also generate additional frequencies after the fiber.
   Seen in other experiments.
