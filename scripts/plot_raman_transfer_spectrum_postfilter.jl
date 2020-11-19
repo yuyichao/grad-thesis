@@ -33,6 +33,7 @@ const data = read_csv_compressed(
 const params = (
     bw = 2,
     xthresh = 0.00005,
+    yzero = 0.006,
     # xcutoff1 = 0.2705,
     # xcutoff2 = 0.301,
     lambda0 = 999.85, # nm
@@ -59,6 +60,9 @@ function process_data(data, params)
         end
         if length(curxs) > 1
             push!(xs, mean(curxs) * (params.lambda1 - params.lambda0) + params.lambda0)
+            if ymin < params.yzero
+                ymin = -0.0001
+            end
             push!(ys, (ymin + ymax) / 2 / params.bw)
             push!(uncs, (ymax - ymin) / 2 / params.bw)
         end
