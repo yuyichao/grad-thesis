@@ -797,26 +797,41 @@ we can see the filter clearly improved the contrast of the oscillation.
 More quantitatively, the Raman Rabi frequency is not affected by the filter as expected
 whereas the coherence time of the oscillation increased from $\todo{number}~\mathrm{ms}$
 to $\todo{number}~\mathrm{ms}$.
+It is worth noting that depending on the wavelength range of the spectral noise,
+more precisely the FCF of the transition within the range,
+the scattering rate measurement can be more sensitive than the spectrum analyser.
+In particular, noise on the level of
+$\approx0.1~\mathrm{ppm/nm}$~($\approx0.01~\mathrm{nW/nm}$
+in Fig.~\ref{fig:raman-transfer:results:ase:spectra}) near the atomic transition wavelength
+is enough to cause kHz of scattering.
+Because of this, we only use Fig.~\ref{fig:raman-transfer:results:ase:spectra}B
+to qualitatively confirm the effectness of the filter
+but rely on the specification of the filter
+to estimate the cleaness of the spectrum after the fiter.
 
-\todo{
-  Another similar effect comes from the fiber.
-  Non-linear effect in fiber can also generate additional frequencies after the fiber.
-  Seen in other experiments.
-  Although we do not see such noise on the spectrum
-  depending on the frequency of the noise it could cause problem even if it's below our threshold.
-  We therefore tested adding another filter after the fiber.
-  The best result we've got is ... suggesting that the noice
-  from the fiber could be a source as well.
-  However, since the filter after the fiber potentially have negetive impact on other properties
-  of the beam including beam shape, pointing and power stability,
-  we were not yet able to make consistent measurement using this.
-  Therefore, for the study of the ... below, we use the scattering data from one ASE filter setup.
-  For properties that are not directly related to scattering including light shift
-  and Rabi frequency, we will also use data that includes no ASE filter.
-}
+In additional to the diode laser, broad spectral noise has also been observed
+from the non-linear effect in the fiber.
+Although we cannot see such noise on the spectrum directly,
+we checked whether this has an effect on the molecule by adding another ASE filter after
+the last fiber in the beam path.
+The best result from these tests is shown in Fig.~\todo{ref}
+which indeed shows an improvement in the scattering.
+However, adding the filter after the fiber potentially has negetive impact
+on other properties of the tweezer including beam shape,
+power variation and pointing fluctuation,
+we were not yet able to make consistent measurement using this setup.
+Future experiments using a beam path that better integrate the filter
+needs to be used to investigate the effect of the tweezer noise more accurately.
 
 \subsection{Scaling of Raman Transition Parameters}
 \label{ch:raman-transfer:results:scaling}
+
+\todo{
+  For the study of the transition and molecule properties below,
+  we measured the scattering rate using the setup with only one ASE filter before the fiber.
+  For properties that are not directly related to scattering including light shift
+  and Rabi frequency, we will also use data that includes no ASE filter.
+}
 
 \todo{
   Scan dependency of parameters to determine the cause
