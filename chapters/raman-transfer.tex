@@ -851,10 +851,7 @@ The parameters that we can easily vary about the transition
 are the power and the detuning of the tweezer\footnote{
   We of course also vary the Raman pulse time and the two photon detuning
   but these are used to determine the transition parameters
-  and are not treated as different conditions.}
-and the properties we can directly measure from the transitions are
-the resonance frequency~(i.e. light shift of the transition),
-Raman Rabi frequency, and the two scattering rates for the atomic and molecular states.
+  and are not treated as different conditions.}.
 The tweezer power changes the single photon Rabi frequencies
 both by changing the field strength and by changing the confinement
 which affects the relative atomic wavefunction but not the molecular wavefunction.
@@ -879,18 +876,46 @@ as an offset plus the contribution from the $v'=0$ state~(either $1/\Delta$ or $
 We will focus more on the $v'=0$ term since it is easier to compare to the theory prediction.
 However, we will also discuss the effect of the background term on the transfer efficiency.
 
-\todo{
-  We measured the four parameters by fitting the .... to a ... model.
-  Additionally, since the atomic loss rate is slow compared to the Raman transition time,
-  it is measured separately using the two-body lifetime of the atoms to obtain a more accurate number.
-  First we measure the light shift.
-  Since $\Omega\ll\Omega$,
-}
+The properties we can directly measure from the transitions are
+the resonance frequency~$f_{\mathrm{R}}$, Raman Rabi frequency~$\Omega_{\mathrm{R}}$,
+and the two scattering rates for the atomic~$\Gamma_{\mathrm{a}}$
+and molecular states~$\Gamma_{\mathrm{m}}$.
+We measure these by fitting both the time~(i.e. Rabi flopping)
+and frequency scan to a single model.
+For a measurement of the Raman transition at frequency $f$,
+the time evolution of the system is determined by,
+\begin{align*}
+  \begin{pmatrix}
+    \psi_a(t)\\
+    \psi_m(t)
+  \end{pmatrix}=&\ue^{-\ui Ht}\begin{pmatrix}
+    \psi_a(0)\\
+    \psi_m(0)
+  \end{pmatrix}=\ue^{-\ui Ht}\begin{pmatrix}
+    1\\
+    0
+  \end{pmatrix}\numberthis{eq:raman-transfer:results:scaling:model}
+\end{align*}
+where the effective non-Hermition Hamiltonian $H$ is
+\begin{align*}
+  H=&-\frac{\ui}{2}\begin{pmatrix}
+    \Gamma_{\mathrm{a}}+\ui\paren{f-f_{\mathrm{R}}}&\Omega_{\mathrm{R}}\\
+    -\Omega_{\mathrm{R}}&\Gamma_{\mathrm{m}}-\ui\paren{f-f_{\mathrm{R}}}
+  \end{pmatrix}
+\end{align*}
+The survival of both Na and Cs atom after the Raman transition
+is fitted to $\abs{\psi_{\mathrm{a}}(t)}$ from Eq.~\ref{eq:raman-transfer:results:scaling:model}.
+Additionally, since the atomic loss rate $\Gamma_{\mathrm{a}}$
+is slow compared to the Raman transition time,
+it is measured separately using the two-body lifetime of the atoms
+to obtain a more accurate number.
+An example of such fitting is shown in Fig.~\todo{ref} and \todo{ref}
+which result in the following fitting parameters.
+\todo{parameters}
 
 \todo{
-  Types of sources: one/two photon
-  Background/v=0 contribution
-  Reference loss due to coupling to atomic motional continuum?
+  First we measure the light shift.
+  Since $\Omega\ll\Omega$,
 }
 
 \section{Summary and Outlook}
