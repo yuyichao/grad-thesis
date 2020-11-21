@@ -939,10 +939,26 @@ the near linear dependency of the light shift on the tweezer power.
 The fitting parameters is as follows,
 \todo{parameters, note that the parameters uses angular frequency whereas the light shift
   and detuning use real frequency}
-Most importantly, the down leg Rabi frequency is
-$2\pi\cdot\todo{number}~\mathrm{MHz/\sqrt{mW}}$
-and the background light shift is $\todo{number}~\mathrm{kHz/mW}$
+Most importantly, the down leg Rabi frequency is $2\pi\cdot\todo{number}~\mathrm{MHz/\sqrt{mW}}$,
+\todo{compared to theoretical value...}.
+The background light shift is $\todo{number}~\mathrm{kHz/mW}$
 which results in $\todo{number}~\mathrm{\%}$ of the light shift for the previous measurement.
+
+Next we study the Raman Rabi frequency.
+Unlike the light shift, this quantity is strongly affected by the coupling
+between the atomic state and the excited molecular state.
+For weak confinement and interaction,
+this coupling scales as the amplitude of the wavefunction at zero relative distance,
+or square root of the probability density,
+which scales as $P^{0.375}$ for a 3D harmonic trap\footnote{
+  $\abs{\psi(0)}^2\propto{\displaystyle\prod_{i=x,y,z}}\beta_i^{-1}\propto{\displaystyle\prod_{i=x,y,z}}\omega_i^{1/2}\propto P^{3/4}$}.
+For stronger confinement and interaction, however,
+this scaling starts to saturate as the scattering length $a$ approaches
+the harmonic oscillator length $\beta$ and does not follow a simple power law scaling anymore.
+This is the regime we have for the strongly interacting $|\mathrm{Na(2,2),Cs(3,3)}\rangle$ state.
+Nevertheless, in order to simplify the fitting,
+we use numerical calculation to determine an approximate scaling of $P^{0.29}$
+for our scattering length within the range of tweezer power we measure.
 
 \todo{
   Mention verification of the assumption made for light shift
