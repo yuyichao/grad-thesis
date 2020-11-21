@@ -939,8 +939,9 @@ the near linear dependency of the light shift on the tweezer power.
 The fitting parameters is as follows,
 \todo{parameters, note that the parameters uses angular frequency whereas the light shift
   and detuning use real frequency}
-Most importantly, the down leg Rabi frequency is $2\pi\cdot\todo{number}~\mathrm{MHz/\sqrt{mW}}$,
-\todo{compared to theoretical value...}.
+Most importantly, the down-leg Rabi frequency is $2\pi\cdot\todo{number}~\mathrm{MHz/\sqrt{mW}}$
+or $2\pi\cdot\todo{number}~\mathrm{MHz}$ for $15~\mathrm{mW}$ tweezer power.
+\todo{compared to theoretical value...}
 The background light shift is $\todo{number}~\mathrm{kHz/mW}$
 which results in $\todo{number}~\mathrm{\%}$ of the light shift for the previous measurement.
 
@@ -959,9 +960,39 @@ This is the regime we have for the strongly interacting $|\mathrm{Na(2,2),Cs(3,3
 Nevertheless, in order to simplify the fitting,
 we use numerical calculation to determine an approximate scaling of $P^{0.29}$
 for our scattering length within the range of tweezer power we measure.
+This results in a scaling of $\Omega_{\mathrm{R}}$ proportional to $P^{1.29}$
+which can be verified using measurements with the same tweezer frequency at different powers,
+as shown in Fig.~\todo{ref}B.
+We fit the $\Omega_{\mathrm{R}}$ for different detuning to the following model,
+\begin{align*}
+  \Omega_{\mathrm{R}}=&\paren{a+\frac{b}{f_{\mathrm{PA0}} - f_{\mathrm{twr}}}}\cdot P^{1.29}
+\end{align*}
+where $a$ and $b$ are the coefficient for the background and the $v'=0$ terms respectively.
+This is shown in Fig.~\todo{ref}A and the fitting parameters are,
+\todo{parameters}
+For the $v'=0$ term, we have
+\begin{align*}
+  b\cdot P^{1.29}=&\Omega_1\Omega_2
+\end{align*}
+Combining with the previous measurement of the down-leg Rabi frequency,
+this gives an up-leg Rabi frequency of $2\pi\cdot\todo{number}~\mathrm{MHz/mW^{0.29}}$.
+The value for $15~\mathrm{mW}$ tweezer power is $2\pi\cdot\todo{number}~\mathrm{MHz}$
+for a Rabi frequency ratio $\Omega_2/\Omega_1$ of $\todo{number}$.
+This ratio verifies the assumption $\Omega_2^2\gg\Omega_1^2$ made above for
+the light shift model.
+\todo{compared to theory}
+The background component fitted has the opposite sign
+with the $v'=0$ term for red detuned tweezer which reduces $\Omega_{\mathrm{R}}$
+by $\todo{number}~\mathrm{\%}$ in Fig.~\todo{ref Rabi flopping}.
+The relative sign should change when the tweezer frequency is tuned
+to be higher than the excited molecular state resonance
+causing an increase in $\Omega_{\mathrm{R}}$.
+Unfortunately, we have observed another excited molecular state
+$\approx\!\todo{number}~\mathrm{GHz}$ higher than $|e\rangle$
+which increases the scattering on the blue side making it unusable.
 
 \todo{
-  Mention verification of the assumption made for light shift
+  scattering
 }
 
 \section{Summary and Outlook}
@@ -983,7 +1014,7 @@ This is especially true for the selection
 of the final state~(section~\ref{ch:raman-transfer:state-selction:final}),
 which was mainly done based on technical considerations.
 As an exmple, states with larger binding energies can have weaker coupling
-to the excited states therefore reducing the ratio $\Omega_m/\Omega_a$
+to the excited states therefore reducing the ratio $\Omega_2/\Omega_1$
 and the total scattering during the Raman transition.
 This may be a promising direction to explore
 but requires locking two lasers with a coherence time longer than a few milliseconds.
