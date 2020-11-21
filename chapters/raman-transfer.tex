@@ -913,9 +913,39 @@ An example of such fitting is shown in Fig.~\todo{ref} and \todo{ref}
 which result in the following fitting parameters.
 \todo{parameters}
 
+After repeating this for multiple tweezer power $P$ and frequencies $f_{\mathrm{twr}}$,
+we first look at the light shift of the transition.
+The resonance frequencies are fitted to the formula,
+\begin{align*}
+  f_{\mathrm{R}}=&\paren{f_{\mathrm{R}0}+a\cdot P+b\cdot P^2}
+                   +\frac{c\cdot P}{f_{\mathrm{PA0}} - f_{\mathrm{twr}}}
+\end{align*}
+where the first term is the background contridution
+and the second term is the one due to $v'=0$ state.
+Since we have $\Omega_2^2\gg\Omega_1^2$, we assume $v'=0$ term is only caused by
+the coupling between excited state $|e\rangle$ and the final molecular state $|f\rangle$.
+Taking into account the cross coupling effect, we have,
+\begin{align*}
+  c\cdot P=&\frac{\Omega_2^2}{2}
+\end{align*}
+For the background term, we have the ``raw'' resonance frequency\footnote{
+  Note that Zeeman shift is still included.} $f_{\mathrm{R}0}$,
+a linear term $a\cdot P$ caused by the scalar AC Stark shift from other states
+and a quadratic term $b\cdot P^2$ that we attribute to the vector AC Stark shift.
+In principle the vector AC Stark shift may also depend on the single-photon detuning
+but the dependency is not significant within the frequency range we measured.
+The fit is shown in Fig.~\todo{ref}A with Fig.~\todo{ref}B showing
+the near linear dependency of the light shift on the tweezer power.
+The fitting parameters is as follows,
+\todo{parameters, note that the parameters uses angular frequency whereas the light shift
+  and detuning use real frequency}
+Most importantly, the down leg Rabi frequency is
+$2\pi\cdot\todo{number}~\mathrm{MHz/\sqrt{mW}}$
+and the background light shift is $\todo{number}~\mathrm{kHz/mW}$
+which results in $\todo{number}~\mathrm{\%}$ of the light shift for the previous measurement.
+
 \todo{
-  First we measure the light shift.
-  Since $\Omega\ll\Omega$,
+  Mention verification of the assumption made for light shift
 }
 
 \section{Summary and Outlook}
