@@ -829,43 +829,57 @@ needs to be used to investigate the effect of the tweezer noise more accurately.
 \subsection{Scaling of Raman Transition Parameters}
 \label{ch:raman-transfer:results:scaling}
 
+The Rabi flopping signal shown above is caused by a combination of
+many effects~(including the ones shown in section~\ref{ch:raman-transfer:raman}),
+making it difficult to identify the reason for the transfer efficiency
+that is lower than expected.
+Because of this, we vary various experimental parameters
+and measure how they affect the Raman transition.
+This allows us to distinguish between different mechanisms based
+on their different responses to the parameters.
+As mentioned in section~\ref{ch:raman-transfer:results:ase},
+due to the potential issues with the ASE filter after the fiber,
+the setup using one ASE filter before the fiber is currently the most reliable configuration
+that offers the lowest scattering rate.
+Therefore, for the measurements in this section,
+this is the setup we used to measure the scattering rate.
+For properties that are not directly related to scattering,
+for example light shift and Rabi frequency,
+we will also use data that was taken before the ASE filter was added.
+
+The parameters that we can easily vary about the transition
+are the power and the detuning of the tweezer\footnote{
+  We of course also vary the Raman pulse time and the two photon detuning
+  but these are used to determine the transition parameters
+  and are not treated as different conditions.}
+and the properties we can directly measure from the transitions are
+the resonance frequency~(i.e. light shift of the transition),
+Raman Rabi frequency, and the two scattering rates for the atomic and molecular states.
+The tweezer power changes the single photon Rabi frequencies
+both by changing the field strength and by changing the confinement
+which affects the relative atomic wavefunction but not the molecular wavefunction.
+We will compare the measured power scaling with the theory calculation
+to check for unknown loss mechanisms.
+Based on the discussion about extra excited states
+in section~\ref{ch:raman-transfer:raman:extra-ext},
+we see that for most properties of the Raman transition,
+there is a term attributed to
+the desired excited state $|e\rangle$~(i.e. the $v'=0$ state)
+and other terms that are caused by the combined effect of other excited states.
+As a function of the single-photon detuning,
+the first term scales the same way as a simple three-level Raman transition
+whereas the second term can have more complex scaling but generally varies slower
+than the first term due to the larger detunings from the excited states involved.
+In the study below, we will treat the contribution from other states as a constant background
+\footnote{Constant here means independent of the single photon detuning.
+  It could, however, depend on other variables including the tweezer power.}
+over the range of frequencies we scan.
+In another word, we fit the detuning dependency of each properties
+as an offset plus the contribution from the $v'=0$ state~(either $1/\Delta$ or $1/\Delta^2$).
+We will focus more on the $v'=0$ term since it is easier to compare to the theory prediction.
+However, we will also discuss the effect of the background term on the transfer efficiency.
+
 \todo{
-  The Rabi flopping signal measured above is caused by a combination of many effects,
-  making it difficult to identify the cause of the transfer efficiency that's lower than expected.
-  Because of this, we vary various experimental parameters
-  and measure how they affects the Raman transition.
-  This allows us to distinguish between different effect based on their different dependencies.
-  For the study of the transition and molecule properties below,
-  we measured the scattering rate using the setup with only one ASE filter before the fiber.
-  For properties that are not directly related to scattering including light shift
-  and Rabi frequency, we will also use data that was taken before the ASE filter was added.
-
-  The parameters that we can easily vary about the transition
-  are the power and the detuning of the tweezer\footnote{
-    We of course also vary the time and the two photon detuning
-    but these used to determine the transition parameters and are not treated as different conditions.
-  } and the paramters we can directly measure from the transitions are ... .
-  The tweezer power changes the single photon Rabi frequencies both by changing the field strength
-  and by changing the confinement which affects the relative atomic wavefunction
-  but not the molecular wavefunction.
-  We will compare the power scaling measured with the theory calculation
-  to check for unknown loss mechanisms.
-  Based on the discussion about extra excited states,
-  we see that there is a term attributed to
-  the desired excited state $|e\rangle$~(in this case the $v'=0$ state)
-  and other terms that are caused by the combined effect of other excited states.
-  As a function of the single-photon detuning,
-  the first term scales the same way as a simple three-level Raman transition
-  whereas the second term can have more complex scaling but generally varies slower
-  due to the larger detunings from the excited states involved.
-  In the study below, we will treat the contribution from other states as constant
-  background\footnote{constant here means independent of the detuning
-    but could depend on other variables including the tweezer power}
-  over the range of frequencies we scan and fit the detuning dependency of each parameters
-  as an offset plus the contribution from the $v'=0$ state~(either $1/\Delta$ or $1/\Delta^2$).
-  We focus more on the $v'=0$ term since it is easier to compare to the theory
-  but we also discuss the effect of the background term on the transfer efficiency.
-
   We measured the four parameters by fitting the .... to a ... model.
   Additionally, since the atomic loss rate is slow compared to the Raman transition time,
   it is measured separately using the two-body lifetime of the atoms to obtain a more accurate number.
