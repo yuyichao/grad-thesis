@@ -912,22 +912,6 @@ as an offset plus the contribution from the $v'=0$ state~(either $1/\Delta$ or $
 We will focus more on the $v'=0$ term since it is easier to compare to the theory prediction.
 However, we will also discuss the effect of the background term on the transfer efficiency.
 
-\begin{figure}
-  \centering
-  \includegraphics[width=\textwidth]{figures/raman_transfer_fit_one_ase_fit.pdf}
-  \caption[Fitting of Raman transition parameters.]{
-    Fitting of Raman transition parameters.
-    (A) Raman spectrum for different times.
-    The $0.12~\mathrm{ms}$ data was previously shown in
-    Fig.~\ref{fig:raman-transfer:results:init}A
-    and is fit to a more accurate model in this plot.
-    (B) Two-body atom loss measurement with longer time to more accurately determine
-    the atomic lifetime.
-    The fit also includes data from Fig.~\ref{fig:raman-transfer:results:init}B.
-    \label{fig:raman-transfer:results:fit}}
-\end{figure}
-% 2.19(47)\times10^{-2}, 0.2684(80), 608.23(11), 24.95(56), 0.154(14), 8.19(65)
-
 The properties we can directly measure from the transitions are
 the resonance frequency~$f_{\mathrm{R}}$, Raman Rabi frequency~$\Omega_{\mathrm{R}}$,
 and the two scattering rates for the atomic~$\Gamma_{\mathrm{a}}$
@@ -955,7 +939,20 @@ where the effective non-Hermition Hamiltonian $H$ is
     -\Omega_{\mathrm{R}}&\Gamma_{\mathrm{m}}-\ui\paren{f-f_{\mathrm{R}}}
   \end{pmatrix}
 \end{align*}
-
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{figures/raman_transfer_fit_one_ase_fit.pdf}
+  \caption[Fitting of Raman transition parameters.]{
+    Fitting of Raman transition parameters.
+    (A) Raman spectrum for different times.
+    The $0.12~\mathrm{ms}$ data was previously shown in
+    Fig.~\ref{fig:raman-transfer:results:init}A
+    and is fit to a more accurate model in this plot.
+    (B) Two-body atom loss measurement with longer time to more accurately determine
+    the atomic lifetime.
+    The fit also includes data from Fig.~\ref{fig:raman-transfer:results:init}B.
+    \label{fig:raman-transfer:results:fit}}
+\end{figure}
 \begin{table}
   \centering
   \caption[Raman transition parameters.]{
@@ -970,7 +967,6 @@ where the effective non-Hermition Hamiltonian $H$ is
     $770.60823(11)$&$3.971(89)$&$24.5(22)$&$1.30(10)$\\\hline
   \end{tabular}
 \end{table}
-
 The survival of both Na and Cs atom after the Raman transition
 is fitted to $\abs{\psi_{\mathrm{a}}(t)}$ from Eq.~\ref{eq:raman-transfer:results:scaling:model}.
 Additionally, since the atomic loss rate $\Gamma_{\mathrm{a}}$
@@ -979,7 +975,7 @@ it is measured separately using the two-body lifetime of the atoms
 to obtain a more accurate number.
 An example of such fitting is shown in Fig.~\ref{fig:raman-transfer:results:init}B
 and \ref{fig:raman-transfer:results:fit}.
-which result in the fitting parameters shown in table.~\ref{table:raman-transfer:results:fit}.
+which result in the fitting parameters shown in table~\ref{table:raman-transfer:results:fit}.
 
 After repeating this for multiple tweezer power $P$ and frequencies $f_{\mathrm{twr}}$,
 we first look at the light shift of the transition.
@@ -987,6 +983,7 @@ The resonance frequencies are fitted to the formula,
 \begin{align*}
   f_{\mathrm{R}}=&\paren{f_{\mathrm{R}0}+a\cdot P+b\cdot P^2}
                    +\frac{c\cdot P}{f_{\mathrm{PA0}} - f_{\mathrm{twr}}}
+                   \numberthis{eq:raman-transfer:results:light-shift}
 \end{align*}
 where the first term is the background contridution
 and the second term is the one due to $v'=0$ state.
@@ -994,7 +991,7 @@ Since we have $\Omega_2^2\gg\Omega_1^2$, we assume $v'=0$ term is only caused by
 the coupling between excited state $|e\rangle$ and the final molecular state $|f\rangle$.
 Taking into account the cross coupling effect, we have,
 \begin{align*}
-  c\cdot P=&\frac{\Omega_2^2}{2}
+  c\cdot P=&\frac{\Omega_2^2}{2}\numberthis{eq:raman-transfer:results:light-shift0}
 \end{align*}
 For the background term, we have the ``raw'' resonance frequency\footnote{
   Note that Zeeman shift is still included.} $f_{\mathrm{R}0}$,
@@ -1002,16 +999,42 @@ a linear term $a\cdot P$ caused by the scalar AC Stark shift from other states
 and a quadratic term $b\cdot P^2$ that we attribute to the vector AC Stark shift.
 In principle the vector AC Stark shift may also depend on the single-photon detuning
 but the dependency is not significant within the frequency range we measured.
-The fit is shown in Fig.~\todo{ref}A with Fig.~\todo{ref}B showing
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{figures/raman_transfer_scaling_light_shift.pdf}
+  \caption[Fitting of Raman light shift.]{
+    Fitting of Raman light shift as a function of tweezer power and detuning.
+    (A) The light shift varies approximately linear with the tweezer power
+    with a small quadratic term.
+    (B) The light shift is proportional to $1/\Delta$ as expected from theory prediction.
+    \label{fig:raman-transfer:results:light-shift}}
+\end{figure}
+\begin{table}
+  \centering
+  \caption[Fitting result of Raman light shift.]{
+    Fitted Raman light shift from Fig.~\ref{fig:raman-transfer:results:light-shift}.
+    Note that the frequencies in this table and Fig.~\ref{fig:raman-transfer:results:light-shift}
+    are linear frequency whereas the quantity used in
+    Eq.~\ref{eq:raman-transfer:results:light-shift} and
+    \ref{eq:raman-transfer:results:light-shift0} are typically angular frequency.
+    \label{table:raman-transfer:results:light-shift}}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    $f_{\mathrm{R}0}~(\mathrm{MHz})$&$f_{\mathrm{PA0}}~(\mathrm{GHz})$
+    &$a~(\mathrm{kHz/mW})$&$b~(\mathrm{Hz/mW^2})$&$c~(\mathrm{MHz\cdot\!GHz/mW})$\\\hline
+    $770.200516(24)$&$288711$&$2.194(17)$&$-199.13(58)$&$4.1083(46)$\\\hline
+  \end{tabular}
+\end{table}
+The fit is shown in Fig.~\ref{fig:raman-transfer:results:light-shift}B
+with Fig.~\ref{fig:raman-transfer:results:light-shift}A showing
 the near linear dependency of the light shift on the tweezer power.
-The fitting parameters is as follows,
-\todo{parameters, note that the parameters uses angular frequency whereas the light shift
-  and detuning use real frequency}
-Most importantly, the down-leg Rabi frequency is $2\pi\cdot\todo{number}~\mathrm{MHz/\sqrt{mW}}$
-or $2\pi\cdot\todo{number}~\mathrm{MHz}$ for $15~\mathrm{mW}$ tweezer power.
+The fitting parameters are shown in table~\ref{table:raman-transfer:results:light-shift}.
+Most importantly, the down-leg Rabi frequency is $2\pi\cdot90.645(50)~\mathrm{MHz/\sqrt{mW}}$
+or $2\pi\cdot351.07(19)~\mathrm{MHz}$ for $15~\mathrm{mW}$ tweezer power.
 \todo{compared to theoretical value...}
-The background light shift is $\todo{number}~\mathrm{kHz/mW}$
-which results in $\todo{number}~\mathrm{\%}$ of the light shift for the previous measurement.
+The background light shift is $2.194(17)~\mathrm{kHz/mW}$
+which results in $\approx\!8~\mathrm{\%}$ of the light shift for the previous measurement
+and is not a significant factor.
 
 Next we study the Raman Rabi frequency.
 Unlike the light shift, this quantity is strongly affected by the coupling
