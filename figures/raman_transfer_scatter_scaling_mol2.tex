@@ -1,0 +1,36 @@
+\documentclass[border={-4pt -6pt -4pt -4pt}]{standalone}
+
+\usepackage{hyperref}
+\usepackage{tikz}
+
+\usetikzlibrary{decorations.pathreplacing,
+  arrows,
+  calc,
+  decorations.pathmorphing,
+  decorations.pathreplacing,
+  decorations.markings,
+  positioning,
+  shapes,
+  3d
+}
+
+\ifpdf
+% Ensure reproducible output
+\pdfinfoomitdate=1
+\pdfsuppressptexinfo=-1
+\pdftrailerid{}
+\hypersetup{
+  pdfcreator={},
+  pdfproducer={}
+}
+\fi
+
+\begin{document}
+\begin{tikzpicture}
+  \node at (0.0, 0) {\includegraphics[width=5.9cm]{raman_transfer_scatter_scaling_mol.pdf}};
+  \node at (6.0, -0.0394)
+  {\includegraphics[width=5.86cm]{raman_transfer_scatter_scaling_mol_diff.pdf}};
+  \node at (-1.80, 1.90) {\scriptsize (\textbf{A})};
+  \node at (4.18, 1.90) {\scriptsize (\textbf{B})};
+\end{tikzpicture}
+\end{document}

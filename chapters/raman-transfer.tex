@@ -1028,9 +1028,9 @@ and is therefore not limiting the transfer efficiency.
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.7\textwidth]{figures/raman_transfer_scatter_scaling_mol.pdf}
+  \includegraphics[width=\textwidth]{figures/raman_transfer_scatter_scaling_mol2.pdf}
   \caption[Molecular scattering rate as a function of tweezer power and frequency]{
-    Dependency of molecular scattering rate $\Gamma_{\mathrm{m}}$
+    (A) Dependency of molecular scattering rate $\Gamma_{\mathrm{m}}$
     on tweezer power and frequency on a log-log scale.
     The data fits to a linear model $a\cdot P$ better than the atomic scattering rate
     though the higher tweezer power points shows signature of a stronger power dependency.
@@ -1038,20 +1038,29 @@ and is therefore not limiting the transfer efficiency.
     $288503~\mathrm{GHz}$ and $288560~\mathrm{GHz}$ are
     $a_{288503}=2\pi\cdot43.5(21)~\mathrm{Hz/mW}$
     and $a_{288560}=2\pi\cdot63.2(27)~\mathrm{Hz/mW}$ respectively.
-    The dependency on the tweezer frequency suggests that
-    part of the scattering is related to the $v'=0$ excited state.
-    Note that part of the scattering is expected to be caused by the laser noise
-    due to the decrease of scattering observed in section~\ref{ch:raman-transfer:results:ase}
-    after adding a second ASE filter after the fiber.
+    (B) The difference between the scattering rate for tweezer frequency at
+    $288503~\mathrm{GHz}$ and $288560~\mathrm{GHz}$.
+    The result fits better to a $P^2$ model (solid line) than a $P^1$ model (dashed line)
+    suggesting that there is potentially a two photon process
+    related to the $v'=0$ excited molecular state.
+    The fitting result for the $P^2$ model is shown on the plot.
     \label{fig:raman-transfer:results:scaling:gamma-mol}}
 \end{figure}
 
 Finally, we look at the molecular scattering rate $\Gamma_{\mathrm{m}}$
 which is expected to scale proportional to the tweezer power.
 This agrees with the experimental data better compares to the scattering on the atomic state,
-as shown in Fig.~\ref{fig:raman-transfer:results:scaling:gamma-mol}.
+as shown in Fig.~\ref{fig:raman-transfer:results:scaling:gamma-mol}A.
 However, the points for higher tweezer power and smaller detuning deviates from the fit,
 suggesting that there could be multiple processes with different power scaling involved.
+The dependency on the tweezer frequency suggests that
+part of the scattering is related to the $v'=0$ excited state\footnote{
+  Note that part of the scattering is expected to be caused by the laser noise
+  due to the decrease of scattering observed in section~\ref{ch:raman-transfer:results:ase}
+  after adding a second ASE filter after the fiber.
+}. Although we do not measure at enough tweezer frequencies to allow a fit against detuning,
+we can take the difference between the two points we have to study the dependency,
+as shown in Fig.~\ref{fig:raman-transfer:results:scaling:gamma-mol}B.
 
 \todo{
   scattering
