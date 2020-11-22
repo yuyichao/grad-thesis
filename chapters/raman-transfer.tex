@@ -991,11 +991,32 @@ Unfortunately, we have observed another excited molecular state
 $\approx\!\todo{number}~\mathrm{GHz}$ higher than $|e\rangle$
 which increases the scattering on the blue side making it unusable.
 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/raman_transfer_scatter_scaling_atom.pdf}
+  \caption[Atomic scattering rate as a function of tweezer power and frequency]{
+    Dependency of atomic scattering rate $\Gamma_{\mathrm{a}}$
+    on tweezer power and frequency on a log-log scale.
+    The dashed lines fit to $a\cdot P^{1.58}$ as expected from theory
+    that has poor agreement with the data.
+    The solid lines fit to $b\cdot P^{2.58}$ with much better agreement with data.
+    The fitting results for tweezer frequencies of
+    $288503~\mathrm{GHz}$ and $288560~\mathrm{GHz}$ are
+    $b_{288503}=2\pi\cdot29.3(17)~\mathrm{mHz/mW^{2.58}}$
+    and $b_{288560}=2\pi\cdot24.5(13)~\mathrm{mHz/mW^{2.58}}$ respectively.
+    The scaling behavior and the lack of sensitivity to tweezer frequency
+    suggests that the scattering from the atomic state is dominated
+    by other excited states or technical noise
+    and is potentially a two-photon scattering process.
+    \label{fig:raman-transfer:results:scaling:gamma-atom}}
+\end{figure}
+
 Next we move on to the scattering rates.
 Based on the scaling of $P^{0.29}$ for the coupling
 between the atomic state and the excited molecular state,
 we expect the atomic scattering rate $\Gamma_{\mathrm{a}}$ to scale as $P^{1.58}$.
-However, as shown in Fig.~\todo{ref}, the scaling is ver closed to $P^{2.58}$ instead.
+However, as shown in Fig.~\ref{fig:raman-transfer:results:scaling:gamma-atom},
+the scaling is very closed to $P^{2.58}$ instead.
 This suggests that a two photon scattering process is potentially involved.
 Furthermore, the plot also shows that the scattering rate does not depend strongly
 on the tweezer frequency meaning that almost all of the contribution
@@ -1005,8 +1026,29 @@ Nevertheless, as we will see soon, the absolute value of the scattering rate
 is much smaller than that from the molecular state
 and is therefore not limiting the transfer efficiency.
 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/raman_transfer_scatter_scaling_mol.pdf}
+  \caption[Molecular scattering rate as a function of tweezer power and frequency]{
+    Dependency of molecular scattering rate $\Gamma_{\mathrm{m}}$
+    on tweezer power and frequency on a log-log scale.
+    The data fits to a linear model $a\cdot P$ better than the atomic scattering rate
+    though the higher tweezer power points shows signature of a stronger power dependency.
+    The fitting results for tweezer frequencies of
+    $288503~\mathrm{GHz}$ and $288560~\mathrm{GHz}$ are
+    $a_{288503}=2\pi\cdot43.5(21)~\mathrm{Hz/mW}$
+    and $a_{288560}=2\pi\cdot63.2(27)~\mathrm{Hz/mW}$ respectively.
+    The dependency on the tweezer frequency suggests that
+    part of the scattering is related to the $v'=0$ excited state.
+    Note that part of the scattering is expected to be caused by the laser noise
+    due to the decrease of scattering observed in section~\ref{ch:raman-transfer:results:ase}
+    after adding a second ASE filter after the fiber.
+    \label{fig:raman-transfer:results:scaling:gamma-mol}}
+\end{figure}
+
 Finally, we look at the molecular scattering rate $\Gamma_{\mathrm{m}}$
 which is expected to scale proportional to the tweezer power.
+\ref{fig:raman-transfer:results:scaling:gamma-mol}
 
 \todo{
   scattering
