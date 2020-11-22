@@ -494,6 +494,29 @@ while the MOT is not affected as significantly.
 This process is then repeated with lower power in the Raman beam path until the desired
 position sensitivity is reached.
 
+\begin{table}
+  \centering
+  \caption[Na Raman beams parameters.]{
+    Single photon Rabi frequency and scattering rate for the Na Raman beams.
+    Since in general each beams couples to more than one excited states,
+    the single photon Rabi frequency is listed for the reduced matrix element
+    $\langle J=1/2||er||J'=3/2\rangle$~\cite{steck_sodium_2019}.
+    The scattering is calculated for the $|F=2,m_F=2\rangle$ ground state
+    since this is the dark state in the cooling scheme where the scattering matters the most.
+    The polarization of the beams can be seen in Fig.~\ref{fig:rsc:na-geometry}.
+    R5 is the F1 beam that is co-propagating with R3 with orthorgonal polarization
+    that is used to drive sideband-free Raman transition (not used for cooling).
+    We also assume $10~\mathrm{\%}$ power of the R1 beam is
+    in the opposite circular polarization~($\sigma^+$) instead of being purely $\sigma^-$.
+    \label{table:rsc:alignment:raman-parameter}}
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    Beam&R1 (F2)&R2 (F1)&R3 (F2)&R4 (F1)&R5 (F1)\\\hline
+    \makecell{Rabi Frequency\\($2\pi\cdot\mathrm{MHz}$)}&$41.2(23)$&$16.4(26)$&$45.5(31)$&$34.8(21)$&$41.4(26)$\\\hline
+    \makecell{Scattering Rate\\($2\pi\cdot\mathrm{Hz}$)}&$5.41(62)$&$1.50(48)$&$11.0(15)$&$6.74(82)$&$9.5(12)$\\\hline
+  \end{tabular}
+\end{table}
+
 \todo{appendex about scattering branching ratio calculation}
 In order to verify the alignment of the tweezer without any physical change to the beam path,
 we use a second method to calibrate the single photon Rabi frequency of the Raman light.
@@ -505,10 +528,11 @@ variable length of time. The off resonance scattering from the Raman beam will c
 the spin state of the atom to change and the population in $F=1$ state is measured
 by removing the $F=2$ population using a pushout pulse.
 The rate of the spin change is fitted to a theory model to derive the Rabi frequency of
-the Raman light. This measurement shows that the Rabi frequencies for the Raman beams are
-... \todo{number, maybe table}. We can also calculate the scattering rate from the Raman
-beams to be ... \todo{number, maybe table} which corresponds to a total of $...$ \todo{number}
-scattering event on average during the whole cooling sequence and
+the Raman light.
+The result of the fit is shown in table.~\ref{table:rsc:alignment:raman-parameter}.
+The table also includes the total scattering rate from each Raman beams
+which corresponds to a cumulative $3$ scattering event
+on average during the whole cooling sequence and
 should not be a limiting factor for the cooling performance.
 
 The OP beam has a much larger waist~($\approx\!1~\mathrm{mm}$)

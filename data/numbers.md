@@ -17,16 +17,16 @@
 * Number of Cs motional states in tweezer after PGC: 60
 * Cs RSC ground state probability: 96(3)%
 * Na Raman beam single photon Rabi frequencies:
-    * F1 Up: ?MHz
-    * F1 Down: ?MHz
-    * F1 Diagnal: ?MHz
-    * F2 Diagnoal: ?MHz
-    * F2 Counter-OP: ?MHz
+    * R1 (F2): 2pi * 41.2(23) MHz
+    * R2 (F1): 2pi * 16.4(26) MHz
+    * R3 (F2): 2pi * 45.5(31) MHz
+    * R4 (F1): 2pi * 34.8(21) MHz
+    * R5 (F1): 2pi * 41.4(26) MHz
 * Na Raman beam total scattering rate:
-    * F1 Up: ?Hz
-    * F1 Down: ?Hz
-    * F1 Diagnal: ?Hz
-    * F2 Diagnoal: ?Hz
-    * F2 Counter-OP: ?Hz
+    * R1 (F2): 2pi * 5.41(62) Hz
+    * R2 (F1): 2pi * 1.50(48) Hz
+    * R3 (F2): 2pi * 11.0(15) Hz
+    * R4 (F1): 2pi * 6.74(82) Hz
+    * R5 (F1): 2pi * 9.5(12) Hz
 * Na OP polarization purity: ?%
 * Tweezer PA broadening (v=12 red detuning): ?
