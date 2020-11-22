@@ -718,22 +718,34 @@ the transfer efficiency and the signal to noise.
   This will be discussed in more detail below in section~\ref{ch:raman-transfer:results:ase}.
 \end{enumerate}
 
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{figures/raman_transfer_fit_one_ase_init.pdf}
+  \caption[Raman resonance with Fourier limited linewidth and Rabi flopping.]{
+    (A) Raman resonance after optimizing for transfer coherence,
+    showing a Fourier limited linewidth.
+    The solid line shows a fit to a Lorentzian line shape used to determine the linewidth.
+    (B) Time scan on the Raman Resonance, showing coherent Rabi oscillations.
+    \label{fig:raman-transfer:results:init}}
+\end{figure}
+
 With these changes, the narrowest linewidth we were able to observe using $15~\mathrm{mW}$
-of total power in the tweezer is shown in Fig.~\todo{ref, data using one ASE filter}.
-The full width half maximum~(FWHM) of $\todo{number}~\mathrm{kHz}$ is consistent
-with the Fourier limited linewidth of $\todo{number}~\mathrm{kHz}$
-for a $\pi$-pulse of $\todo{number}~\mathrm{ms}$ used in the experiment.
+of total power in the tweezer is shown in Fig.~\ref{fig:raman-transfer:results:init}A.
+The full width half maximum~(FWHM) of $7.45(51)~\mathrm{kHz}$ is consistent
+with the Fourier limited linewidth of $7~\mathrm{kHz}$
+for a $\pi$-pulse of $0.12~\mathrm{ms}$ used in the experiment.
 This is evidence that the linewidth is mainly determined by the Raman Rabi frequency
 rather than the lifetime of the molecule, suggesting that we are in the coherent regime.
 We can confirm this by varying the pulse time on the Raman resonance
-and the resulting decaying Rabi flopping can be seen in Fig.~\todo{ref}.
+and the resulting decaying Rabi flopping can be seen in
+Fig.~\ref{fig:raman-transfer:results:init}B.
 The coherence in the molecule creation signals the successful transfer
 of the control of single atoms to the control on the single molecule.
 Becasue of this, the molecules we created are in a single internal spin state
 with higher than $60~\mathrm{\%}$ probability
 of being in the motional ground state in the tweezer.
 
-Based on the Rabi flopping signal, we can infer that $\todo{number}~\mathrm{\%}$ of the atoms
+Based on the Rabi flopping signal, we can infer that $57~\mathrm{\%}$ of the atoms
 that were prepared in the relative motional ground state have been transfered to the molecule.
 This is the first time coherent optical transfer from atoms to molecules has been demostrated
 without the help of an excited state with narrow linewidth.
@@ -792,7 +804,7 @@ We added the filter after the Raman fiber amplifier\footnote{
 } and the spectrum of the laser after the filter is shown in
 Fig.~\ref{fig:raman-transfer:results:ase:spectra}B.
 As mentioned above, this is the condition under which the Rabi flopping
-in Fig.~\todo{ref} is taken.
+in Fig.~\ref{fig:raman-transfer:results:init}B is taken.
 Comparing it to a similar measurement without the ASE filter shown in Fig.~\todo{ref},
 we can see the filter clearly improved the contrast of the oscillation.
 More quantitatively, the Raman Rabi frequency is not affected by the filter as expected
@@ -880,6 +892,22 @@ as an offset plus the contribution from the $v'=0$ state~(either $1/\Delta$ or $
 We will focus more on the $v'=0$ term since it is easier to compare to the theory prediction.
 However, we will also discuss the effect of the background term on the transfer efficiency.
 
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{figures/raman_transfer_fit_one_ase_fit.pdf}
+  \caption[Fitting of Raman transition parameters.]{
+    Fitting of Raman transition parameters.
+    (A) Raman spectrum for different times.
+    The $0.12~\mathrm{ms}$ data was previously shown in
+    Fig.~\ref{fig:raman-transfer:results:init}A
+    and is fit to a more accurate model in this plot.
+    (B) Two-body atom loss measurement with longer time to more accurately determine
+    the atomic lifetime.
+    The fit also includes data from Fig.~\ref{fig:raman-transfer:results:init}B.
+    \label{fig:raman-transfer:results:fit}}
+\end{figure}
+% 2.19(47)\times10^{-2}, 0.2684(80), 608.23(11), 24.95(56), 0.154(14), 8.19(65)
+
 The properties we can directly measure from the transitions are
 the resonance frequency~$f_{\mathrm{R}}$, Raman Rabi frequency~$\Omega_{\mathrm{R}}$,
 and the two scattering rates for the atomic~$\Gamma_{\mathrm{a}}$
@@ -907,15 +935,31 @@ where the effective non-Hermition Hamiltonian $H$ is
     -\Omega_{\mathrm{R}}&\Gamma_{\mathrm{m}}-\ui\paren{f-f_{\mathrm{R}}}
   \end{pmatrix}
 \end{align*}
+
+\begin{table}
+  \centering
+  \caption[Raman transition parameters.]{
+    Fitted Raman transition parameters from Fig.~\ref{fig:raman-transfer:results:init}B
+    and \ref{fig:raman-transfer:results:fit}.
+    \label{table:raman-transfer:results:fit}}
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    $f_{\mathrm{R}}~(\mathrm{MHz})$&$\Omega_{\mathrm{R}}~(\mathrm{2\pi\cdot kHz})$
+    &$\Gamma_{\mathrm{a}}~(\mathrm{2\pi\cdot Hz})$
+    &$\Gamma_{\mathrm{m}}~(\mathrm{2\pi\cdot kHz})$\\\hline
+    $770.60823(11)$&$24.95(56)$&$154(14)$&$8.19(65)$\\\hline
+  \end{tabular}
+\end{table}
+
 The survival of both Na and Cs atom after the Raman transition
 is fitted to $\abs{\psi_{\mathrm{a}}(t)}$ from Eq.~\ref{eq:raman-transfer:results:scaling:model}.
 Additionally, since the atomic loss rate $\Gamma_{\mathrm{a}}$
 is slow compared to the Raman transition time,
 it is measured separately using the two-body lifetime of the atoms
 to obtain a more accurate number.
-An example of such fitting is shown in Fig.~\todo{ref} and \todo{ref}
-which result in the following fitting parameters.
-\todo{parameters}
+An example of such fitting is shown in Fig.~\ref{fig:raman-transfer:results:init}B
+and \ref{fig:raman-transfer:results:fit}.
+which result in the fitting parameters shown in table.~\ref{table:raman-transfer:results:fit}.
 
 After repeating this for multiple tweezer power $P$ and frequencies $f_{\mathrm{twr}}$,
 we first look at the light shift of the transition.
@@ -992,8 +1036,9 @@ The relative sign should change when the tweezer frequency is tuned
 to be higher than the excited molecular state resonance
 causing an increase in $\Omega_{\mathrm{R}}$.
 Unfortunately, we have observed another excited molecular state
-$\approx\!\todo{number}~\mathrm{GHz}$ higher than $|e\rangle$
-which increases the scattering on the blue side making it unusable.
+$\approx\!200~\mathrm{GHz}$ higher than $|e\rangle$
+which increases the scattering and
+makes it difficult to drive coherent transition on the blue side.
 
 \begin{figure}
   \centering
