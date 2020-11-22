@@ -29,4 +29,3 @@
     * R4 (F1): 2pi * 6.74(82) Hz
     * R5 (F1): 2pi * 9.5(12) Hz
 * Na OP polarization purity: ?%
-* Tweezer PA broadening (v=12 red detuning): ?
