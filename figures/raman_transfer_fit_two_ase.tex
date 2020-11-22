@@ -1,0 +1,36 @@
+\documentclass[border={-4pt -6pt -4pt -4pt}]{standalone}
+
+\usepackage{hyperref}
+\usepackage{tikz}
+
+\usetikzlibrary{decorations.pathreplacing,
+  arrows,
+  calc,
+  decorations.pathmorphing,
+  decorations.pathreplacing,
+  decorations.markings,
+  positioning,
+  shapes,
+  3d
+}
+
+\ifpdf
+% Ensure reproducible output
+\pdfinfoomitdate=1
+\pdfsuppressptexinfo=-1
+\pdftrailerid{}
+\hypersetup{
+  pdfcreator={},
+  pdfproducer={}
+}
+\fi
+
+\begin{document}
+\begin{tikzpicture}
+  \node at (0.0, 0) {\includegraphics[height=4.586cm]{raman_transfer_fit_two_ase_time.pdf}};
+  \node at (5.63, -0.177)
+  {\includegraphics[height=4.233cm]{raman_transfer_fit_two_ase_mol_time.pdf}};
+  \node at (-1.7, 2.0) {\scriptsize (\textbf{A})};
+  \node at (3.95, 2.0) {\scriptsize (\textbf{B})};
+\end{tikzpicture}
+\end{document}
