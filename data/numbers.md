@@ -4,18 +4,17 @@
 * MOT diameter: 0.1~0.2mm
 * Na MOT atom number: 10k~50k
 * Cs MOT atom number: 3k~20k
-* Na MOT temperature: ?mK
-* Cs MOT temperature: ?mK
-* Na CMOT temperature: ?mK
-* Na PGC temperature: ?mK
-* Cs PGC temperature: ?mK
+* Na MOT temperature: 400uK
+* Cs MOT temperature: 100uK
+* Na PGC temperature: 80uK
+* Cs PGC temperature: 10uK
 * Na trap volume: 1.3um^3
 * Cs trap volume: 4.1um^3
 * Na MOT atom in tweezer: 0.004
 * Cs MOT atom in tweezer: 0.01
 * Na peak light shift: >200MHz
-* Number of Na motional states in tweezer after PGC: ?
-* Number of Cs motional states in tweezer after PGC: ?
+* Number of Na motional states in tweezer after PGC: 20
+* Number of Cs motional states in tweezer after PGC: 60
 * Cs RSC ground state probability: 96(3)%
 * Na Raman beam single photon Rabi frequencies:
     * F1 Up: ?MHz
