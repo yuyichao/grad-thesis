@@ -22,7 +22,7 @@ const data = LibArchive.Reader(fname) do reader
     LibArchive.next_header(reader)
     readdlm(reader, ',', skipstart=1)
 end
-const prefix = joinpath(@__DIR__, "../figures/raman_transfer")
+const prefix = joinpath(@__DIR__, "../figures/raman_transfer_theory_ratio")
 
 figure()
 ax1 = gca()
@@ -71,6 +71,6 @@ ylim([0, 1.49])
 ylabel("\$\\Omega_{\\mathrm{R}}/\\Gamma_{\\mathrm{s}}\$", fontsize="small", color="C2")
 tax2.tick_params(axis="y", labelcolor="C2")
 setp(tax2.get_yticklabels(), fontweight="bold")
-NaCsPlot.maybe_save("$(prefix)_v63")
+NaCsPlot.maybe_save("$(prefix)_vhi")
 
 NaCsPlot.maybe_show()
