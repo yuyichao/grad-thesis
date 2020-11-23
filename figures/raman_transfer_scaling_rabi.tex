@@ -1,0 +1,35 @@
+\documentclass[border={-4pt -6pt -4pt -4pt}]{standalone}
+
+\usepackage{hyperref}
+\usepackage{tikz}
+
+\usetikzlibrary{decorations.pathreplacing,
+  arrows,
+  calc,
+  decorations.pathmorphing,
+  decorations.pathreplacing,
+  decorations.markings,
+  positioning,
+  shapes,
+  3d
+}
+
+\ifpdf
+% Ensure reproducible output
+\pdfinfoomitdate=1
+\pdfsuppressptexinfo=-1
+\pdftrailerid{}
+\hypersetup{
+  pdfcreator={},
+  pdfproducer={}
+}
+\fi
+
+\begin{document}
+\begin{tikzpicture}
+  \node at (0.0, 0) {\includegraphics[width=5.7cm]{raman_transfer_scaling_rabi_560.pdf}};
+  \node at (5.65, 0) {\includegraphics[width=5.509cm]{raman_transfer_scaling_rabi_det.pdf}};
+  \node at (-2.5, 1.95) {\scriptsize (\textbf{A})};
+  \node at (3.3, 1.95) {\scriptsize (\textbf{B})};
+\end{tikzpicture}
+\end{document}

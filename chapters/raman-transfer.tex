@@ -1053,28 +1053,53 @@ we use numerical calculation to determine an approximate scaling of $P^{0.29}$
 for our scattering length within the range of tweezer power we measure.
 This results in a scaling of $\Omega_{\mathrm{R}}$ proportional to $P^{1.29}$
 which can be verified using measurements with the same tweezer frequency at different powers,
-as shown in Fig.~\todo{ref}B.
+as shown in Fig.~\ref{fig:raman-transfer:results:rabi}A.
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{figures/raman_transfer_scaling_rabi.pdf}
+  \caption[Fitting of Raman Rabi frequencies.]{
+    Fitting of Raman Rabi frequency $\Omega_{\mathrm{R}}$
+    as a function of tweezer power and detuning.
+    (A) $\Omega_{\mathrm{R}}$ varies approximately with $P^{1.29}$.
+    (B) $\Omega_{\mathrm{R}}$ is proportional to $1/\Delta$ as expected from theory prediction.
+    The detuning is calculated using the $f_{\mathrm{PA0}}$ from the light shift fit
+    in table.~\ref{table:raman-transfer:results:light-shift}
+    \label{fig:raman-transfer:results:rabi}}
+\end{figure}
+\begin{table}
+  \centering
+  \caption[Fitting result of Raman Rabi frequencies.]{
+    Fitted result from Fig.~\ref{fig:raman-transfer:results:rabi}
+    for Eq.~\ref{eq:raman-transfer:results:rabi}.
+    \label{table:raman-transfer:results:rabi}}
+  \begin{tabular}{|c|c|}
+    \hline
+    $a~(\mathrm{2\pi\cdot\!Hz/mW^{1.29}})$&$b~(\mathrm{4\pi^2\cdot\!kHz\cdot\!GHz/mW^{1.29}})$\\\hline
+    $-68.3(27)$&$28.00(33)$\\\hline
+  \end{tabular}
+\end{table}
 We fit the $\Omega_{\mathrm{R}}$ for different detuning to the following model,
 \begin{align*}
   \Omega_{\mathrm{R}}=&\paren{a+\frac{b}{f_{\mathrm{PA0}} - f_{\mathrm{twr}}}}\cdot P^{1.29}
+                        \numberthis{eq:raman-transfer:results:rabi}
 \end{align*}
 where $a$ and $b$ are the coefficient for the background and the $v'=0$ terms respectively.
-This is shown in Fig.~\todo{ref}A and the fitting parameters are,
-\todo{parameters}
+This is shown in Fig.~\ref{fig:raman-transfer:results:rabi}B
+and the fitting parameters are shown in table~\ref{table:raman-transfer:results:rabi}
 For the $v'=0$ term, we have
 \begin{align*}
-  b\cdot P^{1.29}=&\Omega_1\Omega_2
+  b\cdot P^{1.29}=&\frac{\Omega_1\Omega_2}2
 \end{align*}
 Combining with the previous measurement of the down-leg Rabi frequency,
-this gives an up-leg Rabi frequency of $2\pi\cdot\todo{number}~\mathrm{MHz/mW^{0.29}}$.
-The value for $15~\mathrm{mW}$ tweezer power is $2\pi\cdot\todo{number}~\mathrm{MHz}$
-for a Rabi frequency ratio $\Omega_2/\Omega_1$ of $\todo{number}$.
+this gives an up-leg Rabi frequency of $2\pi\cdot617.8(72)~\mathrm{kHz/mW^{0.79}}$.
+The value for $15~\mathrm{mW}$ tweezer power is $2\pi\cdot5.248(61)~\mathrm{MHz}$
+for a Rabi frequency ratio $\Omega_2/\Omega_1$ of $66.90(79)$.
 This ratio verifies the assumption $\Omega_2^2\gg\Omega_1^2$ made above for
 the light shift model.
 \todo{compared to theory}
-The background component fitted has the opposite sign
+The background component fitted has opposite sign
 with the $v'=0$ term for red detuned tweezer which reduces $\Omega_{\mathrm{R}}$
-by $\todo{number}~\mathrm{\%}$ in Fig.~\ref{fig:raman-transfer:results:init}B.
+by $\approx\!35~\mathrm{\%}$ in Fig.~\ref{fig:raman-transfer:results:init}B.
 The relative sign should change when the tweezer frequency is tuned
 to be higher than the excited molecular state resonance
 causing an increase in $\Omega_{\mathrm{R}}$.
