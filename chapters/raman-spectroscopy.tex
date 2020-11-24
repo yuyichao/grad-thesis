@@ -175,24 +175,31 @@ the atoms~(Fig.~\ref{fig:raman-spectroscopy:apparatus-sequence}B).
 
 \begin{table}
   \centering
-  \todo{include theory prediction?}
   \caption[Binding energies for $v''=-1,\ N=0$ states]{
     Binding energies and Zeeman shift for $v''=-1,\ N=0$ states.
+    The theory prediction for $|\mathrm{Na(2, 2),Cs(4, 4)}\rangle$
+    was calculated from the potential in~\cite{docenko_coupling_2006}.
+    The prediction for the other two spin states are calculated by Jeremy Hutson
+    using a coupled-channel model calibrated based on the measured binding energy
+    for $|\mathrm{Na(2, 2),Cs(4, 4)}\rangle$ and the scattering length
+    measured from section~\ref{ch:interaction-shift:spectroscopy:results} and
+    Ref.~\cite{hood_multichannel_2020}.
     \label{table:raman-spectroscopy:n0}}
-  \begin{tabular}{|c|c|c|c|}
+  \begin{tabular}{|c|c|c|c|c|}
     \hline
-    \multirow{2}{*}{Spin state}&\multicolumn{2}{c|}{Resonance (MHz)}&\multirowcell{2}{Zeeman shift\\(kHz/G)}\\\cline{2-3}
-    {}&$8.8~\mathrm{G}$&$0~\mathrm{G}$&\\\hline
-    $|\mathrm{Na(2, 2),Cs(4, 4)}\rangle$&$297.8472(28)$&$297.8510(28)$&$-0.43(10)$\\\hline
-    $|\mathrm{Na(1, 1),Cs(3, 3)}\rangle$&$367.7892(25)$&$369.63(29)$&$-209(33)$\\\hline
-    $|\mathrm{Na(2, 2),Cs(3, 3)}\rangle$&$770.200516(24)$&$769.8294(22)$&$42.17(24)$\\\hline
+    \multirow{2}{*}{Spin state}&\multicolumn{3}{c|}{Resonance (MHz)}&\multirowcell{2}{Zeeman shift\\(kHz/G)}\\\cline{2-4}
+    {}&Theory&$8.8~\mathrm{G}$&$0~\mathrm{G}$&\\\hline
+    $|\mathrm{Na(2, 2),Cs(4, 4)}\rangle$&$284$&$297.8472(28)$&$297.8510(28)$&$-0.43(10)$\\\hline
+    $|\mathrm{Na(1, 1),Cs(3, 3)}\rangle$&$369$&$367.7892(25)$&$369.63(29)$&$-209(33)$\\\hline
+    $|\mathrm{Na(2, 2),Cs(3, 3)}\rangle$&$771$&$770.200516(24)$&$769.8294(22)$&$42.17(24)$\\\hline
   \end{tabular}
 \end{table}
 
 We first measure the binding energy for the $v=''-1,\ N=0$ state
 from the atomic states $|\mathrm{Na(2, 2),Cs(4, 4)}\rangle$, $|\mathrm{Na(1, 1),Cs(3, 3)}\rangle$,
 and $|\mathrm{Na(2, 2),Cs(3, 3)}\rangle$.
-\todo{theory prediction? acknowledgement for theory}
+The theory prediction of for the binding energies are shown in
+table~\ref{table:raman-spectroscopy:n0}.
 Fig.~\ref{fig:raman-spectroscopy:resonance} shows the measured Raman resonance from
 $|\mathrm{Na(2, 2),Cs(4, 4)}\rangle$ using $10~\mathrm{mW}$ of tweezer power at a detuning of
 $-100~\mathrm{GHz}$ from the $v'=0$ excited state and a $2~\mathrm{ms}$ pulse time.
@@ -201,7 +208,10 @@ The tweezer also shifts the resonance frequency.
 We remove this effect by measuring the resonance at different tweezer power
 and extrapolate to zero trap powers.
 Similarly, we measure the Zeeman shift and the resonance frequency at zero magnetic field.
-The summary of the results are shown in table~\ref{table:raman-spectroscopy:n0}.
+The summary of the results are also shown in table~\ref{table:raman-spectroscopy:n0}.
+The result shows good agreement with theory prediction,
+especially for the $|\mathrm{Na(1, 1),Cs(3, 3)}\rangle$, and $|\mathrm{Na(2, 2),Cs(3, 3)}\rangle$
+spin state that are calibrated using previous results from our experiment.
 
 \begin{figure}
   \centering
