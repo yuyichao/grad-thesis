@@ -626,17 +626,22 @@ as seen in section~\ref{ch:interaction-shift:spectroscopy:results}.
 
 \begin{figure}
   \centering
-  \includegraphics[width=\textwidth]{figures/raman_transfer_theory_ratio_v0_vs_vhi.pdf}
+  \includegraphics[width=0.95\textwidth]{figures/raman_transfer_theory_ratio_v0_vs_vhi.pdf}
   \caption[Comparison between using a weakly bound and a deeply bound excited state
   as intermediate state for the Raman transition]{
     Comparison between using a weakly bound and a deeply bound excited state
     as intermediate state for the Raman transition.
-    The (A) deeply bound excited state~($v'=0$) has a smaller
-    Raman Rabi frequency`($\Omega_{\mathrm{R}}$) compared to the
-    (B) weakly bound excited state~($v'=63$) at a given detuning.
-    However, the lower scattering rate~($\Gamma_{\mathrm{s}}$) allows a much larger
-    $\Delta_{\max}$,
-    which results in a larger Raman Rabi frequency to scattering rate ratio.
+    (A) Raman Rabi frequency~($\Omega_{\mathrm{R}}$) and
+    scattering rate~($\Gamma_{\mathrm{s}}$) as a function of the tweezer/Raman frequency.
+    A overall decrease of both quantities can be observed
+    with increasing detuning from the atomic threshold.
+    The red line shows the contribution to $\Gamma_{\mathrm{s}}$ from near-threshold states.
+    (B) The deeply bound excited state~($v'=0$, blue lines) has a smaller
+    Raman Rabi frequency~($\Omega_{\mathrm{R}}$) for most detunings compared to the
+    weakly bound excited state~($v'=40$, orange lines).
+    (C) However, the lower scattering rate~($\Gamma_{\mathrm{s}}$) allows a much larger
+    $\Delta_{\max}$, which results in a larger Raman Rabi frequency to scattering rate ratio
+    as shown in (D).
     \label{fig:raman-transfer:v0-vs-vhi}}
 \end{figure}
 
@@ -663,12 +668,14 @@ In the experiment, we use numerical simulation to calculate the Raman transfer e
 for any given Raman beam wavelength taking into account of all states of
 the $\mathrm{c^3\Sigma^+}(\Omega = 1)$
 excited molecular state potential~\cite{grochola_spin-forbidden_2011}
-and the continuum~\cite{liu_ultracold_2017}.
-Fig.~\ref{fig:raman-transfer:v0-vs-vhi} shows the result near a deeply bound
+and the continuum~\cite{liu_ultracold_2017}.\todo{more about calculation}
+Fig.~\ref{fig:raman-transfer:v0-vs-vhi}B-D shows the result near a deeply bound
 and weakly bound excited state.
 Despite having a lower Raman Rabi frequency,
 the deeply bound state has significantly higher transfer efficiency
 and is used as the intermediate state for coherent Raman transfer in our experiment.
+The scattering due to the near-threshold state is very important as can be seen
+from the red line in Fig.~\ref{fig:raman-transfer:v0-vs-vhi}A.
 
 \subsection{Final Molecular State}
 \label{ch:raman-transfer:state-selction:final}

@@ -15,62 +15,83 @@ using LibArchive
 
 using DelimitedFiles
 
-const fname = joinpath(@__DIR__, "../../damop-2020/20MHz_linewidth_c3SigmaOnly_3322_80kHzConfinement.csv.zst")
-const data = LibArchive.Reader(fname) do reader
+read_zst_csv(fname) = LibArchive.Reader(fname) do reader
     LibArchive.support_format_raw(reader)
     LibArchive.support_filter_all(reader)
     LibArchive.next_header(reader)
     readdlm(reader, ',', skipstart=1)
 end
+
+const fname = joinpath(@__DIR__, "../../molecular_raman_paper/data/50MHz_linewidth_8TotalExcitedStates_3322_80kHzConfinement_3.75mWPowerAtAtom.csv.zst")
+const fname2 = joinpath(@__DIR__, "../../molecular_raman_paper/data/50MHz_linewidth_8TotalExcitedStates_3322_80kHzConfinement_3.75mWPowerAtAtom_ThresholdContribution.csv.zst")
+const data = read_zst_csv(fname)
+const data2 = read_zst_csv(fname2)
 const prefix = joinpath(@__DIR__, "../figures/raman_transfer_theory_ratio")
 
 figure()
 ax1 = gca()
-l1 = plot(data[:, 1] .- 288625.081, abs.(data[:, 2] ./ 2π / 1000), "C0",
-          label="\$\\Omega_{\\mathrm{R}}\$")
-l2 = plot(data[:, 1] .- 288625.081, abs.(data[:, 4] ./ 2π / 1000), "C1",
-          label="\$\\Gamma_{\\mathrm{s}}\$")
-text(-32, 2.5, "v'=0", fontsize="small")
-ylabel("\$\\Omega_{\\mathrm{R}}\$ and \$\\Gamma_{\\mathrm{s}}\$ (\$\\mathrm{2\\pi\\times kHz})\$",
-       fontsize="small")
-xlabel("One-Photon Detuning (GHz)")
-ylim([0, 27.5])
+plot(data[:, 1] .- 339724.57, abs.(data[:, 2] ./ 2π / 1000), "C1",
+     label="\$v'=40\$")
+plot(data[:, 1] .- 288625.081, abs.(data[:, 2] ./ 2π / 1000), "C0",
+     label="\$v'=0\$")
 grid()
-tax1 = ax1.twinx()
-l3 = tax1.plot(data[:, 1] .- 288625.081, abs.(data[:, 2] ./ data[:, 4]), "C2",
-               label="\$\\frac{\\Omega_{\\mathrm{R}}}{\\Gamma_{\\mathrm{s}}}\$", linewidth=2)
-ls = [l1; l2; l3]
-legend(ls, [l.get_label() for l in ls], fontsize="small",
-       loc="lower right", bbox_to_anchor=(1, 0.05))
-xlim([-35, 35])
-ylim([0, 55])
-ylabel("\$\\Omega_{\\mathrm{R}}/\\Gamma_{\\mathrm{s}}\$", fontsize="small", color="C2")
-tax1.tick_params(axis="y", labelcolor="C2")
-setp(tax1.get_yticklabels(), fontweight="bold")
-NaCsPlot.maybe_save("$(prefix)_v0")
+yscale("log")
+ax1.yaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
+xlim([-300, 300])
+ylim([6, 20000])
+xlabel("One-Photon Detuning (GHz)")
+ylabel("\$\\Omega_{R}~(2\\pi\\!\\times\\!\\mathrm{kHz})\$")
+legend(fontsize=13.88, loc="center left", handlelength=1, handletextpad=0.3)
+NaCsPlot.maybe_save("$(prefix)_omega")
 
 figure()
 ax2 = gca()
-l1 = plot(data[:, 1] .- 351271.53, abs.(data[:, 2] ./ 2π / 1000), "C0",
-          label="\$\\Omega_{\\mathrm{R}}\$")
-l2 = plot(data[:, 1] .- 351271.53, abs.(data[:, 4] ./ 2π / 1000), "C1",
-          label="\$\\Gamma_{\\mathrm{s}}\$")
-text(-32, 130, "v'=63", fontsize="small")
-ylabel("\$\\Omega_{\\mathrm{R}}\$ and \$\\Gamma_{\\mathrm{s}}\$ (\$\\mathrm{2\\pi\\times kHz})\$",
-       fontsize="small")
-xlabel("One-Photon Detuning (GHz)")
-ylim([0, 596])
+plot(data[:, 1] .- 339724.57, abs.(data[:, 4] ./ 2π / 1000), "C1",
+     label="\$v'=40\$")
+plot(data[:, 1] .- 288625.081, abs.(data[:, 4] ./ 2π / 1000), "C0",
+     label="\$v'=0\$")
 grid()
-tax2 = ax2.twinx()
-l3 = tax2.plot(data[:, 1] .- 351271.53, abs.(data[:, 2] ./ data[:, 4]), "C2",
-              label="\$\\frac{\\Omega_{\\mathrm{R}}}{\\Gamma_{\\mathrm{s}}}\$", linewidth=2)
-ls = [l1; l2; l3]
-legend(ls, [l.get_label() for l in ls], fontsize="small", loc="upper left")
-xlim([-35, 35])
-ylim([0, 1.49])
-ylabel("\$\\Omega_{\\mathrm{R}}/\\Gamma_{\\mathrm{s}}\$", fontsize="small", color="C2")
-tax2.tick_params(axis="y", labelcolor="C2")
-setp(tax2.get_yticklabels(), fontweight="bold")
-NaCsPlot.maybe_save("$(prefix)_vhi")
+yscale("log")
+ax2.yaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
+xlim([-300, 300])
+ylim([0.12, 200000])
+xlabel("One-Photon Detuning (GHz)")
+ylabel("\$\\Gamma_{s}~(2\\pi\\!\\times\\!\\mathrm{kHz})\$")
+legend(fontsize=13.88, loc="upper left", bbox_to_anchor=(0, 0.8),
+       handlelength=1, handletextpad=0.3)
+NaCsPlot.maybe_save("$(prefix)_gamma")
+
+figure()
+ax3 = gca()
+plot(data[:, 1] .- 288625.081, abs.(data[:, 2] ./ data[:, 4]), "C0",
+     label="\$v'=0\$")
+plot(data[:, 1] .- 339724.57, abs.(data[:, 2] ./ data[:, 4]), "C1",
+     label="\$v'=40\$")
+grid()
+yscale("log")
+ax3.yaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
+yticks([0.1, 1, 10], ["0.1", "1", "10"])
+xlim([-300, 300])
+ylim([0.02, 40])
+xlabel("One-Photon Detuning (GHz)")
+ylabel("\$\\Omega_{R}/\\Gamma_{s}\$")
+legend(fontsize=13.88, loc="upper left", bbox_to_anchor=(0, 0.8),
+       handlelength=1, handletextpad=0.3)
+NaCsPlot.maybe_save("$(prefix)_ratio")
+
+figure(figsize=[14.4, 4.5])
+plot(data[:, 1] ./ 1000, abs.(data[:, 2] ./ 2π / 1000), "C0", label="\$\\Omega_{R}\$")
+plot(data2[:, 1] ./ 1000, abs.(data2[:, 4] ./ 2π / 1000), "r", linewidth=4, alpha=0.7)
+plot(data[:, 1] ./ 1000, abs.(data[:, 4] ./ 2π / 1000), "C1", label="\$\\Gamma_{s}\$")
+ylabel("\$2\\pi\\cdot \\mathrm{kHz}\$")
+xlabel("Raman Single-Photon Frequency (THz)")
+yscale("log")
+ylim([0.12, 400])
+yticks([1, 10, 100], ["1", "10", "100"])
+grid()
+legend(ncol=2, loc="lower center", bbox_to_anchor=(0.5, 0.95), frameon=false)
+gca().yaxis.set_label_coords(-0.034, 0.55)
+xlim([287, 340])
+NaCsPlot.maybe_save("$(prefix)_full")
 
 NaCsPlot.maybe_show()
