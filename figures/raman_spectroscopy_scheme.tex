@@ -22,24 +22,10 @@
   color(8mm)=(black);
   color(10mm)=(black)
 }
-\pgfdeclareradialshading{glow}{\pgfpoint{0cm}{0cm}}{
-  color(0mm)=(white);
-  color(5mm)=(white);
-  color(9mm)=(black);
-  color(10mm)=(black)
-}
-
-\begin{tikzfadingfrompicture}[name=glow fading]
-  \shade [shading=glow] (0,0) circle (1);
-\end{tikzfadingfrompicture}
 
 \begin{tikzfadingfrompicture}[name=glow2 fading]
   \shade [shading=glow2] (0,0) circle (1);
 \end{tikzfadingfrompicture}
-
-\tikzstyle{snakearrow} = [decorate, decoration={pre length=0.2cm,
-  post length=0.2cm, snake, amplitude=.4mm,
-  segment length=2mm},thick, ->]
 
 \ifpdf
 % Ensure reproducible output
@@ -57,14 +43,6 @@
 \pgfooclass{tweezer}{
   \method tweezer() {
   }
-  \method drawTweezer(#1,#2,#3) {
-    \begin{pgfonlayer}{tweezer}
-      \shade[shading=radial,path fading=glow fading,shift={(#1,#2)},rotate=90,yscale=1,
-      fill opacity=0.9,inner color=#3]
-      plot[draw,samples=200,domain=-1.5:1.5] function {sqrt(0.01 + x**2 / 5)}
-      -- plot[draw,samples=200,domain=1.5:-1.5] function {-sqrt(0.01 + x**2 / 5)};
-    \end{pgfonlayer}
-  }
   \method drawAtom(#1,#2,#3,#4) {
     \fill [#4,path fading=glow2 fading] (#1,#2) circle (#3);
   }
@@ -74,36 +52,8 @@
   \method drawCsAtom(#1,#2,#3) {
     \pgfoothis.drawAtom(#1,#2,#3,blue);
   }
-  \method drawNaTweezer(#1,#2) {
-    \pgfoothis.drawTweezer(#1,#2,orange!35!black!30);
-  }
-  \method drawCsTweezer(#1,#2) {
-    \pgfoothis.drawTweezer(#1,#2,blue!30!black!30);
-  }
-  \method up(#1,#2) {
-    \pgfoothis.drawCsTweezer(#1,#2);
-    \pgfoothis.drawNaAtom(#1,#2+0.06,0.12);
-    \pgfoothis.drawCsAtom(#1,#2-0.06,0.16);
-  }
-  \method down(#1,#2) {
-    \pgfoothis.drawCsTweezer(#1,#2);
-    \pgfoothis.drawCsAtom(#1,#2+0.06,0.16);
-    \pgfoothis.drawNaAtom(#1,#2-0.06,0.12);
-  }
-  \method naTrap(#1,#2) {
-    \pgfoothis.drawNaTweezer(#1,#2);
-    \pgfoothis.drawNaAtom(#1,#2,0.12);
-  }
-  \method csTrap(#1,#2) {
-    \pgfoothis.drawCsTweezer(#1,#2);
-    \pgfoothis.drawCsAtom(#1,#2,0.16);
-  }
 }
 \pgfoonew \mytweezer=new tweezer()
-
-\makeatletter
-\def\convertto#1#2{\strip@pt\dimexpr #2*65536/\number\dimexpr 1#1}
-\makeatother
 
 \begin{document}
 \begin{tikzpicture}
