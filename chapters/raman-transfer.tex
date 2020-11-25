@@ -1042,7 +1042,8 @@ the near linear dependency of the light shift on the tweezer power.
 The fitting parameters are shown in table~\ref{table:raman-transfer:results:light-shift}.
 Most importantly, the down-leg Rabi frequency is $2\pi\times90.645(50)~\mathrm{MHz/\sqrt{mW}}$
 or $2\pi\times351.07(19)~\mathrm{MHz}$ for $15~\mathrm{mW}$ tweezer power.
-\todo{compared to theoretical value}
+This number is within $50~\mathrm{\%}$ of
+the value $2\pi\times148~\mathrm{MHz/\sqrt{mW}}$ calculated from theory.
 The background light shift is $2.194(17)~\mathrm{kHz/mW}$
 which results in $\approx\!8~\mathrm{\%}$ of the light shift for the previous measurement
 and is not a significant factor.
@@ -1104,10 +1105,12 @@ For the $v'=0$ term, we have
 Combining with the previous measurement of the down-leg Rabi frequency,
 this gives an up-leg Rabi frequency of $2\pi\times617.8(72)~\mathrm{kHz/mW^{0.79}}$.
 The value for $15~\mathrm{mW}$ tweezer power is $2\pi\times5.248(61)~\mathrm{MHz}$
-for a Rabi frequency ratio $\Omega_2/\Omega_1$ of $66.90(79)$.
-This ratio verifies the assumption $\Omega_2^2\gg\Omega_1^2$ made above for
+for a Rabi frequency ratio $\Omega_2/\Omega_1$ of $66.90(79)$,
+which is close to the theory prediction of $77.7$.
+Therefore, this should not cause the ratio of the Raman Rabi frequency to scattering rate
+from the $v'=0$ state to be higher than expected.
+This ratio also verifies the assumption $\Omega_2^2\gg\Omega_1^2$ made above for
 the light shift model.
-\todo{compared to theory}
 The background component fitted has opposite sign
 with the $v'=0$ term for red detuned tweezer which reduces $\Omega_{\mathrm{R}}$
 by $\approx\!35~\mathrm{\%}$ in Fig.~\ref{fig:raman-transfer:results:init}B.
@@ -1210,9 +1213,13 @@ We demostrated the coherent creation of a single molecule in the optical tweezer
 using only optical transitions and achieved control on all degrees of freedoms.
 The technique we developed relies on fewer special properties of the system
 and can be generalized to associate more laser-coolable atoms into molecules.
-The transfer efficiency in our experiment appears to be limited
-by an undetermined scattering mechanism which may be caused by
-either the technical noise of the laser
+We calibrated the parameters of the Raman transition by measuring the dependency
+with tweezer power and detuning.
+The resulting Rabi frequencies matches quite well with the theory prediction
+but we the scattering rate is much higher than expected.
+This undetermined scattering mechanism appears to be the limiting factor
+for the transfer efficiency in our experiment.
+We believe this could be caused by either technical sources
 or other process involving the molecular excited state that are not accounted for.
 We discussed both possibilities based on our observations
 and concluded that two likely source of the scattering are the spectral noise of the laser
