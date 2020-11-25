@@ -694,8 +694,8 @@ L -2 0
      </g>
     </g>
     <g id="text_7">
-     <!-- $\Gamma_{\mathrm{a}}~(\mathrm{2\pi\cdot Hz})$ -->
-     <g transform="translate(22.396875 193.856)rotate(-90)scale(0.2 -0.2)">
+     <!-- $\Gamma_{\mathrm{a}}~(\mathrm{2\pi\times Hz})$ -->
+     <g transform="translate(22.396875 199.056)rotate(-90)scale(0.2 -0.2)">
       <defs>
        <path d="M 9.8125 0 
 L 9.8125 72.90625 
@@ -759,12 +759,20 @@ L 10.59375 45.703125
 L 3.609375 45.703125 
 z
 " id="DejaVuSans-960"/>
-       <path d="M 10.6875 40.921875 
-L 21 40.921875 
-L 21 28.515625 
-L 10.6875 28.515625 
+       <path d="M 70.125 53.71875 
+L 47.796875 31.296875 
+L 70.125 8.984375 
+L 64.3125 3.078125 
+L 41.890625 25.484375 
+L 19.484375 3.078125 
+L 13.71875 8.984375 
+L 35.984375 31.296875 
+L 13.71875 53.71875 
+L 19.484375 59.625 
+L 41.890625 37.203125 
+L 64.3125 59.625 
 z
-" id="DejaVuSans-8901"/>
+" id="DejaVuSans-215"/>
        <path d="M 9.8125 72.90625 
 L 19.671875 72.90625 
 L 19.671875 43.015625 
@@ -785,10 +793,10 @@ z
       <use transform="translate(134.770183 0.125)" xlink:href="#DejaVuSans-40"/>
       <use transform="translate(173.783855 0.125)" xlink:href="#DejaVuSans-50"/>
       <use transform="translate(237.406902 0.125)" xlink:href="#DejaVuSans-960"/>
-      <use transform="translate(317.094402 0.125)" xlink:href="#DejaVuSans-8901"/>
-      <use transform="translate(368.363933 0.125)" xlink:href="#DejaVuSans-72"/>
-      <use transform="translate(443.559246 0.125)" xlink:href="#DejaVuSans-122"/>
-      <use transform="translate(496.04948 0.125)" xlink:href="#DejaVuSans-41"/>
+      <use transform="translate(317.094402 0.125)" xlink:href="#DejaVuSans-215"/>
+      <use transform="translate(420.365886 0.125)" xlink:href="#DejaVuSans-72"/>
+      <use transform="translate(495.561199 0.125)" xlink:href="#DejaVuSans-122"/>
+      <use transform="translate(548.051433 0.125)" xlink:href="#DejaVuSans-41"/>
      </g>
     </g>
    </g>

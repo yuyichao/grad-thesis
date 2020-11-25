@@ -31,7 +31,7 @@ l1 = plot(data[:, 1] .- 288625.081, abs.(data[:, 2] ./ 2π / 1000), "C0",
 l2 = plot(data[:, 1] .- 288625.081, abs.(data[:, 4] ./ 2π / 1000), "C1",
           label="\$\\Gamma_{\\mathrm{s}}\$")
 text(-32, 2.5, "v'=0", fontsize="small")
-ylabel("\$\\Omega_{\\mathrm{R}}\$ and \$\\Gamma_{\\mathrm{s}}\$ (\$2\\pi\\cdot \\mathrm{kHz})\$",
+ylabel("\$\\Omega_{\\mathrm{R}}\$ and \$\\Gamma_{\\mathrm{s}}\$ (\$\\mathrm{2\\pi\\times kHz})\$",
        fontsize="small")
 xlabel("One-Photon Detuning (GHz)")
 ylim([0, 27.5])
@@ -56,7 +56,7 @@ l1 = plot(data[:, 1] .- 351271.53, abs.(data[:, 2] ./ 2π / 1000), "C0",
 l2 = plot(data[:, 1] .- 351271.53, abs.(data[:, 4] ./ 2π / 1000), "C1",
           label="\$\\Gamma_{\\mathrm{s}}\$")
 text(-32, 130, "v'=63", fontsize="small")
-ylabel("\$\\Omega_{\\mathrm{R}}\$ and \$\\Gamma_{\\mathrm{s}}\$ (\$2\\pi\\cdot \\mathrm{kHz})\$",
+ylabel("\$\\Omega_{\\mathrm{R}}\$ and \$\\Gamma_{\\mathrm{s}}\$ (\$\\mathrm{2\\pi\\times kHz})\$",
        fontsize="small")
 xlabel("One-Photon Detuning (GHz)")
 ylim([0, 596])
