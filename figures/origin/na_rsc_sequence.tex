@@ -1,7 +1,11 @@
 \documentclass[border=0pt]{standalone}
 \usepackage{hyperref}
 \usepackage{tikz}
-\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{decorations.pathreplacing,
+  fadings
+}
+\tikzfading[name=fade img right,left color=transparent!100, right color=transparent!0]
+\tikzfading[name=fade img left,right color=transparent!100, left color=transparent!0]
 \usepackage{graphicx}
 
 \ifpdf
@@ -95,10 +99,13 @@
     \draw[line width=2,orange] (0,-2) -- (22.4,-2);
   \end{scope}
 
-  \node[rotate=180] at (17.305, 0.655)
-  {\includegraphics[width=1.01cm, height=5.71cm]{fadings/fade_img.png}};
-  \node at (5.095, 0.655)
-  {\includegraphics[width=1.01cm, height=5.71cm]{fadings/fade_img.png}};
+  \fill[white,path fading=fade img right] (16.8, -2.2) rectangle (17.81, 3.51);
+  \fill[white,path fading=fade img right] (16.8, -2.2) rectangle (17.81, 3.51);
+  \fill[white,path fading=fade img right] (16.8, -2.2) rectangle (17.81, 3.51);
+
+  \fill[white,path fading=fade img left] (5.6, -2.2) rectangle (4.59, 3.51);
+  \fill[white,path fading=fade img left] (5.6, -2.2) rectangle (4.59, 3.51);
+  \fill[white,path fading=fade img left] (5.6, -2.2) rectangle (4.59, 3.51);
 
   \path (5.0, 2.3) node[left,purple,align=center] {\textbf{Tweezer}};
   \path (4.8, 0.5) node[left,align=center] {\textbf{Raman}};
