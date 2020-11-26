@@ -81,3 +81,5 @@ save_img("lens", draw_circle_fade(grad_full, 600, 84, (0.0, 0.0, 1.0), (0.0, 0.6
 save_img("waveplate", draw_circle_fade(grad_full, 600, 42, (0.0, 0.0, 0.502), (0.0, 0.0, 0.8)))
 save_img("pbs", draw_linear_fade(grad_full, 1000, 1, (0.0, 0.4, 1.0), (0.0, 0.502, 1.0)))
 save_img("fade_img", draw_linear_fade(grad_fade_img, 1000, 1, (1.0, 1.0, 1.0)))
+save_img("cs_atom", draw_circle_fade(grad_glow2, 180, 180, (0.0, 0.0, 1.0)))
+save_img("na_atom", draw_circle_fade(grad_glow2, 250, 250, (1.0, 0.483, 0.0)))
