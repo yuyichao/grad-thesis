@@ -7,10 +7,21 @@
   decorations.pathmorphing,
   decorations.pathreplacing,
   decorations.markings,
+  fadings,
   positioning,
   shapes,
   arrows.meta
 }
+\pgfdeclareradialshading{glow}{\pgfpoint{0cm}{0cm}}{
+  color(0mm)=(white);
+  color(5mm)=(white);
+  color(9mm)=(black);
+  color(10mm)=(black)
+}
+
+\begin{tikzfadingfrompicture}[name=glow fading]
+  \shade [shading=glow] (0,0) circle (1);
+\end{tikzfadingfrompicture}
 
 \ifpdf
 % Ensure reproducible output
@@ -28,13 +39,12 @@
 \begin{tikzpicture}
   \begin{scope}[rotate=-90]
     \clip(-2.5,-0.85) rectangle (2.5, 0.85);
-    \begin{scope}
-      \clip plot[samples=200,domain=-2.5:2.5] function {sqrt(0.005 + x**2 / 4)}
-      -- plot[samples=200,domain=2.5:-2.5] function {-sqrt(0.005 + x**2 / 4)};
-      \node at (0, 0) {\includegraphics[width=2.504cm,height=5cm]{fadings/red_tweezer.png}};
-      \fill[white] plot[draw,samples=200,domain=1.2:2.5] function {sqrt(0.005 + x**2 / 4)}
-      -- plot[draw,samples=200,domain=2.5:1.2] function {-sqrt(0.005 + x**2 / 4)};
-    \end{scope}
+    \shade[shading=radial,path fading=glow fading,
+    fill opacity=0.9,inner color=red!80]
+    plot[samples=200,domain=-2.5:2.5] function {sqrt(0.005 + x**2 / 4)}
+    -- plot[samples=200,domain=2.5:-2.5] function {-sqrt(0.005 + x**2 / 4)};
+    \fill[white] plot[draw,samples=200,domain=1.2:2.5] function {sqrt(0.005 + x**2 / 4)}
+    -- plot[draw,samples=200,domain=2.5:1.2] function {-sqrt(0.005 + x**2 / 4)};
   \end{scope}
   \draw[black,fill=white,line width=1] (0.605, -1.2) -- (0.85, -1.6) -- (0.85, -3.2) --
   (-0.85, -3.2) -- (-0.85, -1.6) -- (-0.605, -1.2) -- cycle;
