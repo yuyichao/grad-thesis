@@ -31,7 +31,8 @@
     \begin{scope}
       \clip plot[samples=200,domain=-2.5:2.5] function {sqrt(0.005 + x**2 / 4)}
       -- plot[samples=200,domain=2.5:-2.5] function {-sqrt(0.005 + x**2 / 4)};
-      \node at (0, 0) {\includegraphics[width=2.504cm,height=5cm]{fadings/red_tweezer.png}};
+      \node[rotate=90] at (0, 0)
+      {\includegraphics[width=5cm,height=2.504cm]{fadings/red_tweezer.png}};
       \fill[white] plot[draw,samples=200,domain=1.2:2.5] function {sqrt(0.005 + x**2 / 4)}
       -- plot[draw,samples=200,domain=2.5:1.2] function {-sqrt(0.005 + x**2 / 4)};
     \end{scope}

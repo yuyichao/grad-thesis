@@ -47,9 +47,9 @@
         \pgfgettransformentries{\myscaleX}{\mytmp}{\mytmp}{\myscaleY}{\mytmp}{\mytmp}
         \clip[rotate=90] plot[draw,samples=200,domain=-1.5:1.5] function {sqrt(0.01 + x**2 / 5)}
         -- plot[draw,samples=200,domain=1.5:-1.5] function {-sqrt(0.01 + x**2 / 5)};
-        \node at (0, 0)
+        \node[rotate=90] at (0, 0)
         {\scalebox{\myscaleX}[\myscaleY]{
-            \includegraphics[width=1.356466cm,height=3cm]{fadings/na_tweezer.png}}};
+            \includegraphics[height=1.356466cm,width=3cm]{fadings/na_tweezer.png}}};
       \end{scope}
     \end{pgfonlayer}
   }
@@ -59,9 +59,9 @@
         \pgfgettransformentries{\myscaleX}{\mytmp}{\mytmp}{\myscaleY}{\mytmp}{\mytmp}
         \clip[rotate=90] plot[draw,samples=200,domain=-1.5:1.5] function {sqrt(0.01 + x**2 / 5)}
         -- plot[draw,samples=200,domain=1.5:-1.5] function {-sqrt(0.01 + x**2 / 5)};
-        \node at (0, 0)
+        \node[rotate=90] at (0, 0)
         {\scalebox{\myscaleX}[\myscaleY]{
-            \includegraphics[width=1.356466cm,height=3cm]{fadings/cs_tweezer.png}}};
+            \includegraphics[height=1.356466cm,width=3cm]{fadings/cs_tweezer.png}}};
       \end{scope}
     \end{pgfonlayer}
   }

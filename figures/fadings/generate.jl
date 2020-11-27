@@ -102,3 +102,8 @@ save_img("na_atom", draw_circle_fade(grad_atom, 250, 250, (1.0, 0.483, 0.0)))
 save_img("cs_tweezer", draw_circle_fade(grad_tweezer, 1200, 600, (0.702, 0.702, 0.788)))
 save_img("na_tweezer", draw_circle_fade(grad_tweezer, 1200, 600, (0.804, 0.753, 0.702)))
 save_img("red_tweezer", draw_circle_fade(grad_tweezer, 1200, 600, (1.0, 0.2, 0.2)))
+save_img("red_tweezer_long",
+         draw_circle_fade(grad_tweezer, 2400, 600, (1.0, 0.2, 0.2))[:, 1:end ÷ 2, :])
+save_img("orange_tweezer", draw_circle_fade(grad_tweezer, 1200, 600, (1.0, 0.6, 0.2)))
+save_img("orange_tweezer_long",
+         draw_circle_fade(grad_tweezer, 2400, 600, (1.0, 0.6, 0.2))[:, 1:end ÷ 2, :])

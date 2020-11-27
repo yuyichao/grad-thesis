@@ -7,10 +7,21 @@
   decorations.pathmorphing,
   decorations.pathreplacing,
   decorations.markings,
+  fadings,
   positioning,
   shapes,
   arrows.meta
 }
+\pgfdeclareradialshading{glow}{\pgfpoint{0cm}{0cm}}{
+  color(0mm)=(white);
+  color(5mm)=(white);
+  color(9mm)=(black);
+  color(10mm)=(black)
+}
+
+\begin{tikzfadingfrompicture}[name=glow fading]
+  \shade [shading=glow] (0,0) circle (1);
+\end{tikzfadingfrompicture}
 
 \ifpdf
 % Ensure reproducible output
@@ -27,38 +38,34 @@
 
 \begin{tikzpicture}[scale=1.2]
   \begin{scope}
-    \pgfgettransformentries{\myscaleX}{\mytmp}{\mytmp}{\myscaleY}{\mytmp}{\mytmp}
-    \clip plot[samples=200,domain=-1.5:0] function {sqrt(0.0005 + x**2 / 20)}
-    -- plot[samples=200,domain=0:-1.5] function {-sqrt(0.0005 + x**2 / 20)};
-    \node at (0, 0)
-    {\scalebox{\myscaleX}[\myscaleY]{
-        \includegraphics[width=3cm,height=1.789cm]{fadings/red_tweezer.png}}};
+    \clip (0, -1) rectangle (-1.5, 1);
+    \shade[shading=radial,path fading=glow fading,
+    fill opacity=0.9,inner color=red!80]
+    plot[samples=200,domain=-1.5:1.5] function {sqrt(0.0005 + x**2 / 20)}
+    -- plot[samples=200,domain=1.5:-1.5] function {-sqrt(0.0005 + x**2 / 20)};
   \end{scope}
   \begin{scope}
-    \pgfgettransformentries{\myscaleX}{\mytmp}{\mytmp}{\myscaleY}{\mytmp}{\mytmp}
-    \clip plot[samples=200,domain=0:3] function {sqrt(0.0005 + x**2 / 20)}
-    -- plot[samples=200,domain=3:0] function {-sqrt(0.0005 + x**2 / 20)};
-    \node[rotate=180] at (1.5, 0)
-    {\scalebox{\myscaleX}[\myscaleY]{
-        \includegraphics[width=3cm,height=1.789cm]{fadings/red_tweezer_long.png}}};
+    \clip (0, -1) rectangle (3, 1);
+    \shade[shading=radial,path fading=glow fading,
+    fill opacity=0.9,inner color=red!80]
+    plot[samples=200,domain=-3:3] function {sqrt(0.0005 + x**2 / 20)}
+    -- plot[samples=200,domain=3:-3] function {-sqrt(0.0005 + x**2 / 20)};
   \end{scope}
   \node[right] at (1.50, 0) {Tweezer};
 
   \begin{scope}[shift={({1 / sin(55) + 1 / tan(55)}, -1)}, rotate=180]
     \begin{scope}
-      \pgfgettransformentries{\myscaleX}{\mytmp}{\mytmp}{\myscaleY}{\mytmp}{\mytmp}
       \clip ({1 / sin(55) - 0.5 * cos(62.5)}, {-0.5 * sin(62.5)}) --
       ({1 / sin(55) + 0.5 * cos(62.5)}, {0.5 * sin(62.5)}) --
       (0, 1) -- (0, -1) -- cycle;
-      \clip plot[samples=200,domain=-10:10] function {sqrt(0.002 + x**2 / 80)}
+      \shade[shading=radial,path fading=glow fading,
+      fill opacity=0.5,inner color=orange!80]
+      plot[samples=200,domain=-10:10] function {sqrt(0.002 + x**2 / 80)}
       -- plot[samples=200,domain=10:-10] function {-sqrt(0.002 + x**2 / 80)};
-      \node[opacity=0.7] at (0, 0)
-      {\scalebox{\myscaleX}[\myscaleY]{
-          \includegraphics[width=6cm,height=2.238cm]{fadings/orange_tweezer.png}}};
     \end{scope}
     \draw[line width=1, opacity=0.7] (0, -0.3) --
     node[opacity=1,right,align=left] {Beam\\profiler} (0, 0.3);
-  \end{scope}
+   \end{scope}
 
   \begin{scope}[rotate=-55]
     \begin{scope}
@@ -69,19 +76,18 @@
       -- cycle;
     \end{scope}
     \begin{scope}
-      \pgfgettransformentries{\myscaleX}{\mytmp}{\mytmp}{\myscaleY}{\mytmp}{\mytmp}
-      \clip plot[samples=200,domain=0:4.5] function {sqrt(0.002 + x**2 / 80)}
-      -- plot[samples=200,domain=4.5:0] function {-sqrt(0.002 + x**2 / 80)};
-      \node[rotate=125] at (5, 0)
-      {\scalebox{1.2}{
-          \includegraphics[width=10cm,height=2.238cm]{fadings/orange_tweezer_long.png}}};
+      \clip (0, -1) rectangle (4.5, 1);
+      \shade[shading=radial,path fading=glow fading,
+      fill opacity=0.9,inner color=orange!80]
+      plot[samples=200,domain=-10:10] function {sqrt(0.002 + x**2 / 80)}
+      -- plot[samples=200,domain=10:-10] function {-sqrt(0.002 + x**2 / 80)};
     \end{scope}
     \begin{scope}
-      \pgfgettransformentries{\myscaleX}{\mytmp}{\mytmp}{\myscaleY}{\mytmp}{\mytmp}
-      \clip plot[samples=200,domain=-1:0] function {sqrt(0.002 + x**2 / 80)}
-      -- plot[samples=200,domain=0:-1] function {-sqrt(0.002 + x**2 / 80)};
-      \node at (0, 0)
-      {\scalebox{1.2}{\includegraphics[width=3cm,height=2.238cm]{fadings/orange_tweezer.png}}};
+      \clip (0, -0.3) rectangle (-1.2, 0.3);
+      \shade[shading=radial,path fading=glow fading,
+      fill opacity=0.9,inner color=orange!80]
+      plot[samples=200,domain=-1.:1.] function {sqrt(0.002 + x**2 / 80)}
+      -- plot[samples=200,domain=1.:-1.] function {-sqrt(0.002 + x**2 / 80)};
     \end{scope}
     \begin{scope}
       \fill[green!50!black,opacity=0.5] (2.0, 0.65) -- (2.35, 0.55) -- (2.35, 0.26)
