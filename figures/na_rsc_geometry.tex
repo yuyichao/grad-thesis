@@ -45,13 +45,17 @@
   \pgfmathsetmacro{\radiusv}{.7 * \radiush}
   \pgfmathsetmacro{\waist}{.15}
   \pgfmathsetmacro{\xscale}{\radiush / sqrt(1 + (\waist)^2)}
+  \pgfmathsetmacro{\radiusvs}{\radiusv / 0.9686}
+  \pgfmathsetmacro{\radiushs}{\radiush / 0.9686}
 
   \fill[left color=red!50!black,right color=red!50!black,middle color=red!43,
-  shading=axis,rotate=-45,shading angle=32]
-  plot[domain={-1}:{1}, smooth, variable=\y] ({sqrt((\y)^2 + (\waist)^2) * \xscale}, \y * \theight)
-  arc (0:180:\radiush cm and \radiusv cm)
-  -- plot[domain={-1}:{1}, smooth, variable=\y] ({-sqrt((\y)^2 + (\waist)^2) * \xscale}, -\y * \theight)
-  arc (180:360:\radiush cm and \radiusv cm);
+  shading=axis,rotate=-45,shading angle=40]
+  plot[domain={-1}:{1}, smooth, variable=\y]
+  ({sqrt((\y)^2 + (\waist)^2) * \xscale}, \y * \theight)
+  arc (-14.398:194.398:\radiushs cm and \radiusvs cm)
+  -- plot[domain={-1}:{1}, smooth, variable=\y]
+  ({-sqrt((\y)^2 + (\waist)^2) * \xscale}, -\y * \theight)
+  arc (165.602:374.398:\radiushs cm and \radiusvs cm);
 
   \begin{scope}[transform canvas={rotate={4}}]
     \arrowthreeD{orange}{(0.6, 0)}{-90}{0.4}{3.4};
@@ -106,17 +110,27 @@
   \draw[line width=1.5,color=black!60]
   (-3.14, -0.40+3.14*0.28) arc (-90:-240:0.20 and 0.40);
 
-  \fill[left color=red!50!black,right color=red!50!black,middle color=red!43,
-  shading=axis,rotate=-45,shading angle=40]
-  plot[domain={-1}:{0}, smooth, variable=\y] ({sqrt((\y)^2 + (\waist)^2) * \xscale}, \y * \theight)
-  arc (0:180:{(\radiush)*(\waist)} and {(\radiusv)*(\waist)})
-  -- plot[domain={0}:{1}, smooth, variable=\y] ({-sqrt((\y)^2 + (\waist)^2) * \xscale}, -\y * \theight)
-  arc (180:360:\radiush cm and \radiusv cm);
-  \fill[red!50!gray,rotate=-45]
-  ({-sqrt(1 + (\waist)^2) * \xscale}, -\theight*1.05)
-  arc (180:{360+180}:\radiush cm and \radiusv cm);
+  \begin{scope}
+    \clip[rotate=-45]
+    plot[domain={-1}:{0}, smooth, variable=\y] ({sqrt((\y)^2 + (\waist)^2) * \xscale}, \y * \theight)
+    arc (0:180:{(\radiush)*(\waist)} and {(\radiusv)*(\waist)})
+    -- plot[domain={0}:{1}, smooth, variable=\y] ({-sqrt((\y)^2 + (\waist)^2) * \xscale}, -\y * \theight)
+    arc (165.602:374.398:\radiushs cm and \radiusvs cm);
+    \fill[left color=red!50!black,right color=red!50!black,middle color=red!43,
+    shading=axis,rotate=-45,shading angle=40]
+    plot[domain={-1}:{1}, smooth, variable=\y]
+    ({sqrt((\y)^2 + (\waist)^2) * \xscale}, \y * \theight)
+    arc (-14.398:194.398:\radiushs cm and \radiusvs cm)
+    -- plot[domain={-1}:{1}, smooth, variable=\y]
+    ({-sqrt((\y)^2 + (\waist)^2) * \xscale}, -\y * \theight)
+    arc (165.602:374.398:\radiushs cm and \radiusvs cm);
+  \end{scope}
 
-  \node[white,rotate=-5] at ($(-135:\theight) + (-0.2, 0)$) {\LARGE \textbf{Tweezer}};
+  \fill[red!60!gray!84!white,rotate=-45]
+  ({-sqrt(1 + (\waist)^2) * \xscale}, -\theight)
+  arc (165.602:{360+165.602}:\radiushs cm and \radiusvs cm);
+
+  \node[white,rotate=-5] at ($(-135:\theight) + (-0.25, 0)$) {\LARGE \textbf{Tweezer}};
 \end{tikzpicture}
 
 \end{document}
