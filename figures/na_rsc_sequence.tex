@@ -55,10 +55,11 @@
       \draw[line width=1,blue] plot[domain={2.8*\i}:{2.8*\i+1.6},variable=\x]
       ({\x}, {sin((\x-2.8*\i) * 112.5)^4}) -- (2.8*\i + 2.8, 0);
     }
-    \path[blue] (2.8*2+0.8, 1) node[above,align=center] {Axial $z$};
+    \node[above,blue,align=center] at (2.8*2+0.8, 1) {Axial $z$};
     \foreach \i in {0,...,3} {
-      \path (5.6*\i + 0.8, -0.15) node[below,blue,align=center] {\textbf{$m$-th}\\\textbf{order}};
-      \path (5.6*\i + 3.6, -0.15) node[below,blue,align=center] {\textbf{$(\!m-1\!)$-th}\\\textbf{order}};
+      \node[below,blue,align=center] at (5.6*\i + 0.8, -0.15) {\textbf{$m$-th}\\\textbf{order}};
+      \node[below,blue,align=center] at (5.6*\i + 3.6, -0.15)
+      {\textbf{$(\!m-1\!)$-th}\\\textbf{order}};
     }
 
     %% Radial 2
@@ -69,9 +70,9 @@
       \draw[line width=1,red] (5.6*\i, 0) -- plot[domain={5.6*\i+1.9}:{5.6*\i+2.5},variable=\x]
       ({\x}, {1.5*sin((\x-5.6*\i-1.9) * 300)^4}) -- (5.6*\i+5.6, 0);
     }
-    \path[red] (5.6*1+2.2, 1.5) node[above,align=center] {Radial $x$};
-    \path[red] (5.6*1+2.1, 0.05) node[below,align=center] {\textbf{pulse $1$}};
-    \path[red] (5.6*2+2.1, 0.05) node[below,align=center] {\textbf{pulse $2$}};
+    \node[above,red,align=center] at (5.6*1+2.2, 1.5) {Radial $x$};
+    \node[below,red,align=center] at (5.6*1+2.1, 0.05) {\textbf{pulse $1$}};
+    \node[below,red,align=center] at (5.6*2+2.1, 0.05) {\textbf{pulse $2$}};
 
     %% Radial 3
     \foreach \i in {0,...,3} {
@@ -81,9 +82,9 @@
       \draw[line width=1,black] (5.6*\i, 0) -- plot[domain={5.6*\i+4.7}:{5.6*\i+5.3},variable=\x]
       ({\x}, {1.5*sin((\x-5.6*\i-4.7) * 300)^4}) -- (5.6*\i+5.6, 0);
     }
-    \path[black] (5.6*1+5.0, 1.5) node[above,align=center] {Radial $y$};
-    \path[black] (5.6*1+5.2, 0.05) node[below,align=center] {\textbf{pulse $1$}};
-    \path[black] (5.6*2+5.2, 0.05) node[below,align=center] {\textbf{pulse $2$}};
+    \node[above,align=center] at (5.6*1+5.0, 1.5) {Radial $y$};
+    \node[below,align=center] at (5.6*1+5.2, 0.05) {\textbf{pulse $1$}};
+    \node[below,align=center] at (5.6*2+5.2, 0.05) {\textbf{pulse $2$}};
 
     %% OP
     \foreach \i in {0,...,7} {
@@ -100,9 +101,9 @@
   \node at (5.095, 0.655)
   {\includegraphics[width=1.01cm, height=5.71cm]{fadings/fade_img.png}};
 
-  \path (5.0, 2.3) node[left,purple,align=center] {\textbf{Tweezer}};
-  \path (4.8, 0.5) node[left,align=center] {\textbf{Raman}};
-  \path (5.15, -1.5) node[left,orange,align=center] {\textbf{Optical}\\\textbf{pumping}};
+  \node[left,purple,align=center] at (5.0, 2.3) {\textbf{Tweezer}};
+  \node[left,align=center] at (4.8, 0.5) {\textbf{Raman}};
+  \node[left,orange,align=center] at (5.15, -1.5) {\textbf{Optical}\\\textbf{pumping}};
   \draw[line width=2,orange,->] (5.6,-2) -- (17.8,-2) node[right, below] {\scalebox{2}{$t$}};
 
   %% Cycle mark
