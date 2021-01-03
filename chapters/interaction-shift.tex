@@ -7,7 +7,7 @@
 \label{ch:interaction-shift:introduction}
 
 The interaction between the atoms is governed by the short range molecular potential.
-For low energy process with long de Broglie wavelength, however,
+For low energy processes with long de Broglie wavelength, however,
 the complexity in the interaction at short range
 can be ignored and the collision is approximately described by a single number,
 the $s$-wave scattering length $a$.
@@ -15,7 +15,7 @@ Measuring the scattering length between the atoms allows us to probe the propert
 of the molecular potential and refine our prediction on molecule formation,
 e.g. the binding energy, without direct observation of the molecular states.
 Traditionally, such measurements are done either by scattering in bulk gases
-or by spectroscopy in optical lattices both of which requires the preparation
+or by spectroscopy in optical lattices, both of which require the preparation
 of many atoms in quantum degeneracy.
 The preparation of two single atoms in the motional ground state in a single tweezer,
 however, allow us to cleanly perform this measurement using only two atoms
@@ -74,7 +74,7 @@ The first term and the second term only relies on the COM motion and relative mo
 respectively and can be solved independently. The third term mixes the COM and relative motion
 and is proportional to the trapping frequency difference.
 If the trapping frequencies are the same for the two atoms, the third term is $0$ and
-the solution is fully separateable.
+the solution is fully separable.
 As mentioned above, since the trapping frequencies for the two atoms are similar,
 we will assume the mixing term is small and treat it as a small correction in the calculation.
 
@@ -117,7 +117,7 @@ so that we only need to consider the relative motion,
 \]
 When treating the interaction as perturbation, the base solution is the harmonic oscillator
 states for the relative motion $|n_{\mathrm{rel},x},n_{\mathrm{rel},y},n_{\mathrm{rel},z}\rangle$.
-The energy level pertubation is then,
+The energy level perturbation is then,
 \begin{align*}
   \Delta_{n_{\mathrm{rel},x},n_{\mathrm{rel},y},n_{\mathrm{rel},z}}=&\langle n_{\mathrm{rel},x},n_{\mathrm{rel},y},n_{\mathrm{rel},z}|V_{\mathrm{int}}\paren{\mathbf{r}_{\mathrm{rel}}}|n_{\mathrm{rel},x},n_{\mathrm{rel},y},n_{\mathrm{rel},z}\rangle\\
   =&\frac{2\pi\hbar^2a}{\mu}\langle n_{\mathrm{rel},x},n_{\mathrm{rel},y},n_{\mathrm{rel},z}|\delta_{reg}\paren{\mathbf{r}_{\mathrm{rel}}}|n_{\mathrm{rel},x},n_{\mathrm{rel},y},n_{\mathrm{rel},z}\rangle\\
@@ -138,7 +138,7 @@ and is also stronger for stronger confinement where the wavefunction density is 
 We can see from Eq.~\ref{eq:interaction-shift-perturb-shift} that the shift is only
 non-zero when all of $n_{\mathrm{rel},i}$'s are even.
 The shift is also smaller for higher motional excited state with smaller wavefunction density.
-This means that the shift will only be observable if the atom is cooled to closed to
+This means that the shift will only be observable if the atom is cooled to close to
 the motional ground state and will be small or zero for hot atoms.
 
 \subsection{Non-perturbative Calculation}
@@ -146,10 +146,10 @@ the motional ground state and will be small or zero for hot atoms.
 
 The first order perturbative result breaks down for large $a$ when the energy shift
 approaches the motional energy scale $\omega_{\mathrm{rel},i}$.
-Moreover, due to the divergence nature of the delta-function in the contact interaction potential,
+Moreover, due to the divergent nature of the delta-function in the contact interaction potential,
 higher order perturbative calculation does not converge.
 It is therefore necessary to use a non-perturbative solution of the interacting atoms
-in order to interprete measurement of the shift for strong interaction.
+in order to interpret measurements of the shift for strong interaction.
 To do this, we first ignore the last term in
 the Hamiltonian~\ref{eq:interaction-shift:full-hamiltonian} so that it is fully separable
 into COM and relative motion.
@@ -167,7 +167,7 @@ These differences from the real Hamiltonian will be included later,
 together with the mixing term, as a correction~\cite{
   bertelsen_association_2007,deuretzbacher_heteronuclear_2008}.
 The analytic solutions are only given for the interacting states,
-but there also many relative states which have zero wavefunction at the $\delta$-function,
+but there are also many relative states which have zero wavefunction at the $\delta$-function,
 and therefore are unaffected.
 We have identified these states from the perturbative calculation
 in section~\ref{ch:interaction-shift:theory:perturb}
@@ -183,7 +183,7 @@ and so are just cylindrical harmonic oscillator wavefunctions with eigenenergies
   \frac{E_{n,l,m_z}}{\hbar\omega_z}=&\paren{2 n + |l| + 1}\eta + \paren{m_z + 1/2}
                                       \numberthis{eq:interaction-shift:cylind-E}
 \end{align*}
-where $n$ is the principle quantum number for the radial part.
+where $n$ is the principal quantum number for the radial part.
 In order to find the non-interacting wavefunction,
 we need to remove the interaction wavefunction from
 the cylindrical harmonic oscillator wavefunctions.
@@ -218,7 +218,7 @@ and $\Gamma(x)$ is the Euler gamma function.
 The energy $E$ and $E_0$ are in units of the axial trapping frequency $\omega_z$,
 and so the ground state energy $E_0 = \eta + 1/2$.
 
-The COM Hamiltonian is a cylindrical harmonic oscillator and the energies is given by
+The COM Hamiltonian is a cylindrical harmonic oscillator and the energy is given by
 Eq.~\ref{eq:interaction-shift:cylind-E}.
 
 \begin{figure}
@@ -236,13 +236,13 @@ Eq.~\ref{eq:interaction-shift:cylind-E}.
     The states are labeled with their relative and COM axial motional quantum numbers
     $m_{\mathrm{rel},z}$ and $m_{\mathrm{COM},z}$.
     Due to the relative and COM motion mixing term and the resulting avoided crossings
-    in the energy levels, these are not true quantum number
+    in the energy levels, these are not the true quantum numbers
     and are not constants along the same line.
-    The number shown in the plot are for the state at large negative scattering length.
+    The numbers shown in the plot are for the state at large negative scattering length.
     States with even total parity, i.e. $m_{\mathrm{rel},z} + m_{\mathrm{COM},z}$, are plotted in solid lines
     whereas ones with odd total parity are plotted in dashed lines.
     Since the Hamiltonian conserves total parity,
-    there is no coupling between the between the two sets of states
+    there is no coupling between the two sets of states
     which results in the level crossing shown in the plot.
     \label{fig:interaction-shift:energies}}
 \end{figure}
@@ -307,7 +307,7 @@ or by changing the motional state of the atoms, i.e. moving along the y axis.
 In our experiment, we measure the interaction shifts by flipping the spin state of
 one but not the other atom using Raman transition.
 Since the scattering length depends on the spin state,
-this allow us to measure the difference between energy levels for different scattering lengths
+this allows us to measure the difference between energy levels for different scattering lengths
 by comparing the resonance frequency in the absence of
 the other atom~(Fig.~\ref{fig:interaction-shift:measure}).
 The spin flip is done in the same $8.8~\mathrm{G}$ we use for
@@ -320,7 +320,7 @@ This reduces the number of observable resonances and provides a cleaner spectrum
 \item Parity is conserved during the transition.\\
   Starting from the motional ground state, this means that all dashed lines in
   Fig.~\ref{fig:interaction-shift:energies} are uncoupled.
-\item Coupling to different motional states are surpressed.\\
+\item Coupling to different motional states are surppressed.\\
   In particular, this reduces the coupling to COM motional excitation
   in the strong interaction limit.
   Note that since the interaction between the atoms modifies the wavefunction,
@@ -338,11 +338,11 @@ This reduces the number of observable resonances and provides a cleaner spectrum
     Interaction shift measurement for
     (A) $|\mathrm{Na(2, 2),Cs(4, 4)}\rangle\rightarrow|\mathrm{Na(2, 2),Cs(3, 3)}\rangle$
     and (C) $|\mathrm{Na(2, 2),Cs(3, 3)}\rangle\rightarrow|\mathrm{Na(1, 1),Cs(3, 3)}\rangle$
-    with the corresponding transition shown on the energy map from theoritical calculation
+    with the corresponding transition shown on the energy map from theoretical calculation
     in (B) and (D) respectively.
     The orange line shows the bare resonance with only one atom in the trap
     and the blue line shows the spectrum including interaction shift.
-    A resonance appears at positive frequency shift corresponds to the final state
+    A resonance appearing at positive frequency shift corresponds to the final state
     having a more positive energy (more repulsive interaction or higher motional energy).
     More than one shifted peaks can be observed due to the motional state mixing caused
     by the interaction. The corresponding motional state is marked as
@@ -357,7 +357,7 @@ This reduces the number of observable resonances and provides a cleaner spectrum
 The spectrum for the $|\mathrm{Na(2, 2),Cs(4, 4)}\rangle$ to $|\mathrm{Na(2, 2),Cs(3, 3)}\rangle$
 transition is shown in Fig.~\ref{fig:interaction-shift:results}A.
 The orange line shows the bare $|\Cs(4, 4)\rangle$ to $|\Cs(3, 3)\rangle$ resonance without
-the present of the Na atom whereas the blue line shows the resonances
+the presence of the Na atom whereas the blue line shows the resonances
 including the interaction with the Na atom.
 The largest peak on the left is the shifted ground motional state
 $|m_{\mathrm{rel},z},m_{\mathrm{COM},z}\rangle = |0,0\rangle$ and the smaller peak on the right
@@ -399,7 +399,7 @@ Since the measurement only give the energy difference between different scatteri
 we determine an absolute interaction shift of the $|\mathrm{Na(2, 2),Cs(4, 4)}\rangle$
 using the binding energy of
 the least bound state $v''=-1$~(section~\ref{ch:raman-spectroscopy:states:n0}).
-The absense of spin mixing for this state allows its binding energy to be related
+The absence of spin mixing for this state allows its binding energy to be related
 to the scattering length directly through
 the single-channel quantum defect theory~(QDT)~\cite{
   gao_quantum-defect_1998,gao_angular-momentum-insensitive_2001,gao_general_2008}
@@ -417,7 +417,8 @@ table~\ref{table:interaction-shift:results}.
 Optical tweezer provides a clean platform to study the interaction between exactly two atoms.
 Here, we started our exploration of the interaction by measuring the most important quantity
 for $s$-wave scattering process at ultracold temperature, the scattering length $a$.
-The results from these measurement can be used to refine theory model of the NaCs molecule,
+The results from these measurements can be used
+to refine the theoretical model of the NaCs molecule,
 including predictions of the molecule binding energy
 and Feshbach resonances~\cite{hood_multichannel_2020}.
 More properties of the interaction will be studied in the following chapters.
@@ -426,8 +427,8 @@ Additionally, the combination of the tight confinement from the optical tweezer
 and the interaction between the atoms also give us further control
 on the motional states of the atom.
 As we have seen in this chapter, the degeneracy of carrier Raman transition
-for different motional state is lifted by the interaction.
+for different motional states is lifted by the interaction.
 As a result, driving on the $|0,0\rangle\rightarrow|0,0\rangle$ interaction shifted resonance
-allow us to prepare a system that is completely in the ground state of the relative motion.
+allows us to prepare a system that is completely in the ground state of the relative motion.
 This will be used when we coherently create the molecules~(chapter~\ref{ch:raman-transfer})
 to lower the requirement for the cooling and reduce the background caused by hot atoms.
