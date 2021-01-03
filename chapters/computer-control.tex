@@ -7,7 +7,7 @@
 \label{ch:computer-control:introduction}
 
 The experiment sequence and data taking is managed by computers.
-In additional to controlling the timing and the actions during a sequence,
+In addition to controlling the timing and the actions during a sequence,
 the computer control system is also the main interface
 between the people running the experiment~(the user),
 the data and the hardware performing the manipulation and measurements.
@@ -38,7 +38,7 @@ the daily operation of the lab can be performed smoothly and reliably.
   More concretely, this means creating abstraction for concepts
   typically used to describe the task and allow operation on these abstractions
   matching the users' expectation.
-  We will talk about concrete examples of this requirements
+  We will talk about concrete examples of this requirement
   in section~\ref{ch:computer-control:frontend} regarding the sequence frontend
   and section~\ref{ch:computer-control:scan} regarding scan automation.
 \item Reproducibility.\\
@@ -92,7 +92,7 @@ Its API is designed around a few concepts that can be divided into two categorie
     and zero or more subsequences
     so that all the subsequences in a top level sequence form a tree.
   \item Time step\\
-    The time or time period in the sequence when one or more event may happen
+    The time or time period in the sequence when one or more events may happen
     is called a time step.
     Each time step has a length and a position within a unique parent sequence
     and are always the leaves on the sequence tree.
@@ -100,7 +100,7 @@ Its API is designed around a few concepts that can be divided into two categorie
 \item Output
   \begin{enumerate}
   \item Channel\\
-    Each device that can generate an output are abstracted into
+    Each device that can generate an output is abstracted into
     one or multiple channels that each output a single number.
     The abstraction depends on the type of the device,
     e.g. voltage value for a digital to analog converter,
@@ -136,7 +136,7 @@ it offers the following desired properties,
   for various reasons including higher performance.
   It is important that we can call into other languages to allow such a hybrid implementation.
 \item Good enough feature set.\\
-  MATLAB provides data structures like arrays and hash table
+  MATLAB provides data structures like arrays and hash tables
   as well as handle classes with object identity
   which are important to handle the representation of the sequence.
   It also has a good enough object-oriented programming~(OOP) model
@@ -187,7 +187,7 @@ which can be either
 \begin{enumerate}
 \item \verb`length, offset=0`\\
   This creates a new \verb`TimeStep` with a numerical \verb`length`
-  and an optional time \verb`offset` from a API dependent time reference point
+  and an optional time \verb`offset` from an API dependent time reference point
   (see list of APIs below).
 \item \verb`offset=0, callback, <callback parameters>`\\
   This creates a new \verb`ExpSeqBase` with an optional time \verb`offset`
@@ -563,7 +563,7 @@ As an example, a subsequence construction function may be implemented as
   function subseq(s, p)
     % Access parameter1, with default value 0
     parameter1 = p.parameter1(0);
-    % Access parameter2, which must be pre-defined
+    % Access parameter2, which must be predefined
     parameter2 = p.parameter2();
     % ... Use parameter1 and parameter2 to construct s.
   end

@@ -14,7 +14,7 @@ is still relatively high~($80~\mathrm{mK}$ for Na and
 $10~\mathrm{mK}$ for Cs)
 compared to the trapping frequencies~($80\sim600~\mathrm{kHz}$ or $4\sim30~\mathrm{mK}$ for Na
 and $20\sim160~\mathrm{kHz}$ or $1\sim8~\mathrm{mK}$ for Cs)
-of the tweazer causing a large number of motional states
+of the tweezer causing a large number of motional states
 to be occupied~($\approx\!60$ for Na and $\approx\!20$ for Cs).
 Further cooling into the motional ground state of the tweezer for both atoms
 are required in our experiment for two reasons,
@@ -29,7 +29,7 @@ are required in our experiment for two reasons,
 \end{enumerate}
 
 The confinement provided by the optical tweezer and the relatively high trapping frequencies
-enables the potential the use of Raman sideband cooling~(RSC)
+enables the potential use of Raman sideband cooling~(RSC)
 in our experiment to reach the motional ground state.
 Originally developed for ion systems to take advantage of the tight confinement from ion traps,
 resolved sideband cooling has been later implemented for neutral atomic systems
@@ -40,16 +40,16 @@ outside this regime (formally known as the Lamb-Dicke regime,
 which is defined later in section~\ref{ch:rsc:basic-theory:raman}).
 The efficient polarization gradient cooling for Cs atoms allows RSC
 to be implemented in a similar fashion~\cite{liu_molecular_2019} as previous experiments
-achiving a ground state probability of $96(3)~\mathrm{\%}$.
+achieving a ground state probability of $96(3)~\mathrm{\%}$.
 
 Unfortunately, the parameter achievable for Na lands outside the Lamb-Dicke regime
 making the implementation of RSC much more challenging.
-In this chapter, we will discuss how we overcome these challanges
+In this chapter, we will discuss how we overcame these challenges
 and achieved ground state cooling using RSC in our experiment.
 We will start in section~\ref{ch:rsc:basic-theory} and \ref{ch:rsc:thermometry}
 with a description of the theory for RSC and the related thermometry technique.
 Section~\ref{ch:rsc:setup} describes the experimental setup for RSC.
-The challenges related to cooling outside the Lambd-Dicke regime are analyzed in detail
+The challenges related to cooling outside the Lamb-Dicke regime are analyzed in detail
 in section~\ref{ch:rsc:challenges} followed by
 section~\ref{ch:rsc:solution-high-orders} and \ref{ch:rsc:simulation}
 listing the solution we developed to overcome these challenges.
@@ -85,12 +85,12 @@ and the result can be easily generalized to the full 3D system.
 
 The cooling sequence consists of two types of pulses.
 First, a Raman pulse drives the atom to a different hyperfine state while simultaneously
-reduces the motional energy of the atom.
-The optical pumping~(OP) pulse afterwards then reset the hyperfine state of the atom
-and reduce the entropy of the system.
+reducing the motional energy of the atom.
+The optical pumping~(OP) pulse afterwards then resets the hyperfine state of the atom
+and reduces the entropy of the system.
 This sequence is then repeated until the system reaches the ground motional state
 where there is no more motional energy to be taken out of the system via the Raman pulse.
-In this section, we will discuss the theory of each types of pulses individually.
+In this section, we will discuss the theory of each type of pulses individually.
 We will cover how the pulses affect cooling performance in section~\ref{ch:rsc:challenges}.
 
 \subsection{Raman Transition}
@@ -115,7 +115,7 @@ wavefunction of the atom and light into account.
 As mentioned above, we approximate the atomic motional wavefunction by the harmonic oscillator
 eigenstates $|n\rangle$. Coupling between states different $n$ states from the Raman transition
 is allowed due to the recoil from the Raman lasers,
-which corresponds to a spacial phase imprinting of $\ue^{\ui\mathbf{\Delta k}\cdot\mathbf{\hat x}}$
+which corresponds to a spatial phase imprinting of $\ue^{\ui\mathbf{\Delta k}\cdot\mathbf{\hat x}}$
 where $\mathbf{\Delta k}$ is the wavevector difference between the two Raman beams.
 Using the creation~($\hat a^\dagger$) and annihilation~($\hat a$) operators and the relation
 $\mathbf{\hat x}=\mathbf{x}_0\paren{\hat a+\hat a^\dagger}$ where $x_0=\sqrt{\hbar/2m\omega}$
@@ -146,7 +146,7 @@ the three terms corresponds to the carrier~($n'=n$),
 the first order heating sideband~($n'=n+1$)
 and the first order cooling sideband~($n'=n-1$) with corresponding strength
 $1$, $\eta^{\mathrm{R}}\sqrt{n+1}$ and $\eta^{\mathrm{R}}\sqrt{n}$.
-We can clearly see from this approximation that the coupling to other motional state
+We can clearly see from this approximation that the coupling to other motional states
 is stronger for a larger $\eta^{\mathrm{R}}$ and higher motional quantum number $n$.
 We will discuss this effect outside the LD regime and its implication
 on the cooling performance in more detail in section~\ref{ch:rsc:challenges}.
@@ -154,7 +154,7 @@ on the cooling performance in more detail in section~\ref{ch:rsc:challenges}.
 \subsubsection{Scattering from Raman Beams}
 \label{ch:rsc:basic-theory:raman-scatter}
 
-In additional to driving the Raman transition, the Raman beams can also cause scattering.
+In addition to driving the Raman transition, the Raman beams can also cause scattering.
 The rate of the scattering is
 \footnote{Here we assume that each Raman beam only couples to their respective ground states.
   Including coupling to the other ground state increases the scattering rate but does not change
@@ -196,7 +196,7 @@ $F=2$ states (in particular $|2,1\rangle$ which is populated during the OP proce
 Since the goal of the OP pulse is to clear the atom population in all states but $|2,2\rangle$,
 the photon cycling is not a concern for $F=1$ states and the $\mathrm{D2}$ line
 is used for OP of $F=1$ states instead.
-This also allow us to reuse the MOT light source and simplifies our setup.
+This also allows us to reuse the MOT light source and simplifies our setup.
 
 \section{Raman Sideband Thermometry}
 \label{ch:rsc:thermometry}
@@ -250,13 +250,13 @@ in the following sections.
     Raman beams R1 and R4 address the radial $x$-mode.
     R1 and R2 address the radial $y$-mode.
     R3 and R4 address the axial $z$-mode, where the beams also couple to radial motion,
-    but this coupling can be neglected when the atoms is cooled to the ground state of motion.
+    but this coupling can be neglected when the atoms are cooled to the ground state of motion.
     \label{fig:rsc:na-geometry}}
 \end{figure}
 
-The geometry of all the beams and field involved is shown in Fig.~\ref{fig:rsc:na-geometry}.
+The geometry of all the beams and fields involved is shown in Fig.~\ref{fig:rsc:na-geometry}.
 In order to make the cooling more efficient and simplify the sideband thermometry,
-we address the motion along the three principle axis of the tweezer using different pairs
+we address the motion along the three principal axes of the tweezer using different pairs
 of Raman beams.
 In order to maximize the beam intensity so that a larger single photon detuning can be used
 while maintaining the same Raman Rabi frequency,
@@ -269,10 +269,10 @@ of the tweezer beam (and orthogonal to the tweezer beam propagation direction).
 This makes the field orthogonal to the effective magnetic field of the tweezer,
 which minimizes the vector light shifts~\cite{kaufman_cooling_2012,thompson_coherence_2013}.
 Since the optical pumping beam requires $\sigma^+$ polarization,
-it is setup to propagate parallel to the applied magnetic field.
+it is set up to propagate parallel to the applied magnetic field.
 
 Since both the Raman transition and the optical pumping changes the hyperfine state of the atom,
-the states of the atoms can be used to detect and calibrate these process.
+the states of the atoms can be used to detect and calibrate these processes.
 This is done in our experiment using state sensitive ``push-out'' as follows,
 \begin{enumerate}
 \item Light resonant with the $|F=2,m_F=2\rangle$ to $|F'=3,m_{F'}=3\rangle$ cycling transition
@@ -282,9 +282,9 @@ This is done in our experiment using state sensitive ``push-out'' as follows,
   Since the cycling transition is protected by $F$ and $m_F$ selection rule
   as well as the stronger coupling compared to all other transitions,
   the atom can scatter $>\!10000$ photons before decaying to $F=1$ state.
-\item The OP light is turned off and depth of the trap is lowered so that
-  atom that is heated by the OP light will leave the trap.
-\item The trap depth is ramped back up and an image of the left over atom
+\item The OP light is turned off and the depth of the trap is lowered so that
+  atoms that are heated by the OP light will leave the trap.
+\item The trap depth is ramped back up and an image of the leftover atom
   is taken to measure the probability of atom in the $F=1$ states.
 \end{enumerate}
 
@@ -292,8 +292,8 @@ This is done in our experiment using state sensitive ``push-out'' as follows,
 \label{ch:rsc:challenges}
 
 RSC is typically performed in the LD regime where the coupling
-to other motional state is small.
-Due to the light mass, short wavelength, limitted trap depth and high initial temperature
+to other motional states is small.
+Due to the light mass, short wavelength, limited trap depth and high initial temperature
 of the sodium atom however, we have to start our RSC sequence outside the LD regime.
 This creates unique challenges to our experiment.
 A detailed understanding of the cooling performance is required to understand
@@ -301,13 +301,13 @@ and overcome these challenges.
 
 The simplest way to estimate the effectiveness of RSC
 is by keeping track of the average energy of the atom during the cooling sequence.
-For a typical RSC sequence in the LD regime, all the cooling are done on
+For a typical RSC sequence in the LD regime, all the cooling is done on
 the strongest first order cooling sideband.
-The energy removed for atom driven in one Raman pulse is therefore, $\Delta E_-=\omega$.
+The energy removed from the atom in one Raman pulse is therefore, $\Delta E_-=\omega$.
 In order to reinitialize the hyperfine state, the sodium atom needs to scatter on average
 $2$ photons from the OP pulse which increases the average energy of the driven atom
 by $\Delta E_+=4\omega_{\mathrm{recoil}}$
-\footnote{The factor of 4 comes from 2 absorbed photons and 2 reemitted photons.}
+\footnote{The factor of 4 comes from 2 absorbed photons and 2 re-emitted photons.}
 where $\omega_{\mathrm{recoil}}\equiv \hbar k^2/2m$ is the recoil energy~\cite{steck_sodium_2019}
 and $k$ is the OP light wave vector.
 The heating to cooling ratio in one RSC pulse cycle is therefore,
@@ -341,12 +341,12 @@ each axis is cooled in the sequence.
 
 In our experiment, the OP Lamb-Dicke parameters are
 $\eta^{\mathrm{OP}}_x, \eta^{\mathrm{OP}}_y, \eta^{\mathrm{OP}}_z = 0.25, 0.25, 0.55$.
-Based on the metric above, any cooling sequences
-that have fewer than $78~\mathrm{\%}$ cooling pulse for $z$~(axial) axis,
+Based on the metric above, any cooling sequence
+that has fewer than $78~\mathrm{\%}$ cooling pulse for $z$~(axial) axis,
 which is generally the case, should have a net cooling effect.
 This, however, does not guarantee cooling into the ground motional state,
 nor does it fully characterize the efficiency of the cooling sequence
-since the averaging hides a few critical aspect of having a large Lamb-Dicke parameter.
+since the averaging hides a few critical aspects of having a large Lamb-Dicke parameter.
 
 One of the important effects can be seen in Fig.~\ref{fig:rsc:na-challenges}A showing
 the motional state distribution after one OP cycle
@@ -357,12 +357,12 @@ the spread or the uncertainty of $n$ after the OP is significantly
 higher for high $n_{\mathrm{init}}$.
 This effect significantly increases the difficulty in controlling the state during the
 RSC sequence. It can negatively impact the cooling performance and
-may lead to increased loss during cooling due to atom escaping to higher motional states.
+may lead to increased loss during cooling due to atoms escaping to higher motional states.
 
 The other important effect is the dependency of matrix element $M_{n,n+1}$
 on the motional level $n$.
 While this dependency is not a new effect, since the $\sqrt{n}$ dependency
-on the cooling sideband strength exist even in the LD regime
+on the cooling sideband strength exists even in the LD regime
 and must be taken into account with
 pulse time variation~\cite{wineland_experimental_1998,liu_molecular_2019}
 to achieve efficient cooling, the high Lamb-Dicke parameter adds even more complications.
@@ -370,12 +370,12 @@ As shown in Fig.~\ref{fig:rsc:na-challenges}B, rather than a simple $\sqrt{n}$ d
 it is a non-monotonic function and more importantly has multiple minima, so-called ``dead-zone'',
 within the range of motional states we are interested in~\cite{wineland_laser_1979}.
 The coupling strength for states in the dead-zones can be reduced by more than ten times
-which can significant affect the efficiency of the cooling pulse
+which can significantly affect the efficiency of the cooling pulse
 and even makes it virtually impossible to drive Raman transitions on atoms in these states
 in order to cool them further.
-A cooling sequence can therefore accumulate pupolations in the dead-zones
+A cooling sequence can therefore accumulate populations in the dead-zones
 rather than the ground state.
-Their small coupling strength also reduce their signal level during
+Their small coupling strengths also reduce their signal level during
 Raman sideband spectroscopy making these states nearly invisible to sideband thermometry
 which further complicates the optimization of the cooling sequence.
 
@@ -409,7 +409,7 @@ given the uncertainty after an OP pulse.
 More importantly, depending on the motional level, there is always a sideband order
 with significant coupling strength that can be used to cool it,
 therefore completely removing the coupling dead-zones.
-Moreover, by using each sideband orders only near their coupling maxima,
+Moreover, by using each sideband order only near their coupling maxima,
 the coupling strength variation is also greatly reduced which removes
 the need to vary the pulse times for all but the pulses on the first order sideband.
 
@@ -448,14 +448,14 @@ The simulation includes accurate scattering rate and branching ratios
 from the tweezer, Raman and OP beams.
 For best simulation performance, the atom is assumed to be in a single motional state,
 i.e. with a certain $n_x$, $n_y$ and $n_z$, after each Raman or OP step
-\footnote{This assumes no coherence between different motional state,
+\footnote{This assumes no coherence between different motional states,
   which is the case as long as each Raman pulses are separated from each other by OP pulses.}.
 It is also assumed that each Raman pulse drives only the intended sideband order,
 which is a property that needs to be ensured
 in the experiment~(section~\ref{ch:rsc:implementation:pulse-shaping}).
 For each cooling sequence simulated,
 the Raman beam power and frequency, and the OP beam power and polarization purity
-are varies slightly around the respective expected values
+varies slightly around the respective expected values
 in order to confirm the robustness of the sequence against fluctuation in the experiment.
 Fig.~\ref{fig:rsc:na-sequence} demonstrate the resulting optimal sequence from the simulation.
 In particular, we find that alternating the cooling pulses between two
@@ -473,7 +473,7 @@ the $\Delta n=-1$ sideband while alternating between the three axes.
 \section{Alignment of Raman and OP Beams}
 \label{ch:rsc:alignment}
 
-Due to small waist of the Raman beam, it is important to align the Raman beam to
+Due to the small waist of the Raman beam, it is important to align the Raman beam to
 the single atom with high precision in order to maximize the Raman Rabi frequency
 as well as minimizing the intensity fluctuation of the Raman beam experienced by the atom
 due to pointing instability.
@@ -504,8 +504,8 @@ position sensitivity is reached.
     The scattering is calculated for the $|F=2,m_F=2\rangle$ ground state
     since this is the dark state in the cooling scheme where the scattering matters the most.
     The polarization of the beams can be seen in Fig.~\ref{fig:rsc:na-geometry}.
-    R5 is the $\mathrm{F1}$ beam that is co-propagating with R3 with orthorgonal polarization
-    that is used to drive sideband-free Raman transition (not used for cooling).
+    R5 is the $\mathrm{F1}$ beam that is co-propagating with R3 with orthogonal polarization
+    that is used to drive sideband-free Raman transitions (not used for cooling).
     We also assume $10~\mathrm{\%}$ power of the R1 beam is
     in the opposite circular polarization~($\sigma^+$) instead of being purely $\sigma^-$.
     \label{table:rsc:alignment:raman-parameter}}
@@ -531,15 +531,15 @@ the spin state of the atom to change and the population in $F=1$ state is measur
 by removing the $F=2$ population using a pushout pulse.
 The rate of the spin change is fitted to a theory model to derive the Rabi frequency of
 the Raman light.
-The result of the fit is shown in table.~\ref{table:rsc:alignment:raman-parameter}.
-The table also includes the total scattering rate from each Raman beams
+The result of the fit is shown in table~\ref{table:rsc:alignment:raman-parameter}.
+The table also includes the total scattering rate from each Raman beam
 which corresponds to a cumulative $3$ scattering event
 on average during the whole cooling sequence and
 should not be a limiting factor for the cooling performance.
 
 The OP beam has a much larger waist~($\approx\!1~\mathrm{mm}$)
-and therefore require less alignment in the beam position.
-However, since the OP beam needs to be on resonant with the excited state,
+and therefore requires less alignment in the beam position.
+However, since the OP beam needs to be resonant with the excited state,
 the strong light shift from the tweezer can significantly affect the OP efficiency.
 Fortunately, the method described in section~\ref{ch:loading:loading}
 that fixes this problem for the loading of the atom in the tweezer can also be used here.
@@ -551,24 +551,24 @@ causing the OP to happen only during the off-cycle when there is zero light shif
 
 In order to take advantage of the dark state optical pumping and
 minimize unnecessary scattering for atoms in the $|2,2\rangle$ state,
-the OP beam need to have a pure $\sigma^+$ polarization.
+the OP beam needs to have a pure $\sigma^+$ polarization.
 This requires the OP beam to propagate parallel to the magnetic field
-in additional to having the currect circular polarization.
+in addition to having the correct circular polarization.
 The alignment is done by minimizing ``depumping'' of the atom spin state caused by the OP beam,
 similar to the technique we used to calibrate the Raman beam Rabi frequency.
 After the atom is initialized in the $|2,2\rangle$ state, we turn on the $\mathrm{D1}$ OP light
 for a certain time which should not address the atom when perfectly aligned.
 The misalignment of the beam, however, will cause the atom to scatter from the OP beam
 and change to $F=1$ state, i.e. ``depumped'', with certain probability.
-We then change the alignment of the beam an minimize the depumping rate.
-Due to a similar requirement for Cesium OP, the probagation direction of
+We then change the alignment of the beam and minimize the depumping rate.
+Due to a similar requirement for Cesium OP, the propagation direction of
 the OP beam for Sodium and Cesium are aligned to each other by overlapping them
 using mechanical target to better than $0.08^\circ$ first
 before the magnetic field direction is aligned to the OP beams by minimizing depumping.
 For polarization alignment, we first clean up the linear polarization of the light
 using the LPVISC050-MP2  nanoparticle linear film polarizer from Thorlabs
 with better than $100,000:1$ extinction ratio.
-After that we use both a half waveplate and a quater waveplate
+After that we use both a half waveplate and a quarter waveplate
 to generate a circularly polarized light.
 We observed that both the polarization cleanup and the half waveplate is necessary
 to obtain the best polarization alignment in order to compensate for the polarization
@@ -582,7 +582,7 @@ to be $\approx\!100~\mathrm{ppm}$.
 
 Other than the alignment procedure above, we have also observed that reflection
 of the OP beam can contribute significantly to the polarization impurity and
-must be avoided. In particular, since the Raman beam R1 counter propagate with the OP beam,
+must be avoided. In particular, since the Raman beam R1 counter propagates with the OP beam,
 it is possible for the OP beam to be coupled into the Raman fiber and then retro-reflected
 to be focused onto the atom through the Raman beam path at a wrong polarization.
 Since the Raman beam size is much smaller, we have observed as much as $3~\mathrm{\%}$
@@ -604,7 +604,7 @@ for implementing the sequence from section~\ref{ch:rsc:simulation}.
 
 In order to achieve optimal performance from the cooling sequence,
 it is important to accurately drive the intended sideband order.
-In fact, in the absense of undesired scattering,
+In fact, in the absence of undesired scattering,
 the frequency resolution of the Raman transition limits the lost achievable temperature.
 This is particularly important when driving the first order cooling sidebands
 since any coupling to the carrier may change the spin state of the atom without
@@ -612,15 +612,15 @@ removing any motional energy therefore causing a net heating effect after the OP
 
 The obvious way to achieve this is to narrow the linewidth of the Raman transition,
 e.g. by using a lower power or Raman Rabi frequency.
-However, reducing the lineiwth of the transition also increase the susceptibility
+However, reducing the linewidth of the transition also increases the susceptibility
 to resonance fluctuation.
 Therefore the desired solution is to reduce the off-resonance coupling of the Raman beam
 for large detuning while increasing or maintaining the coupling for small detuning.
 We achieve this by using a Blackman pulse shape for
 the Raman transition~\cite{kasevich_laser_1992}.
 \footnote{While more complex pulses can be constructed
-  to achieve a even sharp detuning cutoff~\cite{fu_broadband_1995},
-  such pulses generally significantly increases the pulse time
+  to achieve an even sharper detuning cutoff~\cite{fu_broadband_1995},
+  such pulses generally significantly increase the pulse time
   and can cause more heating during cooling due to scattering and other heating mechanisms.
   The Blackman pulse we use offers a balance between the pulse time
   and off-resonance coupling reduction.}
@@ -631,7 +631,7 @@ the Raman transition~\cite{kasevich_laser_1992}.
 The Raman sideband frequencies are calibrated by measuring the Raman spectrum before cooling
 (an example of which is shown in the initial spectrum in Fig.~\ref{fig:rsc:na-spectrum}).
 However, since high sideband orders are mainly used to cool atoms in high motional state,
-the resonance frequency for these sideband are not equal spacing anymore due to
+the resonance frequency for these sidebands are not equal spacing anymore due to
 the anharmonicity of the trap.
 In order to estimate the effect on the sideband frequencies,
 we can define anharmonicity as $A_{i,n}=(E_{i,n+1}-E_{i,n})/h - \omega_i/(2\pi)$
@@ -666,7 +666,7 @@ the full Rabi frequency $\Omega_{\mathrm{R}}^0$ and the Lamb-Dicke parameter,
 which are in-turn used to calculate the Rabi frequency on other sideband orders.
 
 Since the final calibration of both the Raman Rabi frequency and resonance requires a working
-cooling sequence, when optimizing the sequency from scratch,
+cooling sequence, when optimizing the sequence from scratch,
 the calibration process is applied iteratively as the cooling performance is improved.
 
 \section{Cooling Performance}
@@ -691,11 +691,11 @@ the calibration process is applied iteratively as the cooling performance is imp
     radial axis $y$ (C) carrier and (D) $\Delta n_x=1$ sideband,
     axial axis $z$ (E) carrier and (F) $\Delta n_x=1$ sideband,
     before~(red circle) and after~(blue square) Raman sideband cooling.
-    Solid lines (both red and blue) in all plots are fits to a Rabi-flopping
+    Solid lines (both red and blue) in all plots are fit to a Rabi-flopping
     that includes a thermal distribution of motional states~\cite{meekhof_generation_1996}
     as well as off-resonant scattering from the Raman beams.
     The blue lines correspond to a ground state probability of
-    (A-D) $98.1~\mathrm{\%}$ along radial axis
+    (A-D) $98.1~\mathrm{\%}$ along the radial axes
     and (E-F) $95~\mathrm{\%}$ along the axial axis after cooling.
     The red lines correspond to a thermal distribution of $80~\mathrm{\mu K}$ before RSC.
     The horizontal dashed lines in all the plots correspond to the $4~\mathrm{\%}$ probability
@@ -774,7 +774,7 @@ and open up a route to ground state cooling.
 
 In our experiment, the RSC step concludes our full control of the atom quantum states.
 The atoms are then merged into the same trap adiabatically
-so that they remains in a single quantum state~\cite{liu_molecular_2019}.
+so that they remain in a single quantum state~\cite{liu_molecular_2019}.
 This is the starting point for our study of
 the atom-atom interaction and molecular potentials,
 as well as the coherent formation of molecules.
