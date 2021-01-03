@@ -19,7 +19,7 @@ the daily operation of the lab can be performed smoothly and reliably.
   The control system is a layer in between the user and the hardware
   and will abstract and manage the hardware on behalf of the user.
   However, the abstraction must still allow the user to take advantage of
-  the full capability of the hardware, e.g. output resolution, timing accuracy etc..
+  the full capability of the hardware, e.g. output resolution, timing accuracy etc.
   This is because there is usually little margin between the capability of the hardware
   and the requirement in the experiment as the specification of the hardware
   is often selected based on the requirement to begin with.
@@ -27,13 +27,13 @@ the daily operation of the lab can be performed smoothly and reliably.
   The lab is operated by users with specialty in physics rather than computer science.
   Although some basic knowledge of computer programming is required for operating
   the experiment as well as analysing data,
-  the computer control system must be fully usable for people without any experience
+  the computer control system must be fully usable by people without any experience
   in building complex software systems.\\
   The inevitable complexity of the system must be fully hidden from the user
   for normal operations although more direct control may still be allowed in certain cases.
 \item Modeling of the sequence and scan.\\
   As an important special case of usability,
-  the computer control system must provide a model for each task closed to
+  the computer control system must provide a model for each task close to
   the users' mental model.
   More concretely, this means creating abstraction for concepts
   typically used to describe the task and allow operation on these abstractions
@@ -46,12 +46,12 @@ the daily operation of the lab can be performed smoothly and reliably.
   trial and error is the standard method and troubleshooting is a major part of the process.
   The ability to do this effectively requires a high degree of reproducibility of all the results.
   While it is impossible and also not the job of the computer control system to
-  eliminate all the fluctuation and noise in the experiment,
+  eliminate all the fluctuations and noise in the experiment,
   it should not add to the randomness of the system.
   With few exceptions, identical user input should produce identical output from
   the control system.
 \item Version control.\\
-  As a variation of the reproducibility requirement and also built on top of it,
+  Related to and complementing the reproducibility requirement,
   we must be able to revert to a previous software configuration at a later time
   in order to reproduce and double-check an earlier result.
   The use of a proper version control system on the settings and code for
@@ -60,8 +60,8 @@ the daily operation of the lab can be performed smoothly and reliably.
   by multiple users.
 \end{enumerate}
 
-The design of the computer control system is mainly guided by these requirements
-and we will go into more detail as we describe each part of the system.
+The design of the computer control system is mainly guided by these requirements.
+In the next sections, we will go into more detail as we describe each part of the system.
 The application programming interface~(API) provided for sequence and scan programming
 are mostly text based due to the flexibility and version control requirement.
 Some graphic user interfaces~(GUI) are also included for specific tasks
@@ -71,24 +71,26 @@ which is used by the user directly to specify an experimental sequence.
 Section~\ref{ch:computer-control:backend} will discuss the support for various
 hardware backends used to run a sequence.
 After that, section~\ref{ch:computer-control:scan} describes how multiple sequences
-can be put together to form a scan and
-we will talk about some planned updates to the system in
-section~\ref{ch:computer-control:summary}.
+can be put together to form a scan and section~\ref{ch:computer-control:summary}
+discusses some planned updates to the system.
 
 \section{Frontend}
 \label{ch:computer-control:frontend}
 
+\todo{Concrete example with a simple ramp}
+
 The frontend is the main user interface of the system to specify a sequence.
-Its API is designed around the a few concepts that can be divided into two categories,
+Its API is designed around a few concepts that can be divided into two categories,
 \begin{enumerate}
 \item Timing
   \begin{enumerate}
   \item (Sub-)sequence\\
     This represents a series of events that has fixed relative timing.
-    Sequences can be nested in other sequences at a specific time offset
-    and are called subsequences.
+    Sequences can be nested in other sequences with specific time offsets,
+    in which case they are called subsequences.
     Each sequence can only have at most one parent sequence (the top level one has none)
-    and zero or more subsequences so all the subsequences in a top level sequence form a tree.
+    and zero or more subsequences
+    so that all the subsequences in a top level sequence form a tree.
   \item Time step\\
     The time or time period in the sequence when one or more event may happen
     is called a time step.
@@ -128,7 +130,7 @@ it offers the following desired properties,
 \item Familiarity for physics students.\\
   MATLAB is often used for simulation and data processing.
   It is one of the few languages that most new students will be familiar with.
-\item Builtin feature-rich integrated development environment~(IDE).
+\item Built-in feature-rich integrated development environment~(IDE).
 \item Foreign function interface~(FFI).\\
   Other parts of the system needs to be implemented in other languages
   for various reasons including higher performance.
@@ -137,17 +139,17 @@ it offers the following desired properties,
   MATLAB provides data structures like arrays and hash table
   as well as handle classes with object identity
   which are important to handle the representation of the sequence.
-  It also has an good enough object-oriented programming~(OOP) model
-  and operator overloads which can simplify the API syntax for the user.
+  It also has a good enough object-oriented programming~(OOP) model
+  and operator overload functionality which can simplify the API syntax for the user.
 \end{enumerate}
 
 \subsection{Channel Naming}
 \label{ch:computer-control:frontend:channel}
 Each output channel has a unique name attached for identification.
 This name is always a string of the format \verb`<device_id>/<channel>`
-where \verb`<device_id>` is an name for the (physical) device
+where \verb`<device_id>` is a name for the (physical) device
 and \verb`<channel>` is an identification of the channel within the device.
-The \verb`<device_id>` may not contain \verb`/` but other than this
+The \verb`<device_id>` may not contain ``\verb`/`'' but other than this
 neither \verb`<device_id>` nor \verb`<channel>` has globally predefined meaning
 and are completely up to the backend to define.
 This format allows maximum freedom for the backend to abstract its function
@@ -180,8 +182,8 @@ which represent an arbitrary node on the sequence tree.
 Most timing related APIs are methods on \verb`ExpSeqBase`.
 The most important ones are the ones creating new branches
 in the subsequence tree, i.e. \verb`TimeSeq`.
-The type of the branch created is determined by the parameters passed in~(\verb`<time_params>`),
-which can be either,
+The type of branch created is determined by the parameters passed in~(\verb`<time_params>`),
+which can be either
 \begin{enumerate}
 \item \verb`length, offset=0`\\
   This creates a new \verb`TimeStep` with a numerical \verb`length`
@@ -195,16 +197,16 @@ which can be either,
 \end{enumerate}
 Since most sequences are built in series, \verb`ExpSeqBase` maintains
 a current time~(\verb`curTime`) of the sequence.
-Various methods are provided that acts differently with respect to \verb`curTime`.
+Various methods are provided that each act differently with respect to \verb`curTime`.
 \begin{enumerate}
 \item \verb`addStep(<time_params>)` method\\
   This is the most used method to construct the sequence in series.
   The time reference point is \verb`curTime` and
   \verb`curTime` will be set to the end of the time step or subsequence created.
-  A check makes sure the \verb`curTime` only moves forward and
-  errors if a too negative \verb`offset` is specified.
-  This ensures that what added with \verb`addStep` always appears in the final
-  sequence in the same order as program execution order
+  A check is made to ensure the \verb`curTime` only moves forward and
+  errors if a too negative \verb`offset` large enough in magnitude is specified.
+  This ensures that what is added with \verb`addStep` always appears in the final
+  sequence in the same order as the program execution order
   which makes the code easier to reason about.
 \item \verb`addBackground(<time_params>)` method\\
   The time reference point is \verb`curTime` and no change to \verb`curTime` is made.
@@ -214,23 +216,23 @@ Various methods are provided that acts differently with respect to \verb`curTime
 \item \verb`addFloating(<time_params>)` method\\
   The time reference point is unspecified.
   The optional \verb`offset` parameter cannot be specified in \verb`<time_params>`.
-  The time reference point, however, must be specified before the sequence can run.
+  The time reference point, however, must be specified before the sequence can be run.
   This can be done by calling the \verb`setTime(time_point, time_ratio=0, offset=0)` method
   on the \verb`TimeSeq` object returned,
   where \verb`time_point` is also of type \verb`TimePoint` described below.
   The optional \verb`time_ratio` specifies the relative time within the subsequence
-  or time step to set the time for where a value of $0$ set the start time
-  and a value of $1$ set the end time.
+  or time step to set the time for where a value of $0$ sets the start time
+  and a value of $1$ sets the end time.
 \end{enumerate}
 All methods return the new \verb`TimeSeq` constructed so that they can be operated on.
 
 The \verb`TimePoint` object used in \verb`addAt` and \verb`setTime`
 can be constructed via \verb`TimePoint(seq, time_ratio, offset)`
-which represent the time within the sequence or step \verb`seq` with a time \verb`offset`.
+which represents the time within the sequence or step \verb`seq` with a time \verb`offset`.
 \verb`time_ratio` specifies the time within the \verb`seq` where $0$ is the start time
 and $1$ is the end time.
 
-Additional continence methods for \verb`ExpSeqBase` are also provided
+Additional convenience methods for \verb`ExpSeqBase` are also provided
 to manipulate \verb`curTime`,
 \begin{enumerate}
 \item \verb`wait(t)` method\\
@@ -254,7 +256,7 @@ As mentioned before, all the outputs are specified on time steps
 which are represented by the class \verb`TimeStep`.
 This is done via a single method \verb`add(channel_name, output)` on \verb`TimeStep`.
 The \verb`channel_name` is the channel name described above
-and \verb`output` specifies the output in one of the following way,
+and \verb`output` specifies the output in one of the following ways,
 \begin{enumerate}
 \item A number\\
   This represents setting the channel to the specified value at the start time of the pulse.
@@ -270,16 +272,16 @@ and \verb`output` specifies the output in one of the following way,
 As discussed in section~\ref{ch:computer-control:frontend},
 the frontend provides an API to program all the output channels in the same way
 no matter the type of the channel or device used.
-However, this is not the case for the devices generating for the output
+However, this is not the case for the devices generating the output
 which often have an API specifically designed for the device
 that may be very different from one another.
-Moreover, the frontend represent the sequence as a tree structure
+Moreover, the frontend represents the sequence as a tree structure
 that is convenient for manipulation
 whereas the device API typically uses a flat data structure like an array of numbers
 or a series of commands.
 It is therefore the job of the backend to bridge this gap
-and convert the between the multiple representations of the sequence.
-The conversion is done in a ``generate'' step and
+and convert between the multiple representations of the sequence.
+The conversion is done in a ``generation'' step and
 the result is cached for each sequence to allow running the sequence
 multiple times with minimum overhead.
 
@@ -289,27 +291,27 @@ different backends.
 
 \subsection{Network Communication}
 \label{ch:computer-control:backend:net}
-With one current exception, the output device is not directly connected to
-the computer running the frontend but is only connected to another computer
+With one current exception, the output devices are not directly connected to
+the computer running the frontend but are only connected to another computer
 on the same network.
 This requires network communication between the frontend machine and
-a service running on the device computer for running the sequence.
+a service running on the device computer to run the sequence.
 
 We use ZeroMQ Message Transport Protocol~(ZMTP) as the main protocol for network communication
 which offers the following advantages,
 \begin{enumerate}
 \item Binary protocol\\
   The protocol allows us to send and receive arbitrary data without having to encode it
-  in text first. This saves encoding and decoding time as well as network bandwidth
+  into text first. This saves encoding and decoding time as well as network bandwidth
   which allows higher performance.
 \item Feature rich and flexible\\
   Compared to using sockets for network communication directly,
   the message oriented protocol allows easy implementation of remote procedure call~(RPC).
-  The ZeroMQ library also provides flexible interface to process the messages
+  The ZeroMQ library also provides a flexible interface to process the messages
   which is useful to implement robust handling of failure
   and parallel processing of requests.
-\item Light weight\\
-  Despite the rich feature set, the library is relatively light weight.
+\item Lightweight\\
+  Despite the rich feature set, the library is relatively lightweight.
   This is important because part of the computer control system
   needs to be executed in an environment with limited resources.
 \item Cross platform\\
@@ -332,17 +334,17 @@ within the top-level sequence is important but not the subsequence structure.
 Because of this, all the backends start the generation step by
 flattening the tree to obtain a list of all pulses sorted by their start time.
 After the sorting of the pulses, the tree structure is discarded by default
-\footnote{This behavior can be disabled for debugging purpose} to reduce memory usage.
+\footnote{This behavior can be disabled for debugging purposes.} to reduce memory usage.
 
 \subsection{Representation of Pulses}
 \label{ch:computer-control:backend:pulse-repr}
 Several backends require accessing the exact representation of the pulses
-outside MATLAB code and even on a different computer.
+outside the MATLAB code and even on different computers.
 Since the pulses can be arbitrary functions,
 this requires the ability to serialize and deserialize code.
 
 In order to do this, we developed a simple intermediate representation~(IR)
-of code that runs on a register-based virtual machine.
+of the code that runs on a register-based virtual machine.
 The IR supports three different data types, \verb`Bool`, \verb`Int32` and \verb`Float64`
 and basic arithmetic, control flow and math functions
 that are sufficient for specifying pulse shapes.
@@ -356,8 +358,8 @@ that records the operation as well as input arguments.
 The value returned from the function is therefore an object representing
 all the operations needed to compute the result as a directed acyclic graph~(DAG).
 We then convert each node in the DAG to an IR instruction to finish the conversion.
-This process only support pure functions.
-Conditional branch is supported via an \verb`ifelse` function
+This process only supports pure functions.
+Conditional branching is supported via an \verb`ifelse` function
 that returns one of the input arguments based on a condition.
 Loops are not currently supported.
 
@@ -368,10 +370,10 @@ Loops are not currently supported.
   \includegraphics[width=0.9\textwidth]{figures/computer_control_backend_fpga.pdf}
   \caption[FPGA Block Diagram]{
     FPGA hardware block diagram.
-    The sequence data is sent to the server program running on the CPU via network.
-    The program then push the commands to the pulse controller implemented
-    in the programming logics.
-    The pulse controller executes the commands and genenerates or changes outputs
+    The sequence data is sent to the server program running on the CPU through the network.
+    The program then pushes the commands to the pulse controller implemented
+    in the programming logic.
+    The pulse controller executes the commands and generates or changes the outputs
     for clock/trigger, DDS or logical outputs.
     \label{fig:computer-control:backend:fpga}}
 \end{figure}
@@ -379,7 +381,7 @@ The timing of the experiment is controlled by a Xilinx ZC702 FPGA
 which contains both a processing system~(PS) part, i.e. CPU,
 and a programmable logic~(PL) part, i.e. FPGA~(Fig.~\ref{fig:computer-control:backend:fpga}).
 The PL creates digital control signals for various peripheral devices
-which generate output for the experiment,
+which generate the outputs for the experiment,
 including direct digital synthesizers~(DDS), logical switching signal
 and clock or trigger signal for other devices.
 The PS consists of a dual core Cortex-A9 CPU
@@ -388,39 +390,39 @@ The server software that runs on the PS communicates with the main control compu
 via ZeroMQ~(section~\ref{ch:computer-control:backend:net})
 and generates a custom command stream to control the PL output.
 Each command corresponds to making one change to the final output, e.g.
-logical values, DDS output amplitude or frequencies, etc.
+logical values, DDS output amplitudes or frequencies, etc.
 The main job of the FPGA backend is therefore to convert
 the sorted pulses to the command stream.
 See appendix~\ref{appendex:computer-control:fpga} and \ref{appendex:computer-control:dds}
-for more info about the hardware specification.
+for more information about the hardware specification.
 
-Due to performance concern, this conversion is done in C++ code\footnote{\url{https://github.com/nacs-lab/libnacs/blob/0076e347ff3ba674fbf74872883b40feefd82ce0/lib/seq/bytecode.cpp\#L528}}.
+Due to performance concerns, this conversion is done in C++ code\footnote{\url{https://github.com/nacs-lab/libnacs/blob/0076e347ff3ba674fbf74872883b40feefd82ce0/lib/seq/bytecode.cpp\#L528}}.
 The main design considerations and features are,
 \begin{enumerate}
 \item The sequence supports changing and ramping multiple channels at the same time.
   This is not supported by the hardware due to the limit on the number of I/O ports
   connecting the PL to the output devices requiring multiplexing of the control signal.
   The backend manages this by interleaving the commands for different channels
-  when more than one are changed at the same time.
-  A set of active pulses are maintained as the conversion proceeds through sequence time.
+  when more than one channel is changed at the same time.
+  A set of active pulses is maintained as the conversion proceeds through the sequence time.
   Pulses are added to the active set when the start time is reached
   and retired from the set when the end time is reached.
 \item For a continuous ramp of a channel, since the output changes are discrete,
   it may not happen at exactly the end time of the pulse
   which requires special care to ensure the correctness of the channel value after a pulse.
   For example, a linear ramp from $0$ to $0.5$ on a channel from time $0~\mathrm{\mu s}$
-  to $5~\mathrm{\mu s}$ may only receive updates at time $0, 2, 4~\mathrm{\mu s}$
+  to $5~\mathrm{\mu s}$ may only receive updates at times $0, 2, 4~\mathrm{\mu s}$
   with values $0.0, 0.2, 0.4$ respectively due to discretization.
-  However, the user should expect the value of the channel (absence of other pulses)
-  long after the pulse to be $0.5$ instead.
+  However, the user should expect the value of the channel (in the absence of other pulses)
+  long after the pulse to be $0.5$.
   This is handled in the backend by checking the last update from the pulse
   against its expected ending value before retiring it.
   A final update to the ending value is generated if the two values are different.
 \item The output has finite resolution.
   If an update changes the value that is unresolved by the hardware
-  (typical during a slow ramp), the update will be omitted.
+  (typically during a slow ramp), the update will be omitted.
 \item Some commands correspond to more than one action/pulse in the sequence.
-  For example, more than one logical outputs can be updated at the same time
+  For example, more than one logical output can be updated at the same time
   and some commands also accept a variable wait time afterwards
   (in addition to a special purpose wait command).
   The backend examines neighboring operations and may merge multiple commands into one.
@@ -439,12 +441,12 @@ The main design considerations and features are,
 
 \subsection{NiDAQ Backend}
 \label{ch:computer-control:backend:nidaq}
-For outputting slowly varying voltage signal, we use an DAQ PCI card
+For outputting slowly varying voltage signals, we use a DAQ PCI card
 (more detail in appendix~\ref{appendex:computer-control:nidaq}).
 The software driver for the card accepts an array of numbers as the voltages
-to output at each cycle for each channel.
+to output at each clock cycle for each of the channels.
 Since the values in these arrays can be computed for each channel independently,
-the logic for generating is relatively straightforward.
+the logic for generating them is relatively straightforward.
 
 The API for the card is designed for updating the outputs at regular intervals.
 However, there are a few issues when it is used this way,
@@ -456,11 +458,11 @@ However, there are a few issues when it is used this way,
   this causes significant duplication in the data causing a waste of memory.
 \item We measured voltage noise at the refresh rate when the output is held constant
   by outputting samples at the same value.\\
-  While this is a hardware limit that cannot easily be fixed when the value are changing,
+  While this is a hardware limit that cannot easily be fixed when the values are changing,
   being able to turn off the refreshing gives us control to minimize its effect
   on the experiment.
 \end{enumerate}
-Because of these, we control the refresh by gating the clock input to the output card.
+Because of these issues, we control the refresh by gating the clock input to the output card.
 When there are channels to be updated, the clock is turned to the maximum speed.
 Otherwise, the clock is kept off so no refreshing is happening.
 Since the clock signal is generated by the FPGA, the gating is done
@@ -481,7 +483,7 @@ In addition to the DDSs attached to the FPGA, we also support generation of
 radio frequency~(RF) signals using universal software radio peripheral~(USRP)
 (more detail in appendix~\ref{appendex:computer-control:nidaq}).
 Compared to the DDS, which can only output a single frequency at a time,
-USRP supports output of arbitrary spectrum within a certain range.
+USRP supports the output of arbitrary spectra within a certain range.
 This can be useful when more than one frequency is needed on a single channel,
 e.g. for fast modulation of the amplitude using beating,
 or to generate multiple diffraction orders on an acousto optical beam deflector~(AOBD).
@@ -503,7 +505,7 @@ However, due to the constant changing nature of the RF output and the higher sam
 the memory requirement would be too high if we take the same approach as the NiDAQ backend
 and compute all the output values before the sequences start.
 Instead, the backend uses a command stream similar to the one used by the FPGA backend
-to encode the change to the output spectrum.
+to encode the change to the output spectra.
 Unlike the FPGA backend, however, commands can be issued
 for all the virtual channels simultaneously,
 removing the need to interleave updates for different channels.
@@ -523,12 +525,12 @@ and to achieve more reliable performance for the sample generation,
 the program directly managing the USRP device runs on a separate computer running Linux.
 The communication with the main computer is done via ZMTP.
 
-The USRP device does not have built in support for triggering,
+The USRP device does not have built-in support for triggering,
 which is necessary to synchronize its output with other devices.
 We implement this in software by converting the trigger signal to a COM port signal
 using an Arduino board and monitoring the COM port in the USRP server program.
 The trigger has a timing accuracy of $1~\mathrm{ms}$
-which is limited either by the timing of on the Arduino or
+which is limited either by the timing of the Arduino or
 the reading of the COM port on the server computer.
 
 \section{Automation of Scans}
@@ -536,7 +538,7 @@ the reading of the COM port on the server computer.
 
 The core of the control system, as described in the previous sections,
 deals with the specification and realization of experimental sequences,
-which are the building block for all measurements we do.
+which are the building blocks for all measurements we do.
 However, most experiments require running multiple sequences
 to reduce statistical uncertainty and measure the effect of varying certain parameters.
 We add the concept of scans to the system in order to satisfy this requirement.
@@ -596,10 +598,10 @@ which provides the following functions to construct a scan.
   \begin{lstlisting}[language=Matlab]
   sg(2).Instance1.parameter1 = 2;
 \end{lstlisting}
-\item Each basic scan allow multiple parameters to be scanned simultaneously
+\item Each basic scan allows multiple parameters to be scanned simultaneously
   forming a multidimensional array of parameters.
   A scan of the parameter along dimension \verb`i` can be configured
-  by assigning to \verb`.scan(i)` for the parameter, e.g.
+  by assigning values to \verb`.scan(i)` of the parameter, e.g.
   \begin{lstlisting}[language=Matlab]
   sg(1).Instance1.parameter2.scan(2) = [1, 2, 3, 4];
 \end{lstlisting}
@@ -633,7 +635,7 @@ All the measurements done in this thesis are implemented using this system.
 The design of the system, especially the user API,
 guarantees that continuous improvement can be made
 without major changes to existing user code.
-Examples of further improvements that could be made to the system includes,
+Examples of further improvements that could be made to the system include,
 \begin{enumerate}
 \item Unlike other backends, the FPGA determines the timing of the experiment
   and only one instance of such a device is allowed per experiment.
@@ -645,11 +647,11 @@ Examples of further improvements that could be made to the system includes,
 \item Support for more devices can be added to the system.\\
   One such update in progress uses the arbitrary waveform generator~(AWG) boards
   from Spectrum Instrumentation.
-  These are very similar to the USRP devices but the output has higher bandwidth
+  These are very similar to the USRP devices but the outputs have higher bandwidth
   and significantly lower noise.
 \item The IR execution is one of the main factors affecting the performance
   of the sequence compilation.
-  In additional to the compilation to native code mentioned previously,
+  In addition to the compilation to native code mentioned previously,
   the function can also be vectorized to take advantage of SIMD instructions
   in order to further improve the performance.
 \item The sequence is currently static and cannot depend on measured value
