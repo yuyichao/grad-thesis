@@ -6,7 +6,7 @@
 \section{Introduction}
 
 The method we use to coherently create a single molecule from atoms
-uses two-photon optical transition~(chapter~\ref{ch:raman-transfer}).
+uses a two-photon optical transition~(chapter~\ref{ch:raman-transfer}).
 Before we can drive such a transition, however, we must locate and characterize
 the intermediate excited states of the molecule to be used in the two-photon transition.
 This can be measured using photoassociation~(PA) spectroscopy
@@ -14,14 +14,15 @@ where two atoms are driven from the atomic state to an excited molecular state
 via an optical transition.
 The flexibility of the optical tweezer platform allows us to
 prepare a clean initial state with only two atoms
-as well as accurately detect when PA has happened
+and accurately detect when PA has happened
 with a high signal to noise ratio~(section~\ref{ch:pa:sequence-res}).
 
 In this chapter, we describe the molecular energy structure~(section~\ref{ch:pa:structure})
 and how we use PA spectroscopy to locate and
 identify the molecular excited states~(section~\ref{ch:pa:pa}).
-We also detail the beam path for the measurement~(section~\ref{ch:pa:beampath}) including
-the alignment procedure for the PA beam and discussions about factors that can affect
+We give details on the beam path for the measurement including
+the alignment procedure for the PA beam~(section~\ref{ch:pa:beampath})
+and discuss about factors that can affect
 the PA linewidth~(section~\ref{ch:pa:linewidth}).
 
 \section{Energy Levels}
@@ -33,31 +34,31 @@ We will focus mainly on the electronic excited states measured in this chapter
 but most of the discussion here applies to ground electronic states as well
 and will be useful for chapter~\ref{ch:raman-spectroscopy} and \ref{ch:raman-transfer}.
 
-\subsection{Angular Momentums}
+\subsection{Angular Momentum States}
 
-Compared to an atom, a diatomic molecule has many more degrees of freedoms.
+Compared to an atom, a diatomic molecule has many more degrees of freedom.
 In addition to the quantum numbers for each atom in the molecule,
 molecules also have nuclear motion.
 In order to reduce the complexity, it is therefore very important to consider the
-symmetry of the system, and in particular the angular momentums,
-which corresponds to rotation symmetry, and the coupling between them.
-The angular momentums in a diatomic molecule includes electron orbit $\mathbf{L}$\footnote{
-  There are $\mathbf{L}_1$ and $\mathbf{L}_2$ for the two electron but since
+symmetries of the system, and in particular the angular momentum,
+which corresponds to rotational symmetry, and the coupling between them.
+The angular momenta in a diatomic molecule include electron orbit $\mathbf{L}$\footnote{
+  There are $\mathbf{L}_1$ and $\mathbf{L}_2$ for the two electrons but since
   we only consider states with at most one $\mathbf{L}_i\neq0$
   we will only use one quantum number here},
 electron spin $\mathbf{S}_1$ and $\mathbf{S}_2$, nuclear orbital $\mathbf{N}$
 and nuclear spin $\mathbf{I}_1$ and $\mathbf{I}_2$.
 Although the total angular momentum
 $\mathbf{F}\equiv\mathbf{L}+\mathbf{S}_1+\mathbf{S}_2+\mathbf{N}+\mathbf{I}_1+\mathbf{I}_2$
-is the only true conserved quantity in the absence of external field,
-depending on the coupling strengths between the angular momentums,
-there are additional approximately conserved quantity in the molecule.
+is the only true conserved quantity in the absence of external fields,
+depending on the coupling strengths between the angular momenta,
+there are additional approximately conserved quantities in the molecule.
 
 For the NaCs molecule and our experiment, there are two important regimes where the coupling
 strength can be easily ordered.
 
 \subsubsection{Deeply Bound States}
-\label{ch:pa:angular-momentums:deep}
+\label{ch:pa:angular-momenta:deep}
 
 \begin{figure}
   \centering
@@ -95,11 +96,11 @@ The angular momentum state of the molecule is therefore fully characterized by
 $|L,\Lambda,S,\Omega,J\rangle$. $\Lambda$ can be $0,1,\dots,L$, $\Omega$ ranges from
 $\abs{\Lambda-S}$ to $\Lambda+S$ and $J\geqslant\Omega$.
 The $L$ quantum number is specified by the electronic state and will be discussed
-in section~\ref{ch:pa:pes} and the rest of the angular momentum quantum numbers
+in section~\ref{ch:pa:pes}. The rest of the angular momentum quantum numbers
 are represented by the \textit{Hund's~case~(a)} term symbol,
 \[ ^{2S+1}\Lambda_\Omega \]
 similar to the atomic term symbol $^{2S+1}L_J$.
-Just as the use of capital English letters $S,P,D,\dots$ to represent
+Just as the use of capital English letters $S,P,D,\dots$ are used to represent
 $L=0,1,2,\dots$, capital Greek letters $\Sigma,\Pi,\Delta,\dots$ are used
 to denote $\Lambda=0,1,2,\dots$ in the term symbol.
 An additional symmetry to consider is the reflection about a plane that includes
@@ -136,7 +137,7 @@ by measuring the state spacing for the lowest few rotational states.
 \subsubsection{Near Threshold Bound States}
 \label{ch:pa:structure:near-threshold}
 
-For molecular states with small binding energy, the interaction between the two atoms is
+For molecular states with a small binding energy, the interaction between the two atoms is
 small compared to the internal coupling in the atoms and
 the angular momentum coupling is ``atom like''.
 In this limit, the total angular momentum $\mathbf{F}_1$ and $\mathbf{F}_2$
@@ -184,12 +185,12 @@ the vibrational and rotational states of the molecule.
 \subsubsection{Franck-Condon Factor}
 
 In addition to the energy of the molecular bound state,
-the solution of the nuclear motion also provides information to the selection rules
+the solution of the nuclear motion also provides information on the selection rules
 and coupling strength of transitions between the states.
-For an electronic electric dipole transition between state
+For an electronic electric dipole transition between states
 $|e_1,v_1,j_1\rangle$ and $|e_2,v_2,j_2\rangle$,
 where $e_i$, $v_i$ and $j_i$ denotes electronic, vibrational and angular momentum states,
-the Rabi frequency under the BO approximation is,
+respectively the Rabi frequency under the BO approximation is,
 \begin{align*}
   \Omega=&\langle e_1,v_1,j_1|e\mathbf{r}_e\cdot\mathbf{E}\ue^{\ui\mathbf{k}\cdot\mathbf{r}}|e_2,v_2,j_2\rangle\\
   =&\langle e_1(\mathbf{r})|e\mathbf{r}_e\cdot\mathbf{E}|e_2(\mathbf{r})\rangle\langle v_1,j_1|\ue^{\ui\mathbf{k}\cdot\mathbf{r}}|v_2,j_2\rangle
@@ -199,7 +200,7 @@ For most of the transitions, we can treat the nuclear coordinate dependent trans
 moment $\mathbf{D}\paren{\mathbf{r}}\equiv\langle e_1(\mathbf{r})|e\mathbf{r}_e|e_2(\mathbf{r})\rangle$ as a constant $\mathbf{D}$.
 Since the size of the molecular wavefunction is also usually much smaller than
 the wavelength of the transition, we can also assume $\ue^{\ui\mathbf{k}\cdot\mathbf{r}}\approx 1$,
-we have,
+so we have,
 \begin{align*}
   \Omega=&\mathbf{D}\cdot\mathbf{E}\langle j_1|j_2\rangle\langle v_1|v_2\rangle
 \end{align*}
@@ -232,10 +233,10 @@ For incoherent transition, the transition rate is proportional to $\Omega^2\prop
 Fig.~\ref{fig:pa:pes} shows the relevant PESs for $\mathrm{NaCs}$.
 Although the spin-less electronic Hamiltonian~\ref{eq:pa:pes:he} makes it easier
 to understand the molecule structure and provides good approximations for the
-transition dipoment and FCF, the absence of spin and the difficulty in exactly solving
+transition dipole moment and FCF, the absence of spin and the difficulty in exactly solving
 a multi-electron system makes it unsuitable to calculate energy levels
-for spectroscopy purpose.
-Because of this, prediction of the molecular states energies are calculated using
+for spectroscopy purposes.
+Because of this, prediction of the molecular-state energies are calculated using
 PESs fitted to experimental data~\cite{docenko_coupling_2006,zaharova_solution_2009,grochola_spin-forbidden_2011,grochola_investigation_2010}.
 
 \section{Photoassociation Spectroscopy}
@@ -248,7 +249,7 @@ PESs fitted to experimental data~\cite{docenko_coupling_2006,zaharova_solution_2
   \centering
   \includegraphics[width=0.7\textwidth]{figures/pa_beampath.pdf}
   \caption[PA beam path]{
-    PA beam path including the relative geometry with the magnetic field
+    PA beam path including the relative passing with the magnetic field
     the glass vacuum cell and the tweezer.
     In order to compensate for the astigmatism from passing through the glass cell window
     at an angle, we added a correction glass plate into the PA beam path.
@@ -262,7 +263,7 @@ PESs fitted to experimental data~\cite{docenko_coupling_2006,zaharova_solution_2
 The excited molecular state we would like to address has a bond length of $3\sim8~\text{\AA}$.
 The initial atomic state, however, has an average inter-nuclear distance of
 $\approx\!1000~\text{\AA}$.
-This size mismatch between the initial and final state wavefunctions
+This size mismatch between the wavefunctions of the initial and final state
 means the transition typically has a very small FCF~($10^{-10}\sim10^{-8}$).
 Because of this, we focus our PA beam onto the tweezer with a beam waist between
 $10~\mathrm{\mu m}$ and $30~\mathrm{\mu m}$~(Fig.~\ref{fig:pa:beampath}) in order to
@@ -301,7 +302,7 @@ In order to align the PA beam to the tweezer, we use the following alignment pro
   the tweezer~(Fig.~\ref{fig:pa:beampath}).
   This allows us to directly measure location of the focal point for the two wavelengths
   and correct for the chromatic aberration by shifting the focus from the PA light
-  to the original focus position from the resonance Cs light.
+  to the original focus position from the resonant Cs light.
 \item As the final alignment step and to correct for the chromatic aberration of the
   glass window that was not corrected for in the last step,
   we align the PA beam to the atom using signal directly from the atom.
@@ -349,14 +350,14 @@ In particular, we scanned the PA light frequency around the $v'=0$ and $v'=12-14
 vibrational states in the $\mathrm{c^3\Sigma}_{\Omega=1}$ potential.
 Table~\ref{table:pa:theory-prediction} shows the predicted resonance frequencies
 for the PA resonance from $|\mathrm{Na(2, 2),Cs(4, 4)}\rangle$
-based on fitting to previous measurement~\cite{grochola_spin-forbidden_2011}.
-The frequencies are calculated from Dunham expansion~\cite{dunham_energy_1932}
-corrected for the hyperfine structure for the atoms.
+based on fitting to previous measurements~\cite{grochola_spin-forbidden_2011}.
+The frequencies are calculated from a Dunham expansion~\cite{dunham_energy_1932}
+that is corrected for the hyperfine structure for the atoms.
 
 In order to observe PA, we first prepare both the Na and Cs atoms in the motional ground states
 in the same tweezer~\cite{liu_building_2018}.
 We then turn on the PA beam for a set time
-followed by separating the atoms into their respective tweezers and image the atoms.
+followed by separating the atoms into their respective tweezers and imaging the atoms.
 When we hit a PA resonance, the excited molecular state will typically decay down
 to either a molecular ground state,
 which will remain in at most one of the tweezers after the separation,
@@ -369,13 +370,13 @@ we can capture the probability of PA event and locate the resonances.
 The initial atomic state we used is $|\mathrm{Na(2, 2),Cs(4, 4)}\rangle$
 which has $L=0$ and $S=1$.
 For atoms in the motional ground state we also have $N=0$ and therefore $J=1$
-which should be coupled to $J=0,1,2$ excited states from the $\Delta J=0,\pm1$ selection rule.
+which should be coupled to $J=0,1,2$ excited states base on the $\Delta J=0,\pm1$ selection rule.
 However, since the cooling is not perfect,
-we expect some atoms initially in the $N=1$ state which can allow a weaker
+we expect some atoms to be initially in the $N=1$ state which can allow a weaker
 transition to the $J=3$ states.
 Moreover, since the PA beam polarization is circular
 and has maximum overlap with the $\sigma^+$ polarization,
-the $J=2$ is expected to have the strongest coupling.
+the $J=2$ excited state is expected to have the strongest coupling.
 
 \begin{figure}
   \centering
@@ -387,7 +388,7 @@ the $J=2$ is expected to have the strongest coupling.
     $v'=0$ also shows multiple peaks that correspond to
     the hyperfine structure of the molecule.
     The $v'=13$ and $v'=14$ transitions are relatively weak
-    and only the strongest line is measured as a result.
+    and as a result only the strongest line in each transition is measured.
     \label{fig:pa:spectrum}}
 \end{figure}
 
@@ -417,7 +418,7 @@ whereas only the strongest rotational state is measured for $v'=13$ and $v'=14$.
 The $v'=0$ spectrum also shows the hyperfine structure for the lowest two rotational states.
 
 The rotational states of the molecule can be determined from the energy gap between the states
-based on the discussion in section~\ref{ch:pa:angular-momentums:deep}.
+based on the discussion in section~\ref{ch:pa:angular-momenta:deep}.
 The ratio of the spacing between the lowest $J$ states we measured are
 $1.64$ and $1.61$ for $v'=0$ \footnote{The energy of the strongest hyperfine line is used}
 and $v'=12$ respectively.
@@ -440,7 +441,7 @@ is~\cite[p.~197]{bransden_physics_2003},
 \end{align*}
 where $\omega_i$ is the decay frequency, $d_i$ is the transition dipole moment,
 and the sum is over all the decay channels.
-Since the size of the excited state electron wavefunction is similar to that of the atom
+Since the size of the excited-state electron wavefunction is similar to that of the atoms,
 the molecule has a similar transition dipole moment as the corresponding atomic transition
 $d_i\approx d_\Cs$. Moreover, since $\sum_i\mathrm{FCF}_i=1$ and $\omega_i\approx\omega_\Cs$
 we have
@@ -468,7 +469,6 @@ Fig.~\ref{fig:pa:linewidth:red-twr}A shows the narrowest spectrum of the $v'=12,
 we measured when the tweezer frequency is set to $306344.5~\mathrm{GHz}$
 with $10~\mathrm{mW}$ of power. The linewidth is determined to be $167(32)~\mathrm{MHz}$
 which is much greater than the theory prediction.
-
 Furthermore, the observed linewidth appears to be dependent on the tweezer power.
 The same PA line measured with $1~\mathrm{mW}$ tweezer power
 is shown in Fig.~\ref{fig:pa:linewidth:red-twr}B with a significantly narrower linewidth
@@ -487,7 +487,7 @@ which suggests that the linewidth may be broadened by a two-photon process.
     (A) For coupling to a higher excited state,
     the broadening depends on the two-photon detuning $\Delta'$ from $|e'\rangle$.
     (B) For coupling to the atomic motional continuum,
-    the broadening is a function of the kinetic energy of the atomic state $E_k$.
+    the broadening is a function of the kinetic energy $E_k$ of the atomic state.
     \label{fig:pa:linewidth:up-vs-down}}
 \end{figure}
 
@@ -509,20 +509,20 @@ In the following section, I will provide an estimation for such a broadening pro
 
 \subsubsection{Two-Photon Coupling to the Atomic Motional Continuum}
 \label{ch:pa:linewidth:two-photn-down}
-The broadening of the PA line requires coupling the excited state to a continuum of states.
+The broadening of the PA line requires the coupling of the excited state to a continuum of states.
 For the ground atomic state, since the state is stable with respect to radiative decay,
 this continuum cannot be the photon continuum.
 Instead, the excited state is coupled to the relative motional continuum of the atoms.
 Physically, this corresponds to a photodissociation process
-where the atoms fly away with high kinetic energies corresponding
+whereby the atoms fly away with high kinetic energies corresponding
 to the detuning of the tweezer~(Fig.~\ref{fig:pa:linewidth:up-vs-down}B).
 
-The photodissociation rate is determined by the Fermi's golden rule,
+The photodissociation rate is determined by Fermi's golden rule,
 \[
   \Gamma=2\pi\Omega_{if}^2\ \rho_f
 \]
 where $\Omega_{if}$ is the matrix element between the initial and final state
-and $\rho_f$ is the density of state near the final state.
+and $\rho_f$ is the density of states near the final state.
 We calculate this by first discretizing the continuum and the rate becomes
 \[
   \Gamma=2\pi\frac{{\Omega'_{if}}^2}{\delta}
@@ -531,13 +531,13 @@ where $\Omega'_{if}$ is the Rabi frequency between the initial and final state
 and $\delta$ is the spacing between the discretized final states.
 
 The Rabi frequency $\Omega'_{if}$ is proportional to the square root of FCF,
-which we calculate for the atomic ground motional states by exactly diagonalization
+which we can calculate for the atomic ground motional states by exact diagonalization
 of the atomic wavefunction.
 However, due to the high energy~($>\!10~\mathrm{GHz}$) of the final state,
 calculating FCF for the target state using this method requires an unrealistic number of
 states to be included.
 Instead, we approximate it using the results for the atomic ground state
-by assuming the FCF to be proportional to the probability density of non-interacting
+by assuming the FCF to be proportional to the probability density of the non-interacting
 atomic wavefunction at zero relative distance so that,
 \[
   \Omega'_{if}=\Omega_0\frac{\psi_f\paren{r_{rel}=0}}{\psi_0\paren{r_{rel}=0}}
@@ -557,7 +557,8 @@ This approximation is justified because,
 This approximation remains valid until the de Broglie wavelength for the atomic state
 is comparable to the size of the molecular potential which corresponds to
 a motional energy of $\approx\!40~\mathrm{GHz}$
-and the result can still be used as order of magnitude estimation for higher motional energies.
+and even then the result can still be used as an order of magnitude estimation
+for higher motional energies.
 
 For atomic motional ground state, we have,
 \begin{align*}
@@ -565,7 +566,7 @@ For atomic motional ground state, we have,
   =&\paren{\frac{\mu^3\omega_1\omega_2\omega_3}{\pi^3}}^{1/4}
 \end{align*}
 where $\mu$ is the reduced mass $\mu\equiv m_\Na m_\Cs/\paren{m_\Na+m_\Cs}$,
-and $\omega_i$'s are the relative trapping frequencies along the three trap axis.
+and $\omega_i$'s are the relative trapping frequencies along the three trap axes.
 We discretize the continuum state by adding an infinitely deep spherical potential well
 of radius $R$ around the center. The radial wavefunctions of the eigenstates
 within the well with quantum number $n=1,2,\dots$ is,
@@ -667,8 +668,8 @@ and is usually not the limiting factor for the transfer efficiency.
 
 The molecular state can also couple to a different motional continuum if there are other
 atomic spin states with lower energies~(Fig.~\ref{fig:pa:linewidth:two-photon-down-raman}F).
-Since the stable atomic state has the lowest energy amount all the ones with the same total $m_F$,
-such state must have a different total $m_F$ than the initial state.
+Since the stable atomic state has the lowest energy among all the ones with the same total $m_F$,
+such a state must have a different total $m_F$ than the initial state.
 Therefore, such coupling is forbidden if the two Raman beams both have $\pi$ polarization,
 as is the case for the Raman transition in chapter~\ref{ch:raman-spectroscopy}
 and \ref{ch:raman-transfer}, and will not cause any loss due to this mechanism.
@@ -685,5 +686,5 @@ also creates unique challenges that can lead to dissociation or loss of the atom
 We studied one of the effects and confirmed our model for the loss process with
 additional measurements and discussed its implication for future experiments.
 The identification of the excited molecular state opens up the pathway
-to formation of ground state single molecule via two-photon process
+to the formation of a single ground-state molecule via two-photon process
 and will be the focus of later chapters.
