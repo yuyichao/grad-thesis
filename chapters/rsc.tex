@@ -422,8 +422,6 @@ the need to vary the pulse times for all but the pulses on the first order sideb
 \section{Solution: Simulation Based Optimization}
 \label{ch:rsc:simulation}
 
-\todo{Link to code}
-
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{figures/na_rsc_sequence.pdf}
@@ -450,7 +448,9 @@ the temperature or the ground state probability.
 Including higher order sidebands in the sideband thermometry could in principle
 give us enough information about the state distribution but doing
 so for a non-thermal distribution is not easy or reliable.
-We therefore use a Monte-Carlo simulation to guide our search
+We therefore use a Monte-Carlo simulation\footnote{
+  See \url{https://github.com/nacs-lab/yyc-data/blob/9edda7f7cfa111e17deb82e1518ef3aeca048875/calculations/sideband/sideband.jl} and \url{https://github.com/nacs-lab/yyc-data/tree/9edda7f7cfa111e17deb82e1518ef3aeca048875/lib/NaCsSim/src} for the code.
+} to guide our search
 for the optimal sequence~\cite{dalibard_wave-function_1992,chretien_laser_2014}.
 The simulation includes accurate scattering rates and branching ratios
 from the tweezer, Raman and OP beams.
