@@ -3,7 +3,7 @@
 \chapter{Computer Control Hardware Specification}
 \label{appendex:computer-control}
 
-In this appendix we list the specification of the important hardware
+In this appendix we list the specifications of the important hardware
 used in our computer control system.
 See section~\ref{ch:computer-control:backend} for the integration
 of these hardware into the system.
@@ -23,14 +23,14 @@ each containing 68 pins used for single-ended signals.
 Each FMC connector is used to control 11 DDS's,
 which will be described in section~\ref{appendex:computer-control:dds},
 and one of the connector is also used to output 32 logical control signals
-and the clock to synchronize with other devices.
+and the clock signal to synchronize with other devices.
 
 The DDS's on each FMC connector are controlled using a shared parallel bus
 with 7-bit address, 16-bit data and 6 control signals.
 A chip select pin for each DDS is used to enable the relevant one for update.
-The setup allows, in general case, one DDS on each FMC connector to be programmed
-simultaneously while at the same time updating the logical outputs.
-This concurrently update capability, however, is not currently used in the experiment
+The setup allows, in the general case, one DDS on each FMC connector to be programmed
+simultaneously while updating the logical outputs at the same time.
+This concurrent update capability, however, is not currently used in the experiment
 and only one update at a time is allowed.
 
 \section{DDS}
@@ -40,13 +40,13 @@ The DDS we use is \href{https://www.analog.com/en/products/ad9914.html}{AD9914}
 from Analog Devices.
 The chip runs on an external clock of $3.5~\mathrm{GHz}$,
 which sets the sampling rate of $3.5~\mathrm{GS/s}$,
-and can directly output frequency up to $1.4~\mathrm{GHz}$.
+and can directly output frequencies up to $1.4~\mathrm{GHz}$.
 We configure the chip to use a single profile and output a fixed frequency and amplitude
 at any given time.
 Using the 16-bit data bus,
-the amplitude has a resolution of 12-bit taking one 16-bit write to update or $160~\mathrm{ns}$,
+the amplitude has a resolution of 12-bit, taking one 16-bit write or $160~\mathrm{ns}$ to update,
 whereas the frequency has a resolution of 31-bit
-taking two 16-bit write to update or $240~\mathrm{ns}$\footnote{
+taking two 16-bit write or $240~\mathrm{ns}$ to update\footnote{
   Currently we conservatively wait for a total of $500~\mathrm{ns}$
   before issuing the next command.
   However, it is likely that this wait time can be shortened.
@@ -59,15 +59,15 @@ around $1~\mathrm{GHz}$.
 We measure the noise on the output after the amplifier.
 We saw a low second harmonic power of $-40\sim-50~\mathrm{dBc}$
 over a wide frequency range of $80\sim900~\mathrm{MHz}$.
-We also observed distortion when the output frequency is closed to
+We also observed distortion when the output frequency is close to
 a fraction of the clock frequency but the effect is also relatively small
 ($\approx\!-40~\mathrm{dBc}$).
-Finally, we measure the crosstalk between different channels.
+Finally, we measured the crosstalk between different channels.
 With a single channel outputing at maximum amplitude,
 we observed a $\approx\!-40\sim-50~\mathrm{dBc}$ crosstalk between the channels.
-This is comparable to other noise on the output, however,
+This is comparable to other noise on the output, though,
 the effect can be greater on a DDS outputting lower power.
-For this reason, we ensure the DDS are outputting maximum power most of the time
+For this reason, we ensure the DDSs are outputting maximum power most of the time
 so that they are less susceptible to noise from other channels.
 For important noise sensitive channels,
 we also use additional methods including filtering, RF switches,
@@ -81,8 +81,8 @@ We use a \href{https://www.ni.com/en-us/support/model.pci-6733.html}
 {NI PCI-6733 analog output board} connected to a
 \href{https://www.ni.com/en-us/support/model.bnc-2110.html}{BNC-2110 BNC connector block}
 to generate low frequency voltage output.
-Other analog output board that support trigger and external clock should also be supported.
-The board support a sampling rate of $769~\mathrm{kS/s}$ when using all output channels
+Other analog output boards that support trigger and external clock should also be supported.
+The board supports a sampling rate of $769~\mathrm{kS/s}$ when using all output channels
 and we use $500~\mathrm{kS/s}$ in the experiment.
 The output swing is $-10~\mathrm{V}$ to $10~\mathrm{V}$ with a 16-bit resolution.
 
@@ -104,18 +104,20 @@ and a sampling rate of any integer fraction of the clock.
 We tested two different daughterboards.
 \begin{enumerate}
 \item \href{https://www.ettus.com/all-products/ubx160/}{UBX 160}\\
-  This daughterboard support upshifting the output frequency
+  This daughterboard supports upshifting the output frequency
   by mixing with a local oscillator~(LO) frequency.
   However, we observed strong leakage of the LO frequency
-  and high heating rate of the atom when using the output on the AOM controling the tweezer.
+  and consequently high heating rate of the atom
+  when using the output on the AOM controling the tweezer.
 \item \href{https://www.ettus.com/all-products/basictx/}{BasicTX}\\
-  This daughterboard directly output the signal from the motherboard
+  This daughterboard directly outputs the signal from the motherboard
   without additional signal generation on board.
   Although we still see increased heating on the atom using this daughterboard
+  compared to using the DDS output,
   the rate is lower than when using the UBX 160 daughterboard.
 \end{enumerate}
-From the test result, we use the BasicTX daughterboard in the experiment
-for it's lower noise and limit the use of the output
+From the test results, we use the BasicTX daughterboard in the experiment
+for its lower noise and limit the use of the output
 to low frequency signals $<\!100~\mathrm{MHz}$.
 We use a sampling rate of $50~\mathrm{MS/s}$ and a center frequency of $60~\mathrm{MHz}$.
 The maximum total power we get is around $10~\mathrm{dBm}$.
