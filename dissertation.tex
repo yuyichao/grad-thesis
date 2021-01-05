@@ -4,12 +4,25 @@
 
 \interfootnotelinepenalty=100000000
 
-\usepackage{fltpage2}
+% \usepackage{fltpage2}
 \usepackage{multirow, makecell}
 \usepackage{tabularx}
 \usepackage[perpage,bottom,symbol*,stable]{footmisc}
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{etoolbox}
+\makeatletter
+% Makes sure the footnote shows up on the same page as the reference in the main text
+% Thanks to @FrankMittelbach for the explaination of the issue and the solution posted at
+% https://github.com/latex3/latex2e/issues/399#issuecomment-750914128
+% Also thanks to Willie Wong and cgnieder for the pointer and summary at my tex.sc question
+% https://tex.stackexchange.com/questions/577605/footnote-appearing-on-the-next-page-when-theres-too-much-space-on-a-page
+\patchcmd\end@float{\@cons\@currlist\@currbox}
+   {\@cons\@currlist\@currbox
+    \global\holdinginserts\@ne}
+    {}{}
+\apptocmd\@specialoutput{\global\holdinginserts\z@}
+\makeatother
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
