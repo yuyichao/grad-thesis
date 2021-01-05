@@ -232,11 +232,11 @@
   \addcontentsline{toc}{chapter}{Copyright}
   \thispagestyle{empty}
   \vspace*{\fill}
-  \scshape \noindent \small \copyright \small \@degreeyear\hspace{3pt}-- \theauthor \\
-  \noindent all rights reserved.
+  {\scshape \noindent \small {\copyright \@degreeyear\hspace{3pt}-- \theauthor}\\}
+  {\scshape \noindent \small all rights reserved.}
   \vspace*{\fill}
-  \newpage
-  \rm
+  {\small \newpage}
+  \small \rm
 }
 
 \newcommand{\abstractpage}[1]{
