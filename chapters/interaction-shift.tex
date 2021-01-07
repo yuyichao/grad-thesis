@@ -7,19 +7,19 @@
 \label{ch:interaction-shift:introduction}
 
 The interaction between the atoms is governed by the short range molecular potential.
-For low energy processes with long de Broglie wavelength, however,
-the complexity in the interaction at short range
+For low energy processes involving atoms with long de Broglie wavelengths, however,
+the complex short range part of the interaction
 can be ignored and the collision is approximately described by a single number,
 the $s$-wave scattering length $a$.
 Measuring the scattering length between the atoms allows us to probe the properties
-of the molecular potential and refine our prediction on molecule formation,
+of the molecular potential and refine predictions needed for molecule formation,
 e.g. the binding energy, without direct observation of the molecular states.
 Traditionally, such measurements are done either by scattering in bulk gases
 or by spectroscopy in optical lattices, both of which require the preparation
 of many atoms in quantum degeneracy.
 The preparation of two single atoms in the motional ground state in a single tweezer,
-however, allow us to cleanly perform this measurement using only two atoms
-and not affected by any many-body effects that inevitably exist using the traditional approach.
+however, allows us to cleanly perform this measurement using only two atoms
+and not be affected by many-body effects that inevitably exist using the traditional approach.
 
 In this chapter, we will discuss our measurement of the interspecies scattering lengths
 between multiple Na and Cs spin states using interaction shift spectroscopy.
@@ -70,15 +70,15 @@ and the Hamiltonian can be expressed as,
     &+\sum_{i=x,y,z}\mu\paren{\omega_{1,i}^2 - \omega_{2,i}^2}R_ir_{\mathrm{rel},i}
   \end{split}\numberthis{eq:interaction-shift:full-hamiltonian}
 \end{align*}
-The first term and the second term only relies on the COM motion and relative motion
+The first term and the second term only rely on the COM motion and relative motion
 respectively and can be solved independently. The third term mixes the COM and relative motion
-and is proportional to the trapping frequency difference.
+and is proportional to the difference in trapping frequency.
 If the trapping frequencies are the same for the two atoms, the third term is $0$ and
 the solution is fully separable.
 As mentioned above, since the trapping frequencies for the two atoms are similar,
 we will assume the mixing term is small and treat it as a small correction in the calculation.
 
-The interaction potential $V_{\mathrm{int}}$ is the original for
+The interaction potential $V_{\mathrm{int}}$ gives rise to
 the molecular bound states and its exact form will be discussed in chapter~\ref{ch:pa},
 \ref{ch:raman-spectroscopy} and \ref{ch:raman-transfer}.
 However, since the range of the potential is much smaller than
@@ -90,10 +90,9 @@ the scattering length $a$~\cite{busch_two_1998},
 \]
 where $\mu = m_1m_2/\paren{m_1+m_2}$ is the reduced mass and
 $\delta_{\mathrm{reg}}\paren{\mathbf{r}}\equiv\delta^{(3)}\paren{\mathbf{r}}\paren{\partial/\partial r}r$
-is the regularized delta-function.
-The validity of the pseudo-potential is characterized by the ratio of
-the van der Waals length $\beta_6 = (2\mu C_6 / \hbar^2)^{1/4}$
-to the relative harmonic oscillator lengths $\beta_{\mathrm{rel},i}$~\cite{
+is the regularized delta-function. This pseudo-potential is valid
+when the van der Waals length~$\beta_6 = (2\mu C_6 / \hbar^2)^{1/4}$
+is much smaller than the relative harmonic oscillator lengths~$\beta_{\mathrm{rel},i}$~\cite{
   bolda_effective-scattering-length_2002,blume_fermi_2002}.
 In our experiment, these are $\beta_6 \approx 6~\mathrm{nm}$,
 $\beta_{\mathrm{rel},x} \approx \beta_{\mathrm{rel},x}\approx 66~\mathrm{nm}$ for the radial axes,
@@ -103,7 +102,7 @@ and  $\beta_{\mathrm{rel},z} \approx 158~\mathrm{nm}$ for the axial axis.
 \label{ch:interaction-shift:theory:perturb}
 
 For weak interaction, i.e. a small scattering length $a$, the effect of the interaction
-on the energy level can be calculated perturbatively.
+on the energies can be calculated perturbatively.
 The result from this calculation is useful for checking the validity of the full calculation,
 as well as providing an intuitive understanding of the shift and its dependence
 on different parameters.
@@ -137,9 +136,10 @@ and is also stronger for stronger confinement where the wavefunction density is 
 
 We can see from Eq.~\ref{eq:interaction-shift-perturb-shift} that the shift is only
 non-zero when all of $n_{\mathrm{rel},i}$'s are even.
-The shift is also smaller for higher motional excited state with smaller wavefunction density.
+The shift is also smaller for higher motional excited states
+with lower wavefunction density at $\mathbf{r}_{\mathrm{rel}}=0$.
 This means that the shift will only be observable if the atom is cooled to close to
-the motional ground state and will be small or zero for hot atoms.
+the motional ground state and will be small or zero for other states.
 
 \subsection{Non-perturbative Calculation}
 \label{ch:interaction-shift:theory:non-perturb}
@@ -147,14 +147,14 @@ the motional ground state and will be small or zero for hot atoms.
 The first order perturbative result breaks down for large $a$ when the energy shift
 approaches the motional energy scale $\omega_{\mathrm{rel},i}$.
 Moreover, due to the divergent nature of the delta-function in the contact interaction potential,
-higher order perturbative calculation does not converge.
+higher order perturbative calculations do not converge.
 It is therefore necessary to use a non-perturbative solution of the interacting atoms
 in order to interpret measurements of the shift for strong interaction.
 To do this, we first ignore the last term in
 the Hamiltonian~\ref{eq:interaction-shift:full-hamiltonian} so that it is fully separable
 into COM and relative motion.
 
-For the relative Hamiltonian, we use the analytic cylindrical solutions
+For the relative Hamiltonian, we use the analytical cylindrical solutions
 from Ref.~\cite{idziaszek_analytical_2006}.
 These solutions require the potential to be cylindrically symmetric and
 that the ratio between the radial trapping frequency
@@ -167,14 +167,14 @@ These differences from the real Hamiltonian will be included later,
 together with the mixing term, as a correction~\cite{
   bertelsen_association_2007,deuretzbacher_heteronuclear_2008}.
 The analytic solutions are only given for the interacting states,
-but there are also many relative states which have zero wavefunction at the $\delta$-function,
-and therefore are unaffected.
+but there are also many relative motional states
+which have zero overlap with the $\delta$-function, and therefore are unaffected.
 We have identified these states from the perturbative calculation
 in section~\ref{ch:interaction-shift:theory:perturb}
 which are states with $l\ne0$ or odd $m_z$
-after transforming to the cylindrical coordinate used by the analytic solution,
+after transforming to the cylindrical coordinates used by the analytic solution,
 where $l$ is the angular momentum quantum numbers for the radial part,
-and $m_z$ is quantum number for 1D harmonic oscillator for the axial part.
+and $m_z$ is quantum number for the axial 1D harmonic oscillator.
 The complete basis includes both the interacting states from
 Ref.~\cite{idziaszek_analytical_2006} as well as all of the non-interacting states.
 The non-interacting states are solutions to the cylindrical harmonic oscillator,
@@ -184,7 +184,7 @@ and so are just cylindrical harmonic oscillator wavefunctions with eigenenergies
                                       \numberthis{eq:interaction-shift:cylind-E}
 \end{align*}
 where $n$ is the principal quantum number for the radial part.
-In order to find the non-interacting wavefunction,
+In order to find the non-interacting subspace,
 we need to remove the interaction wavefunction from
 the cylindrical harmonic oscillator wavefunctions.
 The complication in this process is that when $\eta$ is an integer,
@@ -287,7 +287,8 @@ The results for the lowest energy ones are shown in Fig.~\ref{fig:interaction-sh
 The absolute energies shown in Fig.~\ref{fig:interaction-shift:energies} have an arbitrary global
 offset and are therefore not directly measurable.
 Instead, the measurable quantities are the energy differences between different states,
-which can be done either by changing the scattering length, i.e. moving along the x axis,
+which can be done either by changing the scattering length,
+i.e. moving along the x axis in Fig.~\ref{fig:interaction-shift:energies},
 or by changing the motional state of the atoms, i.e. moving along the y axis.
 
 \begin{figure}
@@ -305,7 +306,7 @@ or by changing the motional state of the atoms, i.e. moving along the y axis.
 \end{figure}
 
 In our experiment, we measure the interaction shifts by flipping the spin state of
-one but not the other atom using Raman transition.
+one but not the other atom using a Raman transition.
 Since the scattering length depends on the spin state,
 this allows us to measure the difference between energy levels for different scattering lengths
 by comparing the resonance frequency in the absence of
@@ -395,26 +396,26 @@ Na and Cs motional excitation~(Fig.~\ref{fig:interaction-shift:results}D).
   \end{tabular}
 \end{table}
 
-Since the measurement only give the energy difference between different scattering lengths,
+Since the measurement only gives the energy difference
+between spin state combinations with different scattering lengths,
 we determine an absolute interaction shift of the $|\mathrm{Na(2, 2),Cs(4, 4)}\rangle$
 using the binding energy of
 the least bound state $v''=-1$~(section~\ref{ch:raman-spectroscopy:states:n0}).
 The absence of spin mixing for this state allows its binding energy to be related
 to the scattering length directly through
-the single-channel quantum defect theory~(QDT)~\cite{
+single-channel quantum defect theory~(QDT)~\cite{
   gao_quantum-defect_1998,gao_angular-momentum-insensitive_2001,gao_general_2008}
 but extended to two-scale by including the $-C_8/r^8$ potential.
 For the van der Waals coefficients, we use $C_6=3227~\mathrm{a.u.}$ and
 $C_8=3.681\times10^5~\mathrm{a.u.}$ from
 Refs.~\cite{docenko_coupling_2006,mcguyer_high-precision_2015,porsev_accurate_2003}.
 From here, we can use the result of the calculation above to obtain all the
-absolute interaction shifts and scattering lengths.
-The final result for all the spin states is summarized in
-table~\ref{table:interaction-shift:results}.
+absolute interaction shifts and scattering lengths,
+summarized in table~\ref{table:interaction-shift:results}.
 
 \section{Summary and Outlook}
 \label{ch:interaction-shift:summary}
-Optical tweezer provides a clean platform to study the interaction between exactly two atoms.
+Optical tweezers provide a clean platform to study the interaction between exactly two atoms.
 Here, we started our exploration of the interaction by measuring the most important quantity
 for $s$-wave scattering process at ultracold temperature, the scattering length $a$.
 The results from these measurements can be used
@@ -424,11 +425,11 @@ and Feshbach resonances~\cite{hood_multichannel_2020}.
 More properties of the interaction will be studied in the following chapters.
 
 Additionally, the combination of the tight confinement from the optical tweezer
-and the interaction between the atoms also give us further control
-on the motional states of the atom.
+and the interaction between the atoms also gives us further control
+of the motional states of the atom.
 As we have seen in this chapter, the degeneracy of carrier Raman transition
 for different motional states is lifted by the interaction.
-As a result, driving on the $|0,0\rangle\rightarrow|0,0\rangle$ interaction shifted resonance
+As a result, driving on the interaction shifted resonance
 allows us to prepare a system that is completely in the ground state of the relative motion.
 This will be used when we coherently create the molecules~(chapter~\ref{ch:raman-transfer})
 to lower the requirement for the cooling and reduce the background caused by hot atoms.
