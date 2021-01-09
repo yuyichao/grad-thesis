@@ -107,15 +107,16 @@ The full Rabi frequency for such a transition is given by~\cite{knight_quantum_2
 \begin{align}
   \Omega_{\mathrm{R}}^0=&\sum_{i}\frac{\Omega_{1i}\Omega_{2i}^*}{2\Delta_i}\label{eq:rsc:basic-theory:raman-rabi}
 \end{align}
-where the sum is over all the coupled excited states $|e_i\rangle$,
-$\Omega_{ai}\equiv\langle a|\mathbf{d}\cdot\mathbf{E}_a|e_i\rangle$ is the single photon
+where $\Omega_{ai}\equiv\langle a|\mathbf{d}\cdot\mathbf{E}_a|e_i\rangle$ is the single photon
 Rabi frequency between $|a\rangle$ and $|e_i\rangle$
 and $\Delta_i$ is the single photon detuning from excited state $|e_i\rangle$.
+The sum is over all the excited states $|e_i\rangle$ allowed by the selection rules,
+which may be different based on the polarization of the Raman beams.
 
-In order to account for the motional degrees of freedom, we need to include the spatial
+In order to account for the motional degrees of freedom, we need to take the spatial
 wavefunction of the atom and light into account.
 As mentioned above, we approximate the atomic motional wavefunction by the harmonic oscillator
-eigenstates $|n\rangle$. Coupling between states different $n$ states from the Raman transition
+eigenstates $|n\rangle$. Coupling between different $n$ states from the Raman transition
 is allowed due to the recoil from the Raman lasers,
 which corresponds to a spatial phase imprinting of $\ue^{\ui\mathbf{\Delta k}\cdot\mathbf{\hat x}}$
 where $\mathbf{\Delta k}$ is the wavevector difference between the two Raman beams.
