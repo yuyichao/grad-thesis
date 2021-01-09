@@ -153,10 +153,16 @@ coherent creation of molecules~(chapter~\ref{ch:raman-transfer}).
 
 The beam path to generate the required frequencies in the tweezer is shown in
 Fig.~\ref{fig:raman-spectroscopy:raman-beampath}.
-The additional single pass AOM in the beam path avoids interference
-with AOM leak light causing power fluctuation and
-also increases the frequency tuning range compared to using only one double pass AOM.
-The powers at each frequency are calibrated as a function of AOM powers
+Due to back reflection of the acoustic wave and imperfect order separation from the AOM,
+each beam may contain small frequency sidebands that are shifted from the desired one
+by integer multiple of the AOM driving frequency.
+Since we are combining two beams into one, such light in one beam that coincides
+with the frequency of the other beam can cause large power fluctuation due to interference.
+We added a single pass AOM in the beam path to shift the frequency of the red beam
+away from all possible frequencies in the blue beam to avoid this issue.
+The additional AOM also increases the frequency tuning range
+compared to using only one double pass AOM.
+The powers in each beam are calibrated as a function of AOM powers
 so that we can select the desired power ratio during the experiment.
 When driving the Raman transition, instead of turning on a separate beam,
 we ramp down the power of the original tweezer and ramp up the power
@@ -212,7 +218,7 @@ Similarly, we measure the Zeeman shift and the resonance frequency at zero magne
 The summary of the results are also shown in table~\ref{table:raman-spectroscopy:n0}.
 The result shows good agreement with theory prediction,
 especially for the $|\mathrm{Na(1, 1),Cs(3, 3)}\rangle$, and $|\mathrm{Na(2, 2),Cs(3, 3)}\rangle$
-spin state that are calibrated using previous results from our experiment.
+spin states for which the theory has been calibrated using previous results from our experiment.
 
 \begin{figure}
   \centering
