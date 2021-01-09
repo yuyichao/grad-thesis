@@ -33,7 +33,7 @@ the daily operation of the lab can be performed smoothly and reliably.
   for normal operations although more direct control may still be allowed in certain cases.
 \item Modeling of the sequence and scan.\\
   As an important special case of usability,
-  the computer control system must provide a model for each task close to
+  the computer control system must provide an description for each task close to
   the users' mental model.
   More concretely, this means creating abstraction for concepts
   typically used to describe the task and allow operation on these abstractions
@@ -149,7 +149,7 @@ Each output channel has a unique name attached for identification.
 This name is always a string of the format \verb`<device_id>/<channel>`
 where \verb`<device_id>` is a name for the (physical) device
 and \verb`<channel>` is an identification of the channel within the device.
-The \verb`<device_id>` may not contain ``\verb`/`'' but other than this
+The \verb`<device_id>` may not contain ``\verb`/`'' but
 neither \verb`<device_id>` nor \verb`<channel>` has globally predefined meaning
 and are completely up to the backend to define.
 This format allows maximum freedom for the backend to abstract its function

@@ -95,7 +95,7 @@ when the van der Waals length~$\beta_6 = (2\mu C_6 / \hbar^2)^{1/4}$
 is much smaller than the relative harmonic oscillator lengths~$\beta_{\mathrm{rel},i}$~\cite{
   bolda_effective-scattering-length_2002,blume_fermi_2002}.
 In our experiment, these are $\beta_6 \approx 6~\mathrm{nm}$,
-$\beta_{\mathrm{rel},x} \approx \beta_{\mathrm{rel},x}\approx 66~\mathrm{nm}$ for the radial axes,
+$\beta_{\mathrm{rel},x} \approx \beta_{\mathrm{rel},y}\approx 66~\mathrm{nm}$ for the radial axes,
 and  $\beta_{\mathrm{rel},z} \approx 158~\mathrm{nm}$ for the axial axis.
 
 \subsection{Perturbative Calculation}
@@ -132,7 +132,7 @@ For the motional ground state, the shift is,
 where $\beta_{\mathrm{rel},i}\equiv\sqrt{\hbar/\mu\omega_{\mathrm{rel},i}}$ is the relative motion
 oscillator length along the $i$-th axis.
 The shift is proportional to the strength of the interaction $a$,
-and is also stronger for stronger confinement where the wavefunction density is higher.
+and is also bigger for stronger confinement where the wavefunction density is higher.
 
 We can see from Eq.~\ref{eq:interaction-shift-perturb-shift} that the shift is only
 non-zero when all of $n_{\mathrm{rel},i}$'s are even.
@@ -153,6 +153,8 @@ in order to interpret measurements of the shift for strong interaction.
 To do this, we first ignore the last term in
 the Hamiltonian~\ref{eq:interaction-shift:full-hamiltonian} so that it is fully separable
 into COM and relative motion.
+This term, along with a few other corrections,
+will be added later numerically to obtain the full solution.
 
 For the relative Hamiltonian, we use the analytical cylindrical solutions
 from Ref.~\cite{idziaszek_analytical_2006}.
@@ -163,16 +165,18 @@ to be an integer.
 We therefore define $\eta = 6$, which is close to the actual values of $5.6$
 and ignores the $7~\mathrm{\%}$ difference between the two radial trapping frequencies
 in order to use these solutions.
-These differences from the real Hamiltonian will be included later,
-together with the mixing term, as a correction~\cite{
+These differences from the real Hamiltonian will be included later as a correction~\cite{
   bertelsen_association_2007,deuretzbacher_heteronuclear_2008}.
-The analytic solutions are only given for the interacting states,
-but there are also many relative motional states
-which have zero overlap with the $\delta$-function, and therefore are unaffected.
+
+Moreover, Ref.~\cite{idziaszek_analytical_2006} does not provide the wavefunctions
+for the full solution, but only include the ones for the interacting states.
+In order to use the solution, we must expand the solution
+to include the non-interacting states as well.
 We have identified these states from the perturbative calculation
 in section~\ref{ch:interaction-shift:theory:perturb}
-which are states with $l\ne0$ or odd $m_z$
-after transforming to the cylindrical coordinates used by the analytic solution,
+which are the ones witch at least one odd $n_{\mathrm{rel},i}$.
+After transforming to the cylindrical coordinates used by the analytic solution,
+the condition becomes $l\ne0$ or odd $m_z$,
 where $l$ is the angular momentum quantum numbers for the radial part,
 and $m_z$ is quantum number for the axial 1D harmonic oscillator.
 The complete basis includes both the interacting states from
@@ -197,7 +201,7 @@ are a linear superposition of the degenerate eigenstates $\psi_i$
 that satisfies the condition $V_{\mathrm{int}}\psi_{\mathrm{non-int}} = 0$ or
 $\psi_{\mathrm{non-int}}\paren{\mathbf{r}_{\mathrm{rel}}=0}=0$.
 We find these amplitudes $c_i$ using a Gram-Schmidt procedure,
-which from the requirement $\sum_{i=1}^{N_{\mathrm{deg}}}  c_i \psi_i\paren{\mathbf{r}_{\mathrm{rel}}=0} = 0$.
+which form the requirement $\sum_{i=1}^{N_{\mathrm{deg}}}  c_i \psi_i\paren{\mathbf{r}_{\mathrm{rel}}=0} = 0$.
 In each subspace, there is only one interacting state,
 for which the analytic solution is used, and  $N_{\mathrm{deg}}-1$ non-interacting states.
 
@@ -306,7 +310,7 @@ or by changing the motional state of the atoms, i.e. moving along the y axis.
 \end{figure}
 
 In our experiment, we measure the interaction shifts by flipping the spin state of
-one but not the other atom using a Raman transition.
+one but not the other atom using Raman transitions.
 Since the scattering length depends on the spin state,
 this allows us to measure the difference between energy levels for different scattering lengths
 by comparing the resonance frequency in the absence of
