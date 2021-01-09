@@ -170,40 +170,38 @@ These differences from the real Hamiltonian will be included later as a correcti
 
 Moreover, Ref.~\cite{idziaszek_analytical_2006} does not provide the wavefunctions
 for the full solution, but only include the ones for the interacting states.
-In order to use the solution, we must expand the solution
-to include the non-interacting states as well.
+In order to use the solution, we must expand it to include the non-interacting states as well.
 We have identified these states from the perturbative calculation
 in section~\ref{ch:interaction-shift:theory:perturb}
 which are the ones witch at least one odd $n_{\mathrm{rel},i}$.
-After transforming to the cylindrical coordinates used by the analytic solution,
-the condition becomes $l\ne0$ or odd $m_z$,
-where $l$ is the angular momentum quantum numbers for the radial part,
-and $m_z$ is quantum number for the axial 1D harmonic oscillator.
-The complete basis includes both the interacting states from
-Ref.~\cite{idziaszek_analytical_2006} as well as all of the non-interacting states.
-The non-interacting states are solutions to the cylindrical harmonic oscillator,
-and so are just cylindrical harmonic oscillator wavefunctions with eigenenergies
+In order to match the analytical solution,
+we can transform to the cylindrical harmonic oscillator basis.
+The eigenenergies becomes
 \begin{align*}
   \frac{E_{n,l,m_z}}{\hbar\omega_z}=&\paren{2 n + |l| + 1}\eta + \paren{m_z + 1/2}
                                       \numberthis{eq:interaction-shift:cylind-E}
 \end{align*}
-where $n$ is the principal quantum number for the radial part.
-In order to find the non-interacting subspace,
-we need to remove the interaction wavefunction from
-the cylindrical harmonic oscillator wavefunctions.
-The complication in this process is that when $\eta$ is an integer,
-as is required by the solution of the interaction,
+where $n$ is the principal quantum number for the radial part,
+$l$ is the angular momentum quantum numbers for the radial part,
+and $m_z$ is quantum number for the axial 1D harmonic oscillator.
+The condition for non-interacting states becomes $l\ne0$ or odd $m_z$.
+However, when $\eta$ is an integer, as is required by the solution of the interacting states,
 there is a subspace of cylindrical harmonic oscillator states with $l=0$
 and even $m_z$ that are degenerate from Eq.~\ref{eq:interaction-shift:cylind-E}.
-In each degenerate subspace with $N_{\mathrm{deg}}$ states,
-the non-interacting states $\psi_{\mathrm{non-int}}$
-are a linear superposition of the degenerate eigenstates $\psi_i$
-that satisfies the condition $V_{\mathrm{int}}\psi_{\mathrm{non-int}} = 0$ or
+This accidental degeneracy reduces the number of interacting states such that
+within each degenerate subspace with $N_{\mathrm{deg}}$ states,
+there is only one interacting state and the rest $N_{\mathrm{deg}}-1$ states are non-interacting.
+We can express a non-interacting state $\psi_{\mathrm{non-int}}$ within this subspace
+as a superposition of the cylindrical harmonic oscillator states
+$\psi_{\mathrm{non-int}}=\sum_ic_i\psi_i$,
+where the sum is over all the spaces in the degenerate subspace.
+The state must satisfy the condition $V_{\mathrm{int}}\psi_{\mathrm{non-int}} = 0$ or
 $\psi_{\mathrm{non-int}}\paren{\mathbf{r}_{\mathrm{rel}}=0}=0$.
-We find these amplitudes $c_i$ using a Gram-Schmidt procedure,
-which form the requirement $\sum_{i=1}^{N_{\mathrm{deg}}}  c_i \psi_i\paren{\mathbf{r}_{\mathrm{rel}}=0} = 0$.
-In each subspace, there is only one interacting state,
-for which the analytic solution is used, and  $N_{\mathrm{deg}}-1$ non-interacting states.
+We find these amplitudes $c_i$ using a Gram-Schmidt procedure, based on the requirement
+$\sum_{i=1}^{N_{\mathrm{deg}}} c_i \psi_i\paren{\mathbf{r}_{\mathrm{rel}}=0} = 0$.
+The procedure identifies $N_{\mathrm{deg}}-1$ non-interacting states within the subspace
+which is combined with the interacting state from Ref.~\cite{idziaszek_analytical_2006}
+to form the full solution.
 
 For the interacting states,
 the energies are given by the transcendental equations~\cite{idziaszek_analytical_2006}
@@ -252,8 +250,11 @@ Eq.~\ref{eq:interaction-shift:cylind-E}.
 \end{figure}
 
 Now that we have the solution in the separable and cylindrical case,
-the next step is to include the non-separable and asymmetric correction terms
-by diagonalizing the total matrix in the combined COM and relative cylindrical bases.
+the next step is to include the correction terms from the effects that were ignored above.
+These include the COM and relative motion mixing term
+from the Hamiltonian~\ref{eq:interaction-shift:full-hamiltonian},
+the asymmetry of the two radial axis, and the effect of non-integer $\eta$.
+The total matrix is diagonalized in the combined COM and relative cylindrical bases.
 Compared to treating the interaction term in Eq.~\ref{eq:interaction-shift:orig-hamiltonian}
 as a perturbation, the correction terms included here all have the form of
 harmonic potentials and therefore have much better convergence behavior.
@@ -312,8 +313,8 @@ or by changing the motional state of the atoms, i.e. moving along the y axis.
 In our experiment, we measure the interaction shifts by flipping the spin state of
 one but not the other atom using Raman transitions.
 Since the scattering length depends on the spin state,
-this allows us to measure the difference between energy levels for different scattering lengths
-by comparing the resonance frequency in the absence of
+the interaction shift may be different between the initial and final spin states.
+We measure this difference by comparing the resonance frequency in the absence of
 the other atom~(Fig.~\ref{fig:interaction-shift:measure}).
 The spin flip is done in the same $8.8~\mathrm{G}$ we use for
 Raman sideband cooling~(section~\ref{ch:rsc:setup}).

@@ -341,7 +341,9 @@ After the sorting of the pulses, the tree structure is discarded by default\foot
 Several backends require accessing the exact representation of the pulses
 outside the MATLAB code and even on different computers.
 Since the pulses can be arbitrary functions,
-this requires the ability to serialize and deserialize code.
+this requires the ability to package the code in a format
+that can be transferred over the network, i.e. serialization,
+and to restore the code for execution from this format, i.e. deserialization.
 
 In order to do this, we developed a simple intermediate representation~(IR)
 of the code that runs on a register-based virtual machine.
