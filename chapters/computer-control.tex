@@ -66,18 +66,30 @@ The application programming interface~(API) provided for sequence and scan progr
 are mostly text based due to the flexibility and version control requirement.
 Some graphic user interfaces~(GUI) are also included for specific tasks
 built on top of the text interface but will not be covered in this chapter.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{figures/computer_control_overview.pdf}
+  \caption[Core architecture of the computer control system]{
+    Core architecture of the computer control system.
+    The frontend takes the user input and passes it on to different backends.
+    The backends apply the necessary data conversion before sending it
+    to various output devices.
+    \label{fig:computer-control:introduction:architecture}}
+\end{figure}
+
+The core of the system is divided into the frontend and the backend
+as shown in Fig.~\ref{fig:computer-control:introduction:architecture}.
 Section~\ref{ch:computer-control:frontend} will cover the frontend of the system
 which is used by the user directly to specify an experimental sequence.
-Section~\ref{ch:computer-control:backend} will discuss the support for various
-hardware backends used to run a sequence.
+Section~\ref{ch:computer-control:backend} will discuss the backends,
+which implements the support for various hardware used to run a sequence.
 After that, section~\ref{ch:computer-control:scan} describes how multiple sequences
 can be put together to form a scan and section~\ref{ch:computer-control:summary}
 discusses some planned updates to the system.
 
 \section{Frontend}
 \label{ch:computer-control:frontend}
-
-\todo{Concrete example with a simple ramp}
 
 The frontend is the main user interface of the system to specify a sequence.
 Its API is designed around a few concepts that can be divided into two categories,
@@ -266,6 +278,8 @@ and \verb`output` specifies the output in one of the following ways,
   \verb`t` is the time within the pulse, \verb`len` is the length of the pulse
   and \verb`old_val` is the previous value of the channel before the current pulse.
 \end{enumerate}
+
+\todo{Concrete example with a simple ramp}
 
 \section{Backends}
 \label{ch:computer-control:backend}
