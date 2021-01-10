@@ -650,25 +650,30 @@ which may be used in the parent sequence as
   % using substructure under Instance2
   s.addStep(@subseq, s.C.Instance2);
 \end{lstlisting}
+We will show examples of how this sequence can be scanned below.
 
 The scan is represented by a \lstinline{ScanGroup} object,
-which provides the following functions to construct a scan.
-\begin{itemize}
-\item A \lstinline{ScanGroup} can store multiple basic scans each containing
-  a multiple dimensional scan (see below) of parameters.
-  The basic scans within a \lstinline{ScanGroup} \lstinline{sg} can be accessed through
-  indexing, e.g. \lstinline{sg(1)}.
-\item Multiple \lstinline{ScanGroup} \lstinline{sg1}, \lstinline{sg2},
-  \lstinline{sg3}, or the basic scans included
-  can be concatenated into a single \lstinline{ScanGroup} via the concatenation syntax, e.g.
-  \begin{lstlisting}[language=Matlab]
+which can store multiple basic scans each containing
+a multiple dimensional scan (see below) of parameters.
+The basic scans within a \lstinline{ScanGroup} \lstinline{sg} can be accessed through
+indexing, e.g. \lstinline{sg(1)}.
+Multiple \lstinline{ScanGroup} \lstinline{sg1}, \lstinline{sg2}, \lstinline{sg3},
+or the basic scans included can be concatenated into a single \lstinline{ScanGroup}
+via the concatenation syntax, e.g.
+\begin{lstlisting}[language=Matlab]
   [sg1, sg2, sg3(1), sg3(4)]
 \end{lstlisting}
-  This allows multiple different scans to run simultaneously,
-  which is useful when running the experiment unattended for a long time, e.g. overnight.
+This allows multiple different scans to run simultaneously,
+which is useful when running the experiment unattended for a long time, e.g. overnight.
+
+The following APIs are provided in order to construct a basic scan.
+The examples given below can be used to scan the sequence give above.
+\begin{itemize}
 \item Within a basic scan,
   the parameter can be set to a fixed value via assignment, e.g.
   \begin{lstlisting}[language=Matlab]
+  % Within the second basic scan,
+  % `parameter1` will be `2` in the first `subseq`
   sg(2).Instance1.parameter1 = 2;
 \end{lstlisting}
 \item Each basic scan allows multiple parameters to be scanned simultaneously
@@ -676,17 +681,27 @@ which provides the following functions to construct a scan.
   A scan of the parameter along dimension \lstinline{i} can be configured
   by assigning values to \lstinline{.scan(i)} of the parameter, e.g.
   \begin{lstlisting}[language=Matlab]
+  % Scan along the second dimention within the first basic scan
+  % `parameter2` will be varied between `1, 2, 3, 4`
+  % in the first `subseq` for sequences within this basic scan.
   sg(1).Instance1.parameter2.scan(2) = [1, 2, 3, 4];
 \end{lstlisting}
 \item Multiple parameters can also be scanned along the same dimension
   in which case the length of the parameter values must be the same. E.g.
   \begin{lstlisting}[language=Matlab]
+  % Scan along the second dimention within the first basic scan
+  % For each sequence within this basic scan.
+  % `parameter2` will be varied between `1, 2, 3, 4`
+  % in the first `subseq`. For each of the values,
+  % `parameter2` in the second `subseq`
+  % will take the corresponding value from `2, 3, 4, 5`.
   sg(1).Instance1.parameter2.scan(2) = [1, 2, 3, 4];
   sg(1).Instance2.parameter2.scan(2) = [2, 3, 4, 5];
 \end{lstlisting}
   is supported whereas
   \begin{lstlisting}[language=Matlab]
   sg(1).Instance1.parameter2.scan(2) = [1, 2, 3, 4];
+  % Error: must have the same dimension
   sg(1).Instance2.parameter1.scan(2) = [2, 3, 4];
 \end{lstlisting}
   will raise an error.
@@ -694,7 +709,12 @@ which provides the following functions to construct a scan.
   can be set for all the basic scans in the \lstinline{ScanGroup}
   by assigning to the empty index, e.g.
   \begin{lstlisting}[language=Matlab]
+  % For all sequences within scan,
+  % `parameter1` will be `3` in the first `subseq`
+  % unless overwritten for a specific basic scan.
   sg().Instance1.parameter1 = 3;
+  % Scan `parameter2` between `2, 3, 4` in the first `subseq`
+  % in all basic scans (unless overwritten)
   sg().Instance1.parameter2.scan(1) = [2, 3, 4];
 \end{lstlisting}
 \end{itemize}
