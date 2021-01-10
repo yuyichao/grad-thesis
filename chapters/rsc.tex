@@ -174,20 +174,27 @@ in order to reduce the scattering during RSC.
 \subsection{Optical Pumping}
 \label{ch:rsc:basic-theory:op}
 
-\todo{Inverting the OP description below to talk about F1 first}
-
 Driving the system on a cooling sideband with a Raman transition can reduce the
 motional energy of the atom. However, this is a fully coherent process
 that does not reduce the system entropy and therefore is not actually ``cooling'' the system
 and does not help us achieve better control over the quantum state of the system.
 Instead, quantum state control is achieved in RSC via the OP pulse.
-The initial hyperfine state $|2,2\rangle$ is a stretched state so it is the
-state the system naturally ends up in when $\sigma^+$ light is applied.
-However, if this is done using scattering from a $F=2$ to $F'=3$ transition,
+
+The state of the atom after a Raman $\pi$-pulse is $|1,1\rangle$.
+We first use $\sigma^+$ polarized light that is resonant with
+the $|1,1\rangle$ to $|2',2\rangle$ transition on the $\mathrm{D2}$ line
+to pump the atom out of the $F=1$ manifold to a mixture of $|2,1\rangle$ and $|2,2\rangle$ state.
+The beam is generated from the same source as the repumper for the MOT,
+which simplifies our setup.
+
+Since the target spin state for the OP, $|2,2\rangle$, is a stretched state,
+we can pump the atom from other $F=2$ states into this state
+by simultaneously applying $\sigma^+$ light that is resonant with the $F=2$ states.
+However, if this is done using a $F=2$ to $F'=3$ transition,
 the OP beam will allow continuous photon cycle
 between the states $|2,2\rangle$ and the $|3',3\rangle$
 causing unnecessary motional heating during OP.
-Therefore, the OP must be done on a $F=2$ to $F'=2$ transition.
+Therefore, the OP should be done on a $F=2$ to $F'=2$ transition to minimize this heating.
 Unfortunately, for Na, the corresponding transition
 from $\mathrm{3^2S_{1/2}}$ to $\mathrm{3^2P_{3/2}}$
 that is used for the MOT is not useable due to the small energy difference of
@@ -197,13 +204,7 @@ Instead, we must use the sodium $\mathrm{D1}$ line,
 i.e. $\mathrm{3^2S_{1/2}}$ to $\mathrm{3^2P_{1/2}}$ transition,
 which lacks a $F'=3$ excited state~\cite{monroe_resolved-sideband_1995,grobner_degenerate_2017}.
 We find a reduction in the scattering rate by a factor of $130(20)$,
-as compared to using OP light resonant with $\mathrm{3^2P_{3/2}}$.
-The $\mathrm{D1}$ light with $\sigma^+$ polarization is only used to pump atoms from
-$F=2$ states (in particular $|2,1\rangle$ which is populated during the OP process).
-Since the goal of the OP pulse is to clear the atom population in all states but $|2,2\rangle$,
-the photon cycling is not a concern for $F=1$ states and the $\mathrm{D2}$ line
-is used for OP of $F=1$ states instead.
-This also allows us to reuse the MOT light source and simplifies our setup.
+as compared to using OP light resonant with $\mathrm{3^2P_{3/2}}$ to address $F=2$ atoms.
 
 \section{Raman Sideband Thermometry}
 \label{ch:rsc:thermometry}
