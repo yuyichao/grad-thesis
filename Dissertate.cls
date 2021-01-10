@@ -235,8 +235,7 @@
   {\scshape \noindent \small {\copyright \@degreeyear\hspace{3pt}-- \theauthor}\\}
   {\scshape \noindent \small all rights reserved.}
   \vspace*{\fill}
-  {\small \newpage}
-  \small \rm
+  \newpage
 }
 
 \newcommand{\abstractpage}[1]{
