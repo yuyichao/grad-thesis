@@ -158,11 +158,11 @@ it offers the following desired properties,
 \subsection{Channel Naming}
 \label{ch:computer-control:frontend:channel}
 Each output channel has a unique name attached for identification.
-This name is always a string of the format \verb`<device_id>/<channel>`
-where \verb`<device_id>` is a name for the (physical) device
-and \verb`<channel>` is an identification of the channel within the device.
-The \verb`<device_id>` may not contain ``\verb`/`'' but
-neither \verb`<device_id>` nor \verb`<channel>` has globally predefined meaning
+This name is always a string of the format \lstinline{<device_id>/<channel>}
+where \lstinline{<device_id>} is a name for the (physical) device
+and \lstinline{<channel>} is an identification of the channel within the device.
+The \lstinline{<device_id>} may not contain ``\lstinline{/}'' but
+neither \lstinline{<device_id>} nor \lstinline{<channel>} has globally predefined meaning
 and are completely up to the backend to define.
 This format allows maximum freedom for the backend to abstract its function
 into multiple channels in the most fitting way,
@@ -186,100 +186,155 @@ Fig.~\ref{fig:computer-control:frontend:classes}
 provides a short summary of all the classes and methods mentioned in this section.
 
 \subsubsection{Timing}
-Subsequences are represented by the \verb`ExpSeqBase` class
-and time steps are represented by the \verb`TimeStep` class.
-Both \verb`ExpSeqBase` and \verb`TimeStep` are subclasses of \verb`TimeSeq`,
+Subsequences are represented by the \lstinline{ExpSeqBase} class
+and time steps are represented by the \lstinline{TimeStep} class.
+Both \lstinline{ExpSeqBase} and \lstinline{TimeStep} are subclasses of \lstinline{TimeSeq},
 which represent an arbitrary node on the sequence tree.
 
-Most timing related APIs are methods on \verb`ExpSeqBase`.
+Most timing related APIs are methods on \lstinline{ExpSeqBase}.
 The most important ones are the ones creating new branches
-in the subsequence tree, i.e. \verb`TimeSeq`.
-The type of branch created is determined by the parameters passed in~(\verb`<time_params>`),
+in the subsequence tree, i.e. \lstinline{TimeSeq}.
+The type of branch created is determined by the parameters passed in~(\lstinline{<time_params>}),
 which can be either
 \begin{enumerate}
-\item \verb`length, offset=0`\\
-  This creates a new \verb`TimeStep` with a numerical \verb`length`
-  and an optional time \verb`offset` from an API dependent time reference point
+\item \lstinline{length, offset=0}\\
+  This creates a new \lstinline{TimeStep} with a numerical \lstinline{length}
+  and an optional time \lstinline{offset} from an API dependent time reference point
   (see list of APIs below).
-\item \verb`offset=0, callback, <callback parameters>`\\
-  This creates a new \verb`ExpSeqBase` with an optional time \verb`offset`
+\item \lstinline{offset=0, callback, <callback parameters>}\\
+  This creates a new \lstinline{ExpSeqBase} with an optional time \lstinline{offset}
   the time reference point.
-  The new subsequence will be populated by calling \verb`callback`
-  with the new sequence followed by \verb`<callback parameters>`.
+  The new subsequence will be populated by calling \lstinline{callback}
+  with the new sequence followed by \lstinline{<callback parameters>}.
 \end{enumerate}
-Since most sequences are built in series, \verb`ExpSeqBase` maintains
-a current time~(\verb`curTime`) of the sequence.
-Various methods are provided that each act differently with respect to \verb`curTime`.
+Since most sequences are built in series, \lstinline{ExpSeqBase} maintains
+a current time~(\lstinline{curTime}) of the sequence.
+Various methods are provided that each act differently with respect to \lstinline{curTime}.
 \begin{enumerate}
-\item \verb`addStep(<time_params>)` method\\
+\item \lstinline{addStep(<time_params>)} method\\
   This is the most used method to construct the sequence in series.
-  The time reference point is \verb`curTime` and
-  \verb`curTime` will be set to the end of the time step or subsequence created.
-  A check is made to ensure the \verb`curTime` only moves forward and
-  errors if a too negative \verb`offset` large enough in magnitude is specified.
-  This ensures that what is added with \verb`addStep` always appears in the final
+  The time reference point is \lstinline{curTime} and
+  \lstinline{curTime} will be set to the end of the time step or subsequence created.
+  A check is made to ensure the \lstinline{curTime} only moves forward and
+  errors if a too negative \lstinline{offset} large enough in magnitude is specified.
+  This ensures that what is added with \lstinline{addStep} always appears in the final
   sequence in the same order as the program execution order
   which makes the code easier to reason about.
-\item \verb`addBackground(<time_params>)` method\\
-  The time reference point is \verb`curTime` and no change to \verb`curTime` is made.
-\item \verb`addAt(time_point, <time_params>)` method\\
-  The time reference point is specified by \verb`time_point` which is of type \verb`TimePoint`.
-  See below about \verb`TimePoint`.
-\item \verb`addFloating(<time_params>)` method\\
+\item \lstinline{addBackground(<time_params>)} method\\
+  The time reference point is \lstinline{curTime} and no change to \lstinline{curTime} is made.
+\item \lstinline{addAt(time_point, <time_params>)} method\\
+  The time reference point is specified by \lstinline{time_point}
+  which is of type \lstinline{TimePoint}.
+  See below about \lstinline{TimePoint}.
+\item \lstinline{addFloating(<time_params>)} method\\
   The time reference point is unspecified.
-  The optional \verb`offset` parameter cannot be specified in \verb`<time_params>`.
+  The optional \lstinline{offset} parameter cannot be specified in \lstinline{<time_params>}.
   The time reference point, however, must be specified before the sequence can be run.
-  This can be done by calling the \verb`setTime(time_point, time_ratio=0, offset=0)` method
-  on the \verb`TimeSeq` object returned,
-  where \verb`time_point` is also of type \verb`TimePoint` described below.
-  The optional \verb`time_ratio` specifies the relative time within the subsequence
+  This can be done by calling the \lstinline{setTime(time_point, time_ratio=0, offset=0)} method
+  on the \lstinline{TimeSeq} object returned,
+  where \lstinline{time_point} is also of type \lstinline{TimePoint} described below.
+  The optional \lstinline{time_ratio} specifies the relative time within the subsequence
   or time step to set the time for where a value of $0$ sets the start time
   and a value of $1$ sets the end time.
 \end{enumerate}
-All methods return the new \verb`TimeSeq` constructed so that they can be operated on.
+All methods return the new \lstinline{TimeSeq} constructed so that they can be operated on.
 
-The \verb`TimePoint` object used in \verb`addAt` and \verb`setTime`
-can be constructed via \verb`TimePoint(seq, time_ratio, offset)`
-which represents the time within the sequence or step \verb`seq` with a time \verb`offset`.
-\verb`time_ratio` specifies the time within the \verb`seq` where $0$ is the start time
+The \lstinline{TimePoint} object used in \lstinline{addAt} and \lstinline{setTime}
+can be constructed via \lstinline{TimePoint(seq, time_ratio, offset)}
+which represents the time within the sequence or step \lstinline{seq}
+with a time \lstinline{offset}.
+\lstinline{time_ratio} specifies the time within the \lstinline{seq} where $0$ is the start time
 and $1$ is the end time.
 
-Additional convenience methods for \verb`ExpSeqBase` are also provided
-to manipulate \verb`curTime`,
+Due to the support of background steps, the \lstinline{curTime} of the sequence
+may not reflect its total time.
+The \lstinline{totalTime()} method can be used to obtain
+the current total length of a sequence that includes the time it takes to finish
+all (nested) subsequences.
+
+Additional convenience methods for \lstinline{ExpSeqBase} are also provided
+to manipulate \lstinline{curTime},
 \begin{enumerate}
-\item \verb`wait(t)` method\\
-  Add \verb`t` to \verb`curTime`.
-  This is the only method that can change \verb`curTime` backwards.
-\item \verb`waitAll()` method\\
-  Forward \verb`curTime` to the end of all (nested) subsequences and time steps
+\item \lstinline{wait(t)} method\\
+  Add \lstinline{t} to \lstinline{curTime}.
+  This is the only method that can change \lstinline{curTime} backwards.
+\item \lstinline{waitAll()} method\\
+  Forward \lstinline{curTime} to the end of all (nested) subsequences and time steps
   within the current subsequence.
-\item \verb`waitBackground()` method\\
-  Similar to \verb`waitAll()` but only wait for the subsequences and time steps
+  This is equivalent to assigning \lstinline{totalTime()} to \lstinline{curTime}.
+\item \lstinline{waitBackground()} method\\
+  Similar to \lstinline{waitAll()} but only wait for the subsequences and time steps
   directly added to the current subsequence.
-\item \verb`waitFor(seqs, offset=0)` method\\
-  Forward \verb`curTime` to the end of subsequences and time steps specified
-  within the array \verb`seqs`.
-  An optional \verb`offset` may be added to the latest end time.
+\item \lstinline{waitFor(seqs, offset=0)} method\\
+  Forward \lstinline{curTime} to the end of subsequences and time steps specified
+  within the array \lstinline{seqs}.
+  An optional \lstinline{offset} may be added to the latest end time.
 \end{enumerate}
 
 \subsubsection{Output}
 
 As mentioned before, all the outputs are specified on time steps
-which are represented by the class \verb`TimeStep`.
-This is done via a single method \verb`add(channel_name, output)` on \verb`TimeStep`.
-The \verb`channel_name` is the channel name described above
-and \verb`output` specifies the output in one of the following ways,
+which are represented by the class \lstinline{TimeStep}.
+This is done via a single method \lstinline{add(channel_name, output)} on \lstinline{TimeStep}.
+The \lstinline{channel_name} is the channel name described above
+and \lstinline{output} specifies the output in one of the following ways,
 \begin{enumerate}
 \item A number\\
   This represents setting the channel to the specified value at the start time of the pulse.
 \item A function or callable object\\
   The function will be used to compute the value to output over the whole duration of the pulse.
-  It will be called with arguments \verb`(t, len, old_val)` where
-  \verb`t` is the time within the pulse, \verb`len` is the length of the pulse
-  and \verb`old_val` is the previous value of the channel before the current pulse.
+  It will be called with arguments \lstinline{(t, len, old_val)} where
+  \lstinline{t} is the time within the pulse, \lstinline{len} is the length of the pulse
+  and \lstinline{old_val} is the previous value of the channel before the current pulse.
 \end{enumerate}
 
-\todo{Concrete example with a simple ramp}
+\subsubsection{Examples}
+
+Putting both the timing and output APIs together,
+here is an example sequence that uses most of the features mentioned above.
+The comments \lstinline{`s.curTime == x`, `s.totalTime() == y`}
+shows the current value of \lstinline{curTime} and sequence length
+at each point in the code.
+
+\begin{lstlisting}[language=Matlab]
+  % `s.curTime == 0`, `s.totalTime() == 0`
+  s.addStep(1) ... % Create a step with length 1
+   .add('CH1', 1) ... % Set CH1 to 1 at t=0
+   .add('CH2', @(t) 2 * t); % Ramp CH2 from 0 to 2 over t=0 to t=1
+
+  % `s.curTime == 1`, `s.totalTime() == 1`
+  step1 = s.addBackground(1) ... % Create a step with length 1 without changing `curTime`
+   .add('CH2', 0); % Set CH2 to 0 at t=1
+
+  % `s.curTime == 1`, `s.totalTime() == 2`
+  step2 = s.addBackground(2) ... % Create a step with length 1 without changing `curTime`
+   .add('CH1', @(t) 1 - t); % Ramp CH1 from to 1 to -1 over t=1 to t=3
+
+  % `s.curTime == 1`, `s.totalTime() == 3`
+  s.waitFor({step1, step2}); % Wait for both background steps to finish
+  % This can also be achieved with one of the following
+  % s.waitAll();
+  % s.waitBackground();
+  % s.wait(2);
+
+  function subseq(s2)
+    % Function to create a subsequence
+    % `s2.curTime == 0`, `s2.totalTime() == 0`
+    s2.addStep(5) ...
+      .add('CH3', @(t) -t); % Ramp CH3 from 0 to -5
+    % `s2.curTime == 5`, `s2.totalTime() == 5`
+
+    % Note that `s.curTime` is not directly affected
+    % while the subsequence is being constructed by the `subseq` function.
+  end
+
+  % `s.curTime == 3`, `s.totalTime() == 3`
+  s2 = s.addFloating(@subseq); % Create a floating subsequence
+  s.setTime(TimePoint(s, 0, 0)); % and add it to the beginning of `s`.
+  % Equivalently:
+  % s.addAt(TimePoint(s, 0, 0), @subseq);
+  % `s.curTime == 3`, `s.totalTime() == 5`
+\end{lstlisting}
 
 \section{Backends}
 \label{ch:computer-control:backend}
@@ -361,7 +416,8 @@ and to restore the code for execution from this format, i.e. deserialization.
 
 In order to do this, we developed a simple intermediate representation~(IR)
 of the code that runs on a register-based virtual machine.
-The IR supports three different data types, \verb`Bool`, \verb`Int32` and \verb`Float64`
+The IR supports three different data types, \lstinline{Bool},
+\lstinline{Int32} and \lstinline{Float64}
 and basic arithmetic, control flow and math functions
 that are sufficient for specifying pulse shapes.
 The IR can be interpreted by an interpreter written in C++ or
@@ -375,7 +431,7 @@ The value returned from the function is therefore an object representing
 all the operations needed to compute the result as a directed acyclic graph~(DAG).
 We then convert each node in the DAG to an IR instruction to finish the conversion.
 This process only supports pure functions.
-Conditional branching is supported via an \verb`ifelse` function
+Conditional branching is supported via an \lstinline{ifelse} function
 that returns one of the input arguments based on a condition.
 Loops are not currently supported.
 
@@ -510,10 +566,10 @@ Instead of mapping the physical output channel to a fixed number of parameters
 similar to all the previously mentioned backends,
 a ``virtual'' output channel is created for each tone in the output,
 and can be controlled independently similar to all other channels.
-The \verb`<device_id>` component of the channel name has format \verb`CH<n>/<param>`
-where \verb`<n>` is a number identifying the virtual channel
-and \verb`<param>` is the parameter controlling the virtual channel,
-e.g. \verb`FREQ` for frequency or \verb`AMP` for amplitude.
+The \lstinline{<device_id>} component of the channel name has format \lstinline{CH<n>/<param>}
+where \lstinline{<n>} is a number identifying the virtual channel
+and \lstinline{<param>} is the parameter controlling the virtual channel,
+e.g. \lstinline{FREQ} for frequency or \lstinline{AMP} for amplitude.
 
 The driver API for USRP is very similar to that of the NI output card
 and requires the output value to be provided at a regular time interval.
@@ -569,19 +625,19 @@ which in our experiment typically happens
 when a certain number of single atom loading events happens.
 
 The scan interacts with the sequence constructing code
-by storing the parameters for the scan in the sequence object \verb`s` as a nested structure,
-which is accessed as \verb`s.C`.
+by storing the parameters for the scan in the sequence object \lstinline{s} as a nested structure,
+which is accessed as \lstinline{s.C}.
 Each substructure within the parameters can be accessed and passed independently
 which allows multiple instances of a common subsequence
 to store their parameters in the same way within the parent structure.
 As an example, a subsequence construction function may be implemented as
 \begin{lstlisting}[language=Matlab]
   function subseq(s, p)
-    % Access parameter1, with default value 0
+    % Access `parameter1`, with default value 0
     parameter1 = p.parameter1(0);
-    % Access parameter2, which must be predefined
+    % Access `parameter2`, which must be predefined
     parameter2 = p.parameter2();
-    % ... Use parameter1 and parameter2 to construct s.
+    % ... Use `parameter1` and `parameter2` to construct s.
   end
 \end{lstlisting}
 which may be used in the parent sequence as
@@ -595,15 +651,16 @@ which may be used in the parent sequence as
   s.addStep(@subseq, s.C.Instance2);
 \end{lstlisting}
 
-The scan is represented by a \verb`ScanGroup` object,
+The scan is represented by a \lstinline{ScanGroup} object,
 which provides the following functions to construct a scan.
 \begin{itemize}
-\item A \verb`ScanGroup` can store multiple basic scans each containing
+\item A \lstinline{ScanGroup} can store multiple basic scans each containing
   a multiple dimensional scan (see below) of parameters.
-  The basic scans within a \verb`ScanGroup` \verb`sg` can be accessed through
-  indexing, e.g. \verb`sg(1)`.
-\item Multiple \verb`ScanGroup` \verb`sg1`, \verb`sg2`, \verb`sg3`, or the basic scans included
-  can be concatenated into a single \verb`ScanGroup` via the concatenation syntax, e.g.
+  The basic scans within a \lstinline{ScanGroup} \lstinline{sg} can be accessed through
+  indexing, e.g. \lstinline{sg(1)}.
+\item Multiple \lstinline{ScanGroup} \lstinline{sg1}, \lstinline{sg2},
+  \lstinline{sg3}, or the basic scans included
+  can be concatenated into a single \lstinline{ScanGroup} via the concatenation syntax, e.g.
   \begin{lstlisting}[language=Matlab]
   [sg1, sg2, sg3(1), sg3(4)]
 \end{lstlisting}
@@ -616,8 +673,8 @@ which provides the following functions to construct a scan.
 \end{lstlisting}
 \item Each basic scan allows multiple parameters to be scanned simultaneously
   forming a multidimensional array of parameters.
-  A scan of the parameter along dimension \verb`i` can be configured
-  by assigning values to \verb`.scan(i)` of the parameter, e.g.
+  A scan of the parameter along dimension \lstinline{i} can be configured
+  by assigning values to \lstinline{.scan(i)} of the parameter, e.g.
   \begin{lstlisting}[language=Matlab]
   sg(1).Instance1.parameter2.scan(2) = [1, 2, 3, 4];
 \end{lstlisting}
@@ -633,7 +690,8 @@ which provides the following functions to construct a scan.
   sg(1).Instance2.parameter1.scan(2) = [2, 3, 4];
 \end{lstlisting}
   will raise an error.
-\item Parameters, fixed or scanned, can be set for all the basic scans in the \verb`ScanGroup`
+\item Parameters, fixed or scanned,
+  can be set for all the basic scans in the \lstinline{ScanGroup}
   by assigning to the empty index, e.g.
   \begin{lstlisting}[language=Matlab]
   sg().Instance1.parameter1 = 3;
