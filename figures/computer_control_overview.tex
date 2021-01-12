@@ -48,11 +48,11 @@
   \draw[dotted,line width=1]
   let \p1 = (Frontend.south), \p2 = (X Backend.north) in (\x2, \y1) -- (\x2, \y2);
 
-  \node[draw,text width=1.4cm,align=center] at (-3.3, -4) (FPGA Device) {FPGA\\Server};
-  \node[draw,text width=1.4cm,align=center] at (-1.5, -4) (NIDAQ Device) {NiDAQ\\Card};
-  \node[draw,text width=1.4cm,align=center] at (0.3, -4) (USRP Device) {USRP\\Server};
-  \node at (1.8, -4) {$\cdots$};
-  \node[draw,text width=1.4cm,align=center] at (3.3, -4) (X Device) {Other\\Hardware};
+  \node[draw,text width=1.4cm,align=center] at (-3.3, -4.5) (FPGA Device) {FPGA\\Server};
+  \node[draw,text width=1.4cm,align=center] at (-1.5, -4.5) (NIDAQ Device) {NiDAQ\\Card};
+  \node[draw,text width=1.4cm,align=center] at (0.3, -4.5) (USRP Device) {USRP\\Server};
+  \node at (1.8, -4.5) {$\cdots$};
+  \node[draw,text width=1.4cm,align=center] at (3.3, -4.5) (X Device) {Other\\Hardware};
 
   \draw[->,>=stealth,line width=1,red!60!black]
   (FPGA Backend.south) -- node[above,rotate=90] {Network} (FPGA Device.north);
@@ -64,7 +64,7 @@
   (X Backend.south) -- node[rotate=90,align=center] {Data\\Connection} (X Device.north);
 
   \node[draw,text width=8cm,align=center,blue!60!black]
-  at (0, -5.7) (Output) {Physical Outputs};
+  at (0, -6.1) (Output) {Physical Outputs};
 
   \draw[->,>=stealth,line width=1,blue!60!black]
   let \p1 = (Output.north), \p2 = (FPGA Device.south) in (\x2, \y2) -- (\x2, \y1);
@@ -79,7 +79,8 @@
   let \p1 = (Frontend.north), \p2 = (FPGA Backend.south) in
   (-4.3, \y1 + 0.11cm) rectangle (4.3, \y2 - 0.11cm);
   \path let \p1 = (Frontend.north), \p2 = (FPGA Backend.south) in
-  node[rotate=90,below,green!40!black] at (4.3, {(\y1 + \y2) / 2}) {\scriptsize Software};
+  node[rotate=90,below,green!40!black] at (4.3, {(\y1 + \y2) / 2})
+  {\scriptsize Main Control Computer};
 
   \draw[line width=1,blue!40!gray,opacity=0.3]
   let \p1 = (FPGA Device.north), \p2 = (Output.south) in
