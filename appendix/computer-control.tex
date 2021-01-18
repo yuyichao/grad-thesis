@@ -41,8 +41,17 @@ from Analog Devices.
 The chip runs on an external clock of $3.5~\mathrm{GHz}$,
 which sets the sampling rate of $3.5~\mathrm{GS/s}$,
 and can directly output frequencies up to $1.4~\mathrm{GHz}$.
-We configure the chip to use a single profile and output a fixed frequency and amplitude
-at any given time.
+The clock is shared between all the channels and can be provided by any source
+with sufficient power~($\approx17~\mathrm{dBm}$).
+The sources that have been used in our experiment include
+\href{https://windfreaktech.com/product/rf-mixer-downconverter-upconverter/}{MixNV}
+from Windfreak Technologies and
+\href{https://www.valonrf.com/frequency-synthesizer-6ghz.html}{5009}
+from Valon Technology, both being amplified by a
+\href{https://www.minicircuits.com/WebStore/dashboard.html?model=ZX60-V82-S\%2B}{ZX60-V82-S+}
+from Mini-Circuits.
+We configure the chip to use a single profile
+and output a fixed frequency and amplitude at any given time.
 Using the 16-bit data bus,
 the amplitude has a resolution of 12-bit, taking one 16-bit write or $160~\mathrm{ns}$ to update,
 whereas the frequency has a resolution of 31-bit
