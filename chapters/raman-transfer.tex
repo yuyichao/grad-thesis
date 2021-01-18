@@ -34,7 +34,8 @@ which also includes a discussion on the transfer efficiency.
 For a Raman transition with Raman Rabi frequency $\Omega_{\mathrm{R}}$ and total scattering rate
 $\Gamma_{\mathrm{s}}$, defined as the sum of the scattering rates
 out of the initial and final states,
-the probability of scattering during a $\pi$-pulse is,
+the time of a $\pi$-pulse is $t_{\pi}\equiv\pi/\Omega_{\mathrm{R}}$
+and the probability of scattering during this time is,
 \begin{align*}
   p_{\mathrm{s}}=&\frac{\Gamma_{\mathrm{s}} t_{\pi}}{2}\\
   =&\frac{\pi\Gamma_{\mathrm{s}}}{2\Omega_{\mathrm{R}}}
@@ -179,7 +180,7 @@ This is because the coupling between the ground states and the excited states is
   \Omega_{1,2}^{i}=&\Omega_{1,2}^{0}\langle\mathrm{F}_e^i|\mathrm{F}_g\rangle
 \end{align*}
 where the superscript $i$ represents different excited states,
-the subscript $1,2$ represents the initial~(1) and final~(2) ground state,
+the subscript $1,2$ represents the initial~($1$) and final~($2$) ground state,
 $\Omega_{1,2}^{0}$ is the reduced Rabi frequency without the angular momentum projection,
 and $\mathrm{F}_e^i$ and $\mathrm{F}_g$ are the rotation and spin states for the excited
 and ground states respectively. Note that the ground states $|i\rangle$ and $|f\rangle$
@@ -361,14 +362,14 @@ By a similar argument, we also have,
 \begin{align*}
   p_{\mathrm{s}0}\geqslant&\frac{4\Gamma_e}{\Omega_1^2T}
 \end{align*}
-which is the same as the previous result for a three-level STIRAP system
+which is the same as the previous result for a three-level Raman system
 where $\Omega_1=\Omega_2$.
 In the general case, these give us a lower bound on the scattering probability,
 \begin{align*}
   \min\paren{p_{\mathrm{s}0}}=&\frac{4\Gamma_e}{\min\paren{\Omega_1^2, \Omega_2^2}T}
 \end{align*}
-whereas the full scattering is larger than this lower bound by a pulse shape dependent
-small constant factor.
+whereas the real value in a experiement depends on the pulse shape
+and may be larger than this lower limit by a small constant factor.
 It is also easy to verify that this result agrees with the scattering probability for
 an optimal three-level Raman $\pi$-pulse with similar single photon Rabi frequency and pulse time.
 This confirms that without additional constraints from the real system or the experimental setup,
@@ -402,9 +403,10 @@ Similar to $\Omega_1$ and $\Omega_2$, we can also define
 $\Omega'_1\equiv\max\paren{\Omega'_1(t)}$ and $\Omega'_2\equiv\max\paren{\Omega'_2(t)}$.
 Since $\Omega'_1(t)$($\Omega'_2(t)$) and $\Omega_1(t)$($\Omega_2(t)$)
 are generated from the same beam, we have
-$\Omega'_1(t)\propto\Omega_1(t)$($\Omega'_2(t)\propto\Omega_2(t)$)
-and the condition can also be equivalently expressed as
-$\Omega_1/\Omega_2\neq\Omega'_1/\Omega'_2$.
+$\Omega'_1(t)\propto\Omega_1(t)$($\Omega'_2(t)\propto\Omega_2(t)$).
+This allow the time dependent condition above:
+$\Omega_1(t)/\Omega_2(t)\neq\Omega'_1(t)/\Omega'_2(t)$
+to be expressed as $\Omega_1/\Omega_2\neq\Omega'_1/\Omega'_2$, which is time independent.
 
 More quantitatively,
 the Rabi frequency coupling the dark state $|D(t)\rangle$ to the excited state $|e'\rangle$ is,
@@ -572,7 +574,10 @@ As a summary, for a two-photon transfer to a weakly bound molecular state,
 it is likely that a Raman transition is the preferred technique.
 However, for transferring to a deeply bound molecular state,
 which is where STIRAP has been used in previous experiments,
-STIRAP can have an advantage over a Raman transition.
+STIRAP can have an advantage over a Raman transition
+if the energy separation between the initial and final states are large enough
+and when the hyperfine and rotational structures in the excited state
+does not cause significant scattering.
 
 \section{States Selection}
 \label{ch:raman-transfer:state-selection}
@@ -817,7 +822,7 @@ causing significant scattering during the Raman transition.
     \label{fig:raman-transfer:results:ase:zero}}
 \end{figure}
 
-Fortunately, this is a common problem for systems with a large number of excited states,
+This is a common problem for systems with a large number of excited states,
 especially molecules, and ASE filters have been developed to address this.
 In our experiment, we use SureBlock ultra narrow-band notch filter from Ondax
 with part number 114-ER407-015,
